@@ -3,6 +3,6 @@
 ### 2020/2021 2ºsemestre
 
 ## Membros:
-### * Tomás Mendes
-### * Joel Oliveira
+* Tomás Mendes
+* Joel Oliveira
  
