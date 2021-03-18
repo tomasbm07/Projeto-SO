@@ -1,13 +1,14 @@
-CFLAGS = -Wall -lpthread -D_REENTRANT -g
+cc		 = gcc
+CFLAGS	 = -Wall -g -lpthread -D_REENTRANT
+LDFLAGS  =
+DEPS	 = main.c main.h teste.c
+OBJFILES = main.o teste.o
+TARGET	 = projeto.sh
 
-#sempre que houver ficheiro novo, aidicionar .o á lista para ser compilado
-OBJ = main.o   \
-      link.h   \
-	  teste.o  \
-	  teste2.o \
+all: $(TARGET)
 
-%.o : %.c
-	gcc -c $(CFLAGS) $< -o $@
+$(TARGET): $(OBJFILES) $(DEPS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) $(LDFLAGS)
 
-projeto.sh: $(OBJ)
-	gcc -o $@ $^ $(CFLAGS) $(LIBS)
+clean:
+	rm -f $(OBJFILES) $(TARGET) *~

@@ -1,5 +1,5 @@
-#include "link.h"
+#include "main.h"
 
 void teste(void){
-    printf("hello world\n");
+    printf("hello world, im xD\n");
 }
