@@ -1,1 +1,1 @@
-obj/main.o: src/main.c src/main.h
+obj/main.o: src/main.c src/config_file.h

@@ -1,11 +1,5 @@
 //gcc -Wall FIcheiro_com_uma_estrutura_assim_por_alto.c -o executavel
 //Includes e definicoes etc, diria
-#include <stdio.h>
-#include <stdlib.h>
-#include <regex.h>
-
-#define MAX_CONFIG_LINE 23
-
 
 
 /*Iniciar as cenas necessárias para a memória partilhada
