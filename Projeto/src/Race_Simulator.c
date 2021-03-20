@@ -8,13 +8,19 @@ int main(int argc, char* argv[]) {
   }
 
   read_file(argv[1]);
+  printf("Configurações lidas do ficheiro:\n");
+  printf("Numero de unidade de tempo /s: %dut\n", nr_unid_tps);
+  printf("Distancia de uma volta: %dm, Numero de voltas da corrida: %d\n", dist_volta, nr_voltas);
+  printf("Numero de equipas: %d\n", nr_equipas);
+  printf("Numero de unidades de tempo entre possivel avaria: %dut\n", unid_temp_avaria);
+  printf("Tempo min de reparacao: %dut, Tempo max de reparacao: %dut\n", min_reparacao, max_reparacao);
+  printf("Capacidade do deposito: %dL\n", deposito);
+  printf("--------------------------\n");
+  printf("ut - unidades de tempo\n");
+  printf("m - metros\n");
+  printf("L - litros\n");
+  printf("--------------------------\n");
 
-  printf("%d\n", nr_unid_tps);
-  printf("%d, %d\n", dist_volta, nr_voltas);
-  printf("%d\n", nr_equipas);
-  printf("%d\n", unid_temp_avaria);
-  printf("%d, %d\n", min_reparacao, max_reparacao);
-  printf("%d\n", deposito);
   // initiate_race();
   exit(0);
 }
