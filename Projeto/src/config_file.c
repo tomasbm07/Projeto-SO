@@ -3,7 +3,7 @@
 #define MAX_CONFIG_LINE 23
 
 void file_error() {
-  fprintf(stderr, "Erro na leitura do ficheiro de configuracoes.\n");
+  fprintf(stderr, "Error reading config file.\n");
   exit(1);
 }
 
@@ -13,7 +13,7 @@ void read_one_integer(char *string, int **int_value, FILE *file) {
   } else {
 	regex_t re;
 	if (regcomp(&re, "^[1-9][0-9]{0,9}\n$", REG_EXTENDED) != 0) {
-	  printf("Erro na compilação");
+	  printf("Compilation error\n");
 	  exit(1);
 	}
 
@@ -32,9 +32,8 @@ void read_two_integer(char *string, int **int_value_1, int **int_value_2, FILE *
 
   } else {
 	regex_t re;
-	if (regcomp(&re, "^[1-9][0-9]{0,9}, [1-9][0-9]{0,9}\n$", REG_EXTENDED) !=
-		0) {
-	  printf("Erro na compilação");
+	if (regcomp(&re, "^[1-9][0-9]{0,9}, [1-9][0-9]{0,9}\n$", REG_EXTENDED) != 0) {
+	  printf("Compilation error\n");
 	  exit(1);
 	}
 
@@ -49,7 +48,12 @@ void read_two_integer(char *string, int **int_value_1, int **int_value_2, FILE *
 
 // Le o ficheiro de configuracoes
 void read_file(char *filename) {
-  FILE *f = fopen(filename, "r");
+  FILE *f;
+
+  if((f = fopen(filename, "r")) == NULL){
+   fprintf(stderr, "File doesn't exist!\n");
+   exit(1);
+  }
 
   int *nr_1_input, *nr_2_input;
   nr_1_input = (int *)malloc(sizeof(int));
@@ -67,8 +71,8 @@ void read_file(char *filename) {
 
   read_one_integer(input_line, &nr_1_input, f);
   if (*(nr_1_input) < 3) {
-	printf("Têm de existir, pelo menos, 3 equipas.\n");
-	exit(0);
+	printf("At least 3 teams are required for race to start!\n");
+	exit(1);
   }
   nr_equipas = *nr_1_input;
 
