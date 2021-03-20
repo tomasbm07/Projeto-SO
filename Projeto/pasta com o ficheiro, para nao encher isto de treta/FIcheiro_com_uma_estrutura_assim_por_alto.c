@@ -43,28 +43,33 @@ void file_error(){
 }
 
 void read_one_integer(char * string, int ** int_value, FILE * file){
-	if (fgets(string, MAX_CONFIG_LINE, file)==NULL)
+	if (fgets(string, MAX_CONFIG_LINE, file)==NULL){
 		file_error();
+		}
 	else{
+		
 		regex_t re;
-		if ( regcomp(&re, "^[1-9][0-9]{0,21}$", REG_EXTENDED)!=0 ){
+		if ( regcomp(&re, "^[1-9][0-9]{0,9}\n$", REG_EXTENDED)!=0 ){
 			printf("Erro na compilação");
 			exit(1);
 		}
 		
-		if ( regexec(&re, string, 0,NULL, 0)!=0 ) file_error();
-		else sscanf(string, "%d", *int_value);
+		if ( regexec(&re, string, 0,NULL, 0) !=0 ) file_error();
+		else sscanf(string, "%d\n", *int_value);
 		
 		regfree(&re);
 	}
 }
 
 void read_two_integer(char * string, int ** int_value_1, int** int_value_2, FILE * file){
-	if (fgets(string, MAX_CONFIG_LINE, file)==NULL)
+	if (fgets(string, MAX_CONFIG_LINE, file)==NULL){
+		
 		file_error();
+		
+		}
 	else{
 		regex_t re;
-		if( regcomp(&re, "^[1-9][0-9]{0,9}, [1-9][0-9]{0,9}$", REG_EXTENDED) !=0 ){
+		if( regcomp(&re, "^[1-9][0-9]{0,9}, [1-9][0-9]{0,9}\n$", REG_EXTENDED) !=0 ){
 			printf("Erro na compilação");
 			exit(1);
 		}
@@ -86,16 +91,13 @@ void read_file(char * filename){
 	//23 = len(2**31)*2 + len(', ') + '\0'
 	char * input_line = (char *)malloc(sizeof(char)*MAX_CONFIG_LINE);
 	
-	printf("1\n");
 	read_one_integer(input_line, &nr_1_input, f);
 	nr_unid_tps = *(nr_1_input);
 	
-	printf("2\n");
 	read_two_integer(input_line, &nr_1_input, &nr_2_input, f);
 	dist_volta = *(nr_1_input);
 	nr_voltas = *(nr_2_input);
 	
-	printf("3\n");
 	read_one_integer(input_line, &nr_1_input, f);
 	if (*(nr_1_input)< 3){
 		printf("Têm de existir, pelo menos, 3 equipas.\n");
