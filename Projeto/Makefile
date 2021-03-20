@@ -12,7 +12,7 @@ CXXFLAGS = -Wall -pthread -D_REENTRANT -g
 LDFLAGS = 
 
 # Makefile settings - Can be customized.
-APPNAME = projeto
+APPNAME = projeto.sh
 EXT = .c
 SRCDIR = src
 OBJDIR = obj
