@@ -1,6 +1,18 @@
 //gcc -Wall FIcheiro_com_uma_estrutura_assim_por_alto.c -o executavel
 //Includes e definicoes etc, diria
 
+//includes for config_file.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <regex.h>
+
+#define MAX_CONFIG_LINE 23
+
+void file_error(void);
+void read_file(char * filename);
+void read_one_integer(char * string, int ** int_value, FILE * file);
+void read_two_integer(char * string, int ** int_value_1, int** int_value_2, FILE * file);
+
 
 /*Iniciar as cenas necessárias para a memória partilhada
 	e os semaforos necessarios, a lista de threads etc */
@@ -27,7 +39,7 @@ int main(int argc, char* argv[]){
 
 void file_error(){
 	fprintf(stderr,"Erro na leitura do ficheiro de configuracoes.\n");
-	exit(0);
+	exit(1);
 }
 
 void read_one_integer(char * string, int ** int_value, FILE * file){

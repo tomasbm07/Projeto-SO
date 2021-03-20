@@ -12,7 +12,12 @@ int main(int argc, char* argv[]){
 	
 	read_file(argv[1]);
 	
-	printf("%d\n%d, %d\n%d\n%d\n%d, %d\n%d\n", nr_unid_tps, dist_volta, nr_voltas, nr_equipas, unid_temp_avaria, min_reparacao, max_reparacao, deposito);
+    printf("%d\n", nr_unid_tps);
+    printf("%d, %d\n", dist_volta, nr_voltas);
+    printf("%d\n", nr_equipas);
+    printf("%d\n", unid_temp_avaria);
+    printf("%d, %d\n", min_reparacao, max_reparacao);
+    printf("%d\n", deposito);
 	//initiate_race();
-	return 0;
+	exit(0);
 }
