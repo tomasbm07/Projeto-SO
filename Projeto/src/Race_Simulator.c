@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "config_file.h"
 // add includes
 
