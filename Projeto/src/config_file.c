@@ -12,7 +12,6 @@ void file_error() {
 
 void check_regex(const char *pattern, char * string){
 	regex_t re;
-	
 	if (regcomp(&re, pattern, REG_EXTENDED) != 0) {
 	  printf("Error verifying file structure.\n");
 	  exit(1);
@@ -28,7 +27,6 @@ void read_one_integer(char *string, int **int_value, FILE *file) {
   if (fgets(string, MAX_CONFIG_LINE, file) == NULL) 
 	file_error();
   else {
-  
 	check_regex("^[1-9][0-9]{0,9}\n$", string);
 	sscanf(string, "%d\n", *int_value);
 	
