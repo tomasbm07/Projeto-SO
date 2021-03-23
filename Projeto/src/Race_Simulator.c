@@ -5,6 +5,7 @@
 #include <sys/types.h>
 #include "config_file.h"
 #include "race_manager.h"
+#include "malfunction_manager.h"
 // add includes
 
 int main(int argc, char* argv[]) {
@@ -30,7 +31,12 @@ int main(int argc, char* argv[]) {
 
   if (!fork())
   	race_manager();
+  if (!fork())
+	malfunction_manager();
+  
+  int i;
+  for(i=0; i < 2; i++)
+  	wait(NULL);
   	
-  wait(NULL);
   exit(0);
 }

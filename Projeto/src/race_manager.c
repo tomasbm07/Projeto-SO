@@ -6,7 +6,7 @@
 #include "race_manager.h"
 #include "team_manager.h"
 #include "config_file.h"
-#include "malfunction_manager.h"
+
 
 void race_manager(){
 	int i;
@@ -17,9 +17,6 @@ void race_manager(){
 			team_manager(i);
 	}
 	
-	if (!fork())
-		malfunction_manager();
-	
-	for (i = 0; i <= nr_equipas; i++) wait(NULL);
+	for (i = 0; i < nr_equipas; i++) wait(NULL);
 	exit(0);
 }
