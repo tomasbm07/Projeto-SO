@@ -2,6 +2,7 @@
 
 
 void malfunction_manager(){
+
 	#ifdef DEBUG
 	write_log("Malfunction manager process created");
 	#endif

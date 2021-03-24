@@ -5,10 +5,10 @@
 void race_manager(){
 	int i;
 	
-	for (i = 0; i < nr_equipas; i++){
-		if (fork() == 0){
-			team_manager();
-		}
+	static pthread_t car_threads[TEAM_NR*CARS_NR];
+	
+	for (i = 0; i < TEAM_NR; i++){
+		if ( !fork() ) team_manager(i);
 	}
 
 	#ifdef DEBUG
@@ -18,8 +18,7 @@ void race_manager(){
 	#endif
 
 	//wait for all team processes to finish
-	for (i = 0; i < nr_equipas; i++)
-		wait(NULL);
-
+	for (i = 0; i < TEAM_NR; i++) wait(NULL);
+	
 	exit(0);
 }

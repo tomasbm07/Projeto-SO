@@ -63,11 +63,11 @@ void read_file(char *filename) {
   char *input_line = (char *)malloc(sizeof(char) * MAX_CONFIG_LINE);
 
   read_one_integer(input_line, &nr_1_input, f);
-  nr_unid_tps = *(nr_1_input);
+  NR_UNI_PS = *(nr_1_input);
 
   read_two_integer(input_line, &nr_1_input, &nr_2_input, f);
-  dist_volta = *(nr_1_input);
-  nr_voltas = *(nr_2_input);
+  LAP_DIST = *(nr_1_input);
+  LAP_NR = *(nr_2_input);
 
   read_one_integer(input_line, &nr_1_input, f);
   if (*(nr_1_input) < 3) {
@@ -76,20 +76,20 @@ void read_file(char *filename) {
 #endif
     exit(1);
   }
-  nr_equipas = *nr_1_input;
+  TEAM_NR = *nr_1_input;
 
   read_one_integer(input_line, &nr_1_input, f);
-  nr_carros = *nr_1_input;
+  CARS_NR = *nr_1_input;
 
   read_one_integer(input_line, &nr_1_input, f);
-  unid_temp_avaria = *nr_1_input;
+  MALFUNCTION_UNI_NR = *nr_1_input;
 
   read_two_integer(input_line, &nr_1_input, &nr_2_input, f);
-  min_reparacao = *nr_1_input;
-  max_reparacao = *nr_2_input;
+  MIN_REP = *nr_1_input;
+  MAX_REP = *nr_2_input;
 
   read_one_integer(input_line, &nr_1_input, f);
-  deposito = *nr_1_input;
+  FUEL_CAPACITY = *nr_1_input;
 
   free(nr_1_input);
   free(nr_2_input);

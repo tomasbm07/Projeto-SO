@@ -11,8 +11,6 @@
 #include <semaphore.h>
 
 
-#define NR_EQUIPAS 3
-
 #define DEBUG //coment this this line to remove debug information
 
 /*Debug stuff

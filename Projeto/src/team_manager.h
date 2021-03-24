@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
+int box_available = 1;
 
 void team_manager();
 

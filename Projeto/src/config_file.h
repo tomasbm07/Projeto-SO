@@ -9,15 +9,15 @@
 #include <stdlib.h>
 
 
-int nr_unid_tps,
-	dist_volta,
-	nr_voltas,
-	nr_equipas,
-	nr_carros,
-	unid_temp_avaria,
-	min_reparacao,
-	max_reparacao,
-	deposito;
+int NR_UNI_PS,
+	LAP_DIST,
+	LAP_NR,
+	TEAM_NR,
+	CARS_NR,
+	MALFUNCTION_UNI_NR,
+	MIN_REP,
+	MAX_REP,
+	FUEL_CAPACITY;
 
 // Functions in config_file.c
 /*------------------------------------------*/
