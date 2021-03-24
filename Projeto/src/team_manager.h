@@ -3,13 +3,15 @@
 
 #include "write_output.h"
 #include "Race_Simulator.h"
+#include "config_file.h"
+#include "car.h"
+
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
 
 
-
-void team_manager(int n_carros);
+void team_manager();
 
 #endif

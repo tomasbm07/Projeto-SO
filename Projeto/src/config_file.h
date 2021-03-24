@@ -3,8 +3,9 @@
 
 #include "write_output.h"
 #include "Race_Simulator.h"
-#include <regex.h>
+
 #include <stdio.h>
+#include <regex.h>
 #include <stdlib.h>
 
 

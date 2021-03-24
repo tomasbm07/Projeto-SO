@@ -1,6 +1,8 @@
 #include "config_file.h"
 
+
 #define MAX_CONFIG_LINE 23
+
 
 void file_error() {
 #ifdef DEBUG
