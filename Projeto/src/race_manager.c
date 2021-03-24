@@ -1,12 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include "race_manager.h"
-#include "team_manager.h"
-#include "config_file.h"
-
 
 void race_manager(){
 	int i;
@@ -17,6 +9,8 @@ void race_manager(){
 			team_manager(i);
 	}
 	
-	for (i = 0; i < nr_equipas; i++) wait(NULL);
+	for (i = 0; i < nr_equipas; i++)
+		wait(NULL);
+
 	exit(0);
 }
