@@ -54,9 +54,7 @@ int main(int argc, char* argv[]) {
   //wait for all process to finish
   for (i = 0; i < 2; i++) wait(NULL);
 
-  char str[] = "teste123\n";
-
-  write_log(str);
+  write_log("Teste 123");
 
 
   //destroy shared mem and semaphores
