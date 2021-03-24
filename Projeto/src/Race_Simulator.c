@@ -30,6 +30,7 @@ int main(int argc, char* argv[]) {
   printf("Numero de unidade de tempo /s: %dut\n", nr_unid_tps);
   printf("Distancia de uma volta: %dm, Numero de voltas da corrida: %d\n",dist_volta, nr_voltas); 
   printf("Numero de equipas: %d\n", nr_equipas);
+  printf("Numero de carros por equipa: %d\n", nr_carros);
   printf("Numero de unidades de tempo entre possivel avaria: %dut\n", unid_temp_avaria); 
   printf("Tempo min de reparacao: %dut, Tempo max dereparacao: %dut\n", min_reparacao, max_reparacao); 
   printf("Capacidade do deposito: %dL\n", deposito); 
