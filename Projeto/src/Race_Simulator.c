@@ -4,15 +4,16 @@
 #include "race_manager.h"
 #include "team_manager.h"
 #include "write_output.h"
+
 #include <semaphore.h>
 // add includes
 
 //global variables
 
 
-
 void init_shm();
 void terminate_shm();
+
 
 int main(int argc, char* argv[]) {
   int i;
