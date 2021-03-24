@@ -72,6 +72,9 @@ void read_file(char *filename) {
 	exit(1);
   }
   nr_equipas = *nr_1_input;
+  
+  read_one_integer(input_line, &nr_1_input, f);
+  nr_carros = *nr_1_input;
 
   read_one_integer(input_line, &nr_1_input, f);
   unid_temp_avaria = *nr_1_input;
