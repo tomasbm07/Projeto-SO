@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]) {
   if (argc != 2) {
-    printf("informacao de erro na entrada");
+    printf("No config file was passed!\n");
     exit(0);
   }
 
@@ -20,6 +20,8 @@ int main(int argc, char* argv[]) {
   printf("m - metros\n");
   printf("L - litros\n");
   printf("--------------------------\n");
+
+  
 
   // initiate_race();
   exit(0);

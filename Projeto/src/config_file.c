@@ -2,6 +2,7 @@
 
 #define MAX_CONFIG_LINE 23
 
+
 void file_error() {
   fprintf(stderr, "Error reading config file.\n");
   exit(1);
