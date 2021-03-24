@@ -1,14 +1,18 @@
 #include "race_manager.h"
 
-
+/*
+void create_threads_array(){
+	static pthread_t car_threads[CARS_NR*TEAM_NR];
+}
+*/
 
 void race_manager(){
 	int i;
 	
-	static pthread_t car_threads[TEAM_NR*CARS_NR];
+	//create_threads_array();
 	
 	for (i = 0; i < TEAM_NR; i++){
-		if ( !fork() ) team_manager(i);
+		if ( !fork() ) team_manager();
 	}
 
 	#ifdef DEBUG

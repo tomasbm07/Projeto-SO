@@ -3,13 +3,21 @@
  //TODO alterar esta cena
 // n gosta de nr_equipas * nr_carros por serem int e n constantes
 
-void team_manager(int team_nr){
+
+pthread_t* create_threads_array(){
+	return (pthread_t*) malloc(sizeof(pthread_t) * CARS_NR);
+}
+
+void team_manager(){
 	int i;
 	//create car threads
-	for (i = 0; i < CARS_NR; i++) pthread_create(&car_threads[team_nr + i], NULL, car, NULL);
+	pthread_t * car_threads = create_threads_array();
+	
+	for (i = 0; i < CARS_NR; i++) pthread_create((car_threads + i), NULL, car, NULL);
 
 	//wait for threads to finish
-	for (i = 0; i < CARS_NR; i++) pthread_join(car_threads[team_nr + i], NULL);
+	for (i = 0; i < CARS_NR; i++) pthread_join(*(car_threads+i), NULL);
 	
+	free(car_threads);
 	exit(0);
 }

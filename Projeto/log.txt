@@ -88,3 +88,33 @@
 [14:23:56] Thread car created!
 [14:23:56] Thread car created!
 [14:23:56] Server closed
+[16:46:14] Successfully read config file
+[16:46:14] Server started
+[16:46:14] Malfunction manager process created
+[16:46:14] Created 5 team processes
+[16:46:14] Thread car created!
+[16:46:14] Thread car created!
+[16:46:14] Thread car created!
+[16:46:14] Thread car created!
+[16:46:14] Thread car created!
+[16:46:14] Thread car created!
+[16:46:14] Thread car created!
+[16:46:14] Thread car created!
+[16:46:14] Thread car created!
+[16:46:14] Thread car created!
+[16:46:14] Server closed
+[17:8:39] Successfully read config file
+[17:8:39] Server started
+[17:8:39] Malfunction manager process created
+[17:8:39] Created 5 team processes
+[17:8:39] Thread car created!
+[17:8:39] Thread car created!
+[17:8:39] Thread car created!
+[17:8:39] Thread car created!
+[17:8:39] Thread car created!
+[17:8:39] Thread car created!
+[17:8:39] Thread car created!
+[17:8:39] Thread car created!
+[17:8:39] Thread car created!
+[17:8:39] Thread car created!
+[17:8:39] Server closed
