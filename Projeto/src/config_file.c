@@ -4,14 +4,14 @@
 
 
 void file_error() {
-  fprintf(stderr, "Error reading config file.\n");
+  write_log("Error reading config file");
   exit(1);
 }
 
 void check_regex(const char *pattern, char * string){
 	regex_t re;
 	if (regcomp(&re, pattern, REG_EXTENDED) != 0) {
-	  printf("Error verifying file structure.\n");
+    write_log("Error verifying file structure");
 	  exit(1);
 	}
 	
@@ -46,7 +46,7 @@ void read_file(char *filename) {
   FILE *f;
 
   if((f = fopen(filename, "r")) == NULL){
-   fprintf(stderr, "File doesn't exist!\n");
+   write_log("File doesn't exist!");
    exit(1);
   }
 
@@ -66,7 +66,7 @@ void read_file(char *filename) {
 
   read_one_integer(input_line, &nr_1_input, f);
   if (*(nr_1_input) < 3) {
-	printf("At least 3 teams are required for race to start!\n");
+  write_log("At least 3 teams are required for race to start!");
 	exit(1);
   }
   nr_equipas = *nr_1_input;

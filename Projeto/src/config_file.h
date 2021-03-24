@@ -1,7 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-
+#include "write_output.h"
 #include <regex.h>
 #include <stdio.h>
 #include <stdlib.h>

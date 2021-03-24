@@ -10,6 +10,8 @@
 #include "team_manager.h"
 #include "config_file.h"
 
+#include "write_output.h"
+
 
 void race_manager(void);
 

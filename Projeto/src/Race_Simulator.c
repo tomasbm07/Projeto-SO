@@ -18,12 +18,17 @@ void terminate_shm();
 int main(int argc, char* argv[]) {
   int i;
 
-  if (argc != 2) {
-    printf("No config file was passed!\n");
-    exit(0);
+  if (argc < 2) {
+    write_log("No config file was passed!");
+    exit(1);
+  } else if (argc >= 3){
+    write_log("Program only takes config filename as argument");
+    exit(1);
   }
 
+  //read confif file
   read_file(argv[1]);
+  write_log("Successfully read config file");
 
   /*
   printf("Configurações lidas do ficheiro:\n");
@@ -47,20 +52,21 @@ int main(int argc, char* argv[]) {
   //create race manager process
   if (!fork()) race_manager();
 
-  //create malfunction manager
+  //create malfunction manager process
   if (!fork()) malfunction_manager();
 
-
-  //wait for all process to finish
+  //wait for both process to finish
   for (i = 0; i < 2; i++) wait(NULL);
 
-  write_log("Teste 123");
-
+  //write_log("Teste 123");
 
   //destroy shared mem and semaphores
 	terminate_shm();
+
+  write_log("Program is done!");
   exit(0);
 }
+
 
 void init_shm(){
 
