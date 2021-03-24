@@ -1,4 +1,7 @@
 #include "config_file.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <regex.h>
 
 #define MAX_CONFIG_LINE 23
 
@@ -8,42 +11,36 @@ void file_error() {
   exit(1);
 }
 
-void read_one_integer(char *string, int **int_value, FILE *file) {
-  if (fgets(string, MAX_CONFIG_LINE, file) == NULL) {
-	file_error();
-  } else {
+void check_regex(const char *pattern, char * string){
 	regex_t re;
-	if (regcomp(&re, "^[1-9][0-9]{0,9}\n$", REG_EXTENDED) != 0) {
-	  printf("Compilation error\n");
+	if (regcomp(&re, pattern, REG_EXTENDED) != 0) {
+	  printf("Error verifying file structure.\n");
 	  exit(1);
 	}
-
+	
 	if (regexec(&re, string, 0, NULL, 0) != 0)
-	  file_error();
-	else
-	  sscanf(string, "%d\n", *int_value);
-
+		file_error();
+	
 	regfree(&re);
+}
+
+void read_one_integer(char *string, int **int_value, FILE *file) {
+  if (fgets(string, MAX_CONFIG_LINE, file) == NULL) 
+	file_error();
+  else {
+	check_regex("^[1-9][0-9]{0,9}\n$", string);
+	sscanf(string, "%d\n", *int_value);
+	
   }
 }
 
 void read_two_integer(char *string, int **int_value_1, int **int_value_2, FILE *file) {
-  if (fgets(string, MAX_CONFIG_LINE, file) == NULL) {
+  if (fgets(string, MAX_CONFIG_LINE, file) == NULL) 
 	file_error();
+  else {
+	check_regex( "^[1-9][0-9]{0,9}, [1-9][0-9]{0,9}\n$", string);
+	sscanf(string, "%d, %d", *int_value_1, *int_value_2);
 
-  } else {
-	regex_t re;
-	if (regcomp(&re, "^[1-9][0-9]{0,9}, [1-9][0-9]{0,9}\n$", REG_EXTENDED) != 0) {
-	  printf("Compilation error\n");
-	  exit(1);
-	}
-
-	if (regexec(&re, string, 0, NULL, 0) != 0)
-	  file_error();
-	else
-	  sscanf(string, "%d, %d", *int_value_1, *int_value_2);
-
-	regfree(&re);
   }
 }
 
@@ -76,6 +73,9 @@ void read_file(char *filename) {
 	exit(1);
   }
   nr_equipas = *nr_1_input;
+  
+  read_one_integer(input_line, &nr_1_input, f);
+  nr_carros = *nr_1_input;
 
   read_one_integer(input_line, &nr_1_input, f);
   unid_temp_avaria = *nr_1_input;

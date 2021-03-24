@@ -7,14 +7,15 @@
 #include <stdlib.h>
 
 
-int nr_unid_tps;
-int dist_volta;
-int nr_voltas;
-int nr_equipas;
-int unid_temp_avaria;
-int min_reparacao;
-int max_reparacao;
-int deposito;
+int nr_unid_tps,
+	dist_volta,
+	nr_voltas,
+	nr_equipas,
+	nr_carros,
+	unid_temp_avaria,
+	min_reparacao,
+	max_reparacao,
+	deposito;
 
 // Functions in config_file.c
 /*------------------------------------------*/
