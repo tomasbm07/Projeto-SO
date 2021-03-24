@@ -2,42 +2,43 @@
 
 #define MAX_CONFIG_LINE 23
 
-
 void file_error() {
+#ifdef DEBUG
   write_log("Error reading config file");
+#endif
   exit(1);
 }
 
-void check_regex(const char *pattern, char * string){
-	regex_t re;
-	if (regcomp(&re, pattern, REG_EXTENDED) != 0) {
+void check_regex(const char *pattern, char *string) {
+  regex_t re;
+  if (regcomp(&re, pattern, REG_EXTENDED) != 0) {
+#ifdef DEBUG
     write_log("Error verifying file structure");
-	  exit(1);
-	}
-	
-	if (regexec(&re, string, 0, NULL, 0) != 0)
-		file_error();
-	
-	regfree(&re);
+#endif
+    exit(1);
+  }
+
+  if (regexec(&re, string, 0, NULL, 0) != 0) file_error();
+
+  regfree(&re);
 }
 
 void read_one_integer(char *string, int **int_value, FILE *file) {
-  if (fgets(string, MAX_CONFIG_LINE, file) == NULL) 
-	file_error();
+  if (fgets(string, MAX_CONFIG_LINE, file) == NULL)
+    file_error();
   else {
-	check_regex("^[1-9][0-9]{0,9}\n$", string);
-	sscanf(string, "%d\n", *int_value);
-	
+    check_regex("^[1-9][0-9]{0,9}\n$", string);
+    sscanf(string, "%d\n", *int_value);
   }
 }
 
-void read_two_integer(char *string, int **int_value_1, int **int_value_2, FILE *file) {
-  if (fgets(string, MAX_CONFIG_LINE, file) == NULL) 
-	file_error();
+void read_two_integer(char *string, int **int_value_1, int **int_value_2,
+                      FILE *file) {
+  if (fgets(string, MAX_CONFIG_LINE, file) == NULL)
+    file_error();
   else {
-	check_regex( "^[1-9][0-9]{0,9}, [1-9][0-9]{0,9}\n$", string);
-	sscanf(string, "%d, %d", *int_value_1, *int_value_2);
-
+    check_regex("^[1-9][0-9]{0,9}, [1-9][0-9]{0,9}\n$", string);
+    sscanf(string, "%d, %d", *int_value_1, *int_value_2);
   }
 }
 
@@ -45,9 +46,11 @@ void read_two_integer(char *string, int **int_value_1, int **int_value_2, FILE *
 void read_file(char *filename) {
   FILE *f;
 
-  if((f = fopen(filename, "r")) == NULL){
-   write_log("File doesn't exist!");
-   exit(1);
+  if ((f = fopen(filename, "r")) == NULL) {
+#ifdef DEBUG
+    write_log("File doesn't exist!");
+#endif
+    exit(1);
   }
 
   int *nr_1_input, *nr_2_input;
@@ -66,11 +69,13 @@ void read_file(char *filename) {
 
   read_one_integer(input_line, &nr_1_input, f);
   if (*(nr_1_input) < 3) {
-  write_log("At least 3 teams are required for race to start!");
-	exit(1);
+#ifdef DEBUG
+    write_log("At least 3 teams are required for race to start!");
+#endif
+    exit(1);
   }
   nr_equipas = *nr_1_input;
-  
+
   read_one_integer(input_line, &nr_1_input, f);
   nr_carros = *nr_1_input;
 

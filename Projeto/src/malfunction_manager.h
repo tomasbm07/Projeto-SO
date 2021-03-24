@@ -3,6 +3,7 @@
 
 #include "write_output.h"
 #include "config_file.h"
+#include "Race_Simulator.h"
 
 #include <stdio.h>
 #include <stdlib.h>

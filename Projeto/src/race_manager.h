@@ -11,6 +11,7 @@
 #include "config_file.h"
 
 #include "write_output.h"
+#include "Race_Simulator.h"
 
 
 void race_manager(void);
