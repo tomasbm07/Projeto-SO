@@ -1,8 +1,5 @@
 #include "team_manager.h"
 
- //TODO alterar esta cena
-// n gosta de nr_equipas * nr_carros por serem int e n constantes
-
 
 pthread_t* create_threads_array(){
 	return (pthread_t*) malloc(sizeof(pthread_t) * CARS_NR);

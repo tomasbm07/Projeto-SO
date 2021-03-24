@@ -23,9 +23,7 @@ int main(int argc, char* argv[]) {
 
 #ifdef DEBUG
   write_log("Successfully read config file");
-#endif
 
-#ifdef DEBUG
   printf("Configurações lidas do ficheiro:\n");
   printf("Numero de unidade de tempo /s: %dut\n", NR_UNI_PS);
   printf("Distancia de uma volta: %dm, Numero de voltas da corrida: %d\n", LAP_DIST, LAP_NR); 
@@ -48,10 +46,10 @@ int main(int argc, char* argv[]) {
   // shared mem var
 
   // create race manager process
-  if (!fork()) race_manager();
+  if (fork() == 0) race_manager();
 
   // create malfunction manager process
-  if (!fork()) malfunction_manager();
+  if (fork() == 0) malfunction_manager();
 
   // wait for both process to finish
   for (i = 0; i < 2; i++) wait(NULL);
