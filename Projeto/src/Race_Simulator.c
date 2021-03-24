@@ -4,12 +4,15 @@
 #include "race_manager.h"
 #include "team_manager.h"
 #include "write_output.h"
-
+#include <semaphore.h>
 // add includes
 
 //global variables
 
 
+
+void init_shm();
+void terminate_shm();
 
 int main(int argc, char* argv[]) {
   int i;
@@ -35,9 +38,9 @@ int main(int argc, char* argv[]) {
   printf("--------------------------\n");*/
 
   //shared mem
-
+  init_shm();
   //shared mem var
-
+	
   //create race manager process
   if (!fork()) race_manager(); //TODO 
 
@@ -50,6 +53,15 @@ int main(int argc, char* argv[]) {
 
 
   //destroy shared mem and semaphores
-
+	terminate_shm();
   exit(0);
 }
+
+void init_shm(){
+
+}
+
+void terminate_shm(){
+
+}
+
