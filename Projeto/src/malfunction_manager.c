@@ -2,7 +2,9 @@
 
 
 void malfunction_manager(){
-	printf("Sou o malfunction manager\n");
+	#ifdef DEBUG
+	write_log("Malfunction manager process created");
+	#endif
 
 	exit(0);
 }
