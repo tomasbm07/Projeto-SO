@@ -34,4 +34,13 @@ pthread_t *create_threads_array() {
 }
 
 // set the atributes of the car
-void set_car_stats(car_struct *stats) { stats->num = 20; }
+void set_car_stats(car_struct *stats) {
+  stats->num = 20;
+  stats->speed = 0;
+  stats->realiability = 0;
+  stats->consuption = 0;
+  stats->state = 'R';
+  stats->fuel = 0;
+  stats->laps_done = 0;
+  stats->lap_distance = 0;
+}

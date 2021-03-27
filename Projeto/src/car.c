@@ -5,10 +5,11 @@
 
 //function to run in car thread
 void *car(void* stats){
-    car_struct *car_stats = (car_struct*) stats;
+    //convert argument from void* to car_struct*
+    car_struct *car = (car_struct*) stats;
     
     //just a test
-    printf("Car Number: %d\n", car_stats->num);
+    printf("Car Number: %d\n", car->num);
 
     #ifdef DEBUG
     write_log("Thread car created!");
