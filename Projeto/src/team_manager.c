@@ -43,7 +43,7 @@ void init_car_stats(car_struct *stats, int num) {
   stats->realiability = 0;
   stats->consuption = 0;
   stats->state = 'R';
-  stats->fuel = 0;
+  stats->fuel = FUEL_CAPACITY;
   stats->laps_done = 0;
   stats->lap_distance = 0;
 }
