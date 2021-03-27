@@ -4,7 +4,7 @@ void race_manager() {
   int i;
 
   for (i = 0; i < NR_TEAM; i++)
-    if (fork() == 0) team_manager();
+    if ( !fork() ) team_manager();
 
 #ifdef DEBUG
   char str[50];

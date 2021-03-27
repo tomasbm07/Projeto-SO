@@ -25,21 +25,21 @@ void check_regex(const char *pattern, char *string) {
   regfree(&re);
 }
 
-void read_one_integer(char *string, int **int_value, FILE *file) {
+void read_one_integer(char *string, int **value, FILE *file) {
   if (fgets(string, MAX_CONFIG_LINE, file) == NULL)
     file_error();
   else {
     check_regex("^[1-9][0-9]{0,9}\n$", string);
-    sscanf(string, "%d\n", *int_value);
+    sscanf(string, "%d\n", *value);
   }
 }
 
-void read_two_integer(char *string, int **int_value_1, int **int_value_2, FILE *file) {
+void read_two_integer(char *string, int **value_1, int **value_2, FILE *file) {
   if (fgets(string, MAX_CONFIG_LINE, file) == NULL)
     file_error();
   else {
     check_regex("^[1-9][0-9]{0,9}, [1-9][0-9]{0,9}\n$", string);
-    sscanf(string, "%d, %d", *int_value_1, *int_value_2);
+    sscanf(string, "%d, %d", *value_1, *value_2);
   }
 }
 
