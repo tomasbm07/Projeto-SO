@@ -1,14 +1,12 @@
 #ifndef CAR_H
 #define CAR_H
 
-#include "Race_Simulator.h"
-
+#include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <pthread.h>
 
+#include "Race_Simulator.h"
 
-
-void *car(void* stats);
+void* car(void* stats);
 
 #endif
