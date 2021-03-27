@@ -15,7 +15,7 @@
 typedef struct {
   int num;  // number of the car
   float speed;
-  float realiability;
+  float realiability; 
   float consuption;
   char state;  // 'R' = race; 'S' = safety; 'B' = box; 'D' = DNF; 'F' = finished;
   float fuel;
@@ -26,6 +26,7 @@ typedef struct {
 
 void team_manager();
 pthread_t* create_threads_array();
-void init_car_stats(car_struct* stats);
+car_struct * create_car_structs_array();
+void init_car_stats(car_struct* stats, int num);
 
 #endif

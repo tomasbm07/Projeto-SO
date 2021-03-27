@@ -22,8 +22,8 @@ int NR_UNI_PS,
 
 void file_error(void);
 void read_file(char* filename);
-void read_one_integer(char* string, int** int_value, FILE* file);
-void read_two_integer(char* string, int** int_value_1, int** int_value_2, FILE* file);
+void read_one_integer(char* string, int** value, FILE* file);
+void read_two_integer(char* string, int** value_1, int** value_2, FILE* file);
 
 
 

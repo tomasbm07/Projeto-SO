@@ -7,7 +7,7 @@ void *car(void *stats) {
   car_struct *car = (car_struct *)stats;
 
   // just a test
-  printf("Car Number: %d\n", car->num);
+  printf("Car Number: %d\tFuel: %.2fL\n", car->num, car->fuel);
 
 #ifdef DEBUG
   write_log("Thread car created!");
