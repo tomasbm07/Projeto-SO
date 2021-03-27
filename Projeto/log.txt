@@ -148,3 +148,108 @@
 [18:51:19] Thread car created!
 [18:51:19] Thread car created!
 [18:51:19] Server closed
+[16:18:37] Successfully read config file
+[16:18:37] Server started
+[16:18:37] Malfunction manager process created
+[16:18:37] Thread car created!
+[16:18:37] Thread car created!
+[16:18:37] Created 5 team processes
+[16:18:37] Thread car created!
+[16:18:37] Thread car created!
+[16:18:37] Thread car created!
+[16:18:37] Thread car created!
+[16:18:37] Thread car created!
+[16:18:37] Thread car created!
+[16:18:37] Thread car created!
+[16:18:37] Thread car created!
+[16:18:37] Server closed
+[17:19:59] Successfully read config file
+[17:19:59] Server started
+[17:19:59] Malfunction manager process created
+[17:19:59] Thread car created!
+[17:19:59] Created 5 team processes
+[17:19:59] Thread car created!
+[17:19:59] Thread car created!
+[17:19:59] Thread car created!
+[17:19:59] Thread car created!
+[17:19:59] Thread car created!
+[17:19:59] Thread car created!
+[17:19:59] Thread car created!
+[17:19:59] Thread car created!
+[17:19:59] Thread car created!
+[17:19:59] Server closed
+[17:21:6] Successfully read config file
+[17:21:6] Server started
+[17:21:6] Malfunction manager process created
+[17:21:6] Created 5 team processes
+[17:21:6] Thread car created!
+[17:21:6] Thread car created!
+[17:21:6] Thread car created!
+[17:21:6] Thread car created!
+[17:21:6] Thread car created!
+[17:21:6] Thread car created!
+[17:21:6] Thread car created!
+[17:21:6] Thread car created!
+[17:21:6] Thread car created!
+[17:21:6] Thread car created!
+[17:21:6] Server closed
+[17:21:13] Successfully read config file
+[17:21:13] Server started
+[17:21:13] Malfunction manager process created
+[17:21:13] Created 5 team processes
+[17:21:13] Thread car created!
+[17:21:13] Thread car created!
+[17:21:13] Thread car created!
+[17:21:13] Thread car created!
+[17:21:13] Thread car created!
+[17:21:13] Thread car created!
+[17:21:13] Thread car created!
+[17:21:13] Thread car created!
+[17:21:13] Thread car created!
+[17:21:13] Thread car created!
+[17:21:14] Server closed
+[17:23:19] Successfully read config file
+[17:23:19] Server started
+[17:23:19] Malfunction manager process created
+[17:23:19] Created 5 team processes
+[17:23:19] Thread car created!
+[17:23:19] Thread car created!
+[17:23:19] Thread car created!
+[17:23:19] Thread car created!
+[17:23:19] Thread car created!
+[17:23:19] Thread car created!
+[17:23:19] Thread car created!
+[17:23:19] Thread car created!
+[17:23:19] Thread car created!
+[17:23:19] Thread car created!
+[17:23:19] Server closed
+[17:23:34] Successfully read config file
+[17:23:34] Server started
+[17:23:34] Malfunction manager process created
+[17:23:34] Created 5 team processes
+[17:23:34] Thread car created!
+[17:23:34] Thread car created!
+[17:23:34] Thread car created!
+[17:23:34] Thread car created!
+[17:23:34] Thread car created!
+[17:23:34] Thread car created!
+[17:23:34] Thread car created!
+[17:23:34] Thread car created!
+[17:23:34] Thread car created!
+[17:23:34] Thread car created!
+[17:23:34] Server closed
+[17:26:22] Successfully read config file
+[17:26:22] Server started
+[17:26:22] Malfunction manager process created
+[17:26:22] Created 5 team processes
+[17:26:22] Thread car created!
+[17:26:22] Thread car created!
+[17:26:22] Thread car created!
+[17:26:22] Thread car created!
+[17:26:22] Thread car created!
+[17:26:22] Thread car created!
+[17:26:22] Thread car created!
+[17:26:22] Thread car created!
+[17:26:22] Thread car created!
+[17:26:22] Thread car created!
+[17:26:22] Server closed

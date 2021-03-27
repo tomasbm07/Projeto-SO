@@ -34,8 +34,7 @@ void read_one_integer(char *string, int **int_value, FILE *file) {
   }
 }
 
-void read_two_integer(char *string, int **int_value_1, int **int_value_2,
-                      FILE *file) {
+void read_two_integer(char *string, int **int_value_1, int **int_value_2, FILE *file) {
   if (fgets(string, MAX_CONFIG_LINE, file) == NULL)
     file_error();
   else {
@@ -67,7 +66,7 @@ void read_file(char *filename) {
 
   read_two_integer(input_line, &nr_1_input, &nr_2_input, f);
   LAP_DIST = *(nr_1_input);
-  LAP_NR = *(nr_2_input);
+  NR_LAP = *(nr_2_input);
 
   read_one_integer(input_line, &nr_1_input, f);
   if (*(nr_1_input) < 3) {
@@ -76,10 +75,10 @@ void read_file(char *filename) {
 #endif
     exit(1);
   }
-  TEAM_NR = *nr_1_input;
+  NR_TEAM = *nr_1_input;
 
   read_one_integer(input_line, &nr_1_input, f);
-  CARS_NR = *nr_1_input;
+  NR_CARS = *nr_1_input;
 
   read_one_integer(input_line, &nr_1_input, f);
   MALFUNCTION_UNI_NR = *nr_1_input;

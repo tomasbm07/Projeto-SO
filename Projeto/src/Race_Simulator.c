@@ -26,9 +26,9 @@ int main(int argc, char* argv[]) {
 
   printf("Configurações lidas do ficheiro:\n");
   printf("Numero de unidade de tempo /s: %dut\n", NR_UNI_PS);
-  printf("Distancia de uma volta: %dm, Numero de voltas da corrida: %d\n", LAP_DIST, LAP_NR); 
-  printf("Numero de equipas: %d\n", TEAM_NR);
-  printf("Numero de carros por equipa: %d\n", CARS_NR);
+  printf("Distancia de uma volta: %dm, Numero de voltas da corrida: %d\n", LAP_DIST, NR_LAP); 
+  printf("Numero de equipas: %d\n", NR_TEAM);
+  printf("Numero de carros por equipa: %d\n", NR_CARS);
   printf("Numero de unidades de tempo entre possivel avaria: %dut\n", MALFUNCTION_UNI_NR); 
   printf("Tempo min de reparacao: %dut, Tempo max dereparacao: %dut\n", MIN_REP, MAX_REP); 
   printf("Capacidade do deposito: %dL\n", FUEL_CAPACITY); 
@@ -41,9 +41,10 @@ int main(int argc, char* argv[]) {
 
   write_log("Server started");
 
-  // shared mem
+  // create shared mem
   init_shm();
-  // shared mem var
+
+  // initialize shared mem structs/var
 
   // create race manager process
   if (fork() == 0) race_manager();

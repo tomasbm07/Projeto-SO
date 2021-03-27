@@ -1,19 +1,13 @@
 #include "race_manager.h"
 
-/*
-void create_threads_array(){
-	static pthread_t car_threads[CARS_NR*TEAM_NR];
-}
-*/
 
 void race_manager(){
 	int i;
 	
-	//create_threads_array();
+	for (i = 0; i < NR_TEAM; i++)
+		if (fork() == 0) 
+			team_manager();
 	
-	for (i = 0; i < TEAM_NR; i++){
-		if ( !fork() ) team_manager();
-	}
 
 	#ifdef DEBUG
 		char str[50];
@@ -22,7 +16,7 @@ void race_manager(){
 	#endif
 
 	//wait for all team processes to finish
-	for (i = 0; i < TEAM_NR; i++) wait(NULL);
+	for (i = 0; i < NR_TEAM; i++) wait(NULL);
 	
 	exit(0);
 }
