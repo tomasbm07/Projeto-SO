@@ -39,7 +39,7 @@ int main(int argc, char* argv[]) {
   printf("--------------------------\n\n\n");
 #endif
 
-  write_log("Server started");
+  write_log("SERVER STARTED");
 
   // create shared mem
   init_shm();
@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
   // destroy shared mem and semaphores
   terminate_shm();
 
-  write_log("Server closed");
+  write_log("SERVER CLOSED");
   exit(0);
 }
 
