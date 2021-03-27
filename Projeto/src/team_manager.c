@@ -8,11 +8,11 @@ void team_manager() {
   // create array for car threads
   pthread_t *car_threads = create_threads_array();
 
-  // create car threads
+  // create car threads; just for initial testing
   for (i = 0; i < NR_CARS; i++) {
     car_stats = malloc(sizeof(car_struct));
 
-    set_car_stats(car_stats);
+    init_car_stats(car_stats);
 
     pthread_create((car_threads + i), NULL, car, (void *)car_stats);
   }
@@ -34,8 +34,8 @@ pthread_t *create_threads_array() {
 }
 
 // set the atributes of the car
-void set_car_stats(car_struct *stats) {
-  stats->num = 20;
+void init_car_stats(car_struct *stats) {
+  stats->num = 0;
   stats->speed = 0;
   stats->realiability = 0;
   stats->consuption = 0;

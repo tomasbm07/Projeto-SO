@@ -26,6 +26,6 @@ typedef struct {
 
 void team_manager();
 pthread_t* create_threads_array();
-void set_car_stats(car_struct* stats);
+void init_car_stats(car_struct* stats);
 
 #endif
