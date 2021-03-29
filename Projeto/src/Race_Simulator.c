@@ -1,4 +1,4 @@
-#include "Race_Simulator.h"
+#include "Simulator.h"
 
 
 // global variables

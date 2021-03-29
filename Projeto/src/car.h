@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Race_Simulator.h"
+#include "Simulator.h"
 
 void* car(void* stats);
 

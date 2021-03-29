@@ -32,7 +32,8 @@ pthread_t *create_threads_array() {
   return (pthread_t *)malloc(sizeof(pthread_t) * NR_CARS);
 }
 
-car_struct * create_car_structs_array(){
+// allocates space for array with car struct atributes
+car_struct* create_car_structs_array(){
     return (car_struct*)malloc(sizeof(car_struct) * NR_CARS);
 }
 

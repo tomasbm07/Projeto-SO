@@ -2,7 +2,7 @@
 #define CONFIG_H
 
 #include "write_output.h"
-#include "Race_Simulator.h"
+#include "Simulator.h"
 
 #include <stdio.h>
 #include <regex.h>
