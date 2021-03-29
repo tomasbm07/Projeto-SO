@@ -7,7 +7,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-#include "Race_Simulator.h"
+#include "Simulator.h"
 #include "config_file.h"
 #include "race_manager.h"
 #include "team_manager.h"
