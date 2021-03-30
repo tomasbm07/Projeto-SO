@@ -42,39 +42,6 @@ int main(int argc, char* argv[]) {
 
   write_log("SERVER STARTED");
 
-
-  // create shared mem key
-  if((shmkey = ftok(".", getpid())) == (key_t) - 1 ){
-    write_log("IPC error: ftok");
-    exit(1);
-  }
-	printf("Created SHM KEY = %d\n",shmkey);
-
-  // create shared mem
-  shmid = shmget(shmkey, sizeof(car_struct)*NR_CARS*NR_TEAM, IPC_CREAT|IPC_EXCL|0700); // shm memory cannot exist
-	if (shmid < 1){
-		write_log("Error creating shm memory!");
-		exit(1);
-	}
-
-  // attatch mem
-  cars = (car_struct*) shmat(shmid, NULL, 0);
-	if (cars < (car_struct*) 1){
-		write_log("Error attaching memory!\n");
-    destroy_resources();
-		exit(1);
-	}
-
-  //create semaphores
-  sem_unlink("MUTEX");
-	mutex = sem_open("MUTEX", O_CREAT|O_EXCL, 0700,1);
-	if(mutex == SEM_FAILED){
-		write_log("Failed to create the semaphore MUTEX");
-    destroy_resources();
-    exit(1);
-	}
-
-
   // create race manager process
   if ( !fork() ) race_manager();
 
@@ -91,6 +58,49 @@ int main(int argc, char* argv[]) {
   exit(0);
 }
 
+void initiate_shm(){
+	// create shared mem key
+  if((shmkey = ftok( ".", getpid())) == (key_t) -1 ){
+    write_log("IPC error: ftok");
+    exit(1);
+  }
+  
+  printf("Created SHM KEY = %d\n",shmkey);
+
+  // create shared mem
+  shmid = shmget(shmkey, sizeof(car_struct)*NR_CARS*NR_TEAM , IPC_CREAT|IPC_EXCL|0700); // shm memory cannot exist
+  if (shmid < 1){
+	write_log("Error creating shm memory!");
+	exit(1);
+	}
+	
+
+	// attatch mem
+  cars = (car_struct*) shmat(shmid, NULL, 0);
+	if (cars < (car_struct*) 1){
+		write_log("Error attaching memory!\n");
+    	destroy_resources();
+		exit(1);
+	}
+}
+
+void initiate_sems(){
+	//create semaphores
+  	sem_unlink("MUTEX");
+	mutex = sem_open("MUTEX", O_CREAT|O_EXCL, 0700,1);
+	
+	if(mutex == SEM_FAILED){
+		write_log("Failed to create the semaphore MUTEX");
+    	destroy_resources();
+    	exit(1);
+	}
+}
+
+void initiate_resources(){
+	initiate_shm();
+	
+	initiate_sems();
+}
 
 void destroy_resources(void) {
   write_log("Cleaning up...");

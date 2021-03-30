@@ -27,7 +27,9 @@
 key_t shmkey;
 
 
-void init_shm();
+void initiate_resources();
+void initiate_shm();
+void initiate_sems();
 void destroy_resources();
 
 #endif
