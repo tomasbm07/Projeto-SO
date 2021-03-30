@@ -69,7 +69,7 @@ int main(int argc, char* argv[]) {
   sem_unlink("MUTEX");
 	mutex = sem_open("MUTEX", O_CREAT|O_EXCL, 0700,1);
 	if(mutex == SEM_FAILED){
-		write_log("Failure creating the semaphore MUTEX");
+		write_log("Failed to create the semaphore MUTEX");
     destroy_resources();
     exit(1);
 	}

@@ -22,7 +22,7 @@ typedef struct {
   int laps_done;     // total of laps completed
   int lap_distance;  // distance on lap; 0 - LAP_DIST; 0 = start/finish line
   //int track_position; // 1st, 2nd, 3rd, 4th, ...
-  int box_count = 0;
+  int box_count;
 } car_struct;
 
 void team_manager();
