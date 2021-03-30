@@ -2,6 +2,13 @@
 #define SIMULATOR_H
 
 #include <semaphore.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <sys/fcntl.h>
+#include <sys/wait.h>
 
 #include "car.h"
 #include "config_file.h"
@@ -17,7 +24,10 @@
 #endif
 */
 
+key_t shmkey;
+
+
 void init_shm();
-void terminate_shm();
+void destroy_resources();
 
 #endif
