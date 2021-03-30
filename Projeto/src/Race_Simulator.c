@@ -41,7 +41,9 @@ int main(int argc, char* argv[]) {
 #endif
 
   write_log("SERVER STARTED");
-
+	
+  initiate_resources();
+	
   // create race manager process
   if ( !fork() ) race_manager();
 
