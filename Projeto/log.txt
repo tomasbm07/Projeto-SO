@@ -298,3 +298,19 @@
 [17:38:51] Thread car created!
 [17:38:51] Thread car created!
 [17:38:51] Server closed
+[17:28:20] Successfully read config file
+[17:28:20] SERVER STARTED
+[17:28:20] Malfunction manager process created
+[17:28:20] Created 5 team processes
+[17:28:20] Thread car created!
+[17:28:20] Thread car created!
+[17:28:20] Thread car created!
+[17:28:20] Thread car created!
+[17:28:20] Thread car created!
+[17:28:20] Thread car created!
+[17:28:20] Thread car created!
+[17:28:20] Thread car created!
+[17:28:20] Thread car created!
+[17:28:20] Thread car created!
+[17:28:20] Cleaning up...
+[17:28:20] SERVER CLOSED

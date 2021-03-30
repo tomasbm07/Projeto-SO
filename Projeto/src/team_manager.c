@@ -41,7 +41,7 @@ car_struct* create_car_structs_array(){
 void init_car_stats(car_struct *stats, int num) {
   stats->num = num;
   stats->speed = 0;
-  stats->reliability = 0;
+  stats->realiability= 0;
   stats->consuption = 0;
   stats->state = 'R';
   stats->fuel = FUEL_CAPACITY;
