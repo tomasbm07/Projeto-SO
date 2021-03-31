@@ -533,3 +533,28 @@
 [15:24:11] Created 5 team processes
 [15:24:11] Cleaning up...
 [15:24:11] SERVER CLOSED
+[15:50:5] Successfully read config file
+[15:50:5] SERVER STARTED
+[15:50:5] Created 5 team processes
+[15:50:5] Cleaning up...
+[15:50:5] SERVER CLOSED
+[15:51:17] Successfully read config file
+[15:51:17] SERVER STARTED
+[15:51:17] Created 5 team processes
+[15:51:17] Cleaning up...
+[15:51:17] SERVER CLOSED
+[16:7:32] Successfully read config file
+[16:7:32] SERVER STARTED
+[16:7:32] Created 5 team processes
+[16:7:32] Cleaning up...
+[16:7:32] SERVER CLOSED
+[16:8:11] Successfully read config file
+[16:8:11] SERVER STARTED
+[16:8:11] Created 5 team processes
+[16:8:11] Cleaning up...
+[16:8:11] SERVER CLOSED
+[16:24:32] Successfully read config file
+[16:24:32] SERVER STARTED
+[16:24:32] Created 5 team processes
+[16:24:32] Cleaning up...
+[16:24:32] SERVER CLOSED

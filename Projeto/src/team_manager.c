@@ -45,8 +45,8 @@ void init_car_stats(car_struct *stats, int team_index, int car_index) {
   
   strcpy(stats->car->team_name, "");
   stats->car->number = car_index+team_index*NR_CARS;
- /* stats->car->speed = 0;
-  stats->car->consumption = 0;
+ stats->car->speed = 25;
+  /*stats->car->consumption = 0;
   stats->car->reliability = 0;
   stats->car->laps_completed = 0;
   stats->car->boxes_stops_counter = 0; */

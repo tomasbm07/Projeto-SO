@@ -3,7 +3,7 @@
 int shm_main_id, shm_boxes_id;
 shm_struct* shm_info;
 shm_boxes * shm_boxes_state;
-sem_t *mutex;
+sem_t *log_mutex;
 
 int main(int argc, char* argv[]) {
   int i;
@@ -45,6 +45,8 @@ int main(int argc, char* argv[]) {
 	
   initiate_resources();
 	
+	printf("\nI'm car 0 and my speed is : %f\n", shm_info->cars[0].speed);
+	
   // create race manager process
   if ( !fork() ) race_manager();
 
@@ -53,12 +55,24 @@ int main(int argc, char* argv[]) {
 
   // wait for both process to finish
   for (i = 0; i < 2; i++) wait(NULL);
-
+	
+	
+	printf("\nI'm car 0 again and now my speed is : %f\n", shm_info->cars[0].speed);
   // destroy shared mem and semaphores
   destroy_resources();
 
   write_log("SERVER CLOSED");
   exit(0);
+}
+
+void get_id(int *id, key_t key, size_t size, int flag){
+	*id = shmget(key, size, flag);
+	if (*id < 1){
+		write_log("Error creating shm memory!");
+		destroy_resources();
+		exit(1);
+	}
+	
 }
 
 void initiate_shm(){
@@ -73,11 +87,7 @@ void initiate_shm(){
 #endif
 
   // create shared mem
-  shm_main_id = shmget(shmkey, sizeof(shm_struct) + sizeof(car_shm_struct)*NR_TEAM*NR_CARS, IPC_CREAT|IPC_EXCL|0700); // shm memory cannot exist
-  if (shm_main_id < 1){
-	write_log("Error creating shm memory!");
-	exit(1);
-	}
+  get_id(&shm_main_id, shmkey, sizeof(shm_struct) + sizeof(car_shm_struct)*NR_TEAM*NR_CARS, IPC_CREAT|IPC_EXCL|0700);
 	
 	// attatch mem
   shm_info = (shm_struct*) shmat(shm_main_id, NULL, 0);
@@ -87,15 +97,10 @@ void initiate_shm(){
 		exit(1);
 	}
 	
-	shm_boxes_id =shmget(IPC_PRIVATE, sizeof(shm_boxes) + sizeof(char)*NR_TEAM, IPC_CREAT|IPC_EXCL|0700 );
-	if (shm_boxes_id < 1){
-		write_log("Error creating shm memory!");
-		destroy_resources();
-		exit(1);
-	}
+	get_id(&shm_boxes_id, IPC_PRIVATE, sizeof(shm_boxes) + sizeof(char)*NR_TEAM, IPC_CREAT|IPC_EXCL|0700);
 	
 	shm_boxes_state = (shm_boxes*) shmat(shm_boxes_id, NULL, 0);
-	if (shm_info < (shm_boxes*) 1){
+	if (shm_boxes_state < (shm_boxes*) 1){
 		write_log("Error attaching memory!\n");
     	destroy_resources();
 		exit(1);
@@ -105,10 +110,10 @@ void initiate_shm(){
 
 void initiate_sems(){
 	//create semaphores
-  	sem_unlink("MUTEX");
-	mutex = sem_open("MUTEX", O_CREAT|O_EXCL, 0700,1);
+  	sem_unlink("LOG_MUTEX");
+	log_mutex = sem_open("LOG_MUTEX", O_CREAT|O_EXCL, 0700,1);
 	
-	if(mutex == SEM_FAILED){
+	if(log_mutex == SEM_FAILED){
 		write_log("Failed to create the semaphore MUTEX");
     	destroy_resources();
     	exit(1);
@@ -127,8 +132,8 @@ void initiate_resources(){
 
 void destroy_resources(void) {
   write_log("Cleaning up...");
-  sem_close(mutex);
-  sem_unlink("MUTEX");
+  sem_close(log_mutex);
+  sem_unlink("LOG_MUTEX");
   
   shmdt(shm_info);
   shmctl(shm_main_id, IPC_RMID, NULL);
