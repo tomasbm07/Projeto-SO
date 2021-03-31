@@ -5,7 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Simulator.h"
+#include "team_manager.h"
+#include "write_output.h"
 
 void* car(void* stats);
 

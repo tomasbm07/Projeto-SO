@@ -1,7 +1,8 @@
 #include "Simulator.h"
 
-int shmid;
-car_struct *cars;
+int shm_main_id, shm_boxes_id;
+shm_struct* shm_info;
+shm_boxes * shm_boxes_state;
 sem_t *mutex;
 
 int main(int argc, char* argv[]) {
@@ -62,28 +63,44 @@ int main(int argc, char* argv[]) {
 
 void initiate_shm(){
 	// create shared mem key
-  if((shmkey = ftok( ".", getpid())) == (key_t) -1 ){
+  if( (shmkey = ftok(".", getpid()) ) == (key_t) -1 ){
     write_log("IPC error: ftok");
     exit(1);
   }
-  
+
+#ifdef DEBUG
   printf("Created SHM KEY = %d\n",shmkey);
+#endif
 
   // create shared mem
-  shmid = shmget(shmkey, sizeof(car_struct)*NR_CARS*NR_TEAM , IPC_CREAT|IPC_EXCL|0700); // shm memory cannot exist
-  if (shmid < 1){
+  shm_main_id = shmget(shmkey, sizeof(shm_struct) + sizeof(car_shm_struct)*NR_TEAM*NR_CARS, IPC_CREAT|IPC_EXCL|0700); // shm memory cannot exist
+  if (shm_main_id < 1){
 	write_log("Error creating shm memory!");
 	exit(1);
 	}
 	
-
 	// attatch mem
-  cars = (car_struct*) shmat(shmid, NULL, 0);
-	if (cars < (car_struct*) 1){
+  shm_info = (shm_struct*) shmat(shm_main_id, NULL, 0);
+	if (shm_info < (shm_struct*) 1){
 		write_log("Error attaching memory!\n");
     	destroy_resources();
 		exit(1);
 	}
+	
+	shm_boxes_id =shmget(IPC_PRIVATE, sizeof(shm_boxes) + sizeof(char)*NR_TEAM, IPC_CREAT|IPC_EXCL|0700 );
+	if (shm_boxes_id < 1){
+		write_log("Error creating shm memory!");
+		destroy_resources();
+		exit(1);
+	}
+	
+	shm_boxes_state = (shm_boxes*) shmat(shm_boxes_id, NULL, 0);
+	if (shm_info < (shm_boxes*) 1){
+		write_log("Error attaching memory!\n");
+    	destroy_resources();
+		exit(1);
+	}
+	
 }
 
 void initiate_sems(){
@@ -96,6 +113,10 @@ void initiate_sems(){
     	destroy_resources();
     	exit(1);
 	}
+	
+#ifdef DEBUG
+	printf("Semaphore initialized\n");
+#endif
 }
 
 void initiate_resources(){
@@ -108,6 +129,10 @@ void destroy_resources(void) {
   write_log("Cleaning up...");
   sem_close(mutex);
   sem_unlink("MUTEX");
-  shmdt(cars);
-  shmctl(shmid, IPC_RMID, NULL);
+  
+  shmdt(shm_info);
+  shmctl(shm_main_id, IPC_RMID, NULL);
+  
+  shmdt(shm_boxes_state);
+  shmctl(shm_boxes_id, IPC_RMID, NULL);
 }

@@ -3,9 +3,9 @@
 
 void malfunction_manager(){
 
-	#ifdef DEBUG
+#ifdef DEBUG
 	write_log("Malfunction manager process created");
-	#endif
+#endif
 
 	exit(0);
 }
