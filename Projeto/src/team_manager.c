@@ -3,6 +3,9 @@
 void team_manager(int team_index) {
 
   int i, car_thread_index=0;
+  #ifdef DEBUG
+  	printf("TEam %d\n", team_index/NR_CARS);
+  	#endif
   // create array for car threads
   //pthread_t *car_threads = create_threads_array();
   pthread_t car_threads[NR_CARS];
@@ -41,10 +44,10 @@ car_struct* create_car_structs_array(){
 // set the atributes of the car
 void init_car_stats(car_struct *stats, int team_index, int car_index) {
   
-  stats->car = &shm_info->cars[ team_index*NR_CARS + car_index];
+  stats->car = &shm_info->cars[ team_index + car_index];
   
   strcpy(stats->car->team_name, "");
-  stats->car->number = car_index+team_index*NR_CARS;
+  stats->car->number = team_index*NR_CARS + car_index;
  stats->car->speed = 25;
   /*stats->car->consumption = 0;
   stats->car->reliability = 0;
@@ -63,9 +66,9 @@ void *car_worker(void *stats) {
   car_struct *car_simu = (car_struct *)stats;
 
   // just a test
+  
+ #ifdef DEBUG
   printf("Car Number: %d\tFuel: %.2fL\n", car_simu->car->number, car_simu->fuel);
-
-#ifdef DEBUG
   write_log("Thread car created!");
 #endif
 

@@ -44,8 +44,18 @@ int main(int argc, char* argv[]) {
   write_log("SERVER STARTED");
 	
   initiate_resources();
-	
-	printf("\nI'm car 0 and my speed is : %f\n", shm_info->cars[0].speed);
+
+#ifdef DEBUG
+	for (i = 0; i < NR_TEAM; i++){
+		printf("TEAM: %d\t", i);
+		int j;
+		for(j = 0 ; j < NR_CARS; j++){
+			printf("Car %d Speed: %.2f\t", shm_info->cars[i*NR_CARS+j].number, shm_info->cars[i*NR_CARS+j].speed);
+		}
+		printf("\n");
+	}
+#endif	
+
 	
   // create race manager process
   if ( !fork() ) race_manager();
@@ -57,7 +67,17 @@ int main(int argc, char* argv[]) {
   for (i = 0; i < 2; i++) wait(NULL);
 	
 	
-	printf("\nI'm car 0 again and now my speed is : %f\n", shm_info->cars[0].speed);
+#ifdef DEBUG
+	for (i = 0; i < NR_TEAM; i++){
+		printf("TEAM: %d\t", i);
+		int j;
+		for(j = 0 ; j < NR_CARS; j++){
+			printf("Car %d Speed: %.2f\t", shm_info->cars[i*NR_CARS+j].number, shm_info->cars[i*NR_CARS+j].speed);
+		}
+		printf("\n");
+	}
+#endif	
+
   // destroy shared mem and semaphores
   destroy_resources();
 

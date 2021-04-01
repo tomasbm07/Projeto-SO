@@ -13,6 +13,8 @@
 #include "config_file.h"
 #include "write_output.h"
 
+#define DEBUG
+
 extern shm_struct *shm_info;
 extern shm_boxes *shm_boxes_state;
 extern int NR_CARS, NR_TEAM;
