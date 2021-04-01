@@ -67,9 +67,9 @@ int main(int argc, char* argv[]) {
   for (i = 0; i < 2; i++) wait(NULL);
 
 #ifdef DEBUG
+  printf("After both processes are closed\n");
   for (i = 0; i < NR_TEAM; i++) {
-    printf("TEAM: %d\t", i);
-    int j;
+    printf("TEAM: %d | ", i);
     for (j = 0; j < NR_CARS; j++) {
       printf("Car %d Speed: %.2f\t", shm_info->cars[i * NR_CARS + j].number,shm_info->cars[i * NR_CARS + j].speed);
     }
@@ -98,17 +98,14 @@ void initiate_shm() {
   // create shared mem key
   if ((shmkey = ftok(".", getpid())) == (key_t)-1) {
     write_log("IPC error: ftok");
+    #ifdef DEBUG
+      printf("SHM KEY = %d\n", shmkey);
+    #endif
     exit(1);
   }
 
-#ifdef DEBUG
-  printf("SHM KEY = %d\n", shmkey);
-#endif
-
-  // create shared mem
   get_id(&shm_main_id, shmkey,sizeof(shm_struct) + sizeof(car_shm_struct) * NR_TEAM * NR_CARS, IPC_CREAT | IPC_EXCL | 0700);
 
-  // attatch mem
   shm_info = (shm_struct*)shmat(shm_main_id, NULL, 0);
   if (shm_info < (shm_struct*)1) {
     write_log("Error attaching memory!\n");

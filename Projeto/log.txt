@@ -1577,3 +1577,65 @@
 [16:12:36] SERVER STARTED
 [16:12:36] SERVER CLOSED
 [16:12:36] Cleaning up...
+[16:31:44] File doesn't exist!
+[16:31:47] File doesn't exist!
+[16:31:52] Successfully read config file
+[16:31:52] SERVER STARTED
+[16:31:52] Malfunction manager process created
+[16:31:52] Successfully read config file
+[16:31:52] SERVER STARTED
+[16:31:52] Thread car created!
+[16:31:52] Thread car created!
+[16:31:52] Successfully read config file
+[16:31:52] SERVER STARTED
+[16:31:52] Thread car created!
+[16:31:52] Thread car created!
+[16:31:52] Successfully read config file
+[16:31:52] SERVER STARTED
+[16:31:52] Thread car created!
+[16:31:52] Thread car created!
+[16:31:52] Successfully read config file
+[16:31:52] SERVER STARTED
+[16:31:52] Thread car created!
+[16:31:52] Thread car created!
+[16:31:52] Successfully read config file
+[16:31:52] SERVER STARTED
+[16:31:52] Thread car created!
+[16:31:52] Thread car created!
+[16:31:52] Successfully read config file
+[16:31:52] SERVER STARTED
+[16:31:52] Created 5 team processes
+[16:31:52] Successfully read config file
+[16:31:52] SERVER STARTED
+[16:31:52] SERVER CLOSED
+[16:31:52] Cleaning up...
+[16:38:44] Successfully read config file
+[16:38:44] SERVER STARTED
+[16:38:44] Malfunction manager process created
+[16:38:44] Successfully read config file
+[16:38:44] SERVER STARTED
+[16:38:44] Thread car created!
+[16:38:44] Thread car created!
+[16:38:44] Successfully read config file
+[16:38:44] SERVER STARTED
+[16:38:44] Thread car created!
+[16:38:44] Thread car created!
+[16:38:44] Successfully read config file
+[16:38:44] SERVER STARTED
+[16:38:44] Thread car created!
+[16:38:44] Thread car created!
+[16:38:44] Successfully read config file
+[16:38:44] SERVER STARTED
+[16:38:44] Thread car created!
+[16:38:44] Thread car created!
+[16:38:44] Successfully read config file
+[16:38:44] SERVER STARTED
+[16:38:44] Thread car created!
+[16:38:44] Thread car created!
+[16:38:44] Successfully read config file
+[16:38:44] SERVER STARTED
+[16:38:44] Created 5 team processes
+[16:38:44] Successfully read config file
+[16:38:44] SERVER STARTED
+[16:38:44] SERVER CLOSED
+[16:38:44] Cleaning up...
