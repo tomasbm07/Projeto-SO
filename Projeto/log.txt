@@ -1639,3 +1639,33 @@
 [16:38:44] SERVER STARTED
 [16:38:44] SERVER CLOSED
 [16:38:44] Cleaning up...
+[16:41:56] Successfully read config file
+[16:41:56] SERVER STARTED
+[16:41:56] Malfunction manager process created
+[16:41:56] Successfully read config file
+[16:41:56] SERVER STARTED
+[16:41:56] Thread car created!
+[16:41:56] Thread car created!
+[16:41:56] Successfully read config file
+[16:41:56] SERVER STARTED
+[16:41:56] Thread car created!
+[16:41:56] Thread car created!
+[16:41:56] Successfully read config file
+[16:41:56] SERVER STARTED
+[16:41:56] Thread car created!
+[16:41:56] Thread car created!
+[16:41:56] Successfully read config file
+[16:41:56] SERVER STARTED
+[16:41:56] Thread car created!
+[16:41:56] Thread car created!
+[16:41:56] Successfully read config file
+[16:41:56] SERVER STARTED
+[16:41:56] Thread car created!
+[16:41:56] Thread car created!
+[16:41:56] Successfully read config file
+[16:41:56] SERVER STARTED
+[16:41:56] Created 5 team processes
+[16:41:56] Successfully read config file
+[16:41:56] SERVER STARTED
+[16:41:56] SERVER CLOSED
+[16:41:56] Cleaning up...

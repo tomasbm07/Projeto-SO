@@ -8,7 +8,7 @@ typedef struct {
 	float consumption;
 	float reliability;
 	int laps_completed;
-	int boxs_stops_counter;
+	int box_stops_counter;
 } car_shm_struct;
 
 typedef struct{
