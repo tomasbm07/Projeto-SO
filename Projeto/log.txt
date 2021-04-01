@@ -703,3 +703,877 @@
 [12:41:18] Thread car created!
 [12:41:18] Cleaning up...
 [12:41:18] SERVER CLOSED
+[14:45:46] Successfully read config file
+[14:45:46] SERVER STARTED
+[14:45:46] Created 5 team processes
+[14:45:46] Thread car created!
+[14:45:46] Thread car created!
+[14:45:46] Thread car created!
+[14:45:46] Thread car created!
+[14:45:46] Thread car created!
+[14:45:46] Thread car created!
+[14:45:46] Thread car created!
+[14:45:46] Thread car created!
+[14:45:46] Thread car created!
+[14:45:46] Thread car created!
+[14:45:46] Cleaning up...
+[14:45:46] SERVER CLOSED
+[15:21:4] Successfully read config file
+[15:21:4] SERVER STARTED
+[15:21:4] Created 5 team processes
+[15:21:4] Malfunction manager process created
+[15:21:4] Thread car created!
+[15:21:4] Thread car created!
+[15:21:4] Thread car created!
+[15:21:4] Thread car created!
+[15:21:4] Thread car created!
+[15:21:4] Thread car created!
+[15:21:4] Thread car created!
+[15:21:4] Thread car created!
+[15:21:4] Thread car created!
+[15:21:4] Thread car created!
+[15:21:4] Cleaning up...
+[15:21:4] SERVER CLOSED
+[15:26:53] Successfully read config file
+[15:26:53] SERVER STARTED
+[15:26:53] Malfunction manager process created
+[15:26:53] Created 5 team processes
+[15:26:53] Thread car created!
+[15:26:53] Thread car created!
+[15:26:53] Thread car created!
+[15:26:53] Thread car created!
+[15:26:53] Thread car created!
+[15:26:53] Thread car created!
+[15:26:53] Thread car created!
+[15:26:53] Thread car created!
+[15:26:53] Thread car created!
+[15:26:53] Thread car created!
+[15:26:53] Cleaning up...
+[15:30:48] Successfully read config file
+[15:30:48] SERVER STARTED
+[15:30:48] Malfunction manager process created
+[15:30:48] Successfully read config file
+[15:30:48] SERVER STARTED
+[15:30:48] Thread car created!
+[15:30:48] Thread car created!
+[15:30:48] Successfully read config file
+[15:30:48] SERVER STARTED
+[15:30:48] Thread car created!
+[15:30:48] Thread car created!
+[15:30:48] Successfully read config file
+[15:30:48] SERVER STARTED
+[15:30:48] Thread car created!
+[15:30:48] Thread car created!
+[15:30:48] Successfully read config file
+[15:30:48] SERVER STARTED
+[15:30:48] Thread car created!
+[15:30:48] Thread car created!
+[15:30:48] Successfully read config file
+[15:30:48] SERVER STARTED
+[15:30:48] Thread car created!
+[15:30:48] Thread car created!
+[15:30:48] Successfully read config file
+[15:30:48] SERVER STARTED
+[15:30:48] Created 5 team processes
+[15:30:48] Successfully read config file
+[15:30:48] SERVER STARTED
+[15:30:48] Cleaning up...
+[15:32:39] Successfully read config file
+[15:32:39] SERVER STARTED
+[15:32:39] Malfunction manager process created
+[15:32:39] Successfully read config file
+[15:32:39] SERVER STARTED
+[15:32:39] Thread car created!
+[15:32:39] Thread car created!
+[15:32:39] Successfully read config file
+[15:32:39] SERVER STARTED
+[15:32:39] Thread car created!
+[15:32:39] Thread car created!
+[15:32:39] Successfully read config file
+[15:32:39] SERVER STARTED
+[15:32:39] Thread car created!
+[15:32:39] Thread car created!
+[15:32:39] Successfully read config file
+[15:32:39] SERVER STARTED
+[15:32:39] Thread car created!
+[15:32:39] Thread car created!
+[15:32:39] Successfully read config file
+[15:32:39] SERVER STARTED
+[15:32:39] Thread car created!
+[15:32:39] Thread car created!
+[15:32:39] Successfully read config file
+[15:32:39] SERVER STARTED
+[15:32:39] Created 5 team processes
+[15:32:39] Successfully read config file
+[15:32:39] SERVER STARTED
+[15:32:39] Cleaning up...
+[15:33:24] Successfully read config file
+[15:33:24] SERVER STARTED
+[15:33:24] Malfunction manager process created
+[15:33:24] Successfully read config file
+[15:33:24] SERVER STARTED
+[15:33:24] Thread car created!
+[15:33:24] Thread car created!
+[15:33:24] Successfully read config file
+[15:33:24] SERVER STARTED
+[15:33:24] Thread car created!
+[15:33:24] Thread car created!
+[15:33:24] Successfully read config file
+[15:33:24] SERVER STARTED
+[15:33:24] Thread car created!
+[15:33:24] Thread car created!
+[15:33:24] Successfully read config file
+[15:33:24] SERVER STARTED
+[15:33:24] Thread car created!
+[15:33:24] Thread car created!
+[15:33:24] Successfully read config file
+[15:33:24] SERVER STARTED
+[15:33:24] Thread car created!
+[15:33:24] Thread car created!
+[15:33:24] Successfully read config file
+[15:33:24] SERVER STARTED
+[15:33:24] Created 5 team processes
+[15:33:24] Successfully read config file
+[15:33:24] SERVER STARTED
+[15:33:24] Cleaning up...
+[15:34:54] Successfully read config file
+[15:34:54] SERVER STARTED
+[15:34:54] Malfunction manager process created
+[15:34:54] Successfully read config file
+[15:34:54] SERVER STARTED
+[15:34:54] Thread car created!
+[15:34:54] Thread car created!
+[15:34:54] Successfully read config file
+[15:34:54] SERVER STARTED
+[15:34:54] Thread car created!
+[15:34:54] Thread car created!
+[15:34:54] Successfully read config file
+[15:34:54] SERVER STARTED
+[15:34:54] Thread car created!
+[15:34:54] Thread car created!
+[15:34:54] Successfully read config file
+[15:34:54] SERVER STARTED
+[15:34:54] Thread car created!
+[15:34:54] Thread car created!
+[15:34:54] Successfully read config file
+[15:34:54] SERVER STARTED
+[15:34:54] Thread car created!
+[15:34:54] Thread car created!
+[15:34:54] Successfully read config file
+[15:34:54] SERVER STARTED
+[15:34:54] Created 5 team processes
+[15:34:54] Successfully read config file
+[15:34:54] SERVER STARTED
+[15:34:54] Cleaning up...
+[15:37:18] Successfully read config file
+[15:37:18] SERVER STARTED
+[15:37:18] Malfunction manager process created
+[15:37:18] Successfully read config file
+[15:37:18] SERVER STARTED
+[15:37:18] Thread car created!
+[15:37:18] Thread car created!
+[15:37:18] Successfully read config file
+[15:37:18] SERVER STARTED
+[15:37:18] Thread car created!
+[15:37:18] Thread car created!
+[15:37:18] Successfully read config file
+[15:37:18] SERVER STARTED
+[15:37:18] Thread car created!
+[15:37:18] Thread car created!
+[15:37:18] Successfully read config file
+[15:37:18] SERVER STARTED
+[15:37:18] Thread car created!
+[15:37:18] Thread car created!
+[15:37:18] Successfully read config file
+[15:37:18] SERVER STARTED
+[15:37:18] Thread car created!
+[15:37:18] Thread car created!
+[15:37:18] Successfully read config file
+[15:37:18] SERVER STARTED
+[15:37:18] Created 5 team processes
+[15:37:18] Successfully read config file
+[15:37:18] SERVER STARTED
+[15:37:18] Cleaning up...
+[15:37:39] Successfully read config file
+[15:37:39] SERVER STARTED
+[15:37:39] Malfunction manager process created
+[15:37:39] Successfully read config file
+[15:37:39] SERVER STARTED
+[15:37:39] Thread car created!
+[15:37:39] Thread car created!
+[15:37:39] Successfully read config file
+[15:37:39] SERVER STARTED
+[15:37:39] Thread car created!
+[15:37:39] Thread car created!
+[15:37:39] Successfully read config file
+[15:37:39] SERVER STARTED
+[15:37:39] Thread car created!
+[15:37:39] Thread car created!
+[15:37:39] Successfully read config file
+[15:37:39] SERVER STARTED
+[15:37:39] Thread car created!
+[15:37:39] Thread car created!
+[15:37:39] Successfully read config file
+[15:37:39] SERVER STARTED
+[15:37:39] Thread car created!
+[15:37:39] Thread car created!
+[15:37:39] Successfully read config file
+[15:37:39] SERVER STARTED
+[15:37:39] Created 5 team processes
+[15:37:39] Successfully read config file
+[15:37:39] SERVER STARTED
+[15:37:39] Cleaning up...
+[15:38:55] Successfully read config file
+[15:38:55] SERVER STARTED
+[15:38:55] Malfunction manager process created
+[15:38:55] Successfully read config file
+[15:38:55] SERVER STARTED
+[15:38:55] Thread car created!
+[15:38:55] Thread car created!
+[15:38:55] Successfully read config file
+[15:38:55] SERVER STARTED
+[15:38:55] Thread car created!
+[15:38:55] Thread car created!
+[15:38:55] Successfully read config file
+[15:38:55] SERVER STARTED
+[15:38:55] Thread car created!
+[15:38:55] Thread car created!
+[15:38:55] Successfully read config file
+[15:38:55] SERVER STARTED
+[15:38:55] Thread car created!
+[15:38:55] Thread car created!
+[15:38:55] Successfully read config file
+[15:38:55] SERVER STARTED
+[15:38:55] Thread car created!
+[15:38:55] Thread car created!
+[15:38:55] Successfully read config file
+[15:38:55] SERVER STARTED
+[15:38:55] Created 5 team processes
+[15:41:2] Successfully read config file
+[15:41:2] SERVER STARTED
+[15:41:2] Malfunction manager process created
+[15:41:2] Successfully read config file
+[15:41:2] SERVER STARTED
+[15:41:2] Thread car created!
+[15:41:2] Thread car created!
+[15:41:2] Successfully read config file
+[15:41:2] SERVER STARTED
+[15:41:2] Thread car created!
+[15:41:2] Thread car created!
+[15:41:2] Successfully read config file
+[15:41:2] SERVER STARTED
+[15:41:2] Thread car created!
+[15:41:2] Thread car created!
+[15:41:2] Successfully read config file
+[15:41:2] SERVER STARTED
+[15:41:2] Thread car created!
+[15:41:2] Thread car created!
+[15:41:2] Successfully read config file
+[15:41:2] SERVER STARTED
+[15:41:2] Thread car created!
+[15:41:2] Thread car created!
+[15:41:2] Successfully read config file
+[15:41:2] SERVER STARTED
+[15:41:2] Created 5 team processes
+[15:43:1] Successfully read config file
+[15:43:1] SERVER STARTED
+[15:43:1] Malfunction manager process created
+[15:43:1] Successfully read config file
+[15:43:1] SERVER STARTED
+[15:43:1] Thread car created!
+[15:43:1] Thread car created!
+[15:43:1] Successfully read config file
+[15:43:1] SERVER STARTED
+[15:43:1] Thread car created!
+[15:43:1] Thread car created!
+[15:43:1] Successfully read config file
+[15:43:1] SERVER STARTED
+[15:43:1] Thread car created!
+[15:43:1] Thread car created!
+[15:43:1] Successfully read config file
+[15:43:1] SERVER STARTED
+[15:43:1] Thread car created!
+[15:43:1] Thread car created!
+[15:43:1] Successfully read config file
+[15:43:1] SERVER STARTED
+[15:43:1] Thread car created!
+[15:43:1] Thread car created!
+[15:43:1] Successfully read config file
+[15:43:1] SERVER STARTED
+[15:43:1] Created 5 team processes
+[15:45:5] Successfully read config file
+[15:45:5] SERVER STARTED
+[15:45:5] Malfunction manager process created
+[15:45:5] Successfully read config file
+[15:45:5] SERVER STARTED
+[15:45:5] Thread car created!
+[15:45:5] Thread car created!
+[15:45:5] Successfully read config file
+[15:45:5] SERVER STARTED
+[15:45:5] Thread car created!
+[15:45:5] Thread car created!
+[15:45:5] Successfully read config file
+[15:45:5] SERVER STARTED
+[15:45:5] Thread car created!
+[15:45:5] Thread car created!
+[15:45:5] Successfully read config file
+[15:45:5] SERVER STARTED
+[15:45:5] Thread car created!
+[15:45:5] Thread car created!
+[15:45:5] Successfully read config file
+[15:45:5] SERVER STARTED
+[15:45:5] Thread car created!
+[15:45:5] Thread car created!
+[15:45:5] Successfully read config file
+[15:45:5] SERVER STARTED
+[15:45:5] Created 5 team processes
+[15:47:23] Successfully read config file
+[15:47:23] SERVER STARTED
+[15:47:23] Malfunction manager process created
+[15:47:23] Successfully read config file
+[15:47:23] SERVER STARTED
+[15:47:23] Thread car created!
+[15:47:23] Thread car created!
+[15:47:23] Successfully read config file
+[15:47:23] SERVER STARTED
+[15:47:23] Thread car created!
+[15:47:23] Thread car created!
+[15:47:23] Successfully read config file
+[15:47:23] SERVER STARTED
+[15:47:23] Thread car created!
+[15:47:23] Thread car created!
+[15:47:23] Successfully read config file
+[15:47:23] SERVER STARTED
+[15:47:23] Thread car created!
+[15:47:23] Thread car created!
+[15:47:23] Successfully read config file
+[15:47:23] SERVER STARTED
+[15:47:23] Thread car created!
+[15:47:23] Thread car created!
+[15:47:23] Successfully read config file
+[15:47:23] SERVER STARTED
+[15:47:23] Created 5 team processes
+[15:48:4] Successfully read config file
+[15:48:4] SERVER STARTED
+[15:48:4] Malfunction manager process created
+[15:48:4] Successfully read config file
+[15:48:4] SERVER STARTED
+[15:48:4] Thread car created!
+[15:48:4] Thread car created!
+[15:48:4] Successfully read config file
+[15:48:4] SERVER STARTED
+[15:48:4] Thread car created!
+[15:48:4] Thread car created!
+[15:48:4] Successfully read config file
+[15:48:4] SERVER STARTED
+[15:48:4] Thread car created!
+[15:48:4] Thread car created!
+[15:48:4] Successfully read config file
+[15:48:4] SERVER STARTED
+[15:48:4] Thread car created!
+[15:48:4] Thread car created!
+[15:48:4] Successfully read config file
+[15:48:4] SERVER STARTED
+[15:48:4] Thread car created!
+[15:48:4] Thread car created!
+[15:48:4] Successfully read config file
+[15:48:4] SERVER STARTED
+[15:48:4] Created 5 team processes
+[15:49:36] Successfully read config file
+[15:49:36] SERVER STARTED
+[15:49:36] Malfunction manager process created
+[15:49:36] Successfully read config file
+[15:49:36] SERVER STARTED
+[15:49:36] Thread car created!
+[15:49:36] Thread car created!
+[15:49:36] Successfully read config file
+[15:49:36] SERVER STARTED
+[15:49:36] Thread car created!
+[15:49:36] Thread car created!
+[15:49:36] Successfully read config file
+[15:49:36] SERVER STARTED
+[15:49:36] Thread car created!
+[15:49:36] Thread car created!
+[15:49:36] Successfully read config file
+[15:49:36] SERVER STARTED
+[15:49:36] Thread car created!
+[15:49:36] Thread car created!
+[15:49:36] Successfully read config file
+[15:49:36] SERVER STARTED
+[15:49:36] Thread car created!
+[15:49:36] Thread car created!
+[15:49:36] Successfully read config file
+[15:49:36] SERVER STARTED
+[15:49:36] Created 5 team processes
+[15:51:10] Successfully read config file
+[15:51:10] SERVER STARTED
+[15:51:10] Malfunction manager process created
+[15:51:10] Successfully read config file
+[15:51:10] SERVER STARTED
+[15:51:10] Thread car created!
+[15:51:10] Thread car created!
+[15:51:10] Successfully read config file
+[15:51:10] SERVER STARTED
+[15:51:10] Thread car created!
+[15:51:10] Thread car created!
+[15:51:10] Successfully read config file
+[15:51:10] SERVER STARTED
+[15:51:10] Thread car created!
+[15:51:10] Thread car created!
+[15:51:10] Successfully read config file
+[15:51:10] SERVER STARTED
+[15:51:10] Thread car created!
+[15:51:10] Thread car created!
+[15:51:10] Successfully read config file
+[15:51:10] SERVER STARTED
+[15:51:10] Thread car created!
+[15:51:10] Thread car created!
+[15:51:10] Successfully read config file
+[15:51:10] SERVER STARTED
+[15:51:10] Created 5 team processes
+[15:52:1] Successfully read config file
+[15:52:1] SERVER STARTED
+[15:52:1] Malfunction manager process created
+[15:52:1] Successfully read config file
+[15:52:1] SERVER STARTED
+[15:52:1] Thread car created!
+[15:52:1] Thread car created!
+[15:52:1] Successfully read config file
+[15:52:1] SERVER STARTED
+[15:52:1] Thread car created!
+[15:52:1] Thread car created!
+[15:52:1] Successfully read config file
+[15:52:1] SERVER STARTED
+[15:52:1] Thread car created!
+[15:52:1] Thread car created!
+[15:52:1] Successfully read config file
+[15:52:1] SERVER STARTED
+[15:52:1] Thread car created!
+[15:52:1] Thread car created!
+[15:52:1] Successfully read config file
+[15:52:1] SERVER STARTED
+[15:52:1] Thread car created!
+[15:52:1] Thread car created!
+[15:52:1] Successfully read config file
+[15:52:1] SERVER STARTED
+[15:52:1] Created 5 team processes
+[15:54:1] Successfully read config file
+[15:54:1] SERVER STARTED
+[15:54:1] Malfunction manager process created
+[15:54:1] Successfully read config file
+[15:54:1] SERVER STARTED
+[15:54:1] Thread car created!
+[15:54:1] Thread car created!
+[15:54:1] Successfully read config file
+[15:54:1] SERVER STARTED
+[15:54:1] Thread car created!
+[15:54:1] Thread car created!
+[15:54:1] Successfully read config file
+[15:54:1] SERVER STARTED
+[15:54:1] Thread car created!
+[15:54:1] Thread car created!
+[15:54:1] Successfully read config file
+[15:54:1] SERVER STARTED
+[15:54:1] Thread car created!
+[15:54:1] Thread car created!
+[15:54:1] Successfully read config file
+[15:54:1] SERVER STARTED
+[15:54:1] Thread car created!
+[15:54:1] Thread car created!
+[15:54:1] Successfully read config file
+[15:54:1] SERVER STARTED
+[15:54:1] Created 5 team processes
+[15:54:1] Successfully read config file
+[15:54:1] SERVER STARTED
+[15:54:1] SERVER CLOSED
+[15:54:1] Cleaning up...
+[15:54:56] Successfully read config file
+[15:54:56] SERVER STARTED
+[15:54:56] Malfunction manager process created
+[15:54:56] Successfully read config file
+[15:54:56] SERVER STARTED
+[15:54:56] Thread car created!
+[15:54:56] Thread car created!
+[15:54:56] Successfully read config file
+[15:54:56] SERVER STARTED
+[15:54:56] Thread car created!
+[15:54:56] Thread car created!
+[15:54:56] Successfully read config file
+[15:54:56] SERVER STARTED
+[15:54:56] Thread car created!
+[15:54:56] Thread car created!
+[15:54:56] Successfully read config file
+[15:54:56] SERVER STARTED
+[15:54:56] Thread car created!
+[15:54:56] Thread car created!
+[15:54:56] Successfully read config file
+[15:54:56] SERVER STARTED
+[15:54:56] Thread car created!
+[15:54:56] Thread car created!
+[15:54:56] Successfully read config file
+[15:54:56] SERVER STARTED
+[15:54:56] Created 5 team processes
+[15:54:56] Successfully read config file
+[15:54:56] SERVER STARTED
+[15:54:56] SERVER CLOSED
+[15:54:56] Cleaning up...
+[15:55:48] Successfully read config file
+[15:55:48] SERVER STARTED
+[15:55:48] Malfunction manager process created
+[15:55:48] Successfully read config file
+[15:55:48] SERVER STARTED
+[15:55:48] Thread car created!
+[15:55:48] Thread car created!
+[15:55:48] Successfully read config file
+[15:55:48] SERVER STARTED
+[15:55:48] Thread car created!
+[15:55:48] Thread car created!
+[15:55:48] Successfully read config file
+[15:55:48] SERVER STARTED
+[15:55:48] Thread car created!
+[15:55:48] Thread car created!
+[15:55:48] Successfully read config file
+[15:55:48] SERVER STARTED
+[15:55:48] Thread car created!
+[15:55:48] Thread car created!
+[15:55:48] Successfully read config file
+[15:55:48] SERVER STARTED
+[15:55:48] Thread car created!
+[15:55:48] Thread car created!
+[15:55:48] Successfully read config file
+[15:55:48] SERVER STARTED
+[15:55:48] Created 5 team processes
+[15:55:48] Successfully read config file
+[15:55:48] SERVER STARTED
+[15:55:48] SERVER CLOSED
+[15:55:48] Cleaning up...
+[16:2:10] Successfully read config file
+[16:2:10] SERVER STARTED
+[16:2:10] Malfunction manager process created
+[16:2:10] Successfully read config file
+[16:2:10] SERVER STARTED
+[16:2:10] Thread car created!
+[16:2:10] Thread car created!
+[16:2:10] Successfully read config file
+[16:2:10] SERVER STARTED
+[16:2:10] Thread car created!
+[16:2:10] Thread car created!
+[16:2:10] Successfully read config file
+[16:2:10] SERVER STARTED
+[16:2:10] Thread car created!
+[16:2:10] Thread car created!
+[16:2:10] Successfully read config file
+[16:2:10] SERVER STARTED
+[16:2:10] Thread car created!
+[16:2:10] Thread car created!
+[16:2:10] Successfully read config file
+[16:2:10] SERVER STARTED
+[16:2:10] Thread car created!
+[16:2:10] Thread car created!
+[16:2:10] Successfully read config file
+[16:2:10] SERVER STARTED
+[16:2:10] Created 5 team processes
+[16:2:10] Successfully read config file
+[16:2:10] SERVER STARTED
+[16:2:10] SERVER CLOSED
+[16:2:10] Cleaning up...
+[16:2:59] Successfully read config file
+[16:2:59] SERVER STARTED
+[16:2:59] Malfunction manager process created
+[16:2:59] Successfully read config file
+[16:2:59] SERVER STARTED
+[16:2:59] Thread car created!
+[16:2:59] Thread car created!
+[16:2:59] Successfully read config file
+[16:2:59] SERVER STARTED
+[16:2:59] Thread car created!
+[16:2:59] Thread car created!
+[16:2:59] Successfully read config file
+[16:2:59] SERVER STARTED
+[16:2:59] Thread car created!
+[16:2:59] Thread car created!
+[16:2:59] Successfully read config file
+[16:2:59] SERVER STARTED
+[16:2:59] Thread car created!
+[16:2:59] Thread car created!
+[16:2:59] Successfully read config file
+[16:2:59] SERVER STARTED
+[16:2:59] Thread car created!
+[16:2:59] Thread car created!
+[16:2:59] Successfully read config file
+[16:2:59] SERVER STARTED
+[16:2:59] Created 5 team processes
+[16:2:59] Successfully read config file
+[16:2:59] SERVER STARTED
+[16:2:59] SERVER CLOSED
+[16:2:59] Cleaning up...
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Malfunction manager process created
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Thread car created!
+[16:3:0] Thread car created!
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Thread car created!
+[16:3:0] Thread car created!
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Thread car created!
+[16:3:0] Thread car created!
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Thread car created!
+[16:3:0] Thread car created!
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Thread car created!
+[16:3:0] Thread car created!
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Created 5 team processes
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] SERVER CLOSED
+[16:3:0] Cleaning up...
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Malfunction manager process created
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Thread car created!
+[16:3:0] Thread car created!
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Thread car created!
+[16:3:0] Thread car created!
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Thread car created!
+[16:3:0] Thread car created!
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Thread car created!
+[16:3:0] Thread car created!
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Thread car created!
+[16:3:0] Thread car created!
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] Created 5 team processes
+[16:3:0] Successfully read config file
+[16:3:0] SERVER STARTED
+[16:3:0] SERVER CLOSED
+[16:3:0] Cleaning up...
+[16:3:3] Successfully read config file
+[16:3:3] SERVER STARTED
+[16:3:3] Malfunction manager process created
+[16:3:3] Successfully read config file
+[16:3:3] SERVER STARTED
+[16:3:3] Thread car created!
+[16:3:3] Thread car created!
+[16:3:3] Successfully read config file
+[16:3:3] SERVER STARTED
+[16:3:3] Thread car created!
+[16:3:3] Thread car created!
+[16:3:3] Successfully read config file
+[16:3:3] SERVER STARTED
+[16:3:3] Thread car created!
+[16:3:3] Thread car created!
+[16:3:3] Successfully read config file
+[16:3:3] SERVER STARTED
+[16:3:3] Thread car created!
+[16:3:3] Thread car created!
+[16:3:3] Successfully read config file
+[16:3:3] SERVER STARTED
+[16:3:3] Thread car created!
+[16:3:3] Thread car created!
+[16:3:3] Successfully read config file
+[16:3:3] SERVER STARTED
+[16:3:3] Created 5 team processes
+[16:3:3] Successfully read config file
+[16:3:3] SERVER STARTED
+[16:3:3] SERVER CLOSED
+[16:3:3] Cleaning up...
+[16:4:1] Successfully read config file
+[16:4:1] SERVER STARTED
+[16:4:1] Malfunction manager process created
+[16:4:1] Successfully read config file
+[16:4:1] SERVER STARTED
+[16:4:1] Thread car created!
+[16:4:1] Thread car created!
+[16:4:1] Successfully read config file
+[16:4:1] SERVER STARTED
+[16:4:1] Thread car created!
+[16:4:1] Thread car created!
+[16:4:1] Successfully read config file
+[16:4:1] SERVER STARTED
+[16:4:1] Thread car created!
+[16:4:1] Thread car created!
+[16:4:1] Successfully read config file
+[16:4:1] SERVER STARTED
+[16:4:1] Thread car created!
+[16:4:1] Thread car created!
+[16:4:1] Successfully read config file
+[16:4:1] SERVER STARTED
+[16:4:1] Thread car created!
+[16:4:1] Thread car created!
+[16:4:1] Successfully read config file
+[16:4:1] SERVER STARTED
+[16:4:1] Created 5 team processes
+[16:4:1] Successfully read config file
+[16:4:1] SERVER STARTED
+[16:4:1] SERVER CLOSED
+[16:4:1] Cleaning up...
+[16:5:19] Successfully read config file
+[16:5:19] SERVER STARTED
+[16:5:19] Malfunction manager process created
+[16:5:19] Successfully read config file
+[16:5:19] SERVER STARTED
+[16:5:19] Thread car created!
+[16:5:19] Thread car created!
+[16:5:19] Successfully read config file
+[16:5:19] SERVER STARTED
+[16:5:19] Thread car created!
+[16:5:19] Thread car created!
+[16:5:19] Successfully read config file
+[16:5:19] SERVER STARTED
+[16:5:19] Thread car created!
+[16:5:19] Thread car created!
+[16:5:19] Successfully read config file
+[16:5:19] SERVER STARTED
+[16:5:19] Thread car created!
+[16:5:19] Thread car created!
+[16:5:19] Successfully read config file
+[16:5:19] SERVER STARTED
+[16:5:19] Thread car created!
+[16:5:19] Thread car created!
+[16:5:19] Successfully read config file
+[16:5:19] SERVER STARTED
+[16:5:19] Created 5 team processes
+[16:5:19] Successfully read config file
+[16:5:19] SERVER STARTED
+[16:5:19] SERVER CLOSED
+[16:5:19] Cleaning up...
+[16:5:52] Successfully read config file
+[16:5:52] SERVER STARTED
+[16:5:52] Malfunction manager process created
+[16:5:52] Successfully read config file
+[16:5:52] SERVER STARTED
+[16:5:52] Thread car created!
+[16:5:52] Thread car created!
+[16:5:52] Successfully read config file
+[16:5:52] SERVER STARTED
+[16:5:52] Thread car created!
+[16:5:52] Thread car created!
+[16:5:52] Successfully read config file
+[16:5:52] SERVER STARTED
+[16:5:52] Thread car created!
+[16:5:52] Thread car created!
+[16:5:52] Successfully read config file
+[16:5:52] SERVER STARTED
+[16:5:52] Thread car created!
+[16:5:52] Thread car created!
+[16:5:52] Successfully read config file
+[16:5:52] SERVER STARTED
+[16:5:52] Thread car created!
+[16:5:52] Thread car created!
+[16:5:52] Successfully read config file
+[16:5:52] SERVER STARTED
+[16:5:52] Created 5 team processes
+[16:5:52] Successfully read config file
+[16:5:52] SERVER STARTED
+[16:5:52] SERVER CLOSED
+[16:5:52] Cleaning up...
+[16:6:23] Successfully read config file
+[16:6:23] SERVER STARTED
+[16:6:23] Malfunction manager process created
+[16:6:23] Successfully read config file
+[16:6:23] SERVER STARTED
+[16:6:23] Thread car created!
+[16:6:23] Thread car created!
+[16:6:23] Successfully read config file
+[16:6:23] SERVER STARTED
+[16:6:23] Thread car created!
+[16:6:23] Thread car created!
+[16:6:23] Successfully read config file
+[16:6:23] SERVER STARTED
+[16:6:23] Thread car created!
+[16:6:23] Thread car created!
+[16:6:23] Successfully read config file
+[16:6:23] SERVER STARTED
+[16:6:23] Thread car created!
+[16:6:23] Thread car created!
+[16:6:23] Successfully read config file
+[16:6:23] SERVER STARTED
+[16:6:23] Thread car created!
+[16:6:23] Thread car created!
+[16:6:23] Successfully read config file
+[16:6:23] SERVER STARTED
+[16:6:23] Created 5 team processes
+[16:6:23] Successfully read config file
+[16:6:23] SERVER STARTED
+[16:6:23] SERVER CLOSED
+[16:6:23] Cleaning up...
+[16:7:3] Successfully read config file
+[16:7:3] SERVER STARTED
+[16:7:3] Malfunction manager process created
+[16:7:3] Successfully read config file
+[16:7:3] SERVER STARTED
+[16:7:3] Thread car created!
+[16:7:3] Thread car created!
+[16:7:3] Successfully read config file
+[16:7:3] SERVER STARTED
+[16:7:3] Thread car created!
+[16:7:3] Thread car created!
+[16:7:3] Successfully read config file
+[16:7:3] SERVER STARTED
+[16:7:3] Thread car created!
+[16:7:3] Thread car created!
+[16:7:3] Successfully read config file
+[16:7:3] SERVER STARTED
+[16:7:3] Thread car created!
+[16:7:3] Thread car created!
+[16:7:3] Successfully read config file
+[16:7:3] SERVER STARTED
+[16:7:3] Thread car created!
+[16:7:3] Thread car created!
+[16:7:3] Successfully read config file
+[16:7:3] SERVER STARTED
+[16:7:3] Created 5 team processes
+[16:7:3] Successfully read config file
+[16:7:3] SERVER STARTED
+[16:7:3] SERVER CLOSED
+[16:7:3] Cleaning up...
+[16:12:36] Successfully read config file
+[16:12:36] SERVER STARTED
+[16:12:36] Malfunction manager process created
+[16:12:36] Successfully read config file
+[16:12:36] SERVER STARTED
+[16:12:36] Thread car created!
+[16:12:36] Thread car created!
+[16:12:36] Successfully read config file
+[16:12:36] SERVER STARTED
+[16:12:36] Thread car created!
+[16:12:36] Thread car created!
+[16:12:36] Successfully read config file
+[16:12:36] SERVER STARTED
+[16:12:36] Thread car created!
+[16:12:36] Thread car created!
+[16:12:36] Successfully read config file
+[16:12:36] SERVER STARTED
+[16:12:36] Thread car created!
+[16:12:36] Thread car created!
+[16:12:36] Successfully read config file
+[16:12:36] SERVER STARTED
+[16:12:36] Thread car created!
+[16:12:36] Thread car created!
+[16:12:36] Successfully read config file
+[16:12:36] SERVER STARTED
+[16:12:36] Created 5 team processes
+[16:12:36] Successfully read config file
+[16:12:36] SERVER STARTED
+[16:12:36] SERVER CLOSED
+[16:12:36] Cleaning up...

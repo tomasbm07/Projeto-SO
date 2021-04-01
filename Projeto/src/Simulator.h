@@ -1,8 +1,6 @@
 #ifndef SIMULATOR_H
 #define SIMULATOR_H
 
-#endif
-
 #include <semaphore.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
@@ -25,11 +23,14 @@
 #endif
 */
 
-
 key_t shmkey;
+sem_t *log_mutex;
+FILE *f;
 
 void initiate_resources();
 void initiate_shm();
 void initiate_sems();
 void destroy_resources();
 
+
+#endif

@@ -1,9 +1,6 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
-#endif
-
-
 typedef struct {
 	char team_name[31];
 	int number;
@@ -11,12 +8,12 @@ typedef struct {
 	float consumption;
 	float reliability;
 	int laps_completed;
-	int boxes_stops_counter;
+	int boxs_stops_counter;
 } car_shm_struct;
 
 typedef struct{
 	int refill_counter;
-	char boxes_state[];
+	char boxs_state[];
 } shm_boxes;
 
 typedef struct {
@@ -26,11 +23,11 @@ typedef struct {
 
 // struct with car stats
 typedef struct {
-  
   car_shm_struct *car;
-  char state;  // 'R' = race; 'S' = safety; 'B' = box; 'D' = DNF; 'F' = finished;
-  float fuel;
-  float lap_distance;  // distance on lap; 0 - LAP_DIST; 0 = start/finish line
+  char state; // 'R' = race; 'S' = safety; 'B' = box; 'D' = DNF; 'F' = finished;
+  float fuel; // remaining fuel
+  float lap_distance; // distance on lap; 0 - LAP_DIST; 0 = start/finish line
   //int track_position; // 1st, 2nd, 3rd, 4th, ...
-  
 } car_struct;
+
+#endif

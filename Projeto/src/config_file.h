@@ -1,7 +1,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#endif
 
 #include "write_output.h"
 
@@ -26,5 +25,4 @@ void read_one_integer(char* string, int** value, FILE* file);
 void read_two_integer(char* string, int** value_1, int** value_2, FILE* file);
 
 
-
-
+#endif

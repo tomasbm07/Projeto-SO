@@ -15,9 +15,9 @@
 
 #define DEBUG
 
-extern shm_struct *shm_info;
-extern shm_boxes *shm_boxes_state;
-extern int NR_CARS, NR_TEAM;
+shm_struct *shm_info; //extern ?
+shm_boxes *shm_boxes_state; //extern ?
+int NR_CARS, NR_TEAM; // extern ?
 void team_manager();
 pthread_t* create_threads_array();
 car_struct* create_car_structs_array();
