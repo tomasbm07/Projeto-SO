@@ -18,6 +18,7 @@
 shm_struct *shm_info; 
 shm_boxes *shm_boxes_state; 
 int NR_CARS, NR_TEAM; 
+
 void team_manager();
 pthread_t* create_threads_array();
 car_struct* create_car_structs_array();

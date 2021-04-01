@@ -1669,3 +1669,535 @@
 [16:41:56] SERVER STARTED
 [16:41:56] SERVER CLOSED
 [16:41:56] Cleaning up...
+[20:46:1] Successfully read config file
+[20:46:1] SERVER STARTED
+[20:46:1] Malfunction manager process created
+[20:46:1] Successfully read config file
+[20:46:1] SERVER STARTED
+[20:46:1] Thread car created!
+[20:46:1] Thread car created!
+[20:46:1] Successfully read config file
+[20:46:1] SERVER STARTED
+[20:46:1] Thread car created!
+[20:46:1] Thread car created!
+[20:46:1] Successfully read config file
+[20:46:1] SERVER STARTED
+[20:46:1] Thread car created!
+[20:46:1] Thread car created!
+[20:46:1] Successfully read config file
+[20:46:1] SERVER STARTED
+[20:46:1] Thread car created!
+[20:46:1] Thread car created!
+[20:46:1] Successfully read config file
+[20:46:1] SERVER STARTED
+[20:46:1] Thread car created!
+[20:46:2] Thread car created!
+[20:46:1] Successfully read config file
+[20:46:1] SERVER STARTED
+[20:46:1] Created 5 team processes
+[20:46:1] Successfully read config file
+[20:46:1] SERVER STARTED
+[20:46:2] SERVER CLOSED
+[20:46:2] Cleaning up...
+[20:46:26] Successfully read config file
+[20:46:26] SERVER STARTED
+[20:46:26] Malfunction manager process created
+[20:46:26] Successfully read config file
+[20:46:26] SERVER STARTED
+[20:46:26] Thread car created!
+[20:46:26] Thread car created!
+[20:46:26] Successfully read config file
+[20:46:26] SERVER STARTED
+[20:46:26] Thread car created!
+[20:46:26] Thread car created!
+[20:46:26] Successfully read config file
+[20:46:26] SERVER STARTED
+[20:46:26] Thread car created!
+[20:46:26] Thread car created!
+[20:46:26] Successfully read config file
+[20:46:26] SERVER STARTED
+[20:46:26] Thread car created!
+[20:46:26] Thread car created!
+[20:46:26] Successfully read config file
+[20:46:26] SERVER STARTED
+[20:46:26] Thread car created!
+[20:46:26] Thread car created!
+[20:46:26] Successfully read config file
+[20:46:26] SERVER STARTED
+[20:46:26] Created 5 team processes
+[20:46:26] Successfully read config file
+[20:46:26] SERVER STARTED
+[20:46:26] SERVER CLOSED
+[20:46:26] Cleaning up...
+[20:49:7] Successfully read config file
+[20:49:7] SERVER STARTED
+[20:49:7] Malfunction manager process created
+[20:49:7] Successfully read config file
+[20:49:7] SERVER STARTED
+[20:49:7] Thread car created!
+[20:49:7] Thread car created!
+[20:49:7] Successfully read config file
+[20:49:7] SERVER STARTED
+[20:49:7] Thread car created!
+[20:49:7] Thread car created!
+[20:49:7] Successfully read config file
+[20:49:7] SERVER STARTED
+[20:49:7] Thread car created!
+[20:49:7] Thread car created!
+[20:49:7] Successfully read config file
+[20:49:7] SERVER STARTED
+[20:49:7] Thread car created!
+[20:49:7] Thread car created!
+[20:49:7] Successfully read config file
+[20:49:7] SERVER STARTED
+[20:49:7] Thread car created!
+[20:49:7] Thread car created!
+[20:49:7] Successfully read config file
+[20:49:7] SERVER STARTED
+[20:49:7] Created 5 team processes
+[20:49:7] Successfully read config file
+[20:49:7] SERVER STARTED
+[20:49:7] SERVER CLOSED
+[20:49:7] Cleaning up...
+[20:55:12] Semaphore initialized
+[20:55:12] Successfully read config file
+[20:55:12] SERVER STARTED
+[20:55:12] Malfunction manager process created
+[20:55:12] Semaphore initialized
+[20:55:12] Successfully read config file
+[20:55:12] SERVER STARTED
+[20:55:12] Team: OMEGALUL | Car Number: 13 | Fuel: 36.00L
+
+[20:55:12] Thread car created!
+[20:55:12] Team: OMEGALUL | Car Number: 12 | Fuel: 36.00L
+
+[20:55:12] Thread car created!
+[20:55:12] Semaphore initialized
+[20:55:12] Successfully read config file
+[20:55:12] SERVER STARTED
+[20:55:12] Team: OMEGALUL | Car Number: 9 | Fuel: 36.00L
+
+[20:55:12] Thread car created!
+[20:55:12] Team: OMEGALUL | Car Number: 8 | Fuel: 36.00L
+
+[20:55:12] Thread car created!
+[20:55:12] Semaphore initialized
+[20:55:12] Successfully read config file
+[20:55:12] SERVER STARTED
+[20:55:12] Team: OMEGALUL | Car Number: 17 | Fuel: 36.00L
+
+[20:55:12] Thread car created!
+[20:55:12] Team: OMEGALUL | Car Number: 16 | Fuel: 36.00L
+
+[20:55:12] Thread car created!
+[20:55:12] Semaphore initialized
+[20:55:12] Successfully read config file
+[20:55:12] SERVER STARTED
+[20:55:12] Team: OMEGALUL | Car Number: 0 | Fuel: 36.00L
+
+[20:55:12] Thread car created!
+[20:55:12] Team: OMEGALUL | Car Number: 1 | Fuel: 36.00L
+
+[20:55:12] Thread car created!
+[20:55:12] Semaphore initialized
+[20:55:12] Successfully read config file
+[20:55:12] SERVER STARTED
+[20:55:12] Team: OMEGALUL | Car Number: 4 | Fuel: 36.00L
+
+[20:55:12] Thread car created!
+[20:55:12] Team: OMEGALUL | Car Number: 5 | Fuel: 36.00L
+
+[20:55:12] Thread car created!
+[20:55:12] Semaphore initialized
+[20:55:12] Successfully read config file
+[20:55:12] SERVER STARTED
+[20:55:12] Created 5 team processes
+[20:55:12] Semaphore initialized
+[20:55:12] Successfully read config file
+[20:55:12] SERVER STARTED
+[20:55:12] SERVER CLOSED
+[20:55:12] Cleaning up...
+[20:55:41] Semaphore initialized
+[20:55:41] Successfully read config file
+[20:55:41] SERVER STARTED
+[20:55:41] Malfunction manager process created
+[20:55:41] Semaphore initialized
+[20:55:41] Successfully read config file
+[20:55:41] SERVER STARTED
+[20:55:41] Team: OMEGALUL | Car Number: 13 | Fuel: 36.00L
+[20:55:41] Thread car created!
+[20:55:41] Team: OMEGALUL | Car Number: 12 | Fuel: 36.00L
+[20:55:41] Thread car created!
+[20:55:41] Semaphore initialized
+[20:55:41] Successfully read config file
+[20:55:41] SERVER STARTED
+[20:55:41] Team: OMEGALUL | Car Number: 9 | Fuel: 36.00L
+[20:55:41] Thread car created!
+[20:55:41] Team: OMEGALUL | Car Number: 8 | Fuel: 36.00L
+[20:55:41] Thread car created!
+[20:55:41] Semaphore initialized
+[20:55:41] Successfully read config file
+[20:55:41] SERVER STARTED
+[20:55:41] Team: OMEGALUL | Car Number: 0 | Fuel: 36.00L
+[20:55:41] Thread car created!
+[20:55:41] Team: OMEGALUL | Car Number: 1 | Fuel: 36.00L
+[20:55:41] Thread car created!
+[20:55:41] Semaphore initialized
+[20:55:41] Successfully read config file
+[20:55:41] SERVER STARTED
+[20:55:41] Team: OMEGALUL | Car Number: 17 | Fuel: 36.00L
+[20:55:41] Thread car created!
+[20:55:41] Team: OMEGALUL | Car Number: 16 | Fuel: 36.00L
+[20:55:41] Thread car created!
+[20:55:41] Semaphore initialized
+[20:55:41] Successfully read config file
+[20:55:41] SERVER STARTED
+[20:55:41] Team: OMEGALUL | Car Number: 4 | Fuel: 36.00L
+[20:55:41] Thread car created!
+[20:55:41] Team: OMEGALUL | Car Number: 5 | Fuel: 36.00L
+[20:55:41] Thread car created!
+[20:55:41] Semaphore initialized
+[20:55:41] Successfully read config file
+[20:55:41] SERVER STARTED
+[20:55:41] Created 5 team processes
+[20:55:41] Semaphore initialized
+[20:55:41] Successfully read config file
+[20:55:41] SERVER STARTED
+[20:55:41] SERVER CLOSED
+[20:55:41] Cleaning up...
+[20:57:47] Semaphore initialized
+[20:57:47] Successfully read config file
+[20:57:47] SERVER STARTED
+[20:57:47] Malfunction manager process created
+[20:57:47] Semaphore initialized
+[20:57:47] Successfully read config file
+[20:57:47] SERVER STARTED
+[20:57:47] Team: OMEGALUL8 | Car Number: 17 | Fuel: 36.00L
+[20:57:47] Thread car created!
+[20:57:47] Team: OMEGALUL8 | Car Number: 16 | Fuel: 36.00L
+[20:57:47] Thread car created!
+[20:57:47] Semaphore initialized
+[20:57:47] Successfully read config file
+[20:57:47] SERVER STARTED
+[20:57:47] Team: OMEGALUL4 | Car Number: 8 | Fuel: 36.00L
+[20:57:47] Thread car created!
+[20:57:47] Team: OMEGALUL4 | Car Number: 9 | Fuel: 36.00L
+[20:57:47] Thread car created!
+[20:57:47] Semaphore initialized
+[20:57:47] Successfully read config file
+[20:57:47] SERVER STARTED
+[20:57:47] Team: OMEGALUL6 | Car Number: 12 | Fuel: 36.00L
+[20:57:47] Thread car created!
+[20:57:47] Team: OMEGALUL6 | Car Number: 13 | Fuel: 36.00L
+[20:57:47] Thread car created!
+[20:57:47] Semaphore initialized
+[20:57:47] Successfully read config file
+[20:57:47] SERVER STARTED
+[20:57:47] Team: OMEGALUL2 | Car Number: 4 | Fuel: 36.00L
+[20:57:47] Thread car created!
+[20:57:47] Team: OMEGALUL2 | Car Number: 5 | Fuel: 36.00L
+[20:57:47] Thread car created!
+[20:57:47] Semaphore initialized
+[20:57:47] Successfully read config file
+[20:57:47] SERVER STARTED
+[20:57:47] Team: OMEGALUL0 | Car Number: 1 | Fuel: 36.00L
+[20:57:47] Thread car created!
+[20:57:47] Team: OMEGALUL0 | Car Number: 0 | Fuel: 36.00L
+[20:57:47] Thread car created!
+[20:57:47] Semaphore initialized
+[20:57:47] Successfully read config file
+[20:57:47] SERVER STARTED
+[20:57:47] Created 5 team processes
+[20:57:47] Semaphore initialized
+[20:57:47] Successfully read config file
+[20:57:47] SERVER STARTED
+[20:57:47] SERVER CLOSED
+[20:57:47] Cleaning up...
+[20:58:9] Semaphore initialized
+[20:58:9] Successfully read config file
+[20:58:9] SERVER STARTED
+[20:58:9] Malfunction manager process created
+[20:58:9] Semaphore initialized
+[20:58:9] Successfully read config file
+[20:58:9] SERVER STARTED
+[20:58:9] Team: OMEGALUL3 | Car Number: 13 | Fuel: 36.00L
+[20:58:9] Thread car created!
+[20:58:9] Team: OMEGALUL3 | Car Number: 12 | Fuel: 36.00L
+[20:58:9] Thread car created!
+[20:58:9] Semaphore initialized
+[20:58:9] Successfully read config file
+[20:58:9] SERVER STARTED
+[20:58:9] Team: OMEGALUL4 | Car Number: 17 | Fuel: 36.00L
+[20:58:9] Thread car created!
+[20:58:9] Team: OMEGALUL4 | Car Number: 16 | Fuel: 36.00L
+[20:58:9] Thread car created!
+[20:58:9] Semaphore initialized
+[20:58:9] Successfully read config file
+[20:58:9] SERVER STARTED
+[20:58:9] Team: OMEGALUL2 | Car Number: 8 | Fuel: 36.00L
+[20:58:9] Thread car created!
+[20:58:9] Team: OMEGALUL2 | Car Number: 9 | Fuel: 36.00L
+[20:58:9] Thread car created!
+[20:58:9] Semaphore initialized
+[20:58:9] Successfully read config file
+[20:58:9] SERVER STARTED
+[20:58:9] Team: OMEGALUL1 | Car Number: 4 | Fuel: 36.00L
+[20:58:9] Thread car created!
+[20:58:9] Team: OMEGALUL1 | Car Number: 5 | Fuel: 36.00L
+[20:58:9] Thread car created!
+[20:58:9] Semaphore initialized
+[20:58:9] Successfully read config file
+[20:58:9] SERVER STARTED
+[20:58:9] Team: OMEGALUL0 | Car Number: 1 | Fuel: 36.00L
+[20:58:9] Thread car created!
+[20:58:9] Team: OMEGALUL0 | Car Number: 0 | Fuel: 36.00L
+[20:58:9] Thread car created!
+[20:58:9] Semaphore initialized
+[20:58:9] Successfully read config file
+[20:58:9] SERVER STARTED
+[20:58:9] Created 5 team processes
+[20:58:9] Semaphore initialized
+[20:58:9] Successfully read config file
+[20:58:9] SERVER STARTED
+[20:58:9] SERVER CLOSED
+[20:58:9] Cleaning up...
+[20:58:35] Semaphore initialized
+[20:58:35] Successfully read config file
+[20:58:35] SERVER STARTED
+[20:58:35] Malfunction manager process created
+[20:58:35] Semaphore initialized
+[20:58:35] Successfully read config file
+[20:58:35] SERVER STARTED
+[20:58:35] Team: OMEGALUL3 | Car Number: 13 | Fuel: 36.00L
+[20:58:35] Thread car created!
+[20:58:35] Team: OMEGALUL3 | Car Number: 12 | Fuel: 36.00L
+[20:58:35] Thread car created!
+[20:58:35] Semaphore initialized
+[20:58:35] Successfully read config file
+[20:58:35] SERVER STARTED
+[20:58:35] Team: OMEGALUL2 | Car Number: 9 | Fuel: 36.00L
+[20:58:35] Thread car created!
+[20:58:35] Team: OMEGALUL2 | Car Number: 8 | Fuel: 36.00L
+[20:58:35] Thread car created!
+[20:58:35] Semaphore initialized
+[20:58:35] Successfully read config file
+[20:58:35] SERVER STARTED
+[20:58:35] Team: OMEGALUL4 | Car Number: 17 | Fuel: 36.00L
+[20:58:35] Thread car created!
+[20:58:35] Team: OMEGALUL4 | Car Number: 16 | Fuel: 36.00L
+[20:58:35] Thread car created!
+[20:58:35] Semaphore initialized
+[20:58:35] Successfully read config file
+[20:58:35] SERVER STARTED
+[20:58:35] Team: OMEGALUL0 | Car Number: 1 | Fuel: 36.00L
+[20:58:35] Thread car created!
+[20:58:35] Team: OMEGALUL0 | Car Number: 0 | Fuel: 36.00L
+[20:58:35] Thread car created!
+[20:58:35] Semaphore initialized
+[20:58:35] Successfully read config file
+[20:58:35] SERVER STARTED
+[20:58:35] Team: OMEGALUL1 | Car Number: 5 | Fuel: 36.00L
+[20:58:35] Thread car created!
+[20:58:35] Team: OMEGALUL1 | Car Number: 4 | Fuel: 36.00L
+[20:58:35] Thread car created!
+[20:58:35] Semaphore initialized
+[20:58:35] Successfully read config file
+[20:58:35] SERVER STARTED
+[20:58:35] Created 5 team processes
+[20:58:35] Semaphore initialized
+[20:58:35] Successfully read config file
+[20:58:35] SERVER STARTED
+[20:58:35] SERVER CLOSED
+[20:58:35] Cleaning up...
+[21:41:9] Semaphore initialized
+[21:41:9] Successfully read config file
+[21:41:9] SERVER STARTED
+[21:41:9] Malfunction manager process created
+[21:41:9] Semaphore initialized
+[21:41:9] Successfully read config file
+[21:41:9] SERVER STARTED
+[21:41:9] Team: OMEGALUL4 | Car Number: 17 | Fuel: 36.00L
+[21:41:9] Thread car created!
+[21:41:9] Team: OMEGALUL4 | Car Number: 16 | Fuel: 36.00L
+[21:41:9] Thread car created!
+[21:41:9] Semaphore initialized
+[21:41:9] Successfully read config file
+[21:41:9] SERVER STARTED
+[21:41:9] Team: OMEGALUL2 | Car Number: 8 | Fuel: 36.00L
+[21:41:9] Thread car created!
+[21:41:9] Team: OMEGALUL2 | Car Number: 9 | Fuel: 36.00L
+[21:41:9] Thread car created!
+[21:41:9] Semaphore initialized
+[21:41:9] Successfully read config file
+[21:41:9] SERVER STARTED
+[21:41:9] Team: OMEGALUL3 | Car Number: 12 | Fuel: 36.00L
+[21:41:9] Thread car created!
+[21:41:9] Team: OMEGALUL3 | Car Number: 13 | Fuel: 36.00L
+[21:41:9] Thread car created!
+[21:41:9] Semaphore initialized
+[21:41:9] Successfully read config file
+[21:41:9] SERVER STARTED
+[21:41:9] Team: OMEGALUL1 | Car Number: 4 | Fuel: 36.00L
+[21:41:9] Thread car created!
+[21:41:9] Team: OMEGALUL1 | Car Number: 5 | Fuel: 36.00L
+[21:41:9] Thread car created!
+[21:41:9] Semaphore initialized
+[21:41:9] Successfully read config file
+[21:41:9] SERVER STARTED
+[21:41:9] Team: OMEGALUL0 | Car Number: 0 | Fuel: 36.00L
+[21:41:9] Thread car created!
+[21:41:9] Team: OMEGALUL0 | Car Number: 1 | Fuel: 36.00L
+[21:41:9] Thread car created!
+[21:41:9] Semaphore initialized
+[21:41:9] Successfully read config file
+[21:41:9] SERVER STARTED
+[21:41:9] Created 5 team processes
+[21:41:9] Semaphore initialized
+[21:41:9] Successfully read config file
+[21:41:9] SERVER STARTED
+[21:41:9] SERVER CLOSED
+[21:41:9] Cleaning up...
+[21:48:26] Semaphore initialized
+[21:48:26] Successfully read config file
+[21:48:26] SERVER STARTED
+[21:48:26] Malfunction manager process created
+[21:48:26] Semaphore initialized
+[21:48:26] Successfully read config file
+[21:48:26] SERVER STARTED
+[21:48:26] Team: OMEGALUL3 | Car Number: 13 | Fuel: 36.00L
+[21:48:26] Thread car created!
+[21:48:26] Team: OMEGALUL3 | Car Number: 12 | Fuel: 36.00L
+[21:48:26] Thread car created!
+[21:48:26] Semaphore initialized
+[21:48:26] Successfully read config file
+[21:48:26] SERVER STARTED
+[21:48:26] Team: OMEGALUL4 | Car Number: 17 | Fuel: 36.00L
+[21:48:26] Thread car created!
+[21:48:26] Team: OMEGALUL4 | Car Number: 16 | Fuel: 36.00L
+[21:48:26] Thread car created!
+[21:48:26] Semaphore initialized
+[21:48:26] Successfully read config file
+[21:48:26] SERVER STARTED
+[21:48:26] Team: OMEGALUL1 | Car Number: 4 | Fuel: 36.00L
+[21:48:26] Thread car created!
+[21:48:26] Team: OMEGALUL1 | Car Number: 5 | Fuel: 36.00L
+[21:48:26] Thread car created!
+[21:48:26] Semaphore initialized
+[21:48:26] Successfully read config file
+[21:48:26] SERVER STARTED
+[21:48:26] Team: OMEGALUL2 | Car Number: 9 | Fuel: 36.00L
+[21:48:26] Thread car created!
+[21:48:26] Team: OMEGALUL2 | Car Number: 8 | Fuel: 36.00L
+[21:48:26] Thread car created!
+[21:48:26] Semaphore initialized
+[21:48:26] Successfully read config file
+[21:48:26] SERVER STARTED
+[21:48:26] Team: OMEGALUL0 | Car Number: 1 | Fuel: 36.00L
+[21:48:26] Thread car created!
+[21:48:26] Team: OMEGALUL0 | Car Number: 0 | Fuel: 36.00L
+[21:48:26] Thread car created!
+[21:48:26] Semaphore initialized
+[21:48:26] Successfully read config file
+[21:48:26] SERVER STARTED
+[21:48:26] Created 5 team processes
+[21:48:26] Semaphore initialized
+[21:48:26] Successfully read config file
+[21:48:26] SERVER STARTED
+[21:48:26] SERVER CLOSED
+[21:48:26] Cleaning up...
+[21:48:31] Semaphore initialized
+[21:48:31] Successfully read config file
+[21:48:31] SERVER STARTED
+[21:48:31] Malfunction manager process created
+[21:48:31] Semaphore initialized
+[21:48:31] Successfully read config file
+[21:48:31] SERVER STARTED
+[21:48:31] Team: OMEGALUL3 | Car Number: 12 | Fuel: 36.00L
+[21:48:31] Thread car created!
+[21:48:31] Team: OMEGALUL3 | Car Number: 13 | Fuel: 36.00L
+[21:48:31] Thread car created!
+[21:48:31] Semaphore initialized
+[21:48:31] Successfully read config file
+[21:48:31] SERVER STARTED
+[21:48:31] Team: OMEGALUL4 | Car Number: 17 | Fuel: 36.00L
+[21:48:31] Thread car created!
+[21:48:31] Team: OMEGALUL4 | Car Number: 16 | Fuel: 36.00L
+[21:48:31] Thread car created!
+[21:48:31] Semaphore initialized
+[21:48:31] Successfully read config file
+[21:48:31] SERVER STARTED
+[21:48:31] Team: OMEGALUL2 | Car Number: 8 | Fuel: 36.00L
+[21:48:31] Thread car created!
+[21:48:31] Team: OMEGALUL2 | Car Number: 9 | Fuel: 36.00L
+[21:48:31] Thread car created!
+[21:48:31] Semaphore initialized
+[21:48:31] Successfully read config file
+[21:48:31] SERVER STARTED
+[21:48:31] Team: OMEGALUL1 | Car Number: 4 | Fuel: 36.00L
+[21:48:31] Thread car created!
+[21:48:31] Team: OMEGALUL1 | Car Number: 5 | Fuel: 36.00L
+[21:48:31] Thread car created!
+[21:48:31] Semaphore initialized
+[21:48:31] Successfully read config file
+[21:48:31] SERVER STARTED
+[21:48:31] Team: OMEGALUL0 | Car Number: 1 | Fuel: 36.00L
+[21:48:31] Thread car created!
+[21:48:31] Team: OMEGALUL0 | Car Number: 0 | Fuel: 36.00L
+[21:48:31] Thread car created!
+[21:48:31] Semaphore initialized
+[21:48:31] Successfully read config file
+[21:48:31] SERVER STARTED
+[21:48:31] Created 5 team processes
+[21:48:31] Semaphore initialized
+[21:48:31] Successfully read config file
+[21:48:31] SERVER STARTED
+[21:48:31] SERVER CLOSED
+[21:48:31] Cleaning up...
+[21:48:38] Semaphore initialized
+[21:48:38] Successfully read config file
+[21:48:38] SERVER STARTED
+[21:48:38] Malfunction manager process created
+[21:48:38] Semaphore initialized
+[21:48:38] Successfully read config file
+[21:48:38] SERVER STARTED
+[21:48:38] Team: OMEGALUL3 | Car Number: 13 | Fuel: 36.00L
+[21:48:38] Thread car created!
+[21:48:38] Team: OMEGALUL3 | Car Number: 12 | Fuel: 36.00L
+[21:48:38] Thread car created!
+[21:48:38] Semaphore initialized
+[21:48:38] Successfully read config file
+[21:48:38] SERVER STARTED
+[21:48:38] Team: OMEGALUL2 | Car Number: 9 | Fuel: 36.00L
+[21:48:38] Thread car created!
+[21:48:38] Team: OMEGALUL2 | Car Number: 8 | Fuel: 36.00L
+[21:48:38] Thread car created!
+[21:48:38] Semaphore initialized
+[21:48:38] Successfully read config file
+[21:48:38] SERVER STARTED
+[21:48:38] Team: OMEGALUL1 | Car Number: 4 | Fuel: 36.00L
+[21:48:38] Thread car created!
+[21:48:38] Team: OMEGALUL1 | Car Number: 5 | Fuel: 36.00L
+[21:48:38] Thread car created!
+[21:48:38] Semaphore initialized
+[21:48:38] Successfully read config file
+[21:48:38] SERVER STARTED
+[21:48:38] Team: OMEGALUL4 | Car Number: 17 | Fuel: 36.00L
+[21:48:38] Thread car created!
+[21:48:38] Team: OMEGALUL4 | Car Number: 16 | Fuel: 36.00L
+[21:48:38] Thread car created!
+[21:48:38] Semaphore initialized
+[21:48:38] Successfully read config file
+[21:48:38] SERVER STARTED
+[21:48:38] Team: OMEGALUL0 | Car Number: 1 | Fuel: 36.00L
+[21:48:38] Thread car created!
+[21:48:38] Team: OMEGALUL0 | Car Number: 0 | Fuel: 36.00L
+[21:48:38] Thread car created!
+[21:48:38] Semaphore initialized
+[21:48:38] Successfully read config file
+[21:48:38] SERVER STARTED
+[21:48:38] Created 5 team processes
+[21:48:38] Semaphore initialized
+[21:48:38] Successfully read config file
+[21:48:38] SERVER STARTED
+[21:48:38] SERVER CLOSED
+[21:48:38] Cleaning up...
