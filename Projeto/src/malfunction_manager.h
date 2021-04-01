@@ -1,9 +1,10 @@
 #ifndef MALFUNCTION_H
 #define MALFUNCTION_H
 
+#endif
+
 #include "write_output.h"
 #include "config_file.h"
-#include "Simulator.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,4 +12,4 @@
 
 void malfunction_manager(void);
 
-#endif
+

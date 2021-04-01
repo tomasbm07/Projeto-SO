@@ -314,3 +314,392 @@
 [17:28:20] Thread car created!
 [17:28:20] Cleaning up...
 [17:28:20] SERVER CLOSED
+[16:43:54] Successfully read config file
+[16:43:54] Server started
+[16:43:54] Malfunction manager process created
+[16:43:54] Created 5 team processes
+[16:43:54] Thread car created!
+[16:43:54] Thread car created!
+[16:43:54] Thread car created!
+[16:43:54] Thread car created!
+[16:43:54] Thread car created!
+[16:43:54] Thread car created!
+[16:43:54] Thread car created!
+[16:43:54] Thread car created!
+[16:43:54] Thread car created!
+[16:43:54] Thread car created!
+[16:43:54] Server closed
+[16:44:35] Successfully read config file
+[16:44:35] Server started
+[16:44:36] Malfunction manager process created
+[16:44:36] Created 5 team processes
+[16:44:36] Thread car created!
+[16:44:36] Thread car created!
+[16:44:36] Thread car created!
+[16:44:36] Thread car created!
+[16:44:36] Thread car created!
+[16:44:36] Thread car created!
+[16:44:36] Thread car created!
+[16:44:36] Thread car created!
+[16:44:36] Thread car created!
+[16:44:36] Thread car created!
+[16:44:36] Server closed
+[16:44:39] Successfully read config file
+[16:44:39] Server started
+[16:44:39] Malfunction manager process created
+[16:44:39] Created 5 team processes
+[16:44:39] Thread car created!
+[16:44:39] Thread car created!
+[16:44:39] Thread car created!
+[16:44:39] Thread car created!
+[16:44:39] Thread car created!
+[16:44:39] Thread car created!
+[16:44:39] Thread car created!
+[16:44:39] Thread car created!
+[16:44:39] Thread car created!
+[16:44:39] Thread car created!
+[16:44:39] Server closed
+[22:59:25] Successfully read config file
+[22:59:25] Server started
+[22:59:25] Malfunction manager process created
+[22:59:25] Created 5 team processes
+[22:59:25] Thread car created!
+[22:59:25] Thread car created!
+[22:59:25] Thread car created!
+[22:59:25] Thread car created!
+[22:59:25] Thread car created!
+[22:59:25] Thread car created!
+[22:59:25] Thread car created!
+[22:59:25] Thread car created!
+[22:59:25] Thread car created!
+[22:59:25] Thread car created!
+[22:59:25] Server closed
+[23:2:23] Successfully read config file
+[23:2:23] Server started
+[23:2:23] Malfunction manager process created
+[23:2:23] Created 5 team processes
+[23:2:23] Thread car created!
+[23:2:23] Thread car created!
+[23:2:23] Thread car created!
+[23:2:23] Thread car created!
+[23:2:23] Thread car created!
+[23:2:23] Thread car created!
+[23:2:23] Thread car created!
+[23:2:23] Thread car created!
+[23:2:23] Thread car created!
+[23:2:23] Thread car created!
+[23:2:23] Server closed
+[23:6:45] Successfully read config file
+[23:6:45] Server started
+[23:6:45] Malfunction manager process created
+[23:6:45] Created 5 team processes
+[23:6:45] Thread car created!
+[23:6:45] Thread car created!
+[23:6:45] Thread car created!
+[23:6:45] Thread car created!
+[23:6:45] Thread car created!
+[23:6:45] Thread car created!
+[23:6:45] Thread car created!
+[23:6:45] Thread car created!
+[23:6:45] Thread car created!
+[23:6:45] Thread car created!
+[23:6:45] Server closed
+[23:22:1] Successfully read config file
+[23:22:2] SERVER STARTED
+[23:22:2] Malfunction manager process created
+[23:22:2] Created 5 team processes
+[23:22:2] Thread car created!
+[23:22:2] Thread car created!
+[23:22:2] Thread car created!
+[23:22:2] Thread car created!
+[23:22:2] Thread car created!
+[23:22:2] Thread car created!
+[23:22:2] Thread car created!
+[23:22:2] Thread car created!
+[23:22:2] Thread car created!
+[23:22:2] Thread car created!
+[23:22:2] Cleaning up...
+[23:22:2] SERVER CLOSED
+[23:22:9] Successfully read config file
+[23:22:9] SERVER STARTED
+[23:22:9] Malfunction manager process created
+[23:22:9] Created 5 team processes
+[23:22:9] Thread car created!
+[23:22:9] Thread car created!
+[23:22:9] Thread car created!
+[23:22:9] Thread car created!
+[23:22:9] Thread car created!
+[23:22:9] Thread car created!
+[23:22:9] Thread car created!
+[23:22:9] Thread car created!
+[23:22:9] Thread car created!
+[23:22:9] Thread car created!
+[23:22:9] Cleaning up...
+[23:22:9] SERVER CLOSED
+[23:35:11] Successfully read config file
+[23:35:11] SERVER STARTED
+[23:35:11] Malfunction manager process created
+[23:35:11] Created 5 team processes
+[23:35:11] Thread car created!
+[23:35:11] Thread car created!
+[23:35:11] Thread car created!
+[23:35:11] Thread car created!
+[23:35:11] Thread car created!
+[23:35:11] Thread car created!
+[23:35:11] Thread car created!
+[23:35:11] Thread car created!
+[23:35:11] Thread car created!
+[23:35:11] Thread car created!
+[23:35:12] Cleaning up...
+[23:35:12] SERVER CLOSED
+[12:16:13] Successfully read config file
+[12:16:13] SERVER STARTED
+[12:16:13] Cleaning up...
+[12:16:13] SERVER CLOSED
+[12:43:16] Successfully read config file
+[12:43:16] SERVER STARTED
+[12:43:16] Cleaning up...
+[12:43:16] SERVER CLOSED
+[12:46:14] Successfully read config file
+[12:46:14] SERVER STARTED
+[12:46:14] Cleaning up...
+[12:46:14] SERVER CLOSED
+[12:49:51] Successfully read config file
+[12:49:51] SERVER STARTED
+[12:49:52] Cleaning up...
+[12:49:52] SERVER CLOSED
+[12:49:56] Successfully read config file
+[12:49:56] SERVER STARTED
+[12:49:56] Created 5 team processes
+[12:49:56] Cleaning up...
+[12:49:56] SERVER CLOSED
+[12:58:26] Successfully read config file
+[12:58:26] SERVER STARTED
+[12:58:26] Created 5 team processes
+[12:58:27] Cleaning up...
+[12:58:27] SERVER CLOSED
+[12:58:46] Successfully read config file
+[12:58:46] SERVER STARTED
+[12:58:46] Created 5 team processes
+[12:58:46] Cleaning up...
+[12:58:46] SERVER CLOSED
+[13:0:28] Successfully read config file
+[13:0:28] SERVER STARTED
+[13:0:28] Created 5 team processes
+[13:0:29] Cleaning up...
+[13:0:29] SERVER CLOSED
+[13:1:22] Successfully read config file
+[13:1:22] SERVER STARTED
+[13:1:22] Created 5 team processes
+[13:1:22] Cleaning up...
+[13:1:22] SERVER CLOSED
+[13:1:48] Successfully read config file
+[13:1:48] SERVER STARTED
+[13:1:48] Created 5 team processes
+[13:1:48] Cleaning up...
+[13:1:48] SERVER CLOSED
+[13:5:2] Successfully read config file
+[13:5:2] SERVER STARTED
+[13:5:2] Created 5 team processes
+[13:5:3] Cleaning up...
+[13:5:3] SERVER CLOSED
+[13:5:49] Successfully read config file
+[13:5:49] SERVER STARTED
+[13:5:49] Created 5 team processes
+[13:5:50] Cleaning up...
+[13:5:50] SERVER CLOSED
+[13:6:19] Successfully read config file
+[13:6:19] SERVER STARTED
+[13:6:19] Created 5 team processes
+[13:6:20] Cleaning up...
+[13:6:20] SERVER CLOSED
+[13:6:30] Successfully read config file
+[13:6:30] SERVER STARTED
+[13:6:30] Created 5 team processes
+[13:6:30] Cleaning up...
+[13:6:30] SERVER CLOSED
+[14:23:45] Successfully read config file
+[14:23:45] SERVER STARTED
+[14:23:45] Created 5 team processes
+[14:23:45] Cleaning up...
+[14:23:45] SERVER CLOSED
+[15:23:56] Successfully read config file
+[15:23:56] SERVER STARTED
+[15:23:56] Created 5 team processes
+[15:23:56] Cleaning up...
+[15:23:56] SERVER CLOSED
+[15:24:11] Successfully read config file
+[15:24:11] SERVER STARTED
+[15:24:11] Created 5 team processes
+[15:24:11] Cleaning up...
+[15:24:11] SERVER CLOSED
+[15:50:5] Successfully read config file
+[15:50:5] SERVER STARTED
+[15:50:5] Created 5 team processes
+[15:50:5] Cleaning up...
+[15:50:5] SERVER CLOSED
+[15:51:17] Successfully read config file
+[15:51:17] SERVER STARTED
+[15:51:17] Created 5 team processes
+[15:51:17] Cleaning up...
+[15:51:17] SERVER CLOSED
+[16:7:32] Successfully read config file
+[16:7:32] SERVER STARTED
+[16:7:32] Created 5 team processes
+[16:7:32] Cleaning up...
+[16:7:32] SERVER CLOSED
+[16:8:11] Successfully read config file
+[16:8:11] SERVER STARTED
+[16:8:11] Created 5 team processes
+[16:8:11] Cleaning up...
+[16:8:11] SERVER CLOSED
+[16:24:32] Successfully read config file
+[16:24:32] SERVER STARTED
+[16:24:32] Created 5 team processes
+[16:24:32] Cleaning up...
+[16:24:32] SERVER CLOSED
+[12:16:46] Successfully read config file
+[12:16:46] SERVER STARTED
+[12:16:46] Created 5 team processes
+[12:16:46] Cleaning up...
+[12:16:46] SERVER CLOSED
+[12:19:11] Successfully read config file
+[12:19:11] SERVER STARTED
+[12:19:11] Created 5 team processes
+[12:19:11] Cleaning up...
+[12:19:11] SERVER CLOSED
+[12:19:58] Successfully read config file
+[12:19:58] SERVER STARTED
+[12:19:58] Created 5 team processes
+[12:19:58] Thread car created!
+[12:19:58] Thread car created!
+[12:19:58] Thread car created!
+[12:19:58] Thread car created!
+[12:19:58] Thread car created!
+[12:19:58] Thread car created!
+[12:19:58] Thread car created!
+[12:19:58] Thread car created!
+[12:19:58] Thread car created!
+[12:19:58] Thread car created!
+[12:19:58] Cleaning up...
+[12:19:58] SERVER CLOSED
+[12:22:57] Successfully read config file
+[12:22:57] SERVER STARTED
+[12:22:57] Created 5 team processes
+[12:22:57] Thread car created!
+[12:22:57] Thread car created!
+[12:22:57] Thread car created!
+[12:22:57] Thread car created!
+[12:22:57] Thread car created!
+[12:22:57] Thread car created!
+[12:22:57] Thread car created!
+[12:22:57] Thread car created!
+[12:22:57] Thread car created!
+[12:22:57] Thread car created!
+[12:22:57] Cleaning up...
+[12:22:57] SERVER CLOSED
+[12:28:55] Successfully read config file
+[12:28:55] SERVER STARTED
+[12:28:55] Created 5 team processes
+[12:28:55] Thread car created!
+[12:28:55] Thread car created!
+[12:28:55] Thread car created!
+[12:28:55] Thread car created!
+[12:28:55] Thread car created!
+[12:28:55] Thread car created!
+[12:28:55] Thread car created!
+[12:28:55] Thread car created!
+[12:28:55] Thread car created!
+[12:28:55] Thread car created!
+[12:28:55] Cleaning up...
+[12:28:55] SERVER CLOSED
+[12:30:8] Successfully read config file
+[12:30:8] SERVER STARTED
+[12:30:8] Created 5 team processes
+[12:30:8] Thread car created!
+[12:30:8] Thread car created!
+[12:30:8] Thread car created!
+[12:30:8] Thread car created!
+[12:30:8] Thread car created!
+[12:30:8] Thread car created!
+[12:30:8] Thread car created!
+[12:30:8] Thread car created!
+[12:30:8] Thread car created!
+[12:30:8] Thread car created!
+[12:30:8] Cleaning up...
+[12:30:8] SERVER CLOSED
+[12:30:38] Successfully read config file
+[12:30:38] SERVER STARTED
+[12:30:38] Created 5 team processes
+[12:30:38] Thread car created!
+[12:30:38] Thread car created!
+[12:30:38] Thread car created!
+[12:30:38] Thread car created!
+[12:30:38] Thread car created!
+[12:30:38] Thread car created!
+[12:30:38] Thread car created!
+[12:30:38] Thread car created!
+[12:30:38] Thread car created!
+[12:30:38] Thread car created!
+[12:30:38] Cleaning up...
+[12:30:38] SERVER CLOSED
+[12:33:2] Successfully read config file
+[12:33:2] SERVER STARTED
+[12:33:2] Created 5 team processes
+[12:33:2] Thread car created!
+[12:33:2] Thread car created!
+[12:33:2] Thread car created!
+[12:33:2] Thread car created!
+[12:33:2] Thread car created!
+[12:33:2] Thread car created!
+[12:33:2] Thread car created!
+[12:33:2] Thread car created!
+[12:33:2] Thread car created!
+[12:33:2] Thread car created!
+[12:33:2] Cleaning up...
+[12:33:2] SERVER CLOSED
+[12:33:42] Successfully read config file
+[12:33:42] SERVER STARTED
+[12:33:42] Created 5 team processes
+[12:33:42] Thread car created!
+[12:33:42] Thread car created!
+[12:33:42] Thread car created!
+[12:33:42] Thread car created!
+[12:33:42] Thread car created!
+[12:33:42] Thread car created!
+[12:33:42] Thread car created!
+[12:33:42] Thread car created!
+[12:33:42] Thread car created!
+[12:33:42] Thread car created!
+[12:33:42] Cleaning up...
+[12:33:42] SERVER CLOSED
+[12:34:15] Successfully read config file
+[12:34:15] SERVER STARTED
+[12:34:15] Created 5 team processes
+[12:34:15] Thread car created!
+[12:34:15] Thread car created!
+[12:34:15] Thread car created!
+[12:34:15] Thread car created!
+[12:34:15] Thread car created!
+[12:34:15] Thread car created!
+[12:34:15] Thread car created!
+[12:34:15] Thread car created!
+[12:34:15] Thread car created!
+[12:34:15] Thread car created!
+[12:34:15] Cleaning up...
+[12:34:15] SERVER CLOSED
+[12:41:18] Successfully read config file
+[12:41:18] SERVER STARTED
+[12:41:18] Created 5 team processes
+[12:41:18] Thread car created!
+[12:41:18] Thread car created!
+[12:41:18] Thread car created!
+[12:41:18] Thread car created!
+[12:41:18] Thread car created!
+[12:41:18] Thread car created!
+[12:41:18] Thread car created!
+[12:41:18] Thread car created!
+[12:41:18] Thread car created!
+[12:41:18] Thread car created!
+[12:41:18] Cleaning up...
+[12:41:18] SERVER CLOSED

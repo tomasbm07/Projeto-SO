@@ -1,6 +1,8 @@
 #ifndef SIMULATOR_H
 #define SIMULATOR_H
 
+#endif
+
 #include <semaphore.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
@@ -10,12 +12,11 @@
 #include <sys/fcntl.h>
 #include <sys/wait.h>
 
-#include "car.h"
-#include "config_file.h"
-#include "malfunction_manager.h"
 #include "race_manager.h"
-#include "team_manager.h"
+#include "config_file.h"
 #include "write_output.h"
+#include "malfunction_manager.h"
+
 
 #define DEBUG  // coment this this line to remove debug information
 
@@ -24,12 +25,11 @@
 #endif
 */
 
-key_t shmkey;
 
+key_t shmkey;
 
 void initiate_resources();
 void initiate_shm();
 void initiate_sems();
 void destroy_resources();
 
-#endif

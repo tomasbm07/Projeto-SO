@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 void write_log(char* line);
 
 #endif

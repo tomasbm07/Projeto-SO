@@ -1,8 +1,9 @@
 #include "Simulator.h"
 
-int shmid;
-car_struct *cars;
-sem_t *mutex;
+int shm_main_id, shm_boxes_id;
+shm_struct* shm_info;
+shm_boxes * shm_boxes_state;
+sem_t *log_mutex;
 
 int main(int argc, char* argv[]) {
   int i;
@@ -43,6 +44,18 @@ int main(int argc, char* argv[]) {
   write_log("SERVER STARTED");
 	
   initiate_resources();
+
+#ifdef DEBUG
+	for (i = 0; i < NR_TEAM; i++){
+		printf("TEAM: %d\t", i);
+		int j;
+		for(j = 0 ; j < NR_CARS; j++){
+			printf("Car %d Speed: %.2f\t", shm_info->cars[i*NR_CARS+j].number, shm_info->cars[i*NR_CARS+j].speed);
+		}
+		printf("\n");
+	}
+#endif	
+
 	
   // create race manager process
   if ( !fork() ) race_manager();
@@ -52,6 +65,18 @@ int main(int argc, char* argv[]) {
 
   // wait for both process to finish
   for (i = 0; i < 2; i++) wait(NULL);
+	
+	
+#ifdef DEBUG
+	for (i = 0; i < NR_TEAM; i++){
+		printf("TEAM: %d\t", i);
+		int j;
+		for(j = 0 ; j < NR_CARS; j++){
+			printf("Car %d Speed: %.2f\t", shm_info->cars[i*NR_CARS+j].number, shm_info->cars[i*NR_CARS+j].speed);
+		}
+		printf("\n");
+	}
+#endif	
 
   // destroy shared mem and semaphores
   destroy_resources();
@@ -60,42 +85,63 @@ int main(int argc, char* argv[]) {
   exit(0);
 }
 
+void get_id(int *id, key_t key, size_t size, int flag){
+	*id = shmget(key, size, flag);
+	if (*id < 1){
+		write_log("Error creating shm memory!");
+		destroy_resources();
+		exit(1);
+	}
+	
+}
+
 void initiate_shm(){
 	// create shared mem key
-  if((shmkey = ftok( ".", getpid())) == (key_t) -1 ){
+  if( (shmkey = ftok(".", getpid()) ) == (key_t) -1 ){
     write_log("IPC error: ftok");
     exit(1);
   }
-  
+
+#ifdef DEBUG
   printf("Created SHM KEY = %d\n",shmkey);
+#endif
 
   // create shared mem
-  shmid = shmget(shmkey, sizeof(car_struct)*NR_CARS*NR_TEAM , IPC_CREAT|IPC_EXCL|0700); // shm memory cannot exist
-  if (shmid < 1){
-	write_log("Error creating shm memory!");
-	exit(1);
-	}
+  get_id(&shm_main_id, shmkey, sizeof(shm_struct) + sizeof(car_shm_struct)*NR_TEAM*NR_CARS, IPC_CREAT|IPC_EXCL|0700);
 	
-
 	// attatch mem
-  cars = (car_struct*) shmat(shmid, NULL, 0);
-	if (cars < (car_struct*) 1){
+  shm_info = (shm_struct*) shmat(shm_main_id, NULL, 0);
+	if (shm_info < (shm_struct*) 1){
 		write_log("Error attaching memory!\n");
     	destroy_resources();
 		exit(1);
 	}
+	
+	get_id(&shm_boxes_id, IPC_PRIVATE, sizeof(shm_boxes) + sizeof(char)*NR_TEAM, IPC_CREAT|IPC_EXCL|0700);
+	
+	shm_boxes_state = (shm_boxes*) shmat(shm_boxes_id, NULL, 0);
+	if (shm_boxes_state < (shm_boxes*) 1){
+		write_log("Error attaching memory!\n");
+    	destroy_resources();
+		exit(1);
+	}
+	
 }
 
 void initiate_sems(){
 	//create semaphores
-  	sem_unlink("MUTEX");
-	mutex = sem_open("MUTEX", O_CREAT|O_EXCL, 0700,1);
+  	sem_unlink("LOG_MUTEX");
+	log_mutex = sem_open("LOG_MUTEX", O_CREAT|O_EXCL, 0700,1);
 	
-	if(mutex == SEM_FAILED){
+	if(log_mutex == SEM_FAILED){
 		write_log("Failed to create the semaphore MUTEX");
     	destroy_resources();
     	exit(1);
 	}
+	
+#ifdef DEBUG
+	printf("Semaphore initialized\n");
+#endif
 }
 
 void initiate_resources(){
@@ -106,8 +152,12 @@ void initiate_resources(){
 
 void destroy_resources(void) {
   write_log("Cleaning up...");
-  sem_close(mutex);
-  sem_unlink("MUTEX");
-  shmdt(cars);
-  shmctl(shmid, IPC_RMID, NULL);
+  sem_close(log_mutex);
+  sem_unlink("LOG_MUTEX");
+  
+  shmdt(shm_info);
+  shmctl(shm_main_id, IPC_RMID, NULL);
+  
+  shmdt(shm_boxes_state);
+  shmctl(shm_boxes_id, IPC_RMID, NULL);
 }
