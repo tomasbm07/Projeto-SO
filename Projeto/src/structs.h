@@ -13,7 +13,7 @@ typedef struct {
 
 typedef struct{
 	int refill_counter;
-	char box_state[]; //
+	char box_state[]; // 'R' = Reserved; 'E' = Empty; 'F' = Full;
 } shm_boxes;
 
 typedef struct {

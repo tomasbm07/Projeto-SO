@@ -3,7 +3,7 @@
 int shm_main_id, shm_boxes_id;
 shm_struct* shm_info;
 shm_boxes* shm_boxes_state;
-sem_t* sem_cars;
+sem_t *(*sem_cars), *(*sem_box);
 
 
 int main(int argc, char* argv[]) {
@@ -140,16 +140,18 @@ void initiate_sems() {
   // create semaphores
   create_sem("LOG_MUTEX", &log_mutex, 0);
   
-  printf("%d\n",NR_CARS*NR_TEAM);
-  
-  sem_cars = (sem_t*) malloc(sizeof(sem_t)*NR_CARS*NR_TEAM);
+  sem_cars = (sem_t**) malloc( sizeof(sem_t*) * NR_CARS * NR_TEAM);
   int i;
   char str[50];
   for (i = 0; i<NR_CARS*NR_TEAM; i++){
   		sprintf(str, "CAR%d",i);
-  		
-  		printf("%s\n",str);
-  		create_sem(str, &(sem_cars), i);
+  		create_sem(str, sem_cars, i);
+  }
+  
+  sem_box = (sem_t**) malloc( sizeof(sem_t*) * NR_TEAM);
+  for(i = 0; i<NR_TEAM;i++){
+  	sprintf(str, "BOX%d",i);
+  	create_sem(str, sem_box, i);
   }
   
 #ifdef DEBUG
@@ -177,7 +179,14 @@ void destroy_resources(void) {
   for (i = 0; i < NR_TEAM*NR_CARS; i++){
   	sprintf(str, "CAR%d", i);
   
-  	sem_close(sem_cars+i);
+  	sem_close(*(sem_cars+i));
+  	sem_unlink(str);
+  }
+  
+  for (i = 0; i < NR_TEAM; i++){
+  	sprintf(str, "BOX%d", i);
+  
+  	sem_close(*(sem_box+i));
   	sem_unlink(str);
   }
 
@@ -187,6 +196,6 @@ void destroy_resources(void) {
   shmdt(shm_boxes_state);
   shmctl(shm_boxes_id, IPC_RMID, NULL);
   
-  
   free(sem_cars);
+  free(sem_box);
 }
