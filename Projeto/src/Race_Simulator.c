@@ -10,17 +10,15 @@ int main(int argc, char* argv[]) {
   int i;
 
   f = fopen("log.txt", "a");
-  initiate_resources();
-
 
   if (argc < 2) {
 #ifdef DEBUG
-    write_log("No config file was passed!");
+    printf("No config file was passed!");
 #endif
     exit(1);
   } else if (argc > 2) {
 #ifdef DEBUG
-    write_log("Program only takes config filename as argument");
+    printf("Program only takes config filename as argument");
 #endif
     exit(1);
   }
@@ -29,7 +27,7 @@ int main(int argc, char* argv[]) {
   read_file(argv[1]);
 
 #ifdef DEBUG
-  write_log("Successfully read config file");
+  printf("Successfully read config file");
   printf("--Configurações lidas do ficheiro--\n\n");
   printf("Numero de unidade de tempo /s: %dut\n", NR_UNI_PS);
   printf("Distancia de uma volta: %dm, Numero de voltas da corrida: %d\n",LAP_DIST, NR_LAP);
@@ -44,6 +42,8 @@ int main(int argc, char* argv[]) {
   printf("L - litros\n");
   printf("--------------------------\n\n\n");
 #endif
+
+  initiate_resources();
 
   write_log("SERVER STARTED");
 
@@ -140,15 +140,18 @@ void initiate_sems() {
   // create semaphores
   create_sem("LOG_MUTEX", &log_mutex, 0);
   
+  printf("%d\n",NR_CARS*NR_TEAM);
+  
   sem_cars = (sem_t*) malloc(sizeof(sem_t)*NR_CARS*NR_TEAM);
   int i;
   char str[50];
   for (i = 0; i<NR_CARS*NR_TEAM; i++){
   		sprintf(str, "CAR%d",i);
   		
+  		printf("%s\n",str);
   		create_sem(str, &(sem_cars), i);
   }
-
+  
 #ifdef DEBUG
 
   sprintf(str, "Semaphore initialized");
@@ -157,8 +160,9 @@ void initiate_sems() {
 }
 
 void initiate_resources() {
+	initiate_sems();
   initiate_shm();
-  initiate_sems();
+  
 }
 
 void destroy_resources(void) {
@@ -171,7 +175,7 @@ void destroy_resources(void) {
   int i = 0;
   char str[50];
   for (i = 0; i < NR_TEAM*NR_CARS; i++){
-  sprintf(str, "CAR%d", i);
+  	sprintf(str, "CAR%d", i);
   
   	sem_close(sem_cars+i);
   	sem_unlink(str);

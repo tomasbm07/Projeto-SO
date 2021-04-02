@@ -22,7 +22,6 @@
 #ifdef DEBUG
 #endif
 */
-
 key_t shmkey;
 sem_t *log_mutex;
 FILE *f;
