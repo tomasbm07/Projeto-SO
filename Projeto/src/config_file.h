@@ -1,3 +1,8 @@
+/*
+Tomás Mendes - 2019232272
+Joel Oliveira - 2019227468
+*/
+
 #ifndef CONFIG_H
 #define CONFIG_H
 

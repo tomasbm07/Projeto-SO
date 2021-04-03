@@ -1,3 +1,8 @@
+/*
+Tomás Mendes - 2019232272
+Joel Oliveira - 2019227468
+*/
+
 #include "Simulator.h"
 
 int shm_main_id, shm_boxes_id;
@@ -155,7 +160,6 @@ void initiate_sems() {
   }
   
 #ifdef DEBUG
-
   sprintf(str, "Semaphore initialized");
   write_log(str);
 #endif
