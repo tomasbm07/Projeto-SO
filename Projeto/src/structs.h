@@ -16,6 +16,7 @@ typedef struct {
 	int box_stops_counter;
 } car_shm_struct;
 
+//apagar
 typedef struct{
 	int refill_counter;
 	char box_state[]; // 'R' = Reserved; 'E' = Empty; 'F' = Full;

@@ -145,6 +145,7 @@ void initiate_sems() {
   // create semaphores
   create_sem("LOG_MUTEX", &log_mutex, 0);
   
+  //apagar estes semafros
   sem_cars = (sem_t**) malloc( sizeof(sem_t*) * NR_CARS * NR_TEAM);
   int i;
   char str[50];
@@ -178,6 +179,7 @@ void destroy_resources(void) {
   sem_close(log_mutex);
   sem_unlink("LOG_MUTEX");
   
+  //apagar esta treta
   int i = 0;
   char str[50];
   for (i = 0; i < NR_TEAM*NR_CARS; i++){
@@ -193,6 +195,7 @@ void destroy_resources(void) {
   	sem_close(*(sem_box+i));
   	sem_unlink(str);
   }
+  
 
   shmdt(shm_info);
   shmctl(shm_main_id, IPC_RMID, NULL);

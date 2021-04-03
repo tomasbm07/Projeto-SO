@@ -5,8 +5,11 @@ Joel Oliveira - 2019227468
 
 #include "team_manager.h"
 
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
 void team_manager(int team_index) {
   int i, car_thread_index = 0;
+  char box_state = 'E'; // 'R' = Reserved; 'E' = Empty; 'F' = Full;
 
   pthread_t car_threads[NR_CARS];
   car_struct car_stats[NR_CARS];
@@ -21,6 +24,9 @@ void team_manager(int team_index) {
 
   // wait for threads to finish
   for (i = 0; i < NR_CARS; i++) pthread_join(car_threads[i], NULL);
+
+  //destroy mutex
+  pthread_mutex_destroy(&mutex);
 
   exit(0);
 }
@@ -57,6 +63,8 @@ void init_car_stats(car_struct *stats, int team_index, int car_index) {
 
 // function to run in car thread
 void *car_worker(void *stats) {
+  //usar pthread_mutex_lock(&mutex); e pthread_mutex_unlock(&mutex); para o semafro de threads mutex
+  
   // convert argument from void* to car_struct*
   car_struct *car_simu = (car_struct *)stats;
 
