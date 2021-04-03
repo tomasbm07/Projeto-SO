@@ -9,7 +9,9 @@ Joel Oliveira - 2019227468
 void malfunction_manager(){
 
 #ifdef DEBUG
-	write_log("Malfunction manager process created");
+char str[50];
+	sprintf(str,"Malfunction manager, process %d, created",(int)getpid());
+	write_log(str);
 #endif
 
 	exit(0);

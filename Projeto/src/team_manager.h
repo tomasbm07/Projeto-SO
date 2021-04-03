@@ -20,8 +20,7 @@ Joel Oliveira - 2019227468
 #include "Simulator.h"
 
 
-shm_struct *shm_info; 
-shm_boxes *shm_boxes_state; 
+shm_struct *shm_info;  
 int NR_CARS, NR_TEAM; 
 
 void team_manager();

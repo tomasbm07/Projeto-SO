@@ -5,12 +5,13 @@ Joel Oliveira - 2019227468
 
 #include "team_manager.h"
 
-pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER;
+char box_state;
 
 void team_manager(int team_index) {
   int i, car_thread_index = 0;
-  char box_state = 'E'; // 'R' = Reserved; 'E' = Empty; 'F' = Full;
-
+  box_state = 'E'; // 'R' = Reserved; 'E' = Empty; 'F' = Full;
+srand((unsigned) team_index);
   pthread_t car_threads[NR_CARS];
   car_struct car_stats[NR_CARS];
 
@@ -25,8 +26,14 @@ void team_manager(int team_index) {
   // wait for threads to finish
   for (i = 0; i < NR_CARS; i++) pthread_join(car_threads[i], NULL);
 
+#ifdef DEBUG
+	char str[50];
+	sprintf(str,"Process %d Car State: %c", (int)getpid(), box_state);
+	write_log(str);
+#endif
+
   //destroy mutex
-  pthread_mutex_destroy(&mutex);
+  pthread_mutex_destroy(&box_mutex);
 
   exit(0);
 }
@@ -68,12 +75,21 @@ void *car_worker(void *stats) {
   // convert argument from void* to car_struct*
   car_struct *car_simu = (car_struct *)stats;
 
+
   // just a test
 #ifdef DEBUG
-	char str[50];
-  sprintf(str, "Team: %s | Car Number: %d | Fuel: %.2fL", car_simu->car->team_name,car_simu->car->number,car_simu->fuel);
+	char str[300];
+  sprintf(str, "I am Thread %d, from process %d\n\t"
+  				"Team: %s | Car Number: %d | Fuel: %.2fL | Box State: %c",
+  				(unsigned int) pthread_self(), (unsigned int) getpid(),
+  				car_simu->car->team_name,car_simu->car->number,car_simu->fuel, box_state);
   write_log(str);
   write_log("Thread car created!");
+  
+  char states[3] = {'E','F','R'};
+	pthread_mutex_lock(&box_mutex);
+	box_state = states[ rand()%3 ];
+	pthread_mutex_unlock(&box_mutex);
 #endif
 
   pthread_exit(NULL);

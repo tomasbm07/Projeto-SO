@@ -6,6 +6,7 @@ Joel Oliveira - 2019227468
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
+//part of car struct in shm
 typedef struct {
 	char team_name[32];
 	int number;
@@ -16,14 +17,9 @@ typedef struct {
 	int box_stops_counter;
 } car_shm_struct;
 
-//apagar
-typedef struct{
-	int refill_counter;
-	char box_state[]; // 'R' = Reserved; 'E' = Empty; 'F' = Full;
-} shm_boxes;
-
 typedef struct {
 	int malfunctions_counter;
+	int refill_counter;
 	car_shm_struct cars[];
 } shm_struct;
 

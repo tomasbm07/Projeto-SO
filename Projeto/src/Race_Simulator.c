@@ -5,10 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-int shm_main_id, shm_boxes_id;
+int shm_id;
 shm_struct* shm_info;
-shm_boxes* shm_boxes_state;
-sem_t *(*sem_cars), *(*sem_box);
 
 
 int main(int argc, char* argv[]) {
@@ -119,48 +117,30 @@ void initiate_shm() {
     exit(1);
   }
 
-  get_id(&shm_main_id, shmkey,sizeof(shm_struct) + sizeof(car_shm_struct) * NR_TEAM * NR_CARS, IPC_CREAT | IPC_EXCL | 0700);
+  get_id(&shm_id, shmkey,sizeof(shm_struct) + sizeof(car_shm_struct) * NR_TEAM * NR_CARS, IPC_CREAT | IPC_EXCL | 0700);
 
-  shm_info = (shm_struct*)shmat(shm_main_id, NULL, 0);
+  shm_info = (shm_struct*)shmat(shm_id, NULL, 0);
   check_shmat(shm_info);
 
-  get_id(&shm_boxes_id, IPC_PRIVATE, sizeof(shm_boxes) + sizeof(char) * NR_TEAM, IPC_CREAT | IPC_EXCL | 0700);
-
-  shm_boxes_state = (shm_boxes*)shmat(shm_boxes_id, NULL, 0);
-  check_shmat(shm_boxes_state);
 }
 
-void create_sem(char * name, sem_t ** sem, int pos){
+void create_sem(char * name, sem_t ** sem){
 	sem_unlink(name);
-	*(sem+pos) = sem_open(name, O_CREAT | O_EXCL, 0700, 1);
-	if (*(sem+pos) == SEM_FAILED){
+	*sem = sem_open(name, O_CREAT | O_EXCL, 0700, 1);
+	if (*sem == SEM_FAILED){
 		write_log("Failed to create the semaphore MUTEX");
     	destroy_resources();
     	exit(1);
 	}
-
 }
 
 void initiate_sems() {
   // create semaphores
-  create_sem("LOG_MUTEX", &log_mutex, 0);
-  
-  //apagar estes semafros
-  sem_cars = (sem_t**) malloc( sizeof(sem_t*) * NR_CARS * NR_TEAM);
-  int i;
-  char str[50];
-  for (i = 0; i<NR_CARS*NR_TEAM; i++){
-  		sprintf(str, "CAR%d",i);
-  		create_sem(str, sem_cars, i);
-  }
-  
-  sem_box = (sem_t**) malloc( sizeof(sem_t*) * NR_TEAM);
-  for(i = 0; i<NR_TEAM;i++){
-  	sprintf(str, "BOX%d",i);
-  	create_sem(str, sem_box, i);
-  }
+  create_sem("LOG_MUTEX", &log_mutex);  
+  create_sem("CAR_MUTEX", &car_mutex);
   
 #ifdef DEBUG
+char str[50];
   sprintf(str, "Semaphore initialized");
   write_log(str);
 #endif
@@ -168,8 +148,7 @@ void initiate_sems() {
 
 void initiate_resources() {
 	initiate_sems();
-  initiate_shm();
-  
+  initiate_shm(); 
 }
 
 void destroy_resources(void) {
@@ -179,30 +158,10 @@ void destroy_resources(void) {
   sem_close(log_mutex);
   sem_unlink("LOG_MUTEX");
   
-  //apagar esta treta
-  int i = 0;
-  char str[50];
-  for (i = 0; i < NR_TEAM*NR_CARS; i++){
-  	sprintf(str, "CAR%d", i);
-  
-  	sem_close(*(sem_cars+i));
-  	sem_unlink(str);
-  }
-  
-  for (i = 0; i < NR_TEAM; i++){
-  	sprintf(str, "BOX%d", i);
-  
-  	sem_close(*(sem_box+i));
-  	sem_unlink(str);
-  }
-  
+  sem_close(car_mutex);
+  sem_unlink("CAR_MUTEX");  
 
   shmdt(shm_info);
-  shmctl(shm_main_id, IPC_RMID, NULL);
-
-  shmdt(shm_boxes_state);
-  shmctl(shm_boxes_id, IPC_RMID, NULL);
+  shmctl(shm_id, IPC_RMID, NULL);
   
-  free(sem_cars);
-  free(sem_box);
 }
