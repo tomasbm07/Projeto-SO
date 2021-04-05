@@ -2201,3 +2201,388 @@
 [21:48:38] SERVER STARTED
 [21:48:38] SERVER CLOSED
 [21:48:38] Cleaning up...
+[15:20:25] Semaphore initialized
+[15:20:25] SERVER STARTED
+[15:20:25] Malfunction manager, process 1763, created
+[15:20:25] Semaphore initialized
+[15:20:25] SERVER STARTED
+[15:20:25] I am Thread 113989376, from process 1764
+	Team: OMEGALUL0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[15:20:25] I am Thread 122382080, from process 1764
+	Team: OMEGALUL0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[15:20:25] Thread car created!
+[15:20:25] Thread car created!
+[15:20:25] Process 1764 Car State: F
+[15:20:25] Semaphore initialized
+[15:20:25] SERVER STARTED
+[15:20:25] I am Thread 122382080, from process 1765
+	Team: OMEGALUL1 | Car Number: 4 | Fuel: 36.00L | Box State: E
+[15:20:25] I am Thread 113989376, from process 1765
+	Team: OMEGALUL1 | Car Number: 5 | Fuel: 36.00L | Box State: E
+[15:20:25] Thread car created!
+[15:20:25] Thread car created!
+[15:20:25] Process 1765 Car State: F
+[15:20:25] Semaphore initialized
+[15:20:25] SERVER STARTED
+[15:20:25] I am Thread 113989376, from process 1771
+	Team: OMEGALUL4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[15:20:25] Thread car created!
+[15:20:25] I am Thread 122382080, from process 1771
+	Team: OMEGALUL4 | Car Number: 16 | Fuel: 36.00L | Box State: F
+[15:20:25] Thread car created!
+[15:20:25] Process 1771 Car State: E
+[15:20:25] Semaphore initialized
+[15:20:25] SERVER STARTED
+[15:20:25] I am Thread 122382080, from process 1769
+	Team: OMEGALUL3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[15:20:25] Thread car created!
+[15:20:25] I am Thread 113989376, from process 1769
+	Team: OMEGALUL3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[15:20:25] Thread car created!
+[15:20:25] Process 1769 Car State: F
+[15:20:25] Semaphore initialized
+[15:20:25] SERVER STARTED
+[15:20:25] I am Thread 122382080, from process 1767
+	Team: OMEGALUL2 | Car Number: 8 | Fuel: 36.00L | Box State: E
+[15:20:25] Thread car created!
+[15:20:25] I am Thread 113989376, from process 1767
+	Team: OMEGALUL2 | Car Number: 9 | Fuel: 36.00L | Box State: F
+[15:20:25] Thread car created!
+[15:20:25] Process 1767 Car State: R
+[15:20:25] Semaphore initialized
+[15:20:25] SERVER STARTED
+[15:20:25] Created 5 team processes
+[15:20:25] Semaphore initialized
+[15:20:25] SERVER STARTED
+[15:20:25] SERVER CLOSED
+[15:20:25] Cleaning up...
+[15:23:27] Semaphore initialized
+[15:23:27] SERVER STARTED
+[15:23:27] Malfunction manager, process 1800, created
+[15:23:27] Semaphore initialized
+[15:23:27] SERVER STARTED
+[15:23:27] I am Thread -881432832, from process 1801
+	Team: OMEGALUL0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[15:23:27] I am Thread -873040128, from process 1801
+	Team: OMEGALUL0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[15:23:27] Thread car created!
+[15:23:27] Thread car created!
+[15:23:27] Process 1801 Car State: F
+[15:23:27] Semaphore initialized
+[15:23:27] SERVER STARTED
+[15:23:27] I am Thread -881432832, from process 1807
+	Team: OMEGALUL3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[15:23:27] Thread car created!
+[15:23:27] I am Thread -873040128, from process 1807
+	Team: OMEGALUL3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[15:23:27] Thread car created!
+[15:23:27] Process 1807 Car State: F
+[15:23:27] Semaphore initialized
+[15:23:27] SERVER STARTED
+[15:23:27] I am Thread -881432832, from process 1809
+	Team: OMEGALUL4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[15:23:27] Thread car created!
+[15:23:27] I am Thread -873040128, from process 1809
+	Team: OMEGALUL4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[15:23:27] Thread car created!
+[15:23:27] Process 1809 Car State: E
+[15:23:27] Semaphore initialized
+[15:23:27] SERVER STARTED
+[15:23:27] I am Thread -873040128, from process 1802
+	Team: OMEGALUL1 | Car Number: 4 | Fuel: 36.00L | Box State: E
+[15:23:27] I am Thread -881432832, from process 1802
+	Team: OMEGALUL1 | Car Number: 5 | Fuel: 36.00L | Box State: E
+[15:23:27] Thread car created!
+[15:23:27] Thread car created!
+[15:23:27] Process 1802 Car State: F
+[15:23:27] Semaphore initialized
+[15:23:27] SERVER STARTED
+[15:23:27] I am Thread -873040128, from process 1803
+	Team: OMEGALUL2 | Car Number: 8 | Fuel: 36.00L | Box State: E
+[15:23:27] Thread car created!
+[15:23:27] I am Thread -881432832, from process 1803
+	Team: OMEGALUL2 | Car Number: 9 | Fuel: 36.00L | Box State: E
+[15:23:27] Thread car created!
+[15:23:27] Process 1803 Car State: R
+[15:23:27] Semaphore initialized
+[15:23:27] SERVER STARTED
+[15:23:27] Created 5 team processes
+[15:23:27] Semaphore initialized
+[15:23:27] SERVER STARTED
+[15:23:27] SERVER CLOSED
+[15:23:27] Cleaning up...
+[15:23:31] Semaphore initialized
+[15:23:31] SERVER STARTED
+[15:23:31] Malfunction manager, process 1821, created
+[15:23:31] Semaphore initialized
+[15:23:31] SERVER STARTED
+[15:23:31] I am Thread 212936448, from process 1824
+	Team: OMEGALUL2 | Car Number: 9 | Fuel: 36.00L | Box State: E
+[15:23:31] Thread car created!
+[15:23:31] I am Thread 221329152, from process 1824
+	Team: OMEGALUL2 | Car Number: 8 | Fuel: 36.00L | Box State: E
+[15:23:31] Thread car created!
+[15:23:31] Process 1824 Car State: R
+[15:23:31] Semaphore initialized
+[15:23:31] SERVER STARTED
+[15:23:31] I am Thread 212936448, from process 1828
+	Team: OMEGALUL4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[15:23:31] Thread car created!
+[15:23:31] I am Thread 221329152, from process 1828
+	Team: OMEGALUL4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[15:23:31] Thread car created!
+[15:23:31] Process 1828 Car State: E
+[15:23:31] Semaphore initialized
+[15:23:31] SERVER STARTED
+[15:23:31] I am Thread 221329152, from process 1823
+	Team: OMEGALUL1 | Car Number: 4 | Fuel: 36.00L | Box State: E
+[15:23:31] Thread car created!
+[15:23:31] I am Thread 212936448, from process 1823
+	Team: OMEGALUL1 | Car Number: 5 | Fuel: 36.00L | Box State: E
+[15:23:31] Thread car created!
+[15:23:31] Process 1823 Car State: F
+[15:23:31] Semaphore initialized
+[15:23:31] SERVER STARTED
+[15:23:31] I am Thread 212936448, from process 1822
+	Team: OMEGALUL0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[15:23:31] Thread car created!
+[15:23:31] I am Thread 221329152, from process 1822
+	Team: OMEGALUL0 | Car Number: 0 | Fuel: 36.00L | Box State: F
+[15:23:31] Thread car created!
+[15:23:31] Process 1822 Car State: F
+[15:23:31] Semaphore initialized
+[15:23:31] SERVER STARTED
+[15:23:31] I am Thread 221329152, from process 1826
+	Team: OMEGALUL3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[15:23:31] Thread car created!
+[15:23:31] I am Thread 212936448, from process 1826
+	Team: OMEGALUL3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[15:23:31] Thread car created!
+[15:23:31] Process 1826 Car State: F
+[15:23:31] Semaphore initialized
+[15:23:31] SERVER STARTED
+[15:23:31] Created 5 team processes
+[15:23:31] Semaphore initialized
+[15:23:31] SERVER STARTED
+[15:23:31] SERVER CLOSED
+[15:23:31] Cleaning up...
+[15:42:1] Semaphore initialized
+[15:42:1] SERVER STARTED
+[15:42:1] Malfunction manager, process 2146, created
+[15:42:1] Semaphore initialized
+[15:42:1] SERVER STARTED
+[15:42:1] I am Thread 2022471424, from process 2148
+	Team: OMEGALUL-1 | Car Number: 5 | Fuel: 36.00L | Box State: E
+[15:42:1] Thread car created!
+[15:42:1] I am Thread 2030864128, from process 2148
+	Team: OMEGALUL-1 | Car Number: 4 | Fuel: 36.00L | Box State: E
+[15:42:1] Thread car created!
+[15:42:1] Process 2148 Car State: F
+[15:42:1] Semaphore initialized
+[15:42:1] SERVER STARTED
+[15:42:1] I am Thread 2022471424, from process 2147
+	Team: OMEGALUL-0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[15:42:1] Thread car created!
+[15:42:1] I am Thread 2030864128, from process 2147
+	Team: OMEGALUL-0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[15:42:1] Thread car created!
+[15:42:1] Process 2147 Car State: F
+[15:42:1] Semaphore initialized
+[15:42:1] SERVER STARTED
+[15:42:1] I am Thread 2030864128, from process 2149
+	Team: OMEGALUL-2 | Car Number: 8 | Fuel: 36.00L | Box State: E
+[15:42:1] Thread car created!
+[15:42:1] I am Thread 2022471424, from process 2149
+	Team: OMEGALUL-2 | Car Number: 9 | Fuel: 36.00L | Box State: F
+[15:42:1] Thread car created!
+[15:42:1] Process 2149 Car State: R
+[15:42:1] Semaphore initialized
+[15:42:1] SERVER STARTED
+[15:42:1] I am Thread 2022471424, from process 2154
+	Team: OMEGALUL-4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[15:42:1] Thread car created!
+[15:42:1] I am Thread 2030864128, from process 2154
+	Team: OMEGALUL-4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[15:42:1] Thread car created!
+[15:42:1] Process 2154 Car State: E
+[15:42:1] Semaphore initialized
+[15:42:1] SERVER STARTED
+[15:42:1] I am Thread 2022471424, from process 2150
+	Team: OMEGALUL-3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[15:42:1] Thread car created!
+[15:42:1] I am Thread 2030864128, from process 2150
+	Team: OMEGALUL-3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[15:42:1] Thread car created!
+[15:42:1] Process 2150 Car State: F
+[15:42:1] Semaphore initialized
+[15:42:1] SERVER STARTED
+[15:42:1] Created 5 team processes
+[15:42:1] Semaphore initialized
+[15:42:1] SERVER STARTED
+[15:42:1] SERVER CLOSED
+[15:42:1] Cleaning up...
+[15:42:46] Semaphore initialized
+[15:42:46] SERVER STARTED
+[15:42:46] Malfunction manager, process 2238, created
+[15:42:46] Semaphore initialized
+[15:42:46] SERVER STARTED
+[15:42:46] I am Thread 529889024, from process 2239
+	Team: OMEGALUL-0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[15:42:46] Thread car created!
+[15:42:46] I am Thread 538281728, from process 2239
+	Team: OMEGALUL-0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[15:42:46] Thread car created!
+[15:42:46] Process 2239 Car State: F
+[15:42:46] Semaphore initialized
+[15:42:46] SERVER STARTED
+[15:42:46] I am Thread 529889024, from process 2245
+	Team: OMEGALUL-4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[15:42:46] Thread car created!
+[15:42:46] I am Thread 538281728, from process 2245
+	Team: OMEGALUL-4 | Car Number: 16 | Fuel: 36.00L | Box State: F
+[15:42:46] Thread car created!
+[15:42:46] Process 2245 Car State: E
+[15:42:46] Semaphore initialized
+[15:42:46] SERVER STARTED
+[15:42:46] I am Thread 529889024, from process 2240
+	Team: OMEGALUL-1 | Car Number: 5 | Fuel: 36.00L | Box State: E
+[15:42:46] Thread car created!
+[15:42:46] I am Thread 538281728, from process 2240
+	Team: OMEGALUL-1 | Car Number: 4 | Fuel: 36.00L | Box State: E
+[15:42:46] Thread car created!
+[15:42:46] Process 2240 Car State: F
+[15:42:46] Semaphore initialized
+[15:42:46] SERVER STARTED
+[15:42:46] I am Thread 529889024, from process 2242
+	Team: OMEGALUL-3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[15:42:46] Thread car created!
+[15:42:46] I am Thread 538281728, from process 2242
+	Team: OMEGALUL-3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[15:42:46] Thread car created!
+[15:42:46] Process 2242 Car State: F
+[15:42:46] Semaphore initialized
+[15:42:46] SERVER STARTED
+[15:42:46] I am Thread 538281728, from process 2241
+	Team: OMEGALUL-2 | Car Number: 8 | Fuel: 36.00L | Box State: E
+[15:42:46] Thread car created!
+[15:42:46] I am Thread 529889024, from process 2241
+	Team: OMEGALUL-2 | Car Number: 9 | Fuel: 36.00L | Box State: E
+[15:42:46] Thread car created!
+[15:42:46] Process 2241 Car State: R
+[15:42:46] Semaphore initialized
+[15:42:46] SERVER STARTED
+[15:42:46] Created 5 team processes
+[15:42:46] Semaphore initialized
+[15:42:46] SERVER STARTED
+[15:42:46] SERVER CLOSED
+[15:42:46] Cleaning up...
+[15:43:36] Semaphore initialized
+[15:43:36] SERVER STARTED
+[15:43:36] Malfunction manager, process 2273, created
+[15:43:36] Semaphore initialized
+[15:43:36] SERVER STARTED
+[15:43:36] I am Thread 1852995328, from process 2274
+	Team: OMEGALUL_0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[15:43:36] Thread car created!
+[15:43:36] I am Thread 1861388032, from process 2274
+	Team: OMEGALUL_0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[15:43:36] Thread car created!
+[15:43:36] Process 2274 Car State: F
+[15:43:36] Semaphore initialized
+[15:43:36] SERVER STARTED
+[15:43:36] I am Thread 1852995328, from process 2275
+	Team: OMEGALUL_1 | Car Number: 5 | Fuel: 36.00L | Box State: E
+[15:43:36] Thread car created!
+[15:43:36] I am Thread 1861388032, from process 2275
+	Team: OMEGALUL_1 | Car Number: 4 | Fuel: 36.00L | Box State: E
+[15:43:36] Thread car created!
+[15:43:36] Process 2275 Car State: F
+[15:43:36] Semaphore initialized
+[15:43:36] SERVER STARTED
+[15:43:36] I am Thread 1861388032, from process 2276
+	Team: OMEGALUL_2 | Car Number: 8 | Fuel: 36.00L | Box State: E
+[15:43:36] Thread car created!
+[15:43:36] I am Thread 1852995328, from process 2276
+	Team: OMEGALUL_2 | Car Number: 9 | Fuel: 36.00L | Box State: E
+[15:43:36] Thread car created!
+[15:43:36] Process 2276 Car State: R
+[15:43:36] Semaphore initialized
+[15:43:36] SERVER STARTED
+[15:43:36] I am Thread 1861388032, from process 2278
+	Team: OMEGALUL_3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[15:43:36] Thread car created!
+[15:43:36] I am Thread 1852995328, from process 2278
+	Team: OMEGALUL_3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[15:43:36] Thread car created!
+[15:43:36] Process 2278 Car State: F
+[15:43:36] Semaphore initialized
+[15:43:36] SERVER STARTED
+[15:43:36] I am Thread 1861388032, from process 2281
+	Team: OMEGALUL_4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[15:43:36] Thread car created!
+[15:43:36] I am Thread 1852995328, from process 2281
+	Team: OMEGALUL_4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[15:43:36] Thread car created!
+[15:43:36] Process 2281 Car State: E
+[15:43:36] Semaphore initialized
+[15:43:36] SERVER STARTED
+[15:43:36] Created 5 team processes
+[15:43:36] Semaphore initialized
+[15:43:36] SERVER STARTED
+[15:43:36] SERVER CLOSED
+[15:43:36] Cleaning up...
+[15:44:54] Semaphore initialized
+[15:44:54] SERVER STARTED
+[15:44:54] Malfunction manager, process 2415, created
+[15:44:54] Semaphore initialized
+[15:44:54] SERVER STARTED
+[15:44:54] I am Thread 1683023616, from process 2416
+	Team: OMEGALUL_0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[15:44:54] I am Thread 1691416320, from process 2416
+	Team: OMEGALUL_0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[15:44:54] Thread car created!
+[15:44:54] Thread car created!
+[15:44:54] Process 2416 Car State: F
+[15:44:54] Semaphore initialized
+[15:44:54] SERVER STARTED
+[15:44:54] I am Thread 1691416320, from process 2417
+	Team: OMEGALUL_1 | Car Number: 4 | Fuel: 36.00L | Box State: E
+[15:44:54] Thread car created!
+[15:44:54] I am Thread 1683023616, from process 2417
+	Team: OMEGALUL_1 | Car Number: 5 | Fuel: 36.00L | Box State: E
+[15:44:54] Thread car created!
+[15:44:54] Process 2417 Car State: F
+[15:44:54] Semaphore initialized
+[15:44:54] SERVER STARTED
+[15:44:54] I am Thread 1691416320, from process 2421
+	Team: OMEGALUL_3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[15:44:54] Thread car created!
+[15:44:54] I am Thread 1683023616, from process 2421
+	Team: OMEGALUL_3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[15:44:54] Thread car created!
+[15:44:54] Process 2421 Car State: F
+[15:44:54] Semaphore initialized
+[15:44:54] SERVER STARTED
+[15:44:54] I am Thread 1683023616, from process 2418
+	Team: OMEGALUL_2 | Car Number: 9 | Fuel: 36.00L | Box State: E
+[15:44:54] Thread car created!
+[15:44:54] I am Thread 1691416320, from process 2418
+	Team: OMEGALUL_2 | Car Number: 8 | Fuel: 36.00L | Box State: F
+[15:44:54] Thread car created!
+[15:44:54] Process 2418 Car State: R
+[15:44:54] Semaphore initialized
+[15:44:54] SERVER STARTED
+[15:44:54] I am Thread 1683023616, from process 2424
+	Team: OMEGALUL_4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[15:44:54] I am Thread 1691416320, from process 2424
+	Team: OMEGALUL_4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[15:44:54] Thread car created!
+[15:44:54] Thread car created!
+[15:44:54] Process 2424 Car State: E
+[15:44:54] Semaphore initialized
+[15:44:54] SERVER STARTED
+[15:44:54] Created 5 team processes
+[15:44:54] Semaphore initialized
+[15:44:54] SERVER STARTED
+[15:44:54] SERVER CLOSED
+[15:44:54] Cleaning up...
