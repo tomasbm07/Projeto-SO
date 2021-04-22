@@ -32,7 +32,14 @@ void race_manager() {
     exit(1);
   }
 
-  printf("Listening to race_pipe!\n");
+  
+  /*
+  Comandos para testar o pipe:
+  echo "ADDCAR TEAM: A, CAR: 77, SPEED: 50, COMSUMPTION: 0.04, RELIABILITY: 99" > race_pipe
+  echo "START RACE" > race_pipe
+  */
+
+  write_log("race_pipe is ready!\n");
   // while de leitura do pipe
   while (1) {
     FD_ZERO(&read_set);
@@ -43,10 +50,26 @@ void race_manager() {
         num_chars = read(fd_race_pipe, str, sizeof(str));
         str[num_chars - 1] = '\0';  // put a \0 in the end of string
 
-        if (strcmp(str, "hehexD") == 0)
-          printf("got 'em bois\n");
-        else if (strcmp(str, "123") == 0)
-          printf("Got 123\n");
+        //split da string que vem do pipe
+        /*
+        char *aux = strtok(str, " ");
+        while (aux != NULL){
+          printf("%s\n", aux);
+          aux = strtok(NULL, ",");
+        }
+        */
+        
+        //TODO: se der split primeiro, o srtcmp so ve "START" se o comando for "START RACE"
+        if (strcmp(str, "ADDCAR") == 0){
+          write_log("[Race_Pipe] Got ADDCAR");
+        }
+        else if (strcmp(str, "123") == 0){
+          write_log("[Race_Pipe] Got 123");
+        }
+        else if (strcmp(str, "START RACE") == 0){
+          write_log("[Race_Pipe] Got START RACE");
+          write_log("Buckle Up, race is starting!");
+        }
         else
           printf("unknown command\n");
       }

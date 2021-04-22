@@ -2685,3 +2685,140 @@
 [11:49:6] SERVER STARTED
 [11:49:7] SERVER CLOSED
 [11:49:7] Cleaning up...
+[12:3:30] Semaphore initialized
+[12:3:30] SERVER STARTED
+[12:3:30] Malfunction manager, process 1851, created
+[12:3:30] Semaphore initialized
+[12:3:30] SERVER STARTED
+[12:3:39] Got SIGINT
+
+[12:3:30] Semaphore initialized
+[12:3:30] SERVER STARTED
+[12:3:39] SERVER CLOSED
+[12:3:39] Cleaning up...
+[12:5:8] Semaphore initialized
+[12:5:8] SERVER STARTED
+[12:5:8] Malfunction manager, process 1871, created
+[12:5:8] Semaphore initialized
+[12:5:8] SERVER STARTED
+[12:5:8] Listening to race_pipe!
+
+[12:6:7] Got SIGINT
+
+[12:5:8] Semaphore initialized
+[12:5:8] SERVER STARTED
+[12:6:7] SERVER CLOSED
+[12:6:7] Cleaning up...
+[12:12:43] Semaphore initialized
+[12:12:43] SERVER STARTED
+[12:12:43] Malfunction manager, process 1976, created
+[12:12:43] Semaphore initialized
+[12:12:43] SERVER STARTED
+[12:12:43] Listening to race_pipe!
+
+[12:12:46] Got ADDCAR
+
+[12:12:57] Got ADDCAR
+
+[12:13:24] Got SIGINT
+
+[12:12:43] Semaphore initialized
+[12:12:43] SERVER STARTED
+[12:13:24] SERVER CLOSED
+[12:13:24] Cleaning up...
+[12:16:33] Semaphore initialized
+[12:16:33] SERVER STARTED
+[12:16:33] Malfunction manager, process 1985, created
+[12:16:33] Semaphore initialized
+[12:16:33] SERVER STARTED
+[12:16:33] Listening to race_pipe!
+
+[12:16:35] Got SIGINT
+
+[12:16:33] Semaphore initialized
+[12:16:33] SERVER STARTED
+[12:16:35] SERVER CLOSED
+[12:16:35] Cleaning up...
+[12:16:38] Semaphore initialized
+[12:16:38] SERVER STARTED
+[12:16:38] Malfunction manager, process 2006, created
+[12:16:38] Semaphore initialized
+[12:16:38] SERVER STARTED
+[12:16:38] Listening to race_pipe!
+
+[12:16:40] Got ADDCAR
+
+[12:17:47] Got ADDCAR
+
+[12:18:13] Got SIGINT
+
+[12:16:38] Semaphore initialized
+[12:16:38] SERVER STARTED
+[12:18:13] SERVER CLOSED
+[12:18:13] Cleaning up...
+[12:18:20] Semaphore initialized
+[12:18:20] SERVER STARTED
+[12:18:20] Malfunction manager, process 2074, created
+[12:18:20] Semaphore initialized
+[12:18:20] SERVER STARTED
+[12:18:20] Listening to race_pipe!
+
+[12:18:22] Got ADDCAR
+
+[12:18:44] Got ADDCAR
+
+[12:19:27] Got SIGINT
+
+[12:18:20] Semaphore initialized
+[12:18:20] SERVER STARTED
+[12:19:27] SERVER CLOSED
+[12:19:27] Cleaning up...
+[12:19:30] Semaphore initialized
+[12:19:30] SERVER STARTED
+[12:19:30] Malfunction manager, process 2098, created
+[12:19:30] Semaphore initialized
+[12:19:30] SERVER STARTED
+[12:19:30] Listening to race_pipe!
+
+[12:19:31] [Race_Pipe] Got ADDCAR
+
+[12:21:11] Got SIGINT
+
+[12:19:30] Semaphore initialized
+[12:19:30] SERVER STARTED
+[12:21:11] SERVER CLOSED
+[12:21:11] Cleaning up...
+[12:21:13] Semaphore initialized
+[12:21:13] SERVER STARTED
+[12:21:13] Malfunction manager, process 2121, created
+[12:21:13] Semaphore initialized
+[12:21:13] SERVER STARTED
+[12:21:13] Listening to race_pipe!
+
+[12:21:16] [Race_Pipe] Got ADDCAR
+
+[12:22:42] Got SIGINT
+
+[12:21:13] Semaphore initialized
+[12:21:13] SERVER STARTED
+[12:22:42] SERVER CLOSED
+[12:22:42] Cleaning up...
+[12:22:47] Semaphore initialized
+[12:22:47] SERVER STARTED
+[12:22:47] Malfunction manager, process 2176, created
+[12:22:47] Semaphore initialized
+[12:22:47] SERVER STARTED
+[12:22:47] Listening to race_pipe!
+
+[12:22:48] [Race_Pipe] Got START RACE
+
+[12:22:48] Buckle Up, race is starting!
+[12:23:28] Got SIGINT
+
+[12:22:47] Semaphore initialized
+[12:22:47] SERVER STARTED
+[12:23:28] SERVER CLOSED
+[12:23:28] Cleaning up...
+[12:23:30] Semaphore initialized
+[12:23:30] SERVER STARTED
+[12:23:30] Malfunction manager, process 2198, created
