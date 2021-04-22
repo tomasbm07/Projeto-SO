@@ -14,6 +14,7 @@ Joel Oliveira - 2019227468
 #include <stdio.h>
 #include <sys/fcntl.h>
 #include <sys/wait.h>
+#include <signal.h>
 
 #include "race_manager.h"
 #include "config_file.h"
@@ -35,6 +36,7 @@ void initiate_resources();
 void initiate_shm();
 void initiate_sems();
 void destroy_resources();
+void signal_handler(int signal);
 
 
 #endif

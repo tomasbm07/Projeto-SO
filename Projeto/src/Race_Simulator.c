@@ -11,6 +11,10 @@ shm_struct* shm_info;
 
 int main(int argc, char* argv[]) {
   int i;
+  struct sigaction sa;
+
+  sa.sa_handler = SIG_IGN;
+  sigaction(SIGINT, &sa, NULL);
 
   f = fopen("log.txt", "a");
 
@@ -164,3 +168,4 @@ void destroy_resources(void) {
   shmdt(shm_info);
   shmctl(shm_id, IPC_RMID, NULL);
 }
+

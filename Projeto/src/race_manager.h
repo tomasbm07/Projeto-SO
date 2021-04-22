@@ -13,6 +13,9 @@ Joel Oliveira - 2019227468
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <sys/select.h>
+#include <sys/stat.h>
+#include <signal.h>
 
 #include "team_manager.h"
 #include "write_output.h"
@@ -20,5 +23,6 @@ Joel Oliveira - 2019227468
 #define DEBUG
 
 void race_manager(void);
+void signal_handler(int signal);
 
 
