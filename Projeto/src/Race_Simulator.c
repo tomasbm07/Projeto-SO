@@ -11,13 +11,14 @@ shm_struct* shm_info;
 
 int main(int argc, char* argv[]) {
   int i;
-  struct sigaction sa;
+  //struct sigaction sa;
 
   //ignorar o SIGINT no processo principal
   //deixar os outros fecharem
   //SIG_IGN = ignorar sinal
-  sa.sa_handler = SIG_IGN;
-  sigaction(SIGINT, &sa, NULL);
+  //sa.sa_handler = signal_handler;
+  signal(SIGINT, SIG_IGN);
+  signal(SIGTSTP, statistics);
 
   f = fopen("log.txt", "a");
 
@@ -170,5 +171,9 @@ void destroy_resources(void) {
 
   shmdt(shm_info);
   shmctl(shm_id, IPC_RMID, NULL);
+}
+
+void statistics(int sig){
+  write_log("GOT SIGTSTP - Statistics coming");
 }
 

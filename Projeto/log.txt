@@ -2822,3 +2822,94 @@
 [12:23:30] Semaphore initialized
 [12:23:30] SERVER STARTED
 [12:23:30] Malfunction manager, process 2198, created
+[12:23:30] Semaphore initialized
+[12:23:30] SERVER STARTED
+[12:23:30] Listening to race_pipe!
+
+[12:23:31] [Race_Pipe] Got START RACE
+[12:23:31] Buckle Up, race is starting!
+[12:24:21] [Race_Pipe] Got START RACE
+[12:24:21] Buckle Up, race is starting!
+[12:26:42] Got SIGINT
+
+[12:23:30] Semaphore initialized
+[12:23:30] SERVER STARTED
+[12:26:42] SERVER CLOSED
+[12:26:42] Cleaning up...
+[12:34:26] Semaphore initialized
+[12:34:26] SERVER STARTED
+[12:34:26] Malfunction manager, process 2377, created
+[12:36:7] Semaphore initialized
+[12:36:7] SERVER STARTED
+[12:36:7] Malfunction manager, process 2399, created
+[12:36:7] Semaphore initialized
+[12:36:7] SERVER STARTED
+[12:36:7] race_pipe is ready!
+
+[12:36:10] Got SIGINT
+
+[12:36:7] Semaphore initialized
+[12:36:7] SERVER STARTED
+[12:36:10] SERVER CLOSED
+[12:36:10] Cleaning up...
+[12:39:6] Semaphore initialized
+[12:39:6] SERVER STARTED
+[12:39:6] Malfunction manager, process 1800, created
+[12:39:6] Semaphore initialized
+[12:39:6] SERVER STARTED
+[12:39:6] race_pipe is ready!
+
+[12:39:7] 
+GOT SIGTSTP
+[12:40:17] Got SIGINT
+
+[12:39:6] Semaphore initialized
+[12:39:6] SERVER STARTED
+[12:39:7] 
+GOT SIGTSTP
+[12:40:17] SERVER CLOSED
+[12:40:17] Cleaning up...
+[12:40:21] Semaphore initialized
+[12:40:21] SERVER STARTED
+[12:40:21] Malfunction manager, process 1821, created
+[12:40:21] Semaphore initialized
+[12:40:21] SERVER STARTED
+[12:40:21] race_pipe is ready!
+
+[12:41:37] Got SIGINT
+
+[12:40:21] Semaphore initialized
+[12:40:21] SERVER STARTED
+[12:40:22] 
+GOT SIGTSTP
+[12:41:37] SERVER CLOSED
+[12:41:37] Cleaning up...
+[12:42:26] Semaphore initialized
+[12:42:26] SERVER STARTED
+[12:42:26] Malfunction manager, process 1873, created
+[12:42:26] Semaphore initialized
+[12:42:26] SERVER STARTED
+[12:42:26] race_pipe is ready!
+
+[12:42:58] Got SIGINT
+
+[12:42:26] Semaphore initialized
+[12:42:26] SERVER STARTED
+[12:42:29] 
+GOT SIGTSTP
+[12:42:58] SERVER CLOSED
+[12:42:58] Cleaning up...
+[12:43:5] Semaphore initialized
+[12:43:5] SERVER STARTED
+[12:43:5] Malfunction manager, process 1897, created
+[12:43:5] Semaphore initialized
+[12:43:5] SERVER STARTED
+[12:43:5] race_pipe is ready!
+
+[12:43:20] Got SIGINT
+
+[12:43:5] Semaphore initialized
+[12:43:5] SERVER STARTED
+[12:43:6] GOT SIGTSTP - Statistics coming
+[12:43:20] SERVER CLOSED
+[12:43:20] Cleaning up...

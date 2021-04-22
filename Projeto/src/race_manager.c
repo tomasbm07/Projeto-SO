@@ -17,8 +17,10 @@ void race_manager() {
   char str[256];
   struct sigaction sa;
 
-  sa.sa_handler = signal_handler;
+  sa.sa_handler = signals;
   sigaction(SIGINT, &sa, NULL);
+  signal(SIGTSTP, SIG_IGN);
+
 
 
   unlink(PIPE_NAME);
@@ -96,7 +98,7 @@ void clean_resources() {
   unlink(PIPE_NAME);
 }
 
-void signal_handler(int signal){
+void signals(int signal){
 #ifdef DEBUG
   write_log("Got SIGINT\n");
 #endif

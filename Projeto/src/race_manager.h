@@ -23,6 +23,6 @@ Joel Oliveira - 2019227468
 #define DEBUG
 
 void race_manager(void);
-void signal_handler(int signal);
+void signals(int signal);
 
 

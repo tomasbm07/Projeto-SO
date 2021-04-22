@@ -36,7 +36,7 @@ void initiate_resources();
 void initiate_shm();
 void initiate_sems();
 void destroy_resources();
-void signal_handler(int signal);
+void statistics(int sig);
 
 
 #endif
