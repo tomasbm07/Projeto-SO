@@ -9,27 +9,37 @@ pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER;
 char box_state;
 
 void team_manager(int team_index) {
+ #ifdef DEBUG
+  char aux[50];
+  sprintf(aux,"Team manager created (PID: %d)", getpid());
+  write_log(aux);
+#endif
+
   int i;
+
+  //close writing part of unnamed pipe
+  //TODO: arranjar forma de fazer esta parte
+  //tem q ficar apenas a parte de leitura de 1 pipe em cada processo team
+
   //int car_thread_index = 0;
   box_state = 'E'; // 'R' = Reserved; 'E' = Empty; 'F' = Full;
-srand((unsigned) team_index);
+	srand((unsigned) team_index);
   pthread_t car_threads[NR_CARS];
   car_struct car_stats[NR_CARS];
 
   // create car threads; just for initial testing
+  //TODO: apenas criar thread quando receber o comando de um unname pipe
   for (i = 0; i < NR_CARS; i++) {
     init_car_stats(&car_stats[i], team_index, i);
     pthread_create(&car_threads[i], NULL, car_worker, &car_stats[i]);
   }
-
-  // something
 
   // wait for threads to finish
   for (i = 0; i < NR_CARS; i++) pthread_join(car_threads[i], NULL);
 
 #ifdef DEBUG
 	char str[50];
-	sprintf(str,"Process %d Car State: %c", (int)getpid(), box_state);
+	sprintf(str,"Process %d Car State: %c", getpid(), box_state);
 	write_log(str);
 #endif
 
@@ -39,15 +49,18 @@ srand((unsigned) team_index);
   exit(0);
 }
 
+
 // allocates space for array with car threads
 pthread_t *create_threads_array() {
   return (pthread_t *)malloc(sizeof(pthread_t) * NR_CARS);
 }
 
+
 // allocates space for array with car struct atributes
 car_struct *create_car_structs_array() {
   return (car_struct *)malloc(sizeof(car_struct) * NR_CARS);
 }
+
 
 // set the atributes of the car
 void init_car_stats(car_struct *stats, int team_index, int car_index) {
@@ -68,6 +81,7 @@ void init_car_stats(car_struct *stats, int team_index, int car_index) {
   stats->fuel = FUEL_CAPACITY;
   stats->lap_distance = 0;
 }
+
 
 // function to run in car thread
 void *car_worker(void *stats) {

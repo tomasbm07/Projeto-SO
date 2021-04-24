@@ -10,7 +10,7 @@ void malfunction_manager(){
 
 #ifdef DEBUG
 char str[50];
-	sprintf(str,"Malfunction manager, process %d, created",(int)getpid());
+	sprintf(str,"Malfunction manager created (PID: %d)",(int)getpid());
 	write_log(str);
 #endif
 
