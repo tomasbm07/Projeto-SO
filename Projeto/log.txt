@@ -2913,3 +2913,45 @@ GOT SIGTSTP
 [12:43:6] GOT SIGTSTP - Statistics coming
 [12:43:20] SERVER CLOSED
 [12:43:20] Cleaning up...
+[19:33:15] Semaphore initialized
+[19:33:15] SERVER STARTED
+[19:33:15] Semaphore initialized
+[19:33:15] SERVER STARTED
+[19:33:15] Malfunction manager, process 4958, created
+[19:33:15] Semaphore initialized
+[19:33:15] SERVER STARTED
+[19:33:15] SERVER CLOSED
+[19:33:15] Cleaning up...
+[19:34:5] Semaphore initialized
+[19:34:5] SERVER STARTED
+[19:34:5] Semaphore initialized
+[19:34:5] SERVER STARTED
+[19:34:5] Malfunction manager, process 4997, created
+[19:34:5] Semaphore initialized
+[19:34:5] SERVER STARTED
+[19:34:5] SERVER CLOSED
+[19:34:5] Cleaning up...
+[19:34:42] Semaphore initialized
+[19:34:42] SERVER STARTED
+[19:34:42] Semaphore initialized
+[19:34:42] SERVER STARTED
+[19:34:42] Malfunction manager, process 5060, created
+[19:34:42] Semaphore initialized
+[19:34:42] SERVER STARTED
+[19:34:42] SERVER CLOSED
+[19:34:42] Cleaning up...
+[19:36:43] Semaphore initialized
+[19:36:43] SERVER STARTED
+[19:36:43] Malfunction manager, process 5153, created
+[19:36:43] Semaphore initialized
+[19:36:43] SERVER STARTED
+[19:36:43] race_pipe is ready!
+
+[19:37:24] [Race_Pipe] Got START RACE
+[19:37:24] Buckle Up, race is starting!
+[19:39:27] Got SIGINT
+
+[19:36:43] Semaphore initialized
+[19:36:43] SERVER STARTED
+[19:39:27] SERVER CLOSED
+[19:39:27] Cleaning up...

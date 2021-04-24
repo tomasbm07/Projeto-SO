@@ -5,7 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "race_manager.h"
 
-#define PIPE_NAME "/home/user/race_pipe"
+//#define PIPE_NAME "/home/user/race_pipe"
+#define PIPE_NAME "race_pipe"
 
 void clean_resources();
 
