@@ -12,7 +12,7 @@ void team_manager(int team_index) {
   int i;
   //int car_thread_index = 0;
   box_state = 'E'; // 'R' = Reserved; 'E' = Empty; 'F' = Full;
-srand((unsigned) team_index);
+  srand((unsigned) team_index);
   pthread_t car_threads[NR_CARS];
   car_struct car_stats[NR_CARS];
 

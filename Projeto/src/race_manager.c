@@ -5,10 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "race_manager.h"
 
-//#define PIPE_NAME "/home/user/race_pipe"
-#define PIPE_NAME "race_pipe"
-
-void clean_resources();
+#define PIPE_NAME "/home/user/race_pipe"
+//#define PIPE_NAME "race_pipe"
 
 int fd_race_pipe;
 
@@ -21,8 +19,6 @@ void race_manager() {
   sa.sa_handler = signals;
   sigaction(SIGINT, &sa, NULL);
   signal(SIGTSTP, SIG_IGN);
-
-
 
   unlink(PIPE_NAME);
   if (mkfifo(PIPE_NAME, O_CREAT | O_EXCL | 0666) < 0) {

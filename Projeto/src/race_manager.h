@@ -24,5 +24,6 @@ Joel Oliveira - 2019227468
 
 void race_manager(void);
 void signals(int signal);
+void clean_resources();
 
 
