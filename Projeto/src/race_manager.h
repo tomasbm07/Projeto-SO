@@ -8,14 +8,17 @@ Joel Oliveira - 2019227468
 
 #endif
 
+#include <ctype.h>
+#include <errno.h>
+#include <limits.h>
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/select.h>
+#include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#include <sys/select.h>
-#include <sys/stat.h>
-#include <signal.h>
 
 #include "team_manager.h"
 #include "write_output.h"
@@ -27,5 +30,4 @@ int *fd_team;
 void race_manager(void);
 void signals(int signal);
 void clean_resources();
-
-
+int convert_to_int(char number[50]);
