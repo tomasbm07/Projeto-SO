@@ -11,7 +11,7 @@ Joel Oliveira - 2019227468
 int fd_race_pipe;
 
 void race_manager() {
-  int i, num_chars;
+  int i, num_chars, team;
   fd_set read_set;
   char str[256];
   struct sigaction sa;
@@ -22,11 +22,11 @@ void race_manager() {
 
 #ifdef DEBUG
   char aux[50];
-  sprintf(aux,"Race manager created (PID: %d)", getpid());
+  sprintf(aux, "Race manager created (PID: %d)", getpid());
   write_log(aux);
 #endif
 
-  //named pipe stuff
+  // named pipe stuff
   unlink(PIPE_NAME);
   if (mkfifo(PIPE_NAME, O_CREAT | O_EXCL | 0666) < 0) {
     perror("Erro a criar o pipe: ");
@@ -38,19 +38,9 @@ void race_manager() {
     exit(1);
   }
 
-  //unnamed pipes stuff - 1 pipe per team
-  //unname pipe direction: race_manager -> team_manager
-  //fd[0] = read; fd[1] = write
-  fd_team = malloc(2 * NR_TEAM * sizeof(int));
-  for (int i = 0; i < NR_TEAM; i++){
-    pipe(&fd_team[i*2]);
-    close(fd_team[i*2]); // close the read part for race_manager
-  }
-
-  
   /*
   Comandos para testar o pipe:
-  echo "ADDCAR TEAM: A, CAR: 77, SPEED: 50, COMSUMPTION: 0.04, RELIABILITY: 99" > race_pipe
+  echo "ADDCAR TEAM: A, CAR: 77, SPEED: 50, COMSUMPTION: 0.04, RELIABILITY: 99" > race_pipe 
   echo "START RACE" > race_pipe
   */
 
@@ -65,7 +55,7 @@ void race_manager() {
         num_chars = read(fd_race_pipe, str, sizeof(str));
         str[num_chars - 1] = '\0';  // put a \0 in the end of string
 
-        //split da string que vem do pipe
+        // split da string que vem do pipe
         /*
         char *aux = strtok(str, " ");
         while (aux != NULL){
@@ -73,30 +63,47 @@ void race_manager() {
           aux = strtok(NULL, ",");
         }
         */
-        
-        //TODO: se der split primeiro, o srtcmp so ve "START" se o comando for "START RACE"
-        if (strcmp(str, "ADDCAR") == 0){
+
+        // TODO: se der split primeiro, o srtcmp so ve "START" se o comando for
+        // "START RACE"
+        if (strcmp(str, "ADDCAR") == 0) {
           write_log("[Race_Pipe] Got ADDCAR");
-        }
-        else if (strcmp(str, "123") == 0){
+        } else if (strcmp(str, "123") == 0) {
           write_log("[Race_Pipe] Got 123");
-        }
-        else if (strcmp(str, "START RACE") == 0){
+        } else if (strcmp(str, "START RACE") == 0) {
           write_log("[Race_Pipe] Got START RACE");
           write_log("Buckle Up, race is starting!");
-        }
-        else if (strcmp(str, "SKIP") == 0){
+        } else if (strcmp(str, "SKIP") == 0) {
           write_log("[Race_Pipe] Got SKIP");
           break;
-        }
-        else
+        } else
           printf("unknown command\n");
       }
     }
   }
 
+  // unnamed pipes stuff - 1 pipe per team
+  // unname pipe direction: race_manager -> team_manager
+  // fd[0] = read; fd[1] = write
+  fd_team = malloc(2 * NR_TEAM * sizeof(*fd_team));
+  for (int i = 0; i < NR_TEAM; i++) pipe(&fd_team[i * 2]);
+
   for (i = 0; i < NR_TEAM; i++)
-    if (!fork()) team_manager(i * NR_CARS);
+    if (!fork()) team_manager(i);
+
+  //send a message to every team
+  char teste[50];
+  //sprintf(teste, "--Just a random test message--");
+  sprintf(teste, "ADDCAR");
+  for (i = 0; i < NR_TEAM; i++){
+    team = i;
+    write(fd_team[team*2 + 1], teste, strlen(teste) + 1);
+  }
+  
+  // close unnecessary reading part
+  for (int i = 0; i < NR_TEAM; i++) {
+    close(fd_team[2 * i]);
+  }
 
 #ifdef DEBUG
   sprintf(str, "Created %d team processes", i);
@@ -113,9 +120,10 @@ void race_manager() {
 void clean_resources() {
   close(fd_race_pipe);
   unlink(PIPE_NAME);
+  for (int i = 0; i < NR_TEAM; i++) close(fd_team[i * 2]);
 }
 
-void signals(int signal){
+void signals(int signal) {
 #ifdef DEBUG
   write_log("Got SIGINT\n");
 #endif

@@ -23,7 +23,7 @@ Joel Oliveira - 2019227468
 shm_struct *shm_info;  
 int NR_CARS, NR_TEAM; 
 
-void team_manager();
+void team_manager(int team_index);
 pthread_t* create_threads_array();
 car_struct* create_car_structs_array();
 void init_car_stats(car_struct* stats, int team_nr, int car_nr);

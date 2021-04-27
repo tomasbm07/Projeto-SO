@@ -82,3 +82,2068 @@
 [20:10:46] SERVER STARTED
 [20:10:49] SERVER CLOSED
 [20:10:49] Cleaning up...
+[10:57:20] Semaphore initialized
+[10:57:20] SERVER STARTED
+[10:57:20] Malfunction manager created (PID: 4303)
+[10:57:20] Semaphore initialized
+[10:57:20] SERVER STARTED
+[10:57:20] Race manager created (PID: 4302)
+[10:57:20] Named pipe 'race_pipe' is ready!
+
+[10:58:16] [Race_Pipe] Got START RACE
+[10:58:16] Buckle Up, race is starting!
+[10:58:24] [Race_Pipe] Got SKIP
+[10:58:24] Team manager created (PID: 4330)
+[10:58:24] I am Thread -1385982208, from process 4330
+	Team: OMEGALUL_0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[10:58:24] Thread car created!
+[10:58:24] I am Thread -1377589504, from process 4330
+	Team: OMEGALUL_0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[10:58:24] Thread car created!
+[10:58:24] Process 4330 Car State: F
+[10:57:20] Semaphore initialized
+[10:57:20] SERVER STARTED
+[10:57:20] Race manager created (PID: 4302)
+[10:57:20] Named pipe 'race_pipe' is ready!
+
+[10:58:16] [Race_Pipe] Got START RACE
+[10:58:16] Buckle Up, race is starting!
+[10:58:24] [Race_Pipe] Got SKIP
+[10:58:24] Team manager created (PID: 4331)
+[10:58:24] I am Thread -1377589504, from process 4331
+	Team: OMEGALUL_1 | Car Number: 4 | Fuel: 36.00L | Box State: E
+[10:58:24] Thread car created!
+[10:58:24] I am Thread -1385982208, from process 4331
+	Team: OMEGALUL_1 | Car Number: 5 | Fuel: 36.00L | Box State: E
+[10:58:24] Thread car created!
+[10:58:24] Process 4331 Car State: F
+[10:57:20] Semaphore initialized
+[10:57:20] SERVER STARTED
+[10:57:20] Race manager created (PID: 4302)
+[10:57:20] Named pipe 'race_pipe' is ready!
+
+[10:58:16] [Race_Pipe] Got START RACE
+[10:58:16] Buckle Up, race is starting!
+[10:58:24] [Race_Pipe] Got SKIP
+[10:58:24] Team manager created (PID: 4332)
+[10:58:24] I am Thread -1385982208, from process 4332
+	Team: OMEGALUL_2 | Car Number: 9 | Fuel: 36.00L | Box State: E
+[10:58:24] I am Thread -1377589504, from process 4332
+	Team: OMEGALUL_2 | Car Number: 8 | Fuel: 36.00L | Box State: E
+[10:58:24] Thread car created!
+[10:58:24] Thread car created!
+[10:58:24] Process 4332 Car State: R
+[10:57:20] Semaphore initialized
+[10:57:20] SERVER STARTED
+[10:57:20] Race manager created (PID: 4302)
+[10:57:20] Named pipe 'race_pipe' is ready!
+
+[10:58:16] [Race_Pipe] Got START RACE
+[10:58:16] Buckle Up, race is starting!
+[10:58:24] [Race_Pipe] Got SKIP
+[10:58:24] Team manager created (PID: 4333)
+[10:58:24] I am Thread -1385982208, from process 4333
+	Team: OMEGALUL_3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[10:58:24] Thread car created!
+[10:58:24] I am Thread -1377589504, from process 4333
+	Team: OMEGALUL_3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[10:58:24] Thread car created!
+[10:58:24] Process 4333 Car State: F
+[10:57:20] Semaphore initialized
+[10:57:20] SERVER STARTED
+[10:57:20] Race manager created (PID: 4302)
+[10:57:20] Named pipe 'race_pipe' is ready!
+
+[10:58:16] [Race_Pipe] Got START RACE
+[10:58:16] Buckle Up, race is starting!
+[10:58:24] [Race_Pipe] Got SKIP
+[10:58:24] Team manager created (PID: 4334)
+[10:58:24] I am Thread -1377589504, from process 4334
+	Team: OMEGALUL_4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[10:58:24] Thread car created!
+[10:58:24] I am Thread -1385982208, from process 4334
+	Team: OMEGALUL_4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[10:58:24] Thread car created!
+[10:58:24] Process 4334 Car State: E
+[10:57:20] Semaphore initialized
+[10:57:20] SERVER STARTED
+[10:57:20] Race manager created (PID: 4302)
+[10:57:20] Named pipe 'race_pipe' is ready!
+
+[10:58:16] [Race_Pipe] Got START RACE
+[10:58:16] Buckle Up, race is starting!
+[10:58:24] [Race_Pipe] Got SKIP
+[10:58:24] Created 5 team processes
+[10:57:20] Semaphore initialized
+[10:57:20] SERVER STARTED
+[10:58:24] SERVER CLOSED
+[10:58:24] Cleaning up...
+[11:2:24] Semaphore initialized
+[11:2:24] SERVER STARTED
+[11:2:24] Malfunction manager created (PID: 4373)
+[11:2:24] Semaphore initialized
+[11:2:24] SERVER STARTED
+[11:2:24] Race manager created (PID: 4372)
+[11:2:24] Named pipe 'race_pipe' is ready!
+
+[11:2:26] Got SIGINT
+
+[11:2:24] Semaphore initialized
+[11:2:24] SERVER STARTED
+[11:2:26] SERVER CLOSED
+[11:2:26] Cleaning up...
+[11:5:45] Semaphore initialized
+[11:5:45] SERVER STARTED
+[11:5:45] Malfunction manager created (PID: 4396)
+[11:5:45] Semaphore initialized
+[11:5:45] SERVER STARTED
+[11:5:45] Race manager created (PID: 4395)
+[11:5:45] Named pipe 'race_pipe' is ready!
+
+[11:5:49] [Race_Pipe] Got SKIP
+[11:5:49] Team manager created (PID: 4400)
+[11:5:49] I am Thread 313939712, from process 4400
+	Team: OMEGALUL_0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[11:5:49] Thread car created!
+[11:5:49] I am Thread 322332416, from process 4400
+	Team: OMEGALUL_0 | Car Number: 0 | Fuel: 36.00L | Box State: F
+[11:5:49] Thread car created!
+[11:5:49] Process 4400 Car State: F
+[11:5:45] Semaphore initialized
+[11:5:45] SERVER STARTED
+[11:5:45] Race manager created (PID: 4395)
+[11:5:45] Named pipe 'race_pipe' is ready!
+
+[11:5:49] [Race_Pipe] Got SKIP
+[11:5:49] Team manager created (PID: 4406)
+[11:5:49] I am Thread 313939712, from process 4406
+	Team: OMEGALUL_4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[11:5:49] Thread car created!
+[11:5:49] I am Thread 322332416, from process 4406
+	Team: OMEGALUL_4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[11:5:49] Thread car created!
+[11:5:49] Process 4406 Car State: E
+[11:5:45] Semaphore initialized
+[11:5:45] SERVER STARTED
+[11:5:45] Race manager created (PID: 4395)
+[11:5:45] Named pipe 'race_pipe' is ready!
+
+[11:5:49] [Race_Pipe] Got SKIP
+[11:5:49] Team manager created (PID: 4403)
+[11:5:49] I am Thread 313939712, from process 4403
+	Team: OMEGALUL_3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[11:5:49] Thread car created!
+[11:5:49] I am Thread 322332416, from process 4403
+	Team: OMEGALUL_3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[11:5:49] Thread car created!
+[11:5:49] Process 4403 Car State: F
+[11:5:45] Semaphore initialized
+[11:5:45] SERVER STARTED
+[11:5:45] Race manager created (PID: 4395)
+[11:5:45] Named pipe 'race_pipe' is ready!
+
+[11:5:49] [Race_Pipe] Got SKIP
+[11:5:49] Team manager created (PID: 4402)
+[11:6:37] Got SIGINT
+
+[11:5:45] Semaphore initialized
+[11:5:45] SERVER STARTED
+[11:5:45] Race manager created (PID: 4395)
+[11:5:45] Named pipe 'race_pipe' is ready!
+
+[11:5:49] [Race_Pipe] Got SKIP
+[11:5:49] Created 5 team processes
+[11:6:37] Got SIGINT
+
+[11:5:45] Semaphore initialized
+[11:5:45] SERVER STARTED
+[11:5:45] Race manager created (PID: 4395)
+[11:5:45] Named pipe 'race_pipe' is ready!
+
+[11:5:49] [Race_Pipe] Got SKIP
+[11:5:49] Team manager created (PID: 4401)
+[11:6:37] Got SIGINT
+
+[11:5:45] Semaphore initialized
+[11:5:45] SERVER STARTED
+[11:6:37] SERVER CLOSED
+[11:6:37] Cleaning up...
+[11:7:36] Semaphore initialized
+[11:7:36] SERVER STARTED
+[11:7:36] Malfunction manager created (PID: 4441)
+[11:7:36] Semaphore initialized
+[11:7:36] SERVER STARTED
+[11:7:36] Race manager created (PID: 4440)
+[11:7:36] Named pipe 'race_pipe' is ready!
+
+[11:7:39] [Race_Pipe] Got SKIP
+[11:7:39] Team manager created (PID: 4444)
+[11:7:39] I am Thread -1233459456, from process 4444
+	Team: OMEGALUL_0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[11:7:39] Thread car created!
+[11:7:39] I am Thread -1225066752, from process 4444
+	Team: OMEGALUL_0 | Car Number: 0 | Fuel: 36.00L | Box State: F
+[11:7:39] Thread car created!
+[11:7:39] Process 4444 Car State: F
+[11:7:36] Semaphore initialized
+[11:7:36] SERVER STARTED
+[11:7:36] Race manager created (PID: 4440)
+[11:7:36] Named pipe 'race_pipe' is ready!
+
+[11:7:39] [Race_Pipe] Got SKIP
+[11:7:39] Team manager created (PID: 4448)
+[11:7:39] I am Thread -1225066752, from process 4448
+	Team: OMEGALUL_4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[11:7:39] Thread car created!
+[11:7:39] I am Thread -1233459456, from process 4448
+	Team: OMEGALUL_4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[11:7:39] Thread car created!
+[11:7:39] Process 4448 Car State: E
+[11:7:36] Semaphore initialized
+[11:7:36] SERVER STARTED
+[11:7:36] Race manager created (PID: 4440)
+[11:7:36] Named pipe 'race_pipe' is ready!
+
+[11:7:39] [Race_Pipe] Got SKIP
+[11:7:39] Team manager created (PID: 4447)
+[11:7:39] I am Thread -1225066752, from process 4447
+	Team: OMEGALUL_3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[11:7:39] Thread car created!
+[11:7:39] I am Thread -1233459456, from process 4447
+	Team: OMEGALUL_3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[11:7:39] Thread car created!
+[11:7:39] Process 4447 Car State: F
+[11:7:36] Semaphore initialized
+[11:7:36] SERVER STARTED
+[11:7:36] Race manager created (PID: 4440)
+[11:7:36] Named pipe 'race_pipe' is ready!
+
+[11:7:39] [Race_Pipe] Got SKIP
+[11:7:39] Team manager created (PID: 4445)
+[11:8:14] Got SIGINT
+
+[11:7:36] Semaphore initialized
+[11:7:36] SERVER STARTED
+[11:7:36] Race manager created (PID: 4440)
+[11:7:36] Named pipe 'race_pipe' is ready!
+
+[11:7:39] [Race_Pipe] Got SKIP
+[11:7:39] Created 5 team processes
+[11:8:14] Got SIGINT
+
+[11:7:36] Semaphore initialized
+[11:7:36] SERVER STARTED
+[11:7:36] Race manager created (PID: 4440)
+[11:7:36] Named pipe 'race_pipe' is ready!
+
+[11:7:39] [Race_Pipe] Got SKIP
+[11:7:39] Team manager created (PID: 4446)
+[11:8:14] Got SIGINT
+
+[11:7:36] Semaphore initialized
+[11:7:36] SERVER STARTED
+[11:8:14] SERVER CLOSED
+[11:8:14] Cleaning up...
+[11:8:33] Semaphore initialized
+[11:8:33] SERVER STARTED
+[11:8:33] Malfunction manager created (PID: 4491)
+[11:8:33] Semaphore initialized
+[11:8:33] SERVER STARTED
+[11:8:33] Race manager created (PID: 4490)
+[11:8:33] Named pipe 'race_pipe' is ready!
+
+[11:8:35] [Race_Pipe] Got SKIP
+[11:8:35] Team manager created (PID: 4494)
+[11:8:35] I am Thread 11613952, from process 4494
+	Team: OMEGALUL_0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[11:8:35] Thread car created!
+[11:8:35] I am Thread 3221248, from process 4494
+	Team: OMEGALUL_0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[11:8:35] Thread car created!
+[11:8:35] Process 4494 Car State: F
+[11:8:33] Semaphore initialized
+[11:8:33] SERVER STARTED
+[11:8:33] Race manager created (PID: 4490)
+[11:8:33] Named pipe 'race_pipe' is ready!
+
+[11:8:35] [Race_Pipe] Got SKIP
+[11:8:35] Team manager created (PID: 4498)
+[11:8:35] I am Thread 3221248, from process 4498
+	Team: OMEGALUL_3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[11:8:35] Thread car created!
+[11:8:35] I am Thread 11613952, from process 4498
+	Team: OMEGALUL_3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[11:8:35] Thread car created!
+[11:8:35] Process 4498 Car State: F
+[11:8:33] Semaphore initialized
+[11:8:33] SERVER STARTED
+[11:8:33] Race manager created (PID: 4490)
+[11:8:33] Named pipe 'race_pipe' is ready!
+
+[11:8:35] [Race_Pipe] Got SKIP
+[11:8:35] Team manager created (PID: 4499)
+[11:8:35] I am Thread 11613952, from process 4499
+	Team: OMEGALUL_4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[11:8:35] Thread car created!
+[11:8:35] I am Thread 3221248, from process 4499
+	Team: OMEGALUL_4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[11:8:35] Thread car created!
+[11:8:35] Process 4499 Car State: E
+[11:8:33] Semaphore initialized
+[11:8:33] SERVER STARTED
+[11:8:33] Race manager created (PID: 4490)
+[11:8:33] Named pipe 'race_pipe' is ready!
+
+[11:8:35] [Race_Pipe] Got SKIP
+[11:8:35] Team manager created (PID: 4495)
+[11:9:36] Got SIGINT
+
+[11:8:33] Semaphore initialized
+[11:8:33] SERVER STARTED
+[11:8:33] Race manager created (PID: 4490)
+[11:8:33] Named pipe 'race_pipe' is ready!
+
+[11:8:35] [Race_Pipe] Got SKIP
+[11:8:35] Team manager created (PID: 4497)
+[11:9:36] Got SIGINT
+
+[11:8:33] Semaphore initialized
+[11:8:33] SERVER STARTED
+[11:8:33] Race manager created (PID: 4490)
+[11:8:33] Named pipe 'race_pipe' is ready!
+
+[11:8:35] [Race_Pipe] Got SKIP
+[11:8:35] Created 5 team processes
+[11:9:36] Got SIGINT
+
+[11:8:33] Semaphore initialized
+[11:8:33] SERVER STARTED
+[11:9:36] SERVER CLOSED
+[11:9:36] Cleaning up...
+[11:9:48] Semaphore initialized
+[11:9:48] SERVER STARTED
+[11:9:48] Malfunction manager created (PID: 4535)
+[11:9:48] Semaphore initialized
+[11:9:48] SERVER STARTED
+[11:9:48] Race manager created (PID: 4534)
+[11:9:48] Named pipe 'race_pipe' is ready!
+
+[11:9:50] [Race_Pipe] Got SKIP
+[11:9:50] Team manager created (PID: 4543)
+[11:9:50] I am Thread 1071343360, from process 4543
+	Team: OMEGALUL_4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[11:9:50] Thread car created!
+[11:9:50] I am Thread 1079736064, from process 4543
+	Team: OMEGALUL_4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[11:9:50] Thread car created!
+[11:9:50] Process 4543 Car State: E
+[11:9:48] Semaphore initialized
+[11:9:48] SERVER STARTED
+[11:9:48] Race manager created (PID: 4534)
+[11:9:48] Named pipe 'race_pipe' is ready!
+
+[11:9:50] [Race_Pipe] Got SKIP
+[11:9:50] Team manager created (PID: 4539)
+[11:9:50] I am Thread 1079736064, from process 4539
+	Team: OMEGALUL_0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[11:9:50] I am Thread 1071343360, from process 4539
+	Team: OMEGALUL_0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[11:9:50] Thread car created!
+[11:9:50] Thread car created!
+[11:9:50] Process 4539 Car State: F
+[11:9:48] Semaphore initialized
+[11:9:48] SERVER STARTED
+[11:9:48] Race manager created (PID: 4534)
+[11:9:48] Named pipe 'race_pipe' is ready!
+
+[11:9:50] [Race_Pipe] Got SKIP
+[11:9:50] Team manager created (PID: 4542)
+[11:9:50] I am Thread 1071343360, from process 4542
+	Team: OMEGALUL_3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[11:9:50] Thread car created!
+[11:9:50] I am Thread 1079736064, from process 4542
+	Team: OMEGALUL_3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[11:9:50] Thread car created!
+[11:9:50] Process 4542 Car State: F
+[11:9:48] Semaphore initialized
+[11:9:48] SERVER STARTED
+[11:9:48] Race manager created (PID: 4534)
+[11:9:48] Named pipe 'race_pipe' is ready!
+
+[11:9:50] [Race_Pipe] Got SKIP
+[11:9:50] Team manager created (PID: 4541)
+[11:10:21] Got SIGINT
+
+[11:9:48] Semaphore initialized
+[11:9:48] SERVER STARTED
+[11:9:48] Race manager created (PID: 4534)
+[11:9:48] Named pipe 'race_pipe' is ready!
+
+[11:9:50] [Race_Pipe] Got SKIP
+[11:9:50] Created 5 team processes
+[11:10:21] Got SIGINT
+
+[11:9:48] Semaphore initialized
+[11:9:48] SERVER STARTED
+[11:9:48] Race manager created (PID: 4534)
+[11:9:48] Named pipe 'race_pipe' is ready!
+
+[11:9:50] [Race_Pipe] Got SKIP
+[11:9:50] Team manager created (PID: 4540)
+[11:10:21] Got SIGINT
+
+[11:9:48] Semaphore initialized
+[11:9:48] SERVER STARTED
+[11:10:21] SERVER CLOSED
+[11:10:21] Cleaning up...
+[11:10:36] Semaphore initialized
+[11:10:36] SERVER STARTED
+[11:10:36] Malfunction manager created (PID: 4574)
+[11:10:36] Semaphore initialized
+[11:10:36] SERVER STARTED
+[11:10:36] Race manager created (PID: 4573)
+[11:10:36] Named pipe 'race_pipe' is ready!
+
+[11:10:39] [Race_Pipe] Got SKIP
+[11:10:39] Team manager created (PID: 4582)
+[11:10:39] I am Thread 1226671872, from process 4582
+	Team: OMEGALUL_4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[11:10:39] Thread car created!
+[11:10:39] I am Thread 1218279168, from process 4582
+	Team: OMEGALUL_4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[11:10:39] Thread car created!
+[11:10:39] Process 4582 Car State: E
+[11:10:36] Semaphore initialized
+[11:10:36] SERVER STARTED
+[11:10:36] Race manager created (PID: 4573)
+[11:10:36] Named pipe 'race_pipe' is ready!
+
+[11:10:39] [Race_Pipe] Got SKIP
+[11:10:39] Team manager created (PID: 4577)
+[11:10:39] I am Thread 1226671872, from process 4577
+	Team: OMEGALUL_0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[11:10:39] Thread car created!
+[11:10:39] I am Thread 1218279168, from process 4577
+	Team: OMEGALUL_0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[11:10:39] Thread car created!
+[11:10:39] Process 4577 Car State: F
+[11:10:36] Semaphore initialized
+[11:10:36] SERVER STARTED
+[11:10:36] Race manager created (PID: 4573)
+[11:10:36] Named pipe 'race_pipe' is ready!
+
+[11:10:39] [Race_Pipe] Got SKIP
+[11:10:39] Team manager created (PID: 4581)
+[11:10:39] I am Thread 1218279168, from process 4581
+	Team: OMEGALUL_3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[11:10:39] Thread car created!
+[11:10:39] I am Thread 1226671872, from process 4581
+	Team: OMEGALUL_3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[11:10:39] Thread car created!
+[11:10:39] Process 4581 Car State: F
+[11:10:36] Semaphore initialized
+[11:10:36] SERVER STARTED
+[11:10:36] Race manager created (PID: 4573)
+[11:10:36] Named pipe 'race_pipe' is ready!
+
+[11:10:39] [Race_Pipe] Got SKIP
+[11:10:39] Team manager created (PID: 4578)
+[11:11:5] Got SIGINT
+
+[11:10:36] Semaphore initialized
+[11:10:36] SERVER STARTED
+[11:10:36] Race manager created (PID: 4573)
+[11:10:36] Named pipe 'race_pipe' is ready!
+
+[11:10:39] [Race_Pipe] Got SKIP
+[11:10:39] Team manager created (PID: 4580)
+[11:11:5] Got SIGINT
+
+[11:10:36] Semaphore initialized
+[11:10:36] SERVER STARTED
+[11:10:36] Race manager created (PID: 4573)
+[11:10:36] Named pipe 'race_pipe' is ready!
+
+[11:10:39] [Race_Pipe] Got SKIP
+[11:10:39] Created 5 team processes
+[11:11:5] Got SIGINT
+
+[11:10:36] Semaphore initialized
+[11:10:36] SERVER STARTED
+[11:11:5] SERVER CLOSED
+[11:11:5] Cleaning up...
+[11:29:14] Semaphore initialized
+[11:29:14] SERVER STARTED
+[11:29:14] Malfunction manager created (PID: 4604)
+[11:29:14] Semaphore initialized
+[11:29:14] SERVER STARTED
+[11:29:14] Race manager created (PID: 4603)
+[11:29:14] Named pipe 'race_pipe' is ready!
+
+[11:29:16] [Race_Pipe] Got SKIP
+[11:29:17] Team manager created (PID: 4609)
+[11:29:17] I am Thread -213313792, from process 4609
+	Team: OMEGALUL_0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[11:29:17] Thread car created!
+[11:29:17] I am Thread -221706496, from process 4609
+	Team: OMEGALUL_0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[11:29:17] Thread car created!
+[11:29:17] Process 4609 Car State: F
+[11:29:14] Semaphore initialized
+[11:29:14] SERVER STARTED
+[11:29:14] Race manager created (PID: 4603)
+[11:29:14] Named pipe 'race_pipe' is ready!
+
+[11:29:16] [Race_Pipe] Got SKIP
+[11:29:17] Team manager created (PID: 4612)
+[11:29:17] I am Thread -213313792, from process 4612
+	Team: OMEGALUL_3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[11:29:17] Thread car created!
+[11:29:17] I am Thread -221706496, from process 4612
+	Team: OMEGALUL_3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[11:29:17] Thread car created!
+[11:29:17] Process 4612 Car State: F
+[11:29:14] Semaphore initialized
+[11:29:14] SERVER STARTED
+[11:29:14] Race manager created (PID: 4603)
+[11:29:14] Named pipe 'race_pipe' is ready!
+
+[11:29:16] [Race_Pipe] Got SKIP
+[11:29:17] Team manager created (PID: 4613)
+[11:29:17] I am Thread -213313792, from process 4613
+	Team: OMEGALUL_4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[11:29:17] I am Thread -221706496, from process 4613
+	Team: OMEGALUL_4 | Car Number: 17 | Fuel: 36.00L | Box State: E
+[11:29:17] Thread car created!
+[11:29:17] Thread car created!
+[11:29:17] Process 4613 Car State: E
+[11:29:14] Semaphore initialized
+[11:29:14] SERVER STARTED
+[11:29:14] Race manager created (PID: 4603)
+[11:29:14] Named pipe 'race_pipe' is ready!
+
+[11:29:16] [Race_Pipe] Got SKIP
+[11:29:17] Team manager created (PID: 4611)
+[11:32:44] Got SIGINT
+
+[11:29:14] Semaphore initialized
+[11:29:14] SERVER STARTED
+[11:29:14] Race manager created (PID: 4603)
+[11:29:14] Named pipe 'race_pipe' is ready!
+
+[11:29:16] [Race_Pipe] Got SKIP
+[11:29:17] Created 5 team processes
+[11:32:44] Got SIGINT
+
+[11:29:14] Semaphore initialized
+[11:29:14] SERVER STARTED
+[11:29:14] Race manager created (PID: 4603)
+[11:29:14] Named pipe 'race_pipe' is ready!
+
+[11:29:16] [Race_Pipe] Got SKIP
+[11:29:17] Team manager created (PID: 4610)
+[11:32:44] Got SIGINT
+
+[11:29:14] Semaphore initialized
+[11:29:14] SERVER STARTED
+[11:32:44] SERVER CLOSED
+[11:32:44] Cleaning up...
+[11:32:48] Semaphore initialized
+[11:32:48] SERVER STARTED
+[11:32:48] Malfunction manager created (PID: 4665)
+[11:32:48] Semaphore initialized
+[11:32:48] SERVER STARTED
+[11:32:48] Race manager created (PID: 4664)
+[11:32:48] Named pipe 'race_pipe' is ready!
+
+[11:32:50] [Race_Pipe] Got SKIP
+[11:32:50] Team manager created (PID: 4668)
+[11:32:50] I am Thread 197457664, from process 4668
+	Team: OMEGALUL_0 | Car Number: 1 | Fuel: 36.00L | Box State: E
+[11:32:50] Thread car created!
+[11:32:50] I am Thread 205850368, from process 4668
+	Team: OMEGALUL_0 | Car Number: 0 | Fuel: 36.00L | Box State: E
+[11:32:50] Thread car created!
+[11:32:50] Process 4668 Car State: F
+[11:32:48] Semaphore initialized
+[11:32:48] SERVER STARTED
+[11:32:48] Race manager created (PID: 4664)
+[11:32:48] Named pipe 'race_pipe' is ready!
+
+[11:32:50] [Race_Pipe] Got SKIP
+[11:32:50] Team manager created (PID: 4672)
+[11:32:50] I am Thread 197457664, from process 4672
+	Team: OMEGALUL_3 | Car Number: 13 | Fuel: 36.00L | Box State: E
+[11:32:50] Thread car created!
+[11:32:50] I am Thread 205850368, from process 4672
+	Team: OMEGALUL_3 | Car Number: 12 | Fuel: 36.00L | Box State: E
+[11:32:50] Thread car created!
+[11:32:50] Process 4672 Car State: F
+[11:32:48] Semaphore initialized
+[11:32:48] SERVER STARTED
+[11:32:48] Race manager created (PID: 4664)
+[11:32:48] Named pipe 'race_pipe' is ready!
+
+[11:32:50] [Race_Pipe] Got SKIP
+[11:32:50] Team manager created (PID: 4673)
+[11:32:50] I am Thread 205850368, from process 4673
+	Team: OMEGALUL_4 | Car Number: 16 | Fuel: 36.00L | Box State: E
+[11:32:50] Thread car created!
+[11:32:50] I am Thread 197457664, from process 4673
+	Team: OMEGALUL_4 | Car Number: 17 | Fuel: 36.00L | Box State: F
+[11:32:50] Thread car created!
+[11:32:50] Process 4673 Car State: E
+[11:32:48] Semaphore initialized
+[11:32:48] SERVER STARTED
+[11:32:48] Race manager created (PID: 4664)
+[11:32:48] Named pipe 'race_pipe' is ready!
+
+[11:32:50] [Race_Pipe] Got SKIP
+[11:32:50] Team manager created (PID: 4670)
+[11:34:9] Got SIGINT
+
+[11:32:48] Semaphore initialized
+[11:32:48] SERVER STARTED
+[11:32:48] Race manager created (PID: 4664)
+[11:32:48] Named pipe 'race_pipe' is ready!
+
+[11:32:50] [Race_Pipe] Got SKIP
+[11:32:50] Created 5 team processes
+[11:34:9] Got SIGINT
+
+[11:32:48] Semaphore initialized
+[11:32:48] SERVER STARTED
+[11:32:48] Race manager created (PID: 4664)
+[11:32:48] Named pipe 'race_pipe' is ready!
+
+[11:32:50] [Race_Pipe] Got SKIP
+[11:32:50] Team manager created (PID: 4671)
+[11:34:9] Got SIGINT
+
+[11:32:48] Semaphore initialized
+[11:32:48] SERVER STARTED
+[11:34:9] SERVER CLOSED
+[11:34:9] Cleaning up...
+[11:34:14] Semaphore initialized
+[11:34:14] SERVER STARTED
+[11:34:14] Malfunction manager created (PID: 4701)
+[11:34:14] Semaphore initialized
+[11:34:14] SERVER STARTED
+[11:34:14] Race manager created (PID: 4700)
+[11:34:14] Named pipe 'race_pipe' is ready!
+
+[11:34:16] [Race_Pipe] Got SKIP
+[11:34:16] Team manager created (PID: 4709)
+[11:34:16] Thread car created!
+[11:34:16] Thread car created!
+[11:34:16] Process 4709 Car State: E
+[11:34:14] Semaphore initialized
+[11:34:14] SERVER STARTED
+[11:34:14] Race manager created (PID: 4700)
+[11:34:14] Named pipe 'race_pipe' is ready!
+
+[11:34:16] [Race_Pipe] Got SKIP
+[11:34:16] Team manager created (PID: 4708)
+[11:34:16] Thread car created!
+[11:34:16] Thread car created!
+[11:34:16] Process 4708 Car State: F
+[11:34:14] Semaphore initialized
+[11:34:14] SERVER STARTED
+[11:34:14] Race manager created (PID: 4700)
+[11:34:14] Named pipe 'race_pipe' is ready!
+
+[11:34:16] [Race_Pipe] Got SKIP
+[11:34:16] Team manager created (PID: 4704)
+[11:34:16] Thread car created!
+[11:34:16] Thread car created!
+[11:34:16] Process 4704 Car State: F
+[11:34:14] Semaphore initialized
+[11:34:14] SERVER STARTED
+[11:34:14] Race manager created (PID: 4700)
+[11:34:14] Named pipe 'race_pipe' is ready!
+
+[11:34:16] [Race_Pipe] Got SKIP
+[11:34:16] Created 5 team processes
+[11:35:33] Got SIGINT
+
+[11:34:14] Semaphore initialized
+[11:34:14] SERVER STARTED
+[11:34:14] Race manager created (PID: 4700)
+[11:34:14] Named pipe 'race_pipe' is ready!
+
+[11:34:16] [Race_Pipe] Got SKIP
+[11:34:16] Team manager created (PID: 4707)
+[11:35:33] Got SIGINT
+
+[11:34:14] Semaphore initialized
+[11:34:14] SERVER STARTED
+[11:34:14] Race manager created (PID: 4700)
+[11:34:14] Named pipe 'race_pipe' is ready!
+
+[11:34:16] [Race_Pipe] Got SKIP
+[11:34:16] Team manager created (PID: 4705)
+[11:35:33] Got SIGINT
+
+[11:34:14] Semaphore initialized
+[11:34:14] SERVER STARTED
+[11:35:33] SERVER CLOSED
+[11:35:33] Cleaning up...
+[11:35:37] Semaphore initialized
+[11:35:37] SERVER STARTED
+[11:35:37] Malfunction manager created (PID: 4741)
+[11:35:37] Semaphore initialized
+[11:35:37] SERVER STARTED
+[11:35:37] Race manager created (PID: 4740)
+[11:35:37] Named pipe 'race_pipe' is ready!
+
+[11:35:39] [Race_Pipe] Got SKIP
+[11:35:39] Team manager created (PID: 4744)
+[11:35:39] Thread car created!
+[11:35:39] Thread car created!
+[11:35:39] Process 4744 Car State: F
+[11:35:37] Semaphore initialized
+[11:35:37] SERVER STARTED
+[11:35:37] Race manager created (PID: 4740)
+[11:35:37] Named pipe 'race_pipe' is ready!
+
+[11:35:39] [Race_Pipe] Got SKIP
+[11:35:39] Team manager created (PID: 4747)
+[11:36:12] Got SIGINT
+
+[11:35:37] Semaphore initialized
+[11:35:37] SERVER STARTED
+[11:35:37] Race manager created (PID: 4740)
+[11:35:37] Named pipe 'race_pipe' is ready!
+
+[11:35:39] [Race_Pipe] Got SKIP
+[11:35:39] Team manager created (PID: 4746)
+[11:36:12] Got SIGINT
+
+[11:35:37] Semaphore initialized
+[11:35:37] SERVER STARTED
+[11:35:37] Race manager created (PID: 4740)
+[11:35:37] Named pipe 'race_pipe' is ready!
+
+[11:35:39] [Race_Pipe] Got SKIP
+[11:35:39] Team manager created (PID: 4745)
+[11:36:12] Got SIGINT
+
+[11:35:37] Semaphore initialized
+[11:35:37] SERVER STARTED
+[11:35:37] Race manager created (PID: 4740)
+[11:35:37] Named pipe 'race_pipe' is ready!
+
+[11:35:39] [Race_Pipe] Got SKIP
+[11:35:39] Team manager created (PID: 4749)
+[11:36:12] Got SIGINT
+
+[11:35:37] Semaphore initialized
+[11:35:37] SERVER STARTED
+[11:35:37] Race manager created (PID: 4740)
+[11:35:37] Named pipe 'race_pipe' is ready!
+
+[11:35:39] [Race_Pipe] Got SKIP
+[11:35:39] Created 5 team processes
+[11:36:12] Got SIGINT
+
+[11:35:37] Semaphore initialized
+[11:35:37] SERVER STARTED
+[11:36:12] SERVER CLOSED
+[11:36:12] Cleaning up...
+[11:36:14] Semaphore initialized
+[11:36:14] SERVER STARTED
+[11:36:14] Malfunction manager created (PID: 4772)
+[11:36:14] Semaphore initialized
+[11:36:14] SERVER STARTED
+[11:36:14] Race manager created (PID: 4771)
+[11:36:14] Named pipe 'race_pipe' is ready!
+
+[11:36:15] [Race_Pipe] Got SKIP
+[11:36:15] Team manager created (PID: 4775)
+[11:36:15] Thread car created!
+[11:36:15] Thread car created!
+[11:36:15] Process 4775 Car State: F
+[11:36:14] Semaphore initialized
+[11:36:14] SERVER STARTED
+[11:36:14] Race manager created (PID: 4771)
+[11:36:14] Named pipe 'race_pipe' is ready!
+
+[11:36:15] [Race_Pipe] Got SKIP
+[11:36:15] Team manager created (PID: 4779)
+[11:38:36] Got SIGINT
+
+[11:36:14] Semaphore initialized
+[11:36:14] SERVER STARTED
+[11:36:14] Race manager created (PID: 4771)
+[11:36:14] Named pipe 'race_pipe' is ready!
+
+[11:36:15] [Race_Pipe] Got SKIP
+[11:36:15] Team manager created (PID: 4778)
+[11:38:36] Got SIGINT
+
+[11:36:14] Semaphore initialized
+[11:36:14] SERVER STARTED
+[11:36:14] Race manager created (PID: 4771)
+[11:36:14] Named pipe 'race_pipe' is ready!
+
+[11:36:15] [Race_Pipe] Got SKIP
+[11:36:15] Team manager created (PID: 4777)
+[11:38:36] Got SIGINT
+
+[11:36:14] Semaphore initialized
+[11:36:14] SERVER STARTED
+[11:36:14] Race manager created (PID: 4771)
+[11:36:14] Named pipe 'race_pipe' is ready!
+
+[11:36:15] [Race_Pipe] Got SKIP
+[11:36:15] Team manager created (PID: 4780)
+[11:38:36] Got SIGINT
+
+[11:36:14] Semaphore initialized
+[11:36:14] SERVER STARTED
+[11:36:14] Race manager created (PID: 4771)
+[11:36:14] Named pipe 'race_pipe' is ready!
+
+[11:36:15] [Race_Pipe] Got SKIP
+[11:36:15] Created 5 team processes
+[11:38:36] Got SIGINT
+
+[11:36:14] Semaphore initialized
+[11:36:14] SERVER STARTED
+[11:38:36] SERVER CLOSED
+[11:38:36] Cleaning up...
+[11:38:46] Semaphore initialized
+[11:38:46] SERVER STARTED
+[11:38:46] Malfunction manager created (PID: 4791)
+[11:38:46] Semaphore initialized
+[11:38:46] SERVER STARTED
+[11:38:46] Race manager created (PID: 4790)
+[11:38:46] Named pipe 'race_pipe' is ready!
+
+[11:38:59] [Race_Pipe] Got SKIP
+[11:38:59] Team manager created (PID: 4794)
+[11:38:59] Thread car created!
+[11:38:59] Thread car created!
+[11:38:59] Process 4794 Car State: F
+[11:38:46] Semaphore initialized
+[11:38:46] SERVER STARTED
+[11:38:46] Race manager created (PID: 4790)
+[11:38:46] Named pipe 'race_pipe' is ready!
+
+[11:38:59] [Race_Pipe] Got SKIP
+[11:38:59] Created 5 team processes
+[11:39:22] Got SIGINT
+
+[11:38:46] Semaphore initialized
+[11:38:46] SERVER STARTED
+[11:38:46] Race manager created (PID: 4790)
+[11:38:46] Named pipe 'race_pipe' is ready!
+
+[11:38:59] [Race_Pipe] Got SKIP
+[11:38:59] Team manager created (PID: 4799)
+[11:39:22] Got SIGINT
+
+[11:38:46] Semaphore initialized
+[11:38:46] SERVER STARTED
+[11:38:46] Race manager created (PID: 4790)
+[11:38:46] Named pipe 'race_pipe' is ready!
+
+[11:38:59] [Race_Pipe] Got SKIP
+[11:38:59] Team manager created (PID: 4797)
+[11:39:22] Got SIGINT
+
+[11:38:46] Semaphore initialized
+[11:38:46] SERVER STARTED
+[11:38:46] Race manager created (PID: 4790)
+[11:38:46] Named pipe 'race_pipe' is ready!
+
+[11:38:59] [Race_Pipe] Got SKIP
+[11:38:59] Team manager created (PID: 4798)
+[11:39:22] Got SIGINT
+
+[11:38:46] Semaphore initialized
+[11:38:46] SERVER STARTED
+[11:38:46] Race manager created (PID: 4790)
+[11:38:46] Named pipe 'race_pipe' is ready!
+
+[11:38:59] [Race_Pipe] Got SKIP
+[11:38:59] Team manager created (PID: 4795)
+[11:39:22] Got SIGINT
+
+[11:38:46] Semaphore initialized
+[11:38:46] SERVER STARTED
+[11:39:22] SERVER CLOSED
+[11:39:22] Cleaning up...
+[11:39:51] Semaphore initialized
+[11:39:51] SERVER STARTED
+[11:39:51] Malfunction manager created (PID: 4823)
+[11:39:51] Semaphore initialized
+[11:39:51] SERVER STARTED
+[11:39:51] Race manager created (PID: 4822)
+[11:39:51] Named pipe 'race_pipe' is ready!
+
+[11:39:53] [Race_Pipe] Got SKIP
+[11:39:53] Team manager created (PID: 4831)
+[11:40:18] Got SIGINT
+
+[11:39:51] Semaphore initialized
+[11:39:51] SERVER STARTED
+[11:39:51] Race manager created (PID: 4822)
+[11:39:51] Named pipe 'race_pipe' is ready!
+
+[11:39:53] [Race_Pipe] Got SKIP
+[11:39:53] Created 5 team processes
+[11:40:18] Got SIGINT
+
+[11:39:51] Semaphore initialized
+[11:39:51] SERVER STARTED
+[11:39:51] Race manager created (PID: 4822)
+[11:39:51] Named pipe 'race_pipe' is ready!
+
+[11:39:53] [Race_Pipe] Got SKIP
+[11:39:53] Team manager created (PID: 4828)
+[11:40:18] Got SIGINT
+
+[11:39:51] Semaphore initialized
+[11:39:51] SERVER STARTED
+[11:39:51] Race manager created (PID: 4822)
+[11:39:51] Named pipe 'race_pipe' is ready!
+
+[11:39:53] [Race_Pipe] Got SKIP
+[11:39:53] Team manager created (PID: 4830)
+[11:40:18] Got SIGINT
+
+[11:39:51] Semaphore initialized
+[11:39:51] SERVER STARTED
+[11:39:51] Race manager created (PID: 4822)
+[11:39:51] Named pipe 'race_pipe' is ready!
+
+[11:39:53] [Race_Pipe] Got SKIP
+[11:39:53] Team manager created (PID: 4827)
+[11:40:18] Got SIGINT
+
+[11:39:51] Semaphore initialized
+[11:39:51] SERVER STARTED
+[11:40:18] SERVER CLOSED
+[11:40:18] Cleaning up...
+[11:39:51] Semaphore initialized
+[11:39:51] SERVER STARTED
+[11:39:51] Race manager created (PID: 4822)
+[11:39:51] Named pipe 'race_pipe' is ready!
+
+[11:39:53] [Race_Pipe] Got SKIP
+[11:39:53] Team manager created (PID: 4829)
+[11:40:18] Got SIGINT
+
+[11:42:46] Semaphore initialized
+[11:42:46] SERVER STARTED
+[11:42:46] Malfunction manager created (PID: 4853)
+[11:42:46] Semaphore initialized
+[11:42:46] SERVER STARTED
+[11:42:46] Race manager created (PID: 4852)
+[11:42:46] Named pipe 'race_pipe' is ready!
+
+[11:42:47] [Race_Pipe] Got SKIP
+[11:42:47] Team manager created (PID: 4856)
+[11:42:47] Thread car created!
+[11:42:47] Thread car created!
+[11:42:47] Process 4856 Car State: F
+[11:42:46] Semaphore initialized
+[11:42:46] SERVER STARTED
+[11:42:46] Race manager created (PID: 4852)
+[11:42:46] Named pipe 'race_pipe' is ready!
+
+[11:42:47] [Race_Pipe] Got SKIP
+[11:42:47] Team manager created (PID: 4859)
+[11:42:47] Thread car created!
+[11:42:47] Thread car created!
+[11:42:47] Process 4859 Car State: F
+[11:42:46] Semaphore initialized
+[11:42:46] SERVER STARTED
+[11:42:46] Race manager created (PID: 4852)
+[11:42:46] Named pipe 'race_pipe' is ready!
+
+[11:42:47] [Race_Pipe] Got SKIP
+[11:42:47] Team manager created (PID: 4858)
+[11:42:47] Thread car created!
+[11:42:47] Thread car created!
+[11:42:47] Process 4858 Car State: F
+[11:42:46] Semaphore initialized
+[11:42:46] SERVER STARTED
+[11:42:46] Race manager created (PID: 4852)
+[11:42:46] Named pipe 'race_pipe' is ready!
+
+[11:42:47] [Race_Pipe] Got SKIP
+[11:42:47] Team manager created (PID: 4860)
+[11:42:47] Thread car created!
+[11:42:47] Thread car created!
+[11:42:47] Process 4860 Car State: R
+[11:42:46] Semaphore initialized
+[11:42:46] SERVER STARTED
+[11:42:46] Race manager created (PID: 4852)
+[11:42:46] Named pipe 'race_pipe' is ready!
+
+[11:42:47] [Race_Pipe] Got SKIP
+[11:42:47] Team manager created (PID: 4857)
+[11:42:47] Thread car created!
+[11:42:47] Thread car created!
+[11:42:47] Process 4857 Car State: F
+[11:42:46] Semaphore initialized
+[11:42:46] SERVER STARTED
+[11:42:46] Race manager created (PID: 4852)
+[11:42:46] Named pipe 'race_pipe' is ready!
+
+[11:42:47] [Race_Pipe] Got SKIP
+[11:42:47] Created 5 team processes
+[11:42:46] Semaphore initialized
+[11:42:46] SERVER STARTED
+[11:42:47] SERVER CLOSED
+[11:42:47] Cleaning up...
+[11:43:17] Semaphore initialized
+[11:43:17] SERVER STARTED
+[11:43:17] Malfunction manager created (PID: 4890)
+[11:43:17] Semaphore initialized
+[11:43:17] SERVER STARTED
+[11:43:17] Race manager created (PID: 4889)
+[11:43:17] Named pipe 'race_pipe' is ready!
+
+[11:43:20] [Race_Pipe] Got SKIP
+[11:43:20] Team manager created (PID: 4893)
+[11:43:20] Thread car created!
+[11:43:20] Thread car created!
+[11:43:20] Process 4893 Car State: F
+[11:43:17] Semaphore initialized
+[11:43:17] SERVER STARTED
+[11:43:17] Race manager created (PID: 4889)
+[11:43:17] Named pipe 'race_pipe' is ready!
+
+[11:43:20] [Race_Pipe] Got SKIP
+[11:43:20] Team manager created (PID: 4896)
+[11:43:20] Thread car created!
+[11:43:20] Thread car created!
+[11:43:20] Process 4896 Car State: F
+[11:43:17] Semaphore initialized
+[11:43:17] SERVER STARTED
+[11:43:17] Race manager created (PID: 4889)
+[11:43:17] Named pipe 'race_pipe' is ready!
+
+[11:43:20] [Race_Pipe] Got SKIP
+[11:43:20] Team manager created (PID: 4897)
+[11:43:20] Thread car created!
+[11:43:20] Thread car created!
+[11:43:20] Process 4897 Car State: F
+[11:43:17] Semaphore initialized
+[11:43:17] SERVER STARTED
+[11:43:17] Race manager created (PID: 4889)
+[11:43:17] Named pipe 'race_pipe' is ready!
+
+[11:43:20] [Race_Pipe] Got SKIP
+[11:43:20] Team manager created (PID: 4898)
+[11:43:20] Thread car created!
+[11:43:20] Thread car created!
+[11:43:20] Process 4898 Car State: R
+[11:43:17] Semaphore initialized
+[11:43:17] SERVER STARTED
+[11:43:17] Race manager created (PID: 4889)
+[11:43:17] Named pipe 'race_pipe' is ready!
+
+[11:43:20] [Race_Pipe] Got SKIP
+[11:43:20] Team manager created (PID: 4894)
+[11:43:20] Thread car created!
+[11:43:20] Thread car created!
+[11:43:20] Process 4894 Car State: F
+[11:43:17] Semaphore initialized
+[11:43:17] SERVER STARTED
+[11:43:17] Race manager created (PID: 4889)
+[11:43:17] Named pipe 'race_pipe' is ready!
+
+[11:43:20] [Race_Pipe] Got SKIP
+[11:43:20] Created 5 team processes
+[11:43:17] Semaphore initialized
+[11:43:17] SERVER STARTED
+[11:43:20] SERVER CLOSED
+[11:43:20] Cleaning up...
+[11:43:39] Semaphore initialized
+[11:43:39] SERVER STARTED
+[11:43:39] Malfunction manager created (PID: 4928)
+[11:43:39] Semaphore initialized
+[11:43:39] SERVER STARTED
+[11:43:39] Race manager created (PID: 4927)
+[11:43:39] Named pipe 'race_pipe' is ready!
+
+[11:43:40] [Race_Pipe] Got SKIP
+[11:43:40] Team manager created (PID: 4932)
+[11:43:40] Thread car created!
+[11:43:40] Thread car created!
+[11:43:40] Process 4932 Car State: F
+[11:43:39] Semaphore initialized
+[11:43:39] SERVER STARTED
+[11:43:39] Race manager created (PID: 4927)
+[11:43:39] Named pipe 'race_pipe' is ready!
+
+[11:43:40] [Race_Pipe] Got SKIP
+[11:43:40] Team manager created (PID: 4934)
+[11:43:40] Thread car created!
+[11:43:40] Thread car created!
+[11:43:40] Process 4934 Car State: F
+[11:43:39] Semaphore initialized
+[11:43:39] SERVER STARTED
+[11:43:39] Race manager created (PID: 4927)
+[11:43:39] Named pipe 'race_pipe' is ready!
+
+[11:43:40] [Race_Pipe] Got SKIP
+[11:43:40] Team manager created (PID: 4933)
+[11:43:40] Thread car created!
+[11:43:40] Thread car created!
+[11:43:40] Process 4933 Car State: F
+[11:43:39] Semaphore initialized
+[11:43:39] SERVER STARTED
+[11:43:39] Race manager created (PID: 4927)
+[11:43:39] Named pipe 'race_pipe' is ready!
+
+[11:43:40] [Race_Pipe] Got SKIP
+[11:43:40] Team manager created (PID: 4936)
+[11:43:40] Thread car created!
+[11:43:40] Thread car created!
+[11:43:40] Process 4936 Car State: R
+[11:43:39] Semaphore initialized
+[11:43:39] SERVER STARTED
+[11:43:39] Race manager created (PID: 4927)
+[11:43:39] Named pipe 'race_pipe' is ready!
+
+[11:43:40] [Race_Pipe] Got SKIP
+[11:43:40] Team manager created (PID: 4935)
+[11:43:40] Thread car created!
+[11:43:40] Thread car created!
+[11:43:40] Process 4935 Car State: F
+[11:43:39] Semaphore initialized
+[11:43:39] SERVER STARTED
+[11:43:39] Race manager created (PID: 4927)
+[11:43:39] Named pipe 'race_pipe' is ready!
+
+[11:43:40] [Race_Pipe] Got SKIP
+[11:43:40] Created 5 team processes
+[11:43:39] Semaphore initialized
+[11:43:39] SERVER STARTED
+[11:43:40] SERVER CLOSED
+[11:43:40] Cleaning up...
+[11:44:25] Semaphore initialized
+[11:44:25] SERVER STARTED
+[11:44:25] Malfunction manager created (PID: 4966)
+[11:44:25] Semaphore initialized
+[11:44:25] SERVER STARTED
+[11:44:25] Race manager created (PID: 4965)
+[11:44:25] Named pipe 'race_pipe' is ready!
+
+[11:44:26] [Race_Pipe] Got SKIP
+[11:44:26] Team manager created (PID: 4974)
+[11:44:40] Got SIGINT
+
+[11:44:25] Semaphore initialized
+[11:44:25] SERVER STARTED
+[11:44:25] Race manager created (PID: 4965)
+[11:44:25] Named pipe 'race_pipe' is ready!
+
+[11:44:26] [Race_Pipe] Got SKIP
+[11:44:26] Team manager created (PID: 4973)
+[11:44:40] Got SIGINT
+
+[11:44:25] Semaphore initialized
+[11:44:25] SERVER STARTED
+[11:44:25] Race manager created (PID: 4965)
+[11:44:25] Named pipe 'race_pipe' is ready!
+
+[11:44:26] [Race_Pipe] Got SKIP
+[11:44:26] Team manager created (PID: 4971)
+[11:44:40] Got SIGINT
+
+[11:44:25] Semaphore initialized
+[11:44:25] SERVER STARTED
+[11:44:25] Race manager created (PID: 4965)
+[11:44:25] Named pipe 'race_pipe' is ready!
+
+[11:44:26] [Race_Pipe] Got SKIP
+[11:44:26] Team manager created (PID: 4972)
+[11:44:40] Got SIGINT
+
+[11:44:25] Semaphore initialized
+[11:44:25] SERVER STARTED
+[11:44:25] Race manager created (PID: 4965)
+[11:44:25] Named pipe 'race_pipe' is ready!
+
+[11:44:26] [Race_Pipe] Got SKIP
+[11:44:26] Team manager created (PID: 4970)
+[11:44:40] Got SIGINT
+
+[11:44:25] Semaphore initialized
+[11:44:25] SERVER STARTED
+[11:44:25] Race manager created (PID: 4965)
+[11:44:25] Named pipe 'race_pipe' is ready!
+
+[11:44:26] [Race_Pipe] Got SKIP
+[11:44:26] Created 5 team processes
+[11:44:40] Got SIGINT
+
+[11:44:25] Semaphore initialized
+[11:44:25] SERVER STARTED
+[11:44:40] SERVER CLOSED
+[11:44:40] Cleaning up...
+[11:44:43] Semaphore initialized
+[11:44:43] SERVER STARTED
+[11:44:43] Malfunction manager created (PID: 4993)
+[11:44:43] Semaphore initialized
+[11:44:43] SERVER STARTED
+[11:44:43] Race manager created (PID: 4992)
+[11:44:43] Named pipe 'race_pipe' is ready!
+
+[11:44:45] [Race_Pipe] Got SKIP
+[11:44:45] Team manager created (PID: 5001)
+[11:44:56] Got SIGINT
+
+[11:44:43] Semaphore initialized
+[11:44:43] SERVER STARTED
+[11:44:43] Race manager created (PID: 4992)
+[11:44:43] Named pipe 'race_pipe' is ready!
+
+[11:44:45] [Race_Pipe] Got SKIP
+[11:44:45] Team manager created (PID: 4996)
+[11:44:56] Got SIGINT
+
+[11:44:43] Semaphore initialized
+[11:44:43] SERVER STARTED
+[11:44:43] Race manager created (PID: 4992)
+[11:44:43] Named pipe 'race_pipe' is ready!
+
+[11:44:45] [Race_Pipe] Got SKIP
+[11:44:45] Created 5 team processes
+[11:44:56] Got SIGINT
+
+[11:44:43] Semaphore initialized
+[11:44:43] SERVER STARTED
+[11:44:43] Race manager created (PID: 4992)
+[11:44:43] Named pipe 'race_pipe' is ready!
+
+[11:44:45] [Race_Pipe] Got SKIP
+[11:44:45] Team manager created (PID: 4999)
+[11:44:56] Got SIGINT
+
+[11:44:43] Semaphore initialized
+[11:44:43] SERVER STARTED
+[11:44:43] Race manager created (PID: 4992)
+[11:44:43] Named pipe 'race_pipe' is ready!
+
+[11:44:45] [Race_Pipe] Got SKIP
+[11:44:45] Team manager created (PID: 4998)
+[11:44:56] Got SIGINT
+
+[11:44:43] Semaphore initialized
+[11:44:43] SERVER STARTED
+[11:44:43] Race manager created (PID: 4992)
+[11:44:43] Named pipe 'race_pipe' is ready!
+
+[11:44:45] [Race_Pipe] Got SKIP
+[11:44:45] Team manager created (PID: 5000)
+[11:44:56] Got SIGINT
+
+[11:44:43] Semaphore initialized
+[11:44:43] SERVER STARTED
+[11:44:56] SERVER CLOSED
+[11:44:56] Cleaning up...
+[11:46:1] Semaphore initialized
+[11:46:1] SERVER STARTED
+[11:46:1] Malfunction manager created (PID: 5023)
+[11:46:1] Semaphore initialized
+[11:46:1] SERVER STARTED
+[11:46:1] Race manager created (PID: 5022)
+[11:46:1] Named pipe 'race_pipe' is ready!
+
+[11:46:2] [Race_Pipe] Got SKIP
+[11:46:2] Team manager created (PID: 5027)
+[11:46:2] Thread car created!
+[11:46:2] Thread car created!
+[11:46:2] Process 5027 Car State: F
+[11:46:1] Semaphore initialized
+[11:46:1] SERVER STARTED
+[11:46:1] Race manager created (PID: 5022)
+[11:46:1] Named pipe 'race_pipe' is ready!
+
+[11:46:2] [Race_Pipe] Got SKIP
+[11:46:2] Created 5 team processes
+[11:46:10] Got SIGINT
+
+[11:46:1] Semaphore initialized
+[11:46:1] SERVER STARTED
+[11:46:1] Race manager created (PID: 5022)
+[11:46:1] Named pipe 'race_pipe' is ready!
+
+[11:46:2] [Race_Pipe] Got SKIP
+[11:46:2] Team manager created (PID: 5031)
+[11:46:10] Got SIGINT
+
+[11:46:1] Semaphore initialized
+[11:46:1] SERVER STARTED
+[11:46:1] Race manager created (PID: 5022)
+[11:46:1] Named pipe 'race_pipe' is ready!
+
+[11:46:2] [Race_Pipe] Got SKIP
+[11:46:2] Team manager created (PID: 5028)
+[11:46:10] Got SIGINT
+
+[11:46:1] Semaphore initialized
+[11:46:1] SERVER STARTED
+[11:46:1] Race manager created (PID: 5022)
+[11:46:1] Named pipe 'race_pipe' is ready!
+
+[11:46:2] [Race_Pipe] Got SKIP
+[11:46:2] Team manager created (PID: 5029)
+[11:46:10] Got SIGINT
+
+[11:46:1] Semaphore initialized
+[11:46:1] SERVER STARTED
+[11:46:1] Race manager created (PID: 5022)
+[11:46:1] Named pipe 'race_pipe' is ready!
+
+[11:46:2] [Race_Pipe] Got SKIP
+[11:46:2] Team manager created (PID: 5030)
+[11:46:10] Got SIGINT
+
+[11:46:1] Semaphore initialized
+[11:46:1] SERVER STARTED
+[11:46:10] SERVER CLOSED
+[11:46:10] Cleaning up...
+[11:46:12] Semaphore initialized
+[11:46:12] SERVER STARTED
+[11:46:12] Malfunction manager created (PID: 5053)
+[11:46:12] Semaphore initialized
+[11:46:12] SERVER STARTED
+[11:46:12] Race manager created (PID: 5052)
+[11:46:12] Named pipe 'race_pipe' is ready!
+
+[11:46:14] [Race_Pipe] Got SKIP
+[11:46:14] Team manager created (PID: 5057)
+[11:46:14] Thread car created!
+[11:46:14] Thread car created!
+[11:46:14] Process 5057 Car State: F
+[11:46:12] Semaphore initialized
+[11:46:12] SERVER STARTED
+[11:46:12] Race manager created (PID: 5052)
+[11:46:12] Named pipe 'race_pipe' is ready!
+
+[11:46:14] [Race_Pipe] Got SKIP
+[11:46:14] Team manager created (PID: 5060)
+[11:47:43] Got SIGINT
+
+[11:46:12] Semaphore initialized
+[11:46:12] SERVER STARTED
+[11:46:12] Race manager created (PID: 5052)
+[11:46:12] Named pipe 'race_pipe' is ready!
+
+[11:46:14] [Race_Pipe] Got SKIP
+[11:46:14] Team manager created (PID: 5056)
+[11:47:43] Got SIGINT
+
+[11:46:12] Semaphore initialized
+[11:46:12] SERVER STARTED
+[11:46:12] Race manager created (PID: 5052)
+[11:46:12] Named pipe 'race_pipe' is ready!
+
+[11:46:14] [Race_Pipe] Got SKIP
+[11:46:14] Team manager created (PID: 5059)
+[11:47:43] Got SIGINT
+
+[11:46:12] Semaphore initialized
+[11:46:12] SERVER STARTED
+[11:46:12] Race manager created (PID: 5052)
+[11:46:12] Named pipe 'race_pipe' is ready!
+
+[11:46:14] [Race_Pipe] Got SKIP
+[11:46:14] Team manager created (PID: 5058)
+[11:47:43] Got SIGINT
+
+[11:46:12] Semaphore initialized
+[11:46:12] SERVER STARTED
+[11:46:12] Race manager created (PID: 5052)
+[11:46:12] Named pipe 'race_pipe' is ready!
+
+[11:46:14] [Race_Pipe] Got SKIP
+[11:46:14] Created 5 team processes
+[11:47:43] Got SIGINT
+
+[11:46:12] Semaphore initialized
+[11:46:12] SERVER STARTED
+[11:47:43] SERVER CLOSED
+[11:47:43] Cleaning up...
+[11:47:46] Semaphore initialized
+[11:47:46] SERVER STARTED
+[11:47:46] Malfunction manager created (PID: 5084)
+[11:47:46] Semaphore initialized
+[11:47:46] SERVER STARTED
+[11:47:46] Race manager created (PID: 5083)
+[11:47:46] Named pipe 'race_pipe' is ready!
+
+[11:47:48] [Race_Pipe] Got SKIP
+[11:47:48] Team manager created (PID: 5088)
+[11:47:48] Thread car created!
+[11:47:48] Thread car created!
+[11:47:48] Process 5088 Car State: F
+[11:47:46] Semaphore initialized
+[11:47:46] SERVER STARTED
+[11:47:46] Race manager created (PID: 5083)
+[11:47:46] Named pipe 'race_pipe' is ready!
+
+[11:47:48] [Race_Pipe] Got SKIP
+[11:47:48] Team manager created (PID: 5089)
+[11:47:52] Got SIGINT
+
+[11:47:46] Semaphore initialized
+[11:47:46] SERVER STARTED
+[11:47:46] Race manager created (PID: 5083)
+[11:47:46] Named pipe 'race_pipe' is ready!
+
+[11:47:48] [Race_Pipe] Got SKIP
+[11:47:48] Team manager created (PID: 5092)
+[11:47:52] Got SIGINT
+
+[11:47:46] Semaphore initialized
+[11:47:46] SERVER STARTED
+[11:47:46] Race manager created (PID: 5083)
+[11:47:46] Named pipe 'race_pipe' is ready!
+
+[11:47:48] [Race_Pipe] Got SKIP
+[11:47:48] Team manager created (PID: 5090)
+[11:47:52] Got SIGINT
+
+[11:47:46] Semaphore initialized
+[11:47:46] SERVER STARTED
+[11:47:46] Race manager created (PID: 5083)
+[11:47:46] Named pipe 'race_pipe' is ready!
+
+[11:47:48] [Race_Pipe] Got SKIP
+[11:47:48] Team manager created (PID: 5087)
+[11:47:52] Got SIGINT
+
+[11:47:46] Semaphore initialized
+[11:47:46] SERVER STARTED
+[11:47:46] Race manager created (PID: 5083)
+[11:47:46] Named pipe 'race_pipe' is ready!
+
+[11:47:48] [Race_Pipe] Got SKIP
+[11:47:48] Created 5 team processes
+[11:47:52] Got SIGINT
+
+[11:47:46] Semaphore initialized
+[11:47:46] SERVER STARTED
+[11:47:52] SERVER CLOSED
+[11:47:52] Cleaning up...
+[11:48:59] Semaphore initialized
+[11:48:59] SERVER STARTED
+[11:48:59] Malfunction manager created (PID: 5100)
+[11:48:59] Semaphore initialized
+[11:48:59] SERVER STARTED
+[11:49:1] SERVER CLOSED
+[11:49:1] Cleaning up...
+[11:49:4] Semaphore initialized
+[11:49:4] SERVER STARTED
+[11:49:4] Malfunction manager created (PID: 5122)
+[11:49:4] Semaphore initialized
+[11:49:4] SERVER STARTED
+[11:49:4] Race manager created (PID: 5121)
+[11:49:4] Named pipe 'race_pipe' is ready!
+
+[11:49:5] [Race_Pipe] Got SKIP
+[11:49:5] Team manager created (PID: 5129)
+[11:49:5] Thread car created!
+[11:49:5] Thread car created!
+[11:49:5] Process 5129 Car State: F
+[11:49:4] Semaphore initialized
+[11:49:4] SERVER STARTED
+[11:49:4] Race manager created (PID: 5121)
+[11:49:4] Named pipe 'race_pipe' is ready!
+
+[11:49:5] [Race_Pipe] Got SKIP
+[11:49:5] Team manager created (PID: 5125)
+[11:49:5] Thread car created!
+[11:49:5] Thread car created!
+[11:49:5] Process 5125 Car State: F
+[11:49:4] Semaphore initialized
+[11:49:4] SERVER STARTED
+[11:49:4] Race manager created (PID: 5121)
+[11:49:4] Named pipe 'race_pipe' is ready!
+
+[11:49:5] [Race_Pipe] Got SKIP
+[11:49:5] Team manager created (PID: 5130)
+[11:49:5] Thread car created!
+[11:49:5] Thread car created!
+[11:49:5] Process 5130 Car State: R
+[11:49:4] Semaphore initialized
+[11:49:4] SERVER STARTED
+[11:49:4] Race manager created (PID: 5121)
+[11:49:4] Named pipe 'race_pipe' is ready!
+
+[11:49:5] [Race_Pipe] Got SKIP
+[11:49:5] Team manager created (PID: 5128)
+[11:49:5] Thread car created!
+[11:49:5] Thread car created!
+[11:49:5] Process 5128 Car State: F
+[11:49:4] Semaphore initialized
+[11:49:4] SERVER STARTED
+[11:49:4] Race manager created (PID: 5121)
+[11:49:4] Named pipe 'race_pipe' is ready!
+
+[11:49:5] [Race_Pipe] Got SKIP
+[11:49:5] Team manager created (PID: 5127)
+[11:49:5] Thread car created!
+[11:49:5] Thread car created!
+[11:49:5] Process 5127 Car State: F
+[11:49:4] Semaphore initialized
+[11:49:4] SERVER STARTED
+[11:49:4] Race manager created (PID: 5121)
+[11:49:4] Named pipe 'race_pipe' is ready!
+
+[11:49:5] [Race_Pipe] Got SKIP
+[11:49:5] Created 5 team processes
+[11:49:4] Semaphore initialized
+[11:49:4] SERVER STARTED
+[11:49:5] SERVER CLOSED
+[11:49:5] Cleaning up...
+[11:51:3] Semaphore initialized
+[11:51:3] SERVER STARTED
+[11:51:3] Malfunction manager created (PID: 5160)
+[11:51:3] Semaphore initialized
+[11:51:3] SERVER STARTED
+[11:51:3] Race manager created (PID: 5159)
+[11:51:3] Named pipe 'race_pipe' is ready!
+
+[11:51:5] [Race_Pipe] Got SKIP
+[11:51:5] Team manager created (PID: 5165)
+[11:51:5] Thread car created!
+[11:51:5] Thread car created!
+[11:51:5] Process 5165 Car State: F
+[11:51:3] Semaphore initialized
+[11:51:3] SERVER STARTED
+[11:51:3] Race manager created (PID: 5159)
+[11:51:3] Named pipe 'race_pipe' is ready!
+
+[11:51:5] [Race_Pipe] Got SKIP
+[11:51:5] Team manager created (PID: 5163)
+[11:51:29] Got SIGINT
+
+[11:51:3] Semaphore initialized
+[11:51:3] SERVER STARTED
+[11:51:3] Race manager created (PID: 5159)
+[11:51:3] Named pipe 'race_pipe' is ready!
+
+[11:51:5] [Race_Pipe] Got SKIP
+[11:51:5] Team manager created (PID: 5166)
+[11:51:29] Got SIGINT
+
+[11:51:3] Semaphore initialized
+[11:51:3] SERVER STARTED
+[11:51:3] Race manager created (PID: 5159)
+[11:51:3] Named pipe 'race_pipe' is ready!
+
+[11:51:5] [Race_Pipe] Got SKIP
+[11:51:5] Team manager created (PID: 5167)
+[11:51:29] Got SIGINT
+
+[11:51:3] Semaphore initialized
+[11:51:3] SERVER STARTED
+[11:51:3] Race manager created (PID: 5159)
+[11:51:3] Named pipe 'race_pipe' is ready!
+
+[11:51:5] [Race_Pipe] Got SKIP
+[11:51:5] Created 5 team processes
+[11:51:29] Got SIGINT
+
+[11:51:3] Semaphore initialized
+[11:51:3] SERVER STARTED
+[11:51:3] Race manager created (PID: 5159)
+[11:51:3] Named pipe 'race_pipe' is ready!
+
+[11:51:5] [Race_Pipe] Got SKIP
+[11:51:5] Team manager created (PID: 5168)
+[11:51:29] Got SIGINT
+
+[11:51:3] Semaphore initialized
+[11:51:3] SERVER STARTED
+[11:51:29] SERVER CLOSED
+[11:51:29] Cleaning up...
+[11:51:45] Semaphore initialized
+[11:51:45] SERVER STARTED
+[11:51:45] Malfunction manager created (PID: 5180)
+[11:51:45] Semaphore initialized
+[11:51:45] SERVER STARTED
+[11:53:4] SERVER CLOSED
+[11:53:4] Cleaning up...
+[11:53:8] Semaphore initialized
+[11:53:8] SERVER STARTED
+[11:53:8] Malfunction manager created (PID: 5205)
+[11:53:8] Semaphore initialized
+[11:53:8] SERVER STARTED
+[11:53:8] Race manager created (PID: 5204)
+[11:53:8] Named pipe 'race_pipe' is ready!
+
+[11:53:12] [Race_Pipe] Got SKIP
+[11:53:12] Team manager created (PID: 5209)
+[11:53:12] Thread car created!
+[11:53:12] Thread car created!
+[11:53:12] Process 5209 Car State: F
+[11:53:8] Semaphore initialized
+[11:53:8] SERVER STARTED
+[11:53:8] Race manager created (PID: 5204)
+[11:53:8] Named pipe 'race_pipe' is ready!
+
+[11:53:12] [Race_Pipe] Got SKIP
+[11:53:12] Team manager created (PID: 5210)
+[11:53:31] Got SIGINT
+
+[11:53:8] Semaphore initialized
+[11:53:8] SERVER STARTED
+[11:53:8] Race manager created (PID: 5204)
+[11:53:8] Named pipe 'race_pipe' is ready!
+
+[11:53:12] [Race_Pipe] Got SKIP
+[11:53:12] Team manager created (PID: 5208)
+[11:53:31] Got SIGINT
+
+[11:53:8] Semaphore initialized
+[11:53:8] SERVER STARTED
+[11:53:8] Race manager created (PID: 5204)
+[11:53:8] Named pipe 'race_pipe' is ready!
+
+[11:53:12] [Race_Pipe] Got SKIP
+[11:53:12] Created 5 team processes
+[11:53:31] Got SIGINT
+
+[11:53:8] Semaphore initialized
+[11:53:8] SERVER STARTED
+[11:53:8] Race manager created (PID: 5204)
+[11:53:8] Named pipe 'race_pipe' is ready!
+
+[11:53:12] [Race_Pipe] Got SKIP
+[11:53:12] Team manager created (PID: 5211)
+[11:53:31] Got SIGINT
+
+[11:53:8] Semaphore initialized
+[11:53:8] SERVER STARTED
+[11:53:31] SERVER CLOSED
+[11:53:31] Cleaning up...
+[11:53:8] Semaphore initialized
+[11:53:8] SERVER STARTED
+[11:53:8] Race manager created (PID: 5204)
+[11:53:8] Named pipe 'race_pipe' is ready!
+
+[11:53:12] [Race_Pipe] Got SKIP
+[11:53:12] Team manager created (PID: 5212)
+[11:53:31] Got SIGINT
+
+[12:1:53] Semaphore initialized
+[12:1:53] SERVER STARTED
+[12:1:53] Malfunction manager created (PID: 5256)
+[12:1:53] Semaphore initialized
+[12:1:53] SERVER STARTED
+[12:1:53] Race manager created (PID: 5255)
+[12:1:53] Named pipe 'race_pipe' is ready!
+
+[12:1:55] [Race_Pipe] Got SKIP
+[12:1:55] Team manager created (PID: 5261)
+[12:1:55] Thread car created!
+[12:1:55] Thread car created!
+[12:1:55] Process 5261 Car State: F
+[12:1:53] Semaphore initialized
+[12:1:53] SERVER STARTED
+[12:1:53] Race manager created (PID: 5255)
+[12:1:53] Named pipe 'race_pipe' is ready!
+
+[12:1:55] [Race_Pipe] Got SKIP
+[12:1:55] Team manager created (PID: 5263)
+[12:2:55] Got SIGINT
+
+[12:1:53] Semaphore initialized
+[12:1:53] SERVER STARTED
+[12:1:53] Race manager created (PID: 5255)
+[12:1:53] Named pipe 'race_pipe' is ready!
+
+[12:1:55] [Race_Pipe] Got SKIP
+[12:1:55] Team manager created (PID: 5264)
+[12:2:55] Got SIGINT
+
+[12:1:53] Semaphore initialized
+[12:1:53] SERVER STARTED
+[12:1:53] Race manager created (PID: 5255)
+[12:1:53] Named pipe 'race_pipe' is ready!
+
+[12:1:55] [Race_Pipe] Got SKIP
+[12:1:55] Team manager created (PID: 5262)
+[12:2:55] Got SIGINT
+
+[12:1:53] Semaphore initialized
+[12:1:53] SERVER STARTED
+[12:1:53] Race manager created (PID: 5255)
+[12:1:53] Named pipe 'race_pipe' is ready!
+
+[12:1:55] [Race_Pipe] Got SKIP
+[12:1:55] Created 5 team processes
+[12:2:55] Got SIGINT
+
+[12:1:53] Semaphore initialized
+[12:1:53] SERVER STARTED
+[12:1:53] Race manager created (PID: 5255)
+[12:1:53] Named pipe 'race_pipe' is ready!
+
+[12:1:55] [Race_Pipe] Got SKIP
+[12:1:55] Team manager created (PID: 5259)
+[12:2:55] Got SIGINT
+
+[12:1:53] Semaphore initialized
+[12:1:53] SERVER STARTED
+[12:2:55] SERVER CLOSED
+[12:2:55] Cleaning up...
+[12:2:58] Semaphore initialized
+[12:2:58] SERVER STARTED
+[12:2:58] Malfunction manager created (PID: 5287)
+[12:2:58] Semaphore initialized
+[12:2:58] SERVER STARTED
+[12:2:58] Race manager created (PID: 5286)
+[12:2:58] Named pipe 'race_pipe' is ready!
+
+[12:3:0] [Race_Pipe] Got SKIP
+[12:3:0] Team manager created (PID: 5290)
+[12:3:0] Thread car created!
+[12:3:0] Thread car created!
+[12:3:0] Process 5290 Car State: F
+[12:2:58] Semaphore initialized
+[12:2:58] SERVER STARTED
+[12:2:58] Race manager created (PID: 5286)
+[12:2:58] Named pipe 'race_pipe' is ready!
+
+[12:3:0] [Race_Pipe] Got SKIP
+[12:3:0] Team manager created (PID: 5294)
+[12:3:5] Got SIGINT
+
+[12:2:58] Semaphore initialized
+[12:2:58] SERVER STARTED
+[12:2:58] Race manager created (PID: 5286)
+[12:2:58] Named pipe 'race_pipe' is ready!
+
+[12:3:0] [Race_Pipe] Got SKIP
+[12:3:0] Team manager created (PID: 5292)
+[12:3:5] Got SIGINT
+
+[12:2:58] Semaphore initialized
+[12:2:58] SERVER STARTED
+[12:2:58] Race manager created (PID: 5286)
+[12:2:58] Named pipe 'race_pipe' is ready!
+
+[12:3:0] [Race_Pipe] Got SKIP
+[12:3:0] Created 5 team processes
+[12:3:5] Got SIGINT
+
+[12:2:58] Semaphore initialized
+[12:2:58] SERVER STARTED
+[12:2:58] Race manager created (PID: 5286)
+[12:2:58] Named pipe 'race_pipe' is ready!
+
+[12:3:0] [Race_Pipe] Got SKIP
+[12:3:0] Team manager created (PID: 5291)
+[12:3:5] Got SIGINT
+
+[12:2:58] Semaphore initialized
+[12:2:58] SERVER STARTED
+[12:2:58] Race manager created (PID: 5286)
+[12:2:58] Named pipe 'race_pipe' is ready!
+
+[12:3:0] [Race_Pipe] Got SKIP
+[12:3:0] Team manager created (PID: 5293)
+[12:3:5] Got SIGINT
+
+[12:2:58] Semaphore initialized
+[12:2:58] SERVER STARTED
+[12:3:5] SERVER CLOSED
+[12:3:5] Cleaning up...
+[12:7:34] Semaphore initialized
+[12:7:34] SERVER STARTED
+[12:7:34] Malfunction manager created (PID: 5874)
+[12:7:34] Semaphore initialized
+[12:7:34] SERVER STARTED
+[12:7:34] Race manager created (PID: 5873)
+[12:7:34] Named pipe 'race_pipe' is ready!
+
+[12:7:35] [Race_Pipe] Got SKIP
+[12:7:35] Team manager created (PID: 5881)
+[12:7:35] Thread car created!
+[12:7:35] Thread car created!
+[12:7:35] Process 5881 Car State: R
+[12:7:34] Semaphore initialized
+[12:7:34] SERVER STARTED
+[12:7:34] Race manager created (PID: 5873)
+[12:7:34] Named pipe 'race_pipe' is ready!
+
+[12:7:35] [Race_Pipe] Got SKIP
+[12:7:35] Team manager created (PID: 5880)
+[12:7:35] Thread car created!
+[12:7:35] Thread car created!
+[12:7:35] Process 5880 Car State: F
+[12:7:34] Semaphore initialized
+[12:7:34] SERVER STARTED
+[12:7:34] Race manager created (PID: 5873)
+[12:7:34] Named pipe 'race_pipe' is ready!
+
+[12:7:35] [Race_Pipe] Got SKIP
+[12:7:35] Team manager created (PID: 5877)
+[12:7:35] Thread car created!
+[12:7:35] Thread car created!
+[12:7:35] Process 5877 Car State: F
+[12:7:34] Semaphore initialized
+[12:7:34] SERVER STARTED
+[12:7:34] Race manager created (PID: 5873)
+[12:7:34] Named pipe 'race_pipe' is ready!
+
+[12:7:35] [Race_Pipe] Got SKIP
+[12:7:35] Team manager created (PID: 5878)
+[12:7:35] Thread car created!
+[12:7:35] Thread car created!
+[12:7:35] Process 5878 Car State: F
+[12:7:34] Semaphore initialized
+[12:7:34] SERVER STARTED
+[12:7:34] Race manager created (PID: 5873)
+[12:7:34] Named pipe 'race_pipe' is ready!
+
+[12:7:35] [Race_Pipe] Got SKIP
+[12:7:35] Team manager created (PID: 5879)
+[12:7:35] Thread car created!
+[12:7:35] Thread car created!
+[12:7:35] Process 5879 Car State: F
+[12:7:34] Semaphore initialized
+[12:7:34] SERVER STARTED
+[12:7:34] Race manager created (PID: 5873)
+[12:7:34] Named pipe 'race_pipe' is ready!
+
+[12:7:35] [Race_Pipe] Got SKIP
+[12:7:35] Created 5 team processes
+[12:7:34] Semaphore initialized
+[12:7:34] SERVER STARTED
+[12:7:35] SERVER CLOSED
+[12:7:35] Cleaning up...
+[12:9:1] Semaphore initialized
+[12:9:1] SERVER STARTED
+[12:9:1] Malfunction manager created (PID: 5949)
+[12:9:1] Semaphore initialized
+[12:9:1] SERVER STARTED
+[12:9:1] Race manager created (PID: 5948)
+[12:9:1] Named pipe 'race_pipe' is ready!
+
+[12:9:4] [Race_Pipe] Got SKIP
+[12:9:4] Team manager created (PID: 5955)
+[12:9:4] Thread car created!
+[12:9:4] Thread car created!
+[12:9:4] Process 5955 Car State: F
+[12:9:1] Semaphore initialized
+[12:9:1] SERVER STARTED
+[12:9:1] Race manager created (PID: 5948)
+[12:9:1] Named pipe 'race_pipe' is ready!
+
+[12:9:4] [Race_Pipe] Got SKIP
+[12:9:4] Team manager created (PID: 5954)
+[12:9:4] Thread car created!
+[12:9:4] Thread car created!
+[12:9:4] Process 5954 Car State: F
+[12:9:1] Semaphore initialized
+[12:9:1] SERVER STARTED
+[12:9:1] Race manager created (PID: 5948)
+[12:9:1] Named pipe 'race_pipe' is ready!
+
+[12:9:4] [Race_Pipe] Got SKIP
+[12:9:4] Team manager created (PID: 5958)
+[12:9:4] Thread car created!
+[12:9:4] Thread car created!
+[12:9:4] Process 5958 Car State: R
+[12:9:1] Semaphore initialized
+[12:9:1] SERVER STARTED
+[12:9:1] Race manager created (PID: 5948)
+[12:9:1] Named pipe 'race_pipe' is ready!
+
+[12:9:4] [Race_Pipe] Got SKIP
+[12:9:4] Team manager created (PID: 5953)
+[12:9:4] Thread car created!
+[12:9:4] Thread car created!
+[12:9:4] Process 5953 Car State: F
+[12:9:1] Semaphore initialized
+[12:9:1] SERVER STARTED
+[12:9:1] Race manager created (PID: 5948)
+[12:9:1] Named pipe 'race_pipe' is ready!
+
+[12:9:4] [Race_Pipe] Got SKIP
+[12:9:4] Team manager created (PID: 5957)
+[12:9:4] Thread car created!
+[12:9:4] Thread car created!
+[12:9:4] Process 5957 Car State: F
+[12:9:1] Semaphore initialized
+[12:9:1] SERVER STARTED
+[12:9:1] Race manager created (PID: 5948)
+[12:9:1] Named pipe 'race_pipe' is ready!
+
+[12:9:4] [Race_Pipe] Got SKIP
+[12:9:4] Created 5 team processes
+[12:9:1] Semaphore initialized
+[12:9:1] SERVER STARTED
+[12:9:4] SERVER CLOSED
+[12:9:4] Cleaning up...
+[12:12:3] Semaphore initialized
+[12:12:3] SERVER STARTED
+[12:12:3] Malfunction manager created (PID: 5997)
+[12:12:3] Semaphore initialized
+[12:12:3] SERVER STARTED
+[12:12:3] Race manager created (PID: 5996)
+[12:12:3] Named pipe 'race_pipe' is ready!
+
+[12:12:5] [Race_Pipe] Got SKIP
+[12:12:5] Team manager created (PID: 6004)
+[12:12:20] Got SIGINT
+
+[12:12:3] Semaphore initialized
+[12:12:3] SERVER STARTED
+[12:12:3] Race manager created (PID: 5996)
+[12:12:3] Named pipe 'race_pipe' is ready!
+
+[12:12:5] [Race_Pipe] Got SKIP
+[12:12:5] Team manager created (PID: 6002)
+[12:12:20] Got SIGINT
+
+[12:12:3] Semaphore initialized
+[12:12:3] SERVER STARTED
+[12:12:3] Race manager created (PID: 5996)
+[12:12:3] Named pipe 'race_pipe' is ready!
+
+[12:12:5] [Race_Pipe] Got SKIP
+[12:12:5] Team manager created (PID: 6001)
+[12:12:20] Got SIGINT
+
+[12:12:3] Semaphore initialized
+[12:12:3] SERVER STARTED
+[12:12:3] Race manager created (PID: 5996)
+[12:12:3] Named pipe 'race_pipe' is ready!
+
+[12:12:5] [Race_Pipe] Got SKIP
+[12:12:5] Created 5 team processes
+[12:12:20] Got SIGINT
+
+[12:12:3] Semaphore initialized
+[12:12:3] SERVER STARTED
+[12:12:20] SERVER CLOSED
+[12:12:20] Cleaning up...
+[12:12:3] Semaphore initialized
+[12:12:3] SERVER STARTED
+[12:12:3] Race manager created (PID: 5996)
+[12:12:3] Named pipe 'race_pipe' is ready!
+
+[12:12:5] [Race_Pipe] Got SKIP
+[12:12:5] Team manager created (PID: 6000)
+[12:12:20] Got SIGINT
+
+[12:12:3] Semaphore initialized
+[12:12:3] SERVER STARTED
+[12:12:3] Race manager created (PID: 5996)
+[12:12:3] Named pipe 'race_pipe' is ready!
+
+[12:12:5] [Race_Pipe] Got SKIP
+[12:12:5] Team manager created (PID: 6003)
+[12:12:20] Got SIGINT
+
+[12:13:15] Semaphore initialized
+[12:13:15] SERVER STARTED
+[12:13:15] Malfunction manager created (PID: 6042)
+[12:13:15] Semaphore initialized
+[12:13:15] SERVER STARTED
+[12:13:15] Race manager created (PID: 6041)
+[12:13:15] Named pipe 'race_pipe' is ready!
+
+[12:13:17] [Race_Pipe] Got SKIP
+[12:13:17] Created 5 team processes
+[12:13:15] Semaphore initialized
+[12:13:15] SERVER STARTED
+[12:13:17] SERVER CLOSED
+[12:13:17] Cleaning up...
+[12:13:55] Semaphore initialized
+[12:13:55] SERVER STARTED
+[12:13:55] Malfunction manager created (PID: 6078)
+[12:13:55] Semaphore initialized
+[12:13:55] SERVER STARTED
+[12:13:55] Race manager created (PID: 6077)
+[12:13:55] Named pipe 'race_pipe' is ready!
+
+[12:13:58] [Race_Pipe] Got SKIP
+[12:13:58] Created 5 team processes
+[12:13:55] Semaphore initialized
+[12:13:55] SERVER STARTED
+[12:13:58] SERVER CLOSED
+[12:13:58] Cleaning up...
+[12:17:54] Semaphore initialized
+[12:17:54] SERVER STARTED
+[12:17:54] Malfunction manager created (PID: 6183)
+[12:17:54] Semaphore initialized
+[12:17:54] SERVER STARTED
+[12:17:54] Race manager created (PID: 6182)
+[12:17:54] Named pipe 'race_pipe' is ready!
+
+[12:17:57] [Race_Pipe] Got SKIP
+[12:17:57] Team manager created (PID: 6187)
+[12:17:57] Team 0 got "ADDCAR" from unnamed pipe
+
+[12:17:57] Thread car created!
+[12:17:57] Process 6187 Car State: F
+[12:17:54] Semaphore initialized
+[12:17:54] SERVER STARTED
+[12:17:54] Race manager created (PID: 6182)
+[12:17:54] Named pipe 'race_pipe' is ready!
+
+[12:17:57] [Race_Pipe] Got SKIP
+[12:17:57] Team manager created (PID: 6188)
+[12:17:57] Team 1 got "ADDCAR" from unnamed pipe
+
+[12:17:57] Thread car created!
+[12:17:57] Process 6188 Car State: F
+[12:17:54] Semaphore initialized
+[12:17:54] SERVER STARTED
+[12:17:54] Race manager created (PID: 6182)
+[12:17:54] Named pipe 'race_pipe' is ready!
+
+[12:17:57] [Race_Pipe] Got SKIP
+[12:17:57] Team manager created (PID: 6190)
+[12:17:57] Team 3 got "ADDCAR" from unnamed pipe
+
+[12:17:57] Thread car created!
+[12:17:57] Process 6190 Car State: E
+[12:17:54] Semaphore initialized
+[12:17:54] SERVER STARTED
+[12:17:54] Race manager created (PID: 6182)
+[12:17:54] Named pipe 'race_pipe' is ready!
+
+[12:17:57] [Race_Pipe] Got SKIP
+[12:17:57] Team manager created (PID: 6189)
+[12:17:57] Team 2 got "ADDCAR" from unnamed pipe
+
+[12:17:57] Thread car created!
+[12:17:57] Process 6189 Car State: E
+[12:17:54] Semaphore initialized
+[12:17:54] SERVER STARTED
+[12:17:54] Race manager created (PID: 6182)
+[12:17:54] Named pipe 'race_pipe' is ready!
+
+[12:17:57] [Race_Pipe] Got SKIP
+[12:17:57] Team manager created (PID: 6191)
+[12:17:57] Team 4 got "ADDCAR" from unnamed pipe
+
+[12:17:57] Thread car created!
+[12:17:57] Process 6191 Car State: F
+[12:17:54] Semaphore initialized
+[12:17:54] SERVER STARTED
+[12:17:54] Race manager created (PID: 6182)
+[12:17:54] Named pipe 'race_pipe' is ready!
+
+[12:17:57] [Race_Pipe] Got SKIP
+[12:17:57] Created 5 team processes
+[12:17:54] Semaphore initialized
+[12:17:54] SERVER STARTED
+[12:17:57] SERVER CLOSED
+[12:17:57] Cleaning up...
