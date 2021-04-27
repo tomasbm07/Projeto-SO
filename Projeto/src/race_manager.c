@@ -20,6 +20,13 @@ void race_manager() {
   sigaction(SIGINT, &sa, NULL);
   signal(SIGTSTP, SIG_IGN);
 
+#ifdef DEBUG
+  char aux[50];
+  sprintf(aux,"Race manager created (PID: %d)", getpid());
+  write_log(aux);
+#endif
+
+  //named pipe stuff
   unlink(PIPE_NAME);
   if (mkfifo(PIPE_NAME, O_CREAT | O_EXCL | 0666) < 0) {
     perror("Erro a criar o pipe: ");
@@ -31,6 +38,15 @@ void race_manager() {
     exit(1);
   }
 
+  //unnamed pipes stuff - 1 pipe per team
+  //unname pipe direction: race_manager -> team_manager
+  //fd[0] = read; fd[1] = write
+  fd_team = malloc(2 * NR_TEAM * sizeof(int));
+  for (int i = 0; i < NR_TEAM; i++){
+    pipe(&fd_team[i*2]);
+    close(fd_team[i*2]); // close the read part for race_manager
+  }
+
   
   /*
   Comandos para testar o pipe:
@@ -38,7 +54,7 @@ void race_manager() {
   echo "START RACE" > race_pipe
   */
 
-  write_log("race_pipe is ready!\n");
+  write_log("Named pipe 'race_pipe' is ready!\n");
   // while de leitura do pipe
   while (1) {
     FD_ZERO(&read_set);
@@ -68,6 +84,10 @@ void race_manager() {
         else if (strcmp(str, "START RACE") == 0){
           write_log("[Race_Pipe] Got START RACE");
           write_log("Buckle Up, race is starting!");
+        }
+        else if (strcmp(str, "SKIP") == 0){
+          write_log("[Race_Pipe] Got SKIP");
+          break;
         }
         else
           printf("unknown command\n");

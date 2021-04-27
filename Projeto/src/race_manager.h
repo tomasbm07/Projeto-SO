@@ -22,6 +22,8 @@ Joel Oliveira - 2019227468
 
 #define DEBUG
 
+int *fd_team;
+
 void race_manager(void);
 void signals(int signal);
 void clean_resources();
