@@ -32,3 +32,4 @@ void signals(int signal);
 void clean_resources();
 int convert_to_int(char number[50]);
 int check_pipe_command_regex(const char *pattern, char *string);
+int car_number_exists(int number);

@@ -10,9 +10,9 @@ Joel Oliveira - 2019227468
 typedef struct {
 	char team_name[32];
 	int number;
-	float speed;
+	int speed;
 	float consumption;
-	float reliability;
+	int reliability;
 	int laps_completed;
 	int box_stops_counter;
 } car_shm_struct;

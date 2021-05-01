@@ -18,6 +18,7 @@ void race_manager() {
   struct sigaction sa;
 
   sa.sa_handler = signals;
+  //TODO: sigint é suposto ser recebido por race_simulator, nao por race_manager //
   sigaction(SIGINT, &sa, NULL);
   signal(SIGTSTP, SIG_IGN);
 
@@ -43,8 +44,9 @@ void race_manager() {
   echo "ADDCAR TEAM: A, CAR: 77, SPEED: 50, COMSUMPTION: 0.04, RELIABILITY: 99"
   > race_pipe echo "START RACE" > race_pipe
   */
-
+#ifdef DEBUG
   write_log("Named pipe 'race_pipe' is ready!\n");
+#endif
   // while de leitura do pipe
   while (1) {
     num_chars = read(fd_race_pipe, str, sizeof(str));
@@ -59,43 +61,51 @@ void race_manager() {
       break;
 
     } else { 
-    
-    
     	if ( check_pipe_command_regex("^ADDCAR*", str) ){
     		write_log("[Race_Pipe] Got ADDCAR");
-			if( check_pipe_command_regex("^ADDCAR TEAM: [a-zA-Z]{1,31}, CAR: (0?[1-9]|[1-9][0-9]), SPEED: [1-9][0-9]{0,9}, CONSUMPTION: ([0-9]*[.][0-9]{1,2}|[1-9][0-9]*), RELIABILITY: (100|[1-9][0-9]|[0-9])$", str) ){
+			if( check_pipe_command_regex("^ADDCAR TEAM: [a-zA-Z]{1,31}, CAR: (0?[1-9]|[1-9][0-9]), SPEED: [1-9][0-9]{0,9}, CONSUMPTION: ([0-9]*[.][0-9]{1,2}|[1-9][0-9]*), RELIABILITY: (100|[1-9][0-9]|[0-9])$", str) ) {
 			// se nao for nenhum dos comandos acima, split da string do pipe
       			char **str_array = NULL;
-      			int num_spaces = 0;
+      			int num_spaces = 0, j;
       			char *aux = strtok(str, " ");
 
       			while (aux) {
         			str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
 
         			str_array[num_spaces - 1] = aux;
-        			aux = strtok(NULL, ",");
+        			aux = strtok(NULL, ", ");
       			}
-      			//str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
-      			//str_array[num_spaces] = 0;
-
-      			//print
-      			//for (i = 0; i < num_spaces + 1; ++i) printf("str_array[%d] = %s\n", i, str_array[i]);
-
-      			//if (strcmp(str_array[0], "ADDCAR") == 0){
-        		//write_log("[Race_Pipe] Got ADDCAR");
-        		//print
-        		for (int x = 0; x < num_spaces; ++x) printf ("str_array[%d] = %s\n", x, str_array[x]);
-
-        		//for (int x = 0; x < num_spaces; ++x) printf("str_array[%d] = %s\n", x, remove_letters(str_array[x]));
+				
+				if (!car_number_exists( atoi(str_array[4]) ) ) {
+        			for (i = 0; i < num_spaces; ++i) printf ("str_array[%d] = %s\n", i, str_array[i]);
+				
+					for (i = 0; i < NR_TEAM * NR_CARS; i += NR_CARS)
+						if ( strcmp(shm_info->cars[i].team_name, "")==0 || strcmp(shm_info->cars[i].team_name, str_array[2])==0)
+							break;
+				
+					if (i >= NR_TEAM * NR_CARS)
+						write_log("[ERROR] MAX NUMBER OF TEAMS ALREADY REACHED");
+					else{
+						for (j = 0; j < NR_CARS; j++)
+							if ( strcmp(shm_info->cars[i+j].team_name, "")==0)
+								break;
+						if (j == NR_CARS)
+							write_log("[ERROR] MAX NUMBER OF CARS, FROM TEAM REFERENCED, ALREADY REACHED");
+						else{
+							sprintf(shm_info->cars[i+j].team_name, "%s", str_array[2]);
+							shm_info->cars[i+j].number = atoi(str_array[4]);
+							shm_info->cars[i+j].speed = atoi(str_array[6]);
+							shm_info->cars[i+j].consumption = atof(str_array[8]);
+							shm_info->cars[i+j].reliability = atoi(str_array[10]);
+						}
+					}
+				}else{
+					write_log("[ERROR] CAR NUMBER ALREADY EXISTS");
+				}
         	}else{
         		write_log("[Race_Pipe] ADDCAR SYNTAX ERROR DETECTED");
         	}
-
-        // os valores estao no array de strings str_array
-        /*--------------------------------------------*/
-        /*---------- Cena do regex aqui --------------*/
-        /*--------------------------------------------*/
-      } else 
+      	} else 
           write_log("[Race_Pipe] Unknown command");
       
     }
@@ -194,3 +204,10 @@ int check_pipe_command_regex(const char *pattern, char *string) {
   return 1;
 }
 
+int car_number_exists(int number){
+	int i;
+	for (i = 0; i < NR_TEAM * NR_CARS; i ++)
+		if (shm_info->cars[i].number==number)
+			return 1;
+	return 0;
+}
