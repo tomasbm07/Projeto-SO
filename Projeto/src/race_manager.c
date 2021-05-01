@@ -5,14 +5,15 @@ Joel Oliveira - 2019227468
 
 #include "race_manager.h"
 
-#define PIPE_NAME "/home/user/race_pipe"
-//#define PIPE_NAME "race_pipe"
+//#define PIPE_NAME "/home/user/race_pipe"
+#define PIPE_NAME "race_pipe"
+
 
 int fd_race_pipe;
 
+
 void race_manager() {
   int i, num_chars, team;
-  fd_set read_set;
   char str[256], aux[256];
   struct sigaction sa;
 
@@ -46,51 +47,51 @@ void race_manager() {
   write_log("Named pipe 'race_pipe' is ready!\n");
   // while de leitura do pipe
   while (1) {
-    FD_ZERO(&read_set);
-    FD_SET(fd_race_pipe, &read_set);
+    num_chars = read(fd_race_pipe, str, sizeof(str));
+    str[num_chars - 1] = '\0';  // put a \0 in the end of string
 
-    if (select(fd_race_pipe + 1, &read_set, NULL, NULL, NULL) > 0) {
-      if (FD_ISSET(fd_race_pipe, &read_set)) {
-        num_chars = read(fd_race_pipe, str, sizeof(str));
-        str[num_chars - 1] = '\0';  // put a \0 in the end of string
+    if (strcmp(str, "START RACE") == 0) {
+      write_log("[Race_Pipe] Got START RACE");
+      write_log("Buckle Up, race is starting!");
 
-        if (strcmp(str, "START RACE") == 0) {
-          write_log("[Race_Pipe] Got START RACE");
-          write_log("Buckle Up, race is starting!");
-          //break; //break por enquanto, depois: começar a corrida
+    } else if (strcmp(str, "SKIP") == 0) {
+      write_log("[Race_Pipe] Got SKIP");
+      break;
 
-        } else if (strcmp(str, "SKIP") == 0) {
-          write_log("[Race_Pipe] Got SKIP");
-          break;
+    } else { // se nao for nenhum dos comandos acima, split da string do pipe
+      char **str_array = NULL;
+      int num_spaces = 0;
+      char *aux = strtok(str, " ");
 
-        } else{ // se nao for nenhum dos comandos acima, split da string do pipe
-          char **str_array = NULL;
-          int num_spaces = 0;
-          char *aux = strtok(str, " ");
+      while (aux) {
+        str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
 
-          while (aux) {
-            str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
-
-            str_array[num_spaces - 1] = aux;
-            aux = strtok(NULL, ",");
-          }
-          //str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
-          //str_array[num_spaces] = 0;
-
-          //for (i = 0; i < num_spaces + 1; ++i) printf ("str_array[%d] = %s\n", i, str_array[i]);
-
-          if (strcmp(str_array[0], "ADDCAR") == 0){
-            write_log("[Race_Pipe] Got ADDCAR");
-            //for (int x = 0; x < num_spaces; ++x) printf ("str_array[%d] = %s\n", x, str_array[x]);
-            for (int x = 0; x < num_spaces; ++x){
-              printf("%d\n", convert_to_int(str_array[x]));
-            }
-          } else {
-              write_log("[Race_Pipe] Unknown command");
-          }
-        }
+        str_array[num_spaces - 1] = aux;
+        aux = strtok(NULL, ",");
       }
+      //str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
+      //str_array[num_spaces] = 0;
+
+      //print
+      //for (i = 0; i < num_spaces + 1; ++i) printf("str_array[%d] = %s\n", i, str_array[i]);
+
+      if (strcmp(str_array[0], "ADDCAR") == 0){
+        write_log("[Race_Pipe] Got ADDCAR");
+        //print
+        for (int x = 0; x < num_spaces; ++x) printf ("str_array[%d] = %s\n", x, str_array[x]);
+
+        //for (int x = 0; x < num_spaces; ++x) printf("str_array[%d] = %s\n", x, remove_letters(str_array[x]));
+
+        // os valores estao no array de strings str_array
+        /*--------------------------------------------*/
+        /*---------- Cena do regex aqui --------------*/
+        /*--------------------------------------------*/
+
+      } else 
+          write_log("[Race_Pipe] Unknown command");
+      
     }
+       
   }
 
   // unnamed pipes stuff - 1 pipe per team
@@ -171,3 +172,4 @@ int convert_to_int(char number[50]) {
 
     return num;
 }
+

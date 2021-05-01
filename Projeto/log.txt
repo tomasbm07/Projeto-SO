@@ -3220,3 +3220,177 @@
 [17:43:34] SERVER STARTED
 [17:43:49] SERVER CLOSED
 [17:43:49] Cleaning up...
+[16:7:39] Semaphore initialized
+[16:7:39] SERVER STARTED
+[16:7:39] Malfunction manager created (PID: 27155)
+[16:7:39] Semaphore initialized
+[16:7:39] SERVER STARTED
+[16:7:39] Race manager created (PID: 27154)
+[16:7:39] Named pipe 'race_pipe' is ready!
+
+[16:7:45] [Race_Pipe] Got SKIP
+[16:7:45] Team manager created (PID: 27169)
+[16:7:45] Team 3 got "ADDCAR" from unnamed pipe
+
+[16:7:45] Thread car created!
+[16:7:45] Process 27169 Car State: E
+[16:7:39] Semaphore initialized
+[16:7:39] SERVER STARTED
+[16:7:39] Race manager created (PID: 27154)
+[16:7:39] Named pipe 'race_pipe' is ready!
+
+[16:7:45] [Race_Pipe] Got SKIP
+[16:7:45] Team manager created (PID: 27166)
+[16:7:45] Team 0 got "ADDCAR" from unnamed pipe
+
+[16:7:45] Thread car created!
+[16:7:45] Process 27166 Car State: F
+[16:7:39] Semaphore initialized
+[16:7:39] SERVER STARTED
+[16:7:39] Race manager created (PID: 27154)
+[16:7:39] Named pipe 'race_pipe' is ready!
+
+[16:7:45] [Race_Pipe] Got SKIP
+[16:7:45] Team manager created (PID: 27168)
+[16:7:45] Team 2 got "ADDCAR" from unnamed pipe
+
+[16:7:45] Thread car created!
+[16:7:45] Process 27168 Car State: E
+[16:7:39] Semaphore initialized
+[16:7:39] SERVER STARTED
+[16:7:39] Race manager created (PID: 27154)
+[16:7:39] Named pipe 'race_pipe' is ready!
+
+[16:7:45] [Race_Pipe] Got SKIP
+[16:7:45] Team manager created (PID: 27167)
+[16:7:45] Team 1 got "ADDCAR" from unnamed pipe
+
+[16:7:45] Thread car created!
+[16:7:45] Process 27167 Car State: F
+[16:7:39] Semaphore initialized
+[16:7:39] SERVER STARTED
+[16:7:39] Race manager created (PID: 27154)
+[16:7:39] Named pipe 'race_pipe' is ready!
+
+[16:7:45] [Race_Pipe] Got SKIP
+[16:7:45] Team manager created (PID: 27170)
+[16:7:45] Team 4 got "ADDCAR" from unnamed pipe
+
+[16:7:45] Thread car created!
+[16:7:45] Process 27170 Car State: F
+[16:7:39] Semaphore initialized
+[16:7:39] SERVER STARTED
+[16:7:39] Race manager created (PID: 27154)
+[16:7:39] Named pipe 'race_pipe' is ready!
+
+[16:7:45] [Race_Pipe] Got SKIP
+[16:7:45] Created 5 team processes
+[16:7:39] Semaphore initialized
+[16:7:39] SERVER STARTED
+[16:7:45] SERVER CLOSED
+[16:7:45] Cleaning up...
+[16:12:27] Semaphore initialized
+[16:12:27] SERVER STARTED
+[16:12:27] Malfunction manager created (PID: 27304)
+[16:12:27] Semaphore initialized
+[16:12:27] SERVER STARTED
+[16:13:21] SERVER CLOSED
+[16:13:21] Cleaning up...
+[16:13:23] Semaphore initialized
+[16:13:23] SERVER STARTED
+[16:13:23] Malfunction manager created (PID: 27349)
+[16:13:23] Semaphore initialized
+[16:13:23] SERVER STARTED
+[16:13:52] SERVER CLOSED
+[16:13:52] Cleaning up...
+[16:13:53] Semaphore initialized
+[16:13:53] SERVER STARTED
+[16:13:53] Malfunction manager created (PID: 27383)
+[16:13:53] Semaphore initialized
+[16:13:53] SERVER STARTED
+[16:14:15] SERVER CLOSED
+[16:14:15] Cleaning up...
+[16:14:17] Semaphore initialized
+[16:14:17] SERVER STARTED
+[16:14:17] Malfunction manager created (PID: 27411)
+[16:14:17] Semaphore initialized
+[16:14:17] SERVER STARTED
+[16:14:20] SERVER CLOSED
+[16:14:20] Cleaning up...
+[16:14:44] Semaphore initialized
+[16:14:44] SERVER STARTED
+[16:14:44] Malfunction manager created (PID: 27444)
+[16:14:44] Semaphore initialized
+[16:14:44] SERVER STARTED
+[16:14:46] SERVER CLOSED
+[16:14:46] Cleaning up...
+[16:15:20] Semaphore initialized
+[16:15:20] SERVER STARTED
+[16:15:20] Malfunction manager created (PID: 27476)
+[16:15:20] Semaphore initialized
+[16:15:20] SERVER STARTED
+[16:26:28] SERVER CLOSED
+[16:26:28] Cleaning up...
+[16:26:29] Semaphore initialized
+[16:26:29] SERVER STARTED
+[16:26:29] Malfunction manager created (PID: 28004)
+[16:26:29] Semaphore initialized
+[16:26:29] SERVER STARTED
+[16:26:48] SERVER CLOSED
+[16:26:48] Cleaning up...
+[16:26:53] Semaphore initialized
+[16:26:53] SERVER STARTED
+[16:26:53] Malfunction manager created (PID: 28037)
+[16:26:53] Semaphore initialized
+[16:26:53] SERVER STARTED
+[16:26:55] SERVER CLOSED
+[16:26:55] Cleaning up...
+[16:28:6] Semaphore initialized
+[16:28:6] SERVER STARTED
+[16:28:6] Malfunction manager created (PID: 28081)
+[16:28:6] Semaphore initialized
+[16:28:6] SERVER STARTED
+[16:28:8] SERVER CLOSED
+[16:28:8] Cleaning up...
+[16:29:41] Semaphore initialized
+[16:29:41] SERVER STARTED
+[16:29:41] Malfunction manager created (PID: 28114)
+[16:29:41] Semaphore initialized
+[16:29:41] SERVER STARTED
+[16:29:43] SERVER CLOSED
+[16:29:43] Cleaning up...
+[16:30:10] Semaphore initialized
+[16:30:10] SERVER STARTED
+[16:30:10] Malfunction manager created (PID: 28148)
+[16:30:10] Semaphore initialized
+[16:30:10] SERVER STARTED
+[16:30:18] SERVER CLOSED
+[16:30:18] Cleaning up...
+[16:31:49] Semaphore initialized
+[16:31:49] SERVER STARTED
+[16:31:49] Malfunction manager created (PID: 28192)
+[16:31:49] Semaphore initialized
+[16:31:49] SERVER STARTED
+[16:31:52] SERVER CLOSED
+[16:31:52] Cleaning up...
+[16:32:17] Semaphore initialized
+[16:32:17] SERVER STARTED
+[16:32:17] Malfunction manager created (PID: 28222)
+[16:32:17] Semaphore initialized
+[16:32:17] SERVER STARTED
+[16:35:5] SERVER CLOSED
+[16:35:5] Cleaning up...
+[16:55:23] Semaphore initialized
+[16:55:23] SERVER STARTED
+[16:55:23] Malfunction manager created (PID: 29215)
+[16:55:23] Semaphore initialized
+[16:55:23] SERVER STARTED
+[16:55:49] SERVER CLOSED
+[16:55:49] Cleaning up...
+[16:55:55] Semaphore initialized
+[16:55:55] SERVER STARTED
+[16:55:55] Malfunction manager created (PID: 29245)
+[16:55:55] Semaphore initialized
+[16:55:55] SERVER STARTED
+[16:56:20] SERVER CLOSED
+[16:56:20] Cleaning up...
