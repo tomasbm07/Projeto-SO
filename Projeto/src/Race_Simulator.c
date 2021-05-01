@@ -23,9 +23,7 @@ int main(int argc, char* argv[]) {
   f = fopen("log.txt", "a");
 
   if (argc < 2) {
-#ifdef DEBUG
-    printf("No config file was passed!");
-#endif
+    printf("No config file was passed!\n");
     exit(1);
   } else if (argc > 2) {
 #ifdef DEBUG

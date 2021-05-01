@@ -11,7 +11,7 @@ Joel Oliveira - 2019227468
 
 void file_error() {
 #ifdef DEBUG
-  write_log("Error reading config file");
+  printf("Error reading config file\n");
 #endif
   exit(1);
 }
@@ -20,7 +20,7 @@ void check_regex(const char *pattern, char *string) {
   regex_t re;
   if (regcomp(&re, pattern, REG_EXTENDED) != 0) {
 #ifdef DEBUG
-    write_log("Error verifying file structure");
+    printf("Error verifying file structure\n");
 #endif
     exit(1);
   }
@@ -54,7 +54,7 @@ void read_file(char *filename) {
 
   if ((f = fopen(filename, "r")) == NULL) {
 #ifdef DEBUG
-    write_log("File doesn't exist!");
+    printf("File doesn't exist!");
 #endif
     exit(1);
   }
@@ -76,7 +76,7 @@ void read_file(char *filename) {
   read_one_integer(input_line, &nr_1_input, f);
   if (*(nr_1_input) < 3) {
 #ifdef DEBUG
-    write_log("At least 3 teams are required for race to start!");
+    printf("At least 3 teams are required for race to start!");
 #endif
     exit(1);
   }

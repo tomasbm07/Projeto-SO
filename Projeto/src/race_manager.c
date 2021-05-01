@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "race_manager.h"
 
-//#define PIPE_NAME "/home/user/race_pipe"
-#define PIPE_NAME "race_pipe"
+#define PIPE_NAME "/home/user/race_pipe"
+//#define PIPE_NAME "race_pipe"
 
 
 int fd_race_pipe;
@@ -58,35 +58,43 @@ void race_manager() {
       write_log("[Race_Pipe] Got SKIP");
       break;
 
-    } else { // se nao for nenhum dos comandos acima, split da string do pipe
-      char **str_array = NULL;
-      int num_spaces = 0;
-      char *aux = strtok(str, " ");
+    } else { 
+    
+    
+    	if ( check_pipe_command_regex("^ADDCAR*", str) ){
+    		write_log("[Race_Pipe] Got ADDCAR");
+			if( check_pipe_command_regex("^ADDCAR TEAM: [a-zA-Z]{1,31}, CAR: (0?[1-9]|[1-9][0-9]), SPEED: [1-9][0-9]{0,9}, CONSUMPTION: ([0-9]*[.][0-9]{1,2}|[1-9][0-9]*), RELIABILITY: (100|[1-9][0-9]|[0-9])$", str) ){
+			// se nao for nenhum dos comandos acima, split da string do pipe
+      			char **str_array = NULL;
+      			int num_spaces = 0;
+      			char *aux = strtok(str, " ");
 
-      while (aux) {
-        str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
+      			while (aux) {
+        			str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
 
-        str_array[num_spaces - 1] = aux;
-        aux = strtok(NULL, ",");
-      }
-      //str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
-      //str_array[num_spaces] = 0;
+        			str_array[num_spaces - 1] = aux;
+        			aux = strtok(NULL, ",");
+      			}
+      			//str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
+      			//str_array[num_spaces] = 0;
 
-      //print
-      //for (i = 0; i < num_spaces + 1; ++i) printf("str_array[%d] = %s\n", i, str_array[i]);
+      			//print
+      			//for (i = 0; i < num_spaces + 1; ++i) printf("str_array[%d] = %s\n", i, str_array[i]);
 
-      if (strcmp(str_array[0], "ADDCAR") == 0){
-        write_log("[Race_Pipe] Got ADDCAR");
-        //print
-        for (int x = 0; x < num_spaces; ++x) printf ("str_array[%d] = %s\n", x, str_array[x]);
+      			//if (strcmp(str_array[0], "ADDCAR") == 0){
+        		//write_log("[Race_Pipe] Got ADDCAR");
+        		//print
+        		for (int x = 0; x < num_spaces; ++x) printf ("str_array[%d] = %s\n", x, str_array[x]);
 
-        //for (int x = 0; x < num_spaces; ++x) printf("str_array[%d] = %s\n", x, remove_letters(str_array[x]));
+        		//for (int x = 0; x < num_spaces; ++x) printf("str_array[%d] = %s\n", x, remove_letters(str_array[x]));
+        	}else{
+        		write_log("[Race_Pipe] ADDCAR SYNTAX ERROR DETECTED");
+        	}
 
         // os valores estao no array de strings str_array
         /*--------------------------------------------*/
         /*---------- Cena do regex aqui --------------*/
         /*--------------------------------------------*/
-
       } else 
           write_log("[Race_Pipe] Unknown command");
       
@@ -171,5 +179,18 @@ int convert_to_int(char number[50]) {
       write_log("Error converting string to int");
 
     return num;
+}
+
+int check_pipe_command_regex(const char *pattern, char *string) {
+  regex_t re;
+  if (regcomp(&re, pattern, REG_EXTENDED) != 0)
+    return 0;
+  
+  if (regexec(&re, string, 0, NULL, 0) != 0){
+  	regfree(&re);
+  	return 0;
+  }
+  regfree(&re);
+  return 1;
 }
 
