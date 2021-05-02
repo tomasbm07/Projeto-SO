@@ -112,6 +112,10 @@ void race_manager() {
        
   }
 
+
+
+
+
   // unnamed pipes stuff - 1 pipe per team
   // unname pipe direction: race_manager -> team_manager
   // fd[0] = read; fd[1] = write

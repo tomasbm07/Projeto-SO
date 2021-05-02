@@ -77,18 +77,10 @@ car_struct *create_car_structs_array() {
   return (car_struct *)malloc(sizeof(car_struct) * NR_CARS);
 }
 
-// set the atributes of the car
+// set the atributes of the car that aren't set by race_manager
 void init_car_stats(car_struct *stats, int team_index, int car_index) {
   stats->car = &shm_info->cars[team_index + car_index];
 
-  char nome[50];
-  sprintf(nome, "OMEGALUL_%d", team_index / NR_CARS);
-
-  strcpy(stats->car->team_name, nome);
-  stats->car->number = team_index * NR_CARS + car_index;
-  stats->car->speed = 25;
-  stats->car->consumption = 0;
-  stats->car->reliability = 0;
   stats->car->laps_completed = 0;
   stats->car->box_stops_counter = 0;
 
@@ -99,6 +91,7 @@ void init_car_stats(car_struct *stats, int team_index, int car_index) {
 
 // function to run in car thread
 void *car_worker(void *stats) {
+
   // convert argument from void* to car_struct*
   car_struct *car_info = (car_struct *)stats;
 
