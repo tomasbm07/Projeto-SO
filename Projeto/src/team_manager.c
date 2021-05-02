@@ -9,6 +9,7 @@ pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER;
 char box_state;
 
 void team_manager(int team_index) {
+	team_index = team_index*NR_CARS;
 	int i;
 	char str[150];
 
@@ -46,12 +47,13 @@ void team_manager(int team_index) {
 	write_log(str);
 #endif
 
-  /*
+  
   for (i = 0; i < NR_CARS; i++) {
+	if (strcmp(shm_info->cars[team_index + i].team_name,"")==0) break; 
     init_car_stats(&car_stats[i], team_index, i);
     pthread_create(&car_threads[i], NULL, car_worker, &car_stats[i]);
   }
-  */
+  
 
   // wait for threads to finish
   for (i = 0; i < NR_CARS; i++) pthread_join(car_threads[i], NULL);
@@ -80,9 +82,6 @@ car_struct *create_car_structs_array() {
 // set the atributes of the car that aren't set by race_manager
 void init_car_stats(car_struct *stats, int team_index, int car_index) {
 	stats->car = &shm_info->cars[team_index + car_index];
-
-  //stats->car->laps_completed = 0;
-  	stats->car->box_stops_counter = 0;
 
   	stats->state = 'R';
   	stats->fuel = FUEL_CAPACITY;
