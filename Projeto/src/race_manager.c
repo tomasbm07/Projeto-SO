@@ -13,7 +13,7 @@ int fd_race_pipe;
 
 
 void race_manager() {
-  	int i, num_chars, team;
+  	int i, num_chars, teams;
   	char str[256], aux[256];
   	struct sigaction sa;
 
@@ -126,14 +126,16 @@ void race_manager() {
 	}
 
   	for (i = 0; i < NR_TEAM; i++){
+		if ( strcmp(shm_info->cars[i*NR_CARS].team_name,"") == 0) break;
     	if (!fork()) team_manager(i);
 		//fechar pipe de escrita
 		close(fd_team[i][1]);
 	}
+	teams = (i == NR_TEAM)?NR_TEAM:i;
   // send a message to every team
   	char teste[50];
   // sprintf(teste, "--Just a random test message--");
-  	for (i = 0; i < NR_TEAM; i++) {
+  	for (i = 0; i < teams; i++) {
     	read(fd_team[i][0], teste, 50);
 		printf("MESSAGE received!! ----> '%s'\n", teste);
   	}

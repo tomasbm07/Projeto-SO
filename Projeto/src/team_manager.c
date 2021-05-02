@@ -23,7 +23,11 @@ void team_manager(int team_index) {
 
 	for (int i = 0; i < NR_TEAM; i++) {
     	if (i == team_index) continue;
-    	close(fd_team[2 * i]);
+    	//fechar pipes das outras equipas
+		else{
+			close(fd_team[i][0]);
+			close(fd_team[i][1]);
+		}
   	}
   
 
