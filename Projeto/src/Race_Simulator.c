@@ -78,18 +78,22 @@ int main(int argc, char* argv[]) {
   // wait for both process to finish
   for (i = 0; i < 2; i++) wait(NULL);
 
-/*
+
 #ifdef DEBUG
   printf("After both processes are closed\n");
-  for (i = 0; i < NR_TEAM; i++) {
-    printf("TEAM: %d | ", i);
+  int j;
+  for (i = 0; i < NR_TEAM*NR_CARS; i+=NR_CARS) {
+    if (strcmp(shm_info->cars[i].team_name,"")==0)
+    	break;
+    printf("TEAM %s:\n", shm_info->cars[i].team_name);
     for (j = 0; j < NR_CARS; j++) {
-      printf("Car %d Speed: %d\t", shm_info->cars[i * NR_CARS + j].number,shm_info->cars[i * NR_CARS + j].speed);
+    	if( strcmp(shm_info->cars[i + j].team_name,"") == 0)
+    		break;	
+      	printf("\tCar: %02d\n\t\tSpeed: %d\n\t\t Consumption: %.2f\n\t\tReliability: %d\n\t\tLaps Completed: %d\n", shm_info->cars[i + j].number, shm_info->cars[i + j].speed, shm_info->cars[i + j].consumption, shm_info->cars[i + j].reliability, shm_info->cars[i + j].laps_completed);
     }
-    printf("\n");
   }
 #endif
-*/
+
 
   write_log("SERVER CLOSED");
 

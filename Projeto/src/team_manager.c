@@ -81,7 +81,7 @@ car_struct *create_car_structs_array() {
 void init_car_stats(car_struct *stats, int team_index, int car_index) {
   stats->car = &shm_info->cars[team_index + car_index];
 
-  stats->car->laps_completed = 0;
+  //stats->car->laps_completed = 0;
   stats->car->box_stops_counter = 0;
 
   stats->state = 'R';
