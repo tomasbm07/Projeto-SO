@@ -13,31 +13,31 @@ int fd_race_pipe;
 
 
 void race_manager() {
-  int i, num_chars, team;
-  char str[256], aux[256];
-  struct sigaction sa;
+  	int i, num_chars, team;
+  	char str[256], aux[256];
+  	struct sigaction sa;
 
-  sa.sa_handler = signals;
-  //TODO: sigint é suposto ser recebido por race_simulator, nao por race_manager //
-  sigaction(SIGINT, &sa, NULL);
-  signal(SIGTSTP, SIG_IGN);
+  	sa.sa_handler = signals;
+  	//TODO: sigint é suposto ser recebido por race_simulator, nao por race_manager //
+  	sigaction(SIGINT, &sa, NULL);
+  	signal(SIGTSTP, SIG_IGN);
 
 #ifdef DEBUG
-  sprintf(aux, "Race manager created (PID: %d)", getpid());
-  write_log(aux);
+  	sprintf(aux, "Race manager created (PID: %d)", getpid());
+  	write_log(aux);
 #endif
 
   // named pipe stuff
-  unlink(PIPE_NAME);
-  if (mkfifo(PIPE_NAME, O_CREAT | O_EXCL | 0666) < 0) {
-    perror("Erro a criar o pipe: ");
-    exit(-1);
-  }
+  	unlink(PIPE_NAME);
+  	if (mkfifo(PIPE_NAME, O_CREAT | O_EXCL | 0666) < 0) {
+    	perror("Erro a criar o pipe: ");
+    	exit(-1);
+  	}
 
-  if ((fd_race_pipe = open(PIPE_NAME, O_RDWR)) < 0) {
-    perror("Erro: ");
-    exit(1);
-  }
+  	if ((fd_race_pipe = open(PIPE_NAME, O_RDWR)) < 0) {
+    	perror("Erro: ");
+    	exit(1);
+  	}
 
   /*
   Comandos para testar o pipe:
@@ -48,76 +48,74 @@ void race_manager() {
   write_log("Named pipe 'race_pipe' is ready!\n");
 #endif
   // while de leitura do pipe
-  while (1) {
-    num_chars = read(fd_race_pipe, str, sizeof(str));
-    str[num_chars - 1] = '\0';  // put a \0 in the end of string
+  	while (1) {
+    	num_chars = read(fd_race_pipe, str, sizeof(str));
+    	str[num_chars - 1] = '\0';  // put a \0 in the end of string
 
-    if (strcmp(str, "START RACE") == 0) {
-      write_log("[Race_Pipe] Got START RACE");
-      write_log("Buckle Up, race is starting!");
+    	if (strcmp(str, "START RACE") == 0) {
+      		write_log("[Race_Pipe] Got START RACE");
+      		write_log("Buckle Up, race is starting!");
+    	} else if (strcmp(str, "SKIP") == 0) {
+      		write_log("[Race_Pipe] Got SKIP");
+      		break;
 
-    } else if (strcmp(str, "SKIP") == 0) {
-      write_log("[Race_Pipe] Got SKIP");
-      break;
-
-    } else { 
-    	if ( check_pipe_command_regex("^ADDCAR*", str) ){
-    		write_log("[Race_Pipe] Got ADDCAR");
-			if( check_pipe_command_regex("^ADDCAR TEAM: [a-zA-Z]{1,31}, CAR: (0?[1-9]|[1-9][0-9]), SPEED: [1-9][0-9]{0,9}, CONSUMPTION: ([0-9]*[.][0-9]{1,2}|[1-9][0-9]*), RELIABILITY: (100|[1-9][0-9]|[0-9])$", str) ) {
+    	} else { 
+    		if ( check_pipe_command_regex("^ADDCAR*", str) ){
+    			write_log("[Race_Pipe] Got ADDCAR");
+				if( check_pipe_command_regex("^ADDCAR TEAM: [a-zA-Z]{1,31}, CAR: (0?[1-9]|[1-9][0-9]), SPEED: [1-9][0-9]{0,9}, CONSUMPTION: ([0-9]*[.][0-9]{1,2}|[1-9][0-9]*), RELIABILITY: (100|[1-9][0-9]|[0-9])$", str) ) {
 			// se nao for nenhum dos comandos acima, split da string do pipe
-      			char **str_array = NULL;
-      			int num_spaces = 0, j;
-      			char *aux = strtok(str, " ");
+      				char **str_array = NULL;
+      				int num_spaces = 0, j;
+      				char *aux = strtok(str, " ");
 
-      			while (aux) {
-        			str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
+      				while (aux) {
+        				str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
 
-        			str_array[num_spaces - 1] = aux;
-        			aux = strtok(NULL, ", ");
-      			}
+        				str_array[num_spaces - 1] = aux;
+        				aux = strtok(NULL, ", ");
+      				}
 				
-				if (!car_number_exists( atoi(str_array[4]) ) ) {
-        			for (i = 0; i < num_spaces; ++i) printf ("str_array[%d] = %s\n", i, str_array[i]);
-				
-					for (i = 0; i < NR_TEAM * NR_CARS; i += NR_CARS)
-						if ( strcmp(shm_info->cars[i].team_name, "")==0 || strcmp(shm_info->cars[i].team_name, str_array[2])==0)
-							break;
-				
-					if (i >= NR_TEAM * NR_CARS)
-						write_log("[ERROR] MAX NUMBER OF TEAMS ALREADY REACHED");
-					else{
-						for (j = 0; j < NR_CARS; j++)
-							if ( strcmp(shm_info->cars[i+j].team_name, "")==0)
+					if (!car_number_exists( atoi(str_array[4]) ) ) {
+						//se numero de carro nao existe, vai adicionar
+        				for (i = 0; i < num_spaces; ++i) printf ("str_array[%d] = %s\n", i, str_array[i]);
+						
+						//percorre equipas até encontrar equipa com o mesmo nome ou slot vazio para nova equipa
+						for (i = 0; i < NR_TEAM * NR_CARS; i += NR_CARS)
+							if ( strcmp(shm_info->cars[i].team_name, "")==0 || strcmp(shm_info->cars[i].team_name, str_array[2])==0)
 								break;
-						if (j == NR_CARS)
-							write_log("[ERROR] MAX NUMBER OF CARS, FROM TEAM REFERENCED, ALREADY REACHED");
+				
+						if (i >= NR_TEAM * NR_CARS)
+							write_log("[ERROR] MAX NUMBER OF TEAMS ALREADY REACHED");
 						else{
-							sprintf(shm_info->cars[i+j].team_name, "%s", str_array[2]);
-							shm_info->cars[i+j].number = atoi(str_array[4]);
-							shm_info->cars[i+j].speed = atoi(str_array[6]);
-							shm_info->cars[i+j].consumption = atof(str_array[8]);
-							shm_info->cars[i+j].reliability = atoi(str_array[10]);
+							//percorre carros da equipa até encontrar slot vazio para novo carro
+							for (j = 0; j < NR_CARS; j++)
+								if ( strcmp(shm_info->cars[i+j].team_name, "")==0)
+									break;
+							if (j == NR_CARS)
+								write_log("[ERROR] MAX NUMBER OF CARS, FROM TEAM REFERENCED, ALREADY REACHED");
+							else{
+								sprintf(shm_info->cars[i+j].team_name, "%s", str_array[2]);
+								shm_info->cars[i+j].number = atoi(str_array[4]);
+								shm_info->cars[i+j].speed = atoi(str_array[6]);
+								shm_info->cars[i+j].consumption = atof(str_array[8]);
+								shm_info->cars[i+j].reliability = atoi(str_array[10]);
+							}
 						}
+					}else{
+						write_log("[ERROR] CAR NUMBER ALREADY EXISTS");
 					}
-				}else{
-					write_log("[ERROR] CAR NUMBER ALREADY EXISTS");
-				}
-        	}else{
-        		write_log("[Race_Pipe] ADDCAR SYNTAX ERROR DETECTED");
-        	}
-      	} else 
-          write_log("[Race_Pipe] Unknown command");
+        		}else{
+        			write_log("[Race_Pipe] ADDCAR SYNTAX ERROR DETECTED");
+        		}
+      		} else 
+         		write_log("[Race_Pipe] Unknown command");
       
     }
        
   }
 
-
-
-
-
   // unnamed pipes stuff - 1 pipe per team
-  // unname pipe direction: race_manager -> team_manager
+  // unname pipe direction: race_manager <- team_manager
   // fd[0] = read; fd[1] = write
   fd_team = malloc(2 * NR_TEAM * sizeof(*fd_team));
   for (int i = 0; i < NR_TEAM; i++) pipe(&fd_team[i * 2]);
@@ -128,7 +126,6 @@ void race_manager() {
   // send a message to every team
   char teste[50];
   // sprintf(teste, "--Just a random test message--");
-  sprintf(teste, "ADDCAR");
   for (i = 0; i < NR_TEAM; i++) {
     team = i;
     write(fd_team[team * 2 + 1], teste, strlen(teste) + 1);
