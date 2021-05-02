@@ -56,19 +56,6 @@ int main(int argc, char* argv[]) {
 
   write_log("SERVER STARTED");
 
-/*
-#ifdef DEBUG
-  int j;
-  for (i = 0; i < NR_TEAM; i++) {
-    printf("TEAM: %d | ", i);
-    for (j = 0; j < NR_CARS; j++) {
-      printf("Car %d Speed: %d\t", shm_info->cars[i * NR_CARS + j].number,shm_info->cars[i * NR_CARS + j].speed);
-    }
-    printf("\n");
-  }
-#endif
-*/
-
   // create race manager process
   if (!fork()) race_manager();
 
@@ -79,6 +66,8 @@ int main(int argc, char* argv[]) {
   for (i = 0; i < 2; i++) wait(NULL);
 
 
+// debug para verificar informações escritas por race_maneger -- uncomment para verificar
+/*
 #ifdef DEBUG
   printf("After both processes are closed\n");
   int j;
@@ -93,7 +82,7 @@ int main(int argc, char* argv[]) {
     }
   }
 #endif
-
+*/
 
   write_log("SERVER CLOSED");
 

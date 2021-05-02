@@ -110,31 +110,34 @@ void race_manager() {
       		} else 
          		write_log("[Race_Pipe] Unknown command");
       
-    }
+    	}
        
-  }
+  	}
 
   // unnamed pipes stuff - 1 pipe per team
   // unname pipe direction: race_manager <- team_manager
   // fd[0] = read; fd[1] = write
-  fd_team = malloc(2 * NR_TEAM * sizeof(*fd_team));
-  for (int i = 0; i < NR_TEAM; i++) pipe(&fd_team[i * 2]);
 
-  for (i = 0; i < NR_TEAM; i++)
-    if (!fork()) team_manager(i);
+//TODO MULTIPLEXING ENTRE NAMED PIPE E UNNAMED PIPES DOS CARROS ALGURES AQUI PARA BAIXO
+  	fd_team = (int**)malloc(NR_TEAM * sizeof(*fd_team));
+  	for (int i = 0; i < NR_TEAM; i++){ 
+		fd_team[i] = (int *) malloc(2 * sizeof(**fd_team)); 
+		pipe(fd_team[i]);
+	}
 
+  	for (i = 0; i < NR_TEAM; i++){
+    	if (!fork()) team_manager(i);
+		//fechar pipe de escrita
+		close(fd_team[i][1]);
+	}
   // send a message to every team
-  char teste[50];
+  	char teste[50];
   // sprintf(teste, "--Just a random test message--");
-  for (i = 0; i < NR_TEAM; i++) {
-    team = i;
-    write(fd_team[team * 2 + 1], teste, strlen(teste) + 1);
-  }
+  	for (i = 0; i < NR_TEAM; i++) {
+    	read(fd_team[i][0], teste, 50);
+		printf("MESSAGE received!! ----> '%s'\n", teste);
+  	}
 
-  // close unnecessary reading part
-  for (int i = 0; i < NR_TEAM; i++) {
-    close(fd_team[2 * i]);
-  }
 
 #ifdef DEBUG
   sprintf(str, "Created %d team processes", i);
@@ -142,24 +145,24 @@ void race_manager() {
 #endif
 
   // wait for all team processes to finish
-  for (i = 0; i < NR_TEAM; i++) wait(NULL);
-  clean_resources();
+  	for (i = 0; i < NR_TEAM; i++) wait(NULL);
+  	clean_resources();
 
-  exit(0);
+  	exit(0);
 }
 
 void clean_resources() {
-  close(fd_race_pipe);
-  unlink(PIPE_NAME);
-  for (int i = 0; i < NR_TEAM; i++) close(fd_team[i * 2]);
+  	close(fd_race_pipe);
+  	unlink(PIPE_NAME);
+  	for (int i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
 }
 
 void signals(int signal) {
   #ifdef DEBUG
     write_log("Got SIGINT\n");
   #endif
-  clean_resources();
-  exit(0);
+  	clean_resources();
+  	exit(0);
 }
 
 int convert_to_int(char number[50]) {
@@ -193,17 +196,17 @@ int convert_to_int(char number[50]) {
 }
 
 int check_pipe_command_regex(const char *pattern, char *string) {
-  regex_t re;
-  if (regcomp(&re, pattern, REG_EXTENDED) != 0)
-    return 0;
+  	regex_t re;
+  	if (regcomp(&re, pattern, REG_EXTENDED) != 0)
+    	return 0;
   
-  if (regexec(&re, string, 0, NULL, 0) != 0){
+  	if (regexec(&re, string, 0, NULL, 0) != 0){
+  		regfree(&re);
+  		return 0;
+  	}
   	regfree(&re);
-  	return 0;
-  }
-  regfree(&re);
-  return 1;
-}
+ 	 return 1;
+	}
 
 int car_number_exists(int number){
 	int i;

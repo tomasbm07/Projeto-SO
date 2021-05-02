@@ -18,8 +18,8 @@ void team_manager(int team_index) {
 	write_log(aux);
 #endif
 
-  // close unnecessary writing part
-	close(fd_team[2 * team_index + 1]);
+  // fechar pipe de leitura
+	close(fd_team[team_index][0]);
 
 	for (int i = 0; i < NR_TEAM; i++) {
     	if (i == team_index) continue;
@@ -34,17 +34,13 @@ void team_manager(int team_index) {
 	car_struct car_stats[NR_CARS];
 
 	char pipe_str[50];
-	read(fd_team[2 * team_index], &pipe_str, 50);
+	sprintf(pipe_str, "Team %d Ready!", team_index);
+	write(fd_team[team_index][1], &pipe_str, strlen(pipe_str)+1);
+
 #ifdef DEBUG
-	sprintf(str, "Team %d got \"%s\" from unnamed pipe\n", team_index, pipe_str);
+	sprintf(str, "Team %d sent \"%s\" to unnamed pipe\n", team_index, pipe_str);
 	write_log(str);
 #endif
-
-  // Create car thread when message from pipe is correct
-	if (strcmp(pipe_str, "ADDCAR") == 0){
-		init_car_stats(&car_stats[0], team_index, 0);
-    	pthread_create(&car_threads[0], NULL, car_worker, &car_stats[0]);
-  	}
 
   /*
   for (i = 0; i < NR_CARS; i++) {
