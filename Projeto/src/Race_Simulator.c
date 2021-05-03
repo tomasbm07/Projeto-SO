@@ -62,6 +62,9 @@ int main(int argc, char* argv[]) {
   // create malfunction manager process
   if (!fork()) malfunction_manager();
 
+  //sleep(1);
+  //kill(0, SIGUSR2);
+
   // wait for both process to finish
   for (i = 0; i < 2; i++) wait(NULL);
 
