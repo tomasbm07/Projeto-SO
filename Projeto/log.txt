@@ -3394,3 +3394,79 @@
 [16:55:55] SERVER STARTED
 [16:56:20] SERVER CLOSED
 [16:56:20] Cleaning up...
+[13:34:54] Semaphore initialized
+[13:34:54] SERVER STARTED
+[13:34:54] Race manager created (PID: 12405)
+[13:34:54] Semaphore initialized
+[13:34:54] SERVER STARTED
+[13:34:54] Malfunction manager created (PID: 12406)
+[13:34:54] Semaphore initialized
+[13:34:54] SERVER STARTED
+[13:34:54] SERVER CLOSED
+[13:34:54] Cleaning up...
+[13:35:23] Semaphore initialized
+[13:35:23] SERVER STARTED
+[13:35:23] Malfunction manager created (PID: 12495)
+[13:35:23] Semaphore initialized
+[13:35:23] SERVER STARTED
+[13:36:57] SERVER CLOSED
+[13:36:57] Cleaning up...
+[13:37:0] Semaphore initialized
+[13:37:0] SERVER STARTED
+[13:37:0] Malfunction manager created (PID: 12584)
+[13:37:0] Semaphore initialized
+[13:37:0] SERVER STARTED
+[13:38:3] SERVER CLOSED
+[13:38:3] Cleaning up...
+[13:38:7] Semaphore initialized
+[13:38:7] SERVER STARTED
+[13:38:7] Malfunction manager created (PID: 12676)
+[13:38:7] Semaphore initialized
+[13:38:7] SERVER STARTED
+[13:48:31] SERVER CLOSED
+[13:48:31] Cleaning up...
+[13:48:32] Semaphore initialized
+[13:48:32] SERVER STARTED
+[13:48:32] Malfunction manager created (PID: 13281)
+[13:48:32] Semaphore initialized
+[13:48:32] SERVER STARTED
+[13:48:44] SERVER CLOSED
+[13:48:44] Cleaning up...
+[14:2:25] Semaphore initialized
+[14:2:25] SERVER STARTED
+[14:2:25] Malfunction manager created (PID: 13856)
+[14:2:25] Semaphore initialized
+[14:2:25] SERVER STARTED
+[14:3:32] SERVER CLOSED
+[14:3:32] Cleaning up...
+[14:3:36] Semaphore initialized
+[14:3:36] SERVER STARTED
+[14:3:36] Malfunction manager created (PID: 13926)
+[14:3:36] Semaphore initialized
+[14:3:36] SERVER STARTED
+[14:4:49] SERVER CLOSED
+[14:4:49] Cleaning up...
+[14:8:24] Semaphore initialized
+[14:8:24] SERVER STARTED
+[14:8:24] Malfunction manager created (PID: 14108)
+[14:8:24] Semaphore initialized
+[14:8:24] SERVER STARTED
+[14:9:15] SERVER CLOSED
+[14:9:15] Cleaning up...
+[14:11:55] Semaphore initialized
+[14:11:55] SERVER STARTED
+[14:11:55] Malfunction manager created (PID: 14334)
+[14:11:55] Semaphore initialized
+[14:11:55] SERVER STARTED
+[14:13:4] SERVER CLOSED
+[14:13:4] Cleaning up...
+[14:13:6] Semaphore initialized
+[14:13:6] SERVER STARTED
+[14:13:6] Malfunction manager created (PID: 14407)
+[14:13:6] Semaphore initialized
+[14:13:6] SERVER STARTED
+[14:13:46] SERVER CLOSED
+[14:13:46] Cleaning up...
+[14:13:47] Semaphore initialized
+[14:13:47] SERVER STARTED
+[14:13:47] Malfunction manager created (PID: 14443)

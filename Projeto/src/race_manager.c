@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "race_manager.h"
 
-#define PIPE_NAME "/home/user/race_pipe"
-//#define PIPE_NAME "race_pipe"
+//#define PIPE_NAME "/home/user/race_pipe"
+#define PIPE_NAME "race_pipe"
 
 
 int fd_race_pipe;
@@ -41,8 +41,8 @@ void race_manager() {
 
   /*
   Comandos para testar o pipe:
-  echo "ADDCAR TEAM: A, CAR: 77, SPEED: 50, COMSUMPTION: 0.04, RELIABILITY: 99"
-  > race_pipe echo "START RACE" > race_pipe
+  echo "ADDCAR TEAM: A, CAR: 77, SPEED: 50, COMSUMPTION: 0.04, RELIABILITY: 99" > race_pipe 
+  echo "START RACE" > race_pipe
   */
 #ifdef DEBUG
   write_log("Named pipe 'race_pipe' is ready!\n");
@@ -54,7 +54,13 @@ void race_manager() {
 
     	if (strcmp(str, "START RACE") == 0) {
       		write_log("[Race_Pipe] Got START RACE");
-      		write_log("Buckle Up, race is starting!");
+			if (minium_cars()){
+				write_log("Buckle Up, race is starting!");
+				//DO SOMETHING
+			} else {
+				write_log("Not enough teams registered to start race");
+			}
+			
     	} else if (strcmp(str, "SKIP") == 0) {
       		write_log("[Race_Pipe] Got SKIP");
       		break;
@@ -63,7 +69,7 @@ void race_manager() {
     		if ( check_pipe_command_regex("^ADDCAR*", str) ){
     			write_log("[Race_Pipe] Got ADDCAR");
 				if( check_pipe_command_regex("^ADDCAR TEAM: [a-zA-Z]{1,31}, CAR: (0?[1-9]|[1-9][0-9]), SPEED: [1-9][0-9]{0,9}, CONSUMPTION: ([0-9]*[.][0-9]{1,2}|[1-9][0-9]*), RELIABILITY: (100|[1-9][0-9]|[0-9])$", str) ) {
-			// se nao for nenhum dos comandos acima, split da string do pipe
+					// se nao for nenhum dos comandos acima, split da string do pipe
       				char **str_array = NULL;
       				int num_spaces = 0, j;
       				char *aux = strtok(str, " ");
@@ -77,7 +83,7 @@ void race_manager() {
 				
 					if (!car_number_exists( atoi(str_array[4]) ) ) {
 						//se numero de carro nao existe, vai adicionar
-        				for (i = 0; i < num_spaces; ++i) printf ("str_array[%d] = %s\n", i, str_array[i]);
+        				//for (i = 0; i < num_spaces; ++i) printf ("str_array[%d] = %s\n", i, str_array[i]);
 						
 						//percorre equipas até encontrar equipa com o mesmo nome ou slot vazio para nova equipa
 						for (i = 0; i < NR_TEAM * NR_CARS; i += NR_CARS)
@@ -92,20 +98,21 @@ void race_manager() {
 								if ( strcmp(shm_info->cars[i+j].team_name, "")==0)
 									break;
 							if (j == NR_CARS)
-								write_log("[ERROR] MAX NUMBER OF CARS, FROM TEAM REFERENCED, ALREADY REACHED");
+								write_log("Max number of cars reached for this team");
 							else{
 								sprintf(shm_info->cars[i+j].team_name, "%s", str_array[2]);
 								shm_info->cars[i+j].number = atoi(str_array[4]);
 								shm_info->cars[i+j].speed = atoi(str_array[6]);
 								shm_info->cars[i+j].consumption = atof(str_array[8]);
 								shm_info->cars[i+j].reliability = atoi(str_array[10]);
+								write_log("CAR ADDDED");
 							}
 						}
 					}else{
-						write_log("[ERROR] CAR NUMBER ALREADY EXISTS");
+						write_log("Car number already exists");
 					}
         		}else{
-        			write_log("[Race_Pipe] ADDCAR SYNTAX ERROR DETECTED");
+        			write_log("ADDCAR Syntax error");
         		}
       		} else 
          		write_log("[Race_Pipe] Unknown command");
@@ -167,35 +174,6 @@ void signals(int signal) {
   	exit(0);
 }
 
-int convert_to_int(char number[50]) {
-    long int numl;
-    int num = 0;
-    char *tail;
-
-    errno = 0;
-    numl = strtol(number, &tail, 0);
-    if (errno) 
-        write_log("Error converting string to int");
-    
-
-    // verificar se existem carateres invalidos no resultado
-    // strtol("123abc") -> 123; tail = "   " 
-    while ((*tail) != 0) {
-        if (!isspace(*tail)) {
-            write_log("Error converting string to int");
-            return -1;
-        }
-        tail++;
-    }
-
-    // converter de long para int
-    if (numl <= INT_MAX && numl >= INT_MIN) 
-      num = (int) numl;
-    else
-      write_log("Error converting string to int");
-
-    return num;
-}
 
 int check_pipe_command_regex(const char *pattern, char *string) {
   	regex_t re;
@@ -215,5 +193,20 @@ int car_number_exists(int number){
 	for (i = 0; i < NR_TEAM * NR_CARS; i ++)
 		if (shm_info->cars[i].number==number)
 			return 1;
+	return 0;
+}
+
+int minium_cars(){
+	int i;
+	int count = 0;
+	// loop through teams, if team doesnt have name, doest exist
+	for (i = 0; i < NR_TEAM * NR_CARS; i+= NR_CARS)
+		if ( strcmp(shm_info->cars[i].team_name, "") != 0)
+			count++;
+	
+	if (count == NR_TEAM){
+		return 1;
+	}
+	
 	return 0;
 }
