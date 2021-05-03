@@ -8,6 +8,18 @@ Joel Oliveira - 2019227468
 
 void malfunction_manager(){
 	
+	//Create Message queue
+	create_mq();
+
+	malfunction_msg msg;
+
+	//fill the mq, just for testing
+	for (int i = 0; i < 10; i++) {
+		printf("messaged added to MQ\n");
+		msg.car_num = i;
+		msgsnd(mqid, &msg, sizeof(malfunction_msg), 0);
+	}
+	
 	/*
 	sigset_t set;
 
@@ -33,15 +45,6 @@ void malfunction_manager(){
 	exit(0);
 }
 
-void malfunction_signals(int sig){
-	if (sig == SIGUSR2){
-		write_log("[Malfunction Manager] Got SIGUSR2");
-		generator();
-	} else { // SIGINT
-		exit(0);
-	}
-}
-
 void generator(){
 	int i, reliability;
 
@@ -56,4 +59,29 @@ void generator(){
 			write_log(str);
 		}
 	}
+}
+
+void create_mq(){
+	mqid = msgget(IPC_PRIVATE, IPC_CREAT|0777);
+  	if (mqid < 0){
+    	write_log("Error creating message queue");
+      	exit(-1);
+    }
+}
+
+void cleanup(){
+	msgctl(mqid, IPC_RMID, 0);
+	exit(0);
+}
+
+void malfunction_signal_handler(int sig){
+	if (sig == SIGUSR2){
+		write_log("[Malfunction Manager] Got SIGUSR2");
+		generator();
+
+	} else if (sig == SIGINT){
+		cleanup();
+		exit(0);
+	}
+
 }

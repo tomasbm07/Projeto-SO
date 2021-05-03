@@ -6,7 +6,6 @@ Joel Oliveira - 2019227468
 #ifndef MALFUNCTION_H
 #define MALFUNCTION_H
 
-#endif
 
 #include "write_output.h"
 #include "config_file.h"
@@ -27,13 +26,22 @@ Joel Oliveira - 2019227468
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <sys/msg.h>
 
+int mqid; // Message queue ID
+
+//define the message struct for the MQ
+//typedef struct malfunction_msg *msg;
 typedef struct{
-  long mtype;
-  int car_num;
+	long mtype;
+    int car_num;
 } malfunction_msg;
 
 
 void malfunction_manager(void);
-void malfunction_signals(int sig);
+void malfunction_signal_handler(int sig);
 void generator();
+void cleanup();
+void create_mq();
+
+#endif

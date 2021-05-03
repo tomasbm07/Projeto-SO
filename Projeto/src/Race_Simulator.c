@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
 
 
 // debug para verificar informações escritas por race_maneger -- uncomment para verificar
-/*
+
 #ifdef DEBUG
   printf("After both processes are closed\n");
   int j;
@@ -85,7 +85,7 @@ int main(int argc, char* argv[]) {
     }
   }
 #endif
-*/
+
 
   write_log("SERVER CLOSED");
 
@@ -106,7 +106,7 @@ void get_id(int* id, key_t key, size_t size, int flag) {
 
 void check_shmat(void* pointer){
 	if (pointer < (void*)1){
-		write_log("Error attaching memory!");
+		  write_log("Error attaching memory!");
     	destroy_resources();
     	exit(1);
 	}
