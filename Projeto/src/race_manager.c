@@ -7,16 +7,16 @@ Joel Oliveira - 2019227468
 
 //mudei o named pipe para o processo principal
 
-void race_manager() {
+void race_manager(pid_t malf_pid) {
 	char race_going = 'F'; //T -true, F - false
   	int i, num_chars, teams;
   	char str[256], aux[256];
-  	struct sigaction sa;
+  	struct sigaction sa_rmanager;
 	fd_set read_set;
 
-  	sa.sa_handler = signals;
+  	sa_rmanager.sa_handler = signals;
   	//TODO: sigint é suposto ser recebido por race_simulator, nao por race_manager //
-  	sigaction(SIGINT, &sa, NULL);
+  	sigaction(SIGINT, &sa_rmanager, NULL);
   	signal(SIGTSTP, SIG_IGN);
 
 #ifdef DEBUG
@@ -57,6 +57,12 @@ void race_manager() {
 					//fechar pipe de escrita
 					close(fd_team[i][1]);
 				}
+				
+				//waiting for child process to be ready
+  				for (i = 0; i < NR_TEAM; i++) {
+    				read(fd_team[i][0], str, 50);
+					printf("MESSAGE received!! ----> '%s'\n", str);
+  				}
 				break;		
 			}else
 				write_log("Not enough teams ready");
@@ -109,6 +115,9 @@ void race_manager() {
          		write_log("[Race_Pipe] Unknown command");      	
 		}  	
 	}
+	
+	kill(0, SIGUSR2);
+	kill(malf_pid, SIGUSR2);
 	/*
   // while de leitura do pipe
   	while (1) {
@@ -125,15 +134,7 @@ void race_manager() {
 
 
 
-//TODO MULTIPLEXING ENTRE NAMED PIPE E UNNAMED PIPES DOS CARROS ALGURES AQUI PARA BAIXO
-	
-  // receive a message from every team
-  	char teste[50];
-  	for (i = 0; i < NR_TEAM; i++) {
-    	read(fd_team[i][0], teste, 50);
-		printf("MESSAGE received!! ----> '%s'\n", teste);
-  	}
-
+//TODO MULTIPLEXING ENTRE NAMED PIPE E UNNAMED PIPES DOS CARROS ALGURES AQUI PARA BAIXO 	
 
 #ifdef DEBUG
   sprintf(str, "Created %d team processes", i);
@@ -141,7 +142,7 @@ void race_manager() {
 #endif
 
   // wait for all team processes to finish
-  	for (i = 0; i < teams; i++) wait(NULL);
+  	for (i = 0; i < NR_TEAM; i++) wait(NULL);
   	clean_resources();
 
   	exit(0);

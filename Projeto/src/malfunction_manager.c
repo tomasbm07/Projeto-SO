@@ -41,7 +41,7 @@ void malfunction_manager(){
 	write_log(str);
 #endif
 
-	printf("DONE");
+	printf("DONE\n");
 	exit(0);
 }
 

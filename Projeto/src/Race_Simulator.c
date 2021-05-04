@@ -59,12 +59,12 @@ int main(int argc, char* argv[]) {
   initiate_resources();
 
   write_log("SERVER STARTED");
+   // create malfunction manager process
+   pid_t malf_pid;
+  if ( !(malf_pid = fork()) ) malfunction_manager();
   
   // create race manager process
-  if (!fork()) race_manager();
-
-  // create malfunction manager process
-  if (!fork()) malfunction_manager();
+  if (!fork()) race_manager(malf_pid);
 
   //sleep(1);
   //kill(0, SIGUSR2);

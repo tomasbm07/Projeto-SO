@@ -7,12 +7,19 @@ Joel Oliveira - 2019227468
 
 pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER;
 char box_state;
+int cars_number;
+pthread_t *car_threads;
 
 void team_manager(int team_index) {
 	team_index = team_index*NR_CARS;
-	int i, cars_number;
-	char str[150];
-
+	int i;
+	char str[256];
+	struct sigaction sa_tmanager;
+	
+	sa_tmanager.sa_handler = start_race;
+	sigaction(SIGUSR2, &sa_tmanager, NULL);
+	
+	
 #ifdef DEBUG
 	char aux[50];
 	sprintf(aux, "\nTeam manager created (PID: %d), from Team %d", getpid(), team_index);
@@ -21,7 +28,6 @@ void team_manager(int team_index) {
 
   // fechar pipe de leitura
 	close(fd_team[team_index][0]);
-
 
 	for (int i = 0; i < NR_TEAM; i++) {
     	if (i != team_index){
@@ -35,32 +41,33 @@ void team_manager(int team_index) {
   // int car_thread_index = 0;
 	box_state = 'E';  // 'R' = Reserved; 'E' = Empty; 'F' = Full;
 	srand((unsigned)team_index);
-	pthread_t car_threads[NR_CARS];
+	car_threads = create_threads_array();
 	car_struct car_stats[NR_CARS];
 
-	char pipe_str[50];
-	sprintf(pipe_str, "Team %d Ready!", team_index);
-	write(fd_team[team_index][1], &pipe_str, strlen(pipe_str)+1);
-
+/*
 #ifdef DEBUG
 	sprintf(str, "Team %d sent \"%s\" to unnamed pipe\n", team_index, pipe_str);
 	write_log(str);
 #endif
-
+*/
   
 	for (i = 0; i < NR_CARS; i++) {
 		if (strcmp(shm_info->cars[team_index + i].team_name,"")==0) break; 
 		init_car_stats(&car_stats[i], team_index, i);
-		pthread_create(&car_threads[i], NULL, car_worker, &car_stats[i]);
+		pthread_create((car_threads+i), NULL, car_worker, &car_stats[i]);
 	}
-	
   	// wait for threads to finish
-  	cars_number=(i==NR_CARS)?NR_CARS:i;
-  	for (i = 0; i < cars_number; i++) pthread_join(car_threads[i], NULL);
+  	cars_number = i;
+  	
+  	sprintf(str, "Team %d Ready!", team_index);
+	write(fd_team[team_index][1], &str, strlen(str)+1);
+  	
+  	for (i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
 
   	// destroy mutex
 	pthread_mutex_destroy(&box_mutex);
-
+	
+	free(car_threads);
   exit(0);
 }
 
@@ -83,6 +90,13 @@ void init_car_stats(car_struct *stats, int team_index, int car_index) {
   	stats->lap_distance = 0;
 }
 
+void start_race(int sig){
+	int i;
+	for (i = 0; i < cars_number;)
+		pthread_kill(car_threads[i++], SIGUSR2);
+
+}
+
 //TODO: READ MESSAGE QUEUE MESSAGES AND DETERMINE WHAT TO DO
 // function to run in car thread
 void *car_worker(void *stats) {
@@ -91,6 +105,11 @@ void *car_worker(void *stats) {
 	malfunction_msg msg;
 	char states[3] = {'E', 'F', 'R'};
 	char str[300];
+	int start;
+
+	while( (start = pause())!=SIGUSR2 );
+
+	
 /*
   // just for testing
 #ifdef DEBUG

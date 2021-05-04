@@ -28,5 +28,4 @@ pthread_t* create_threads_array();
 car_struct* create_car_structs_array();
 void init_car_stats(car_struct* stats, int team_nr, int car_nr);
 void* car_worker(void* stats);
-
-
+void start_race(int sig);
