@@ -10,22 +10,22 @@ char box_state;
 
 void team_manager(int team_index) {
 	team_index = team_index*NR_CARS;
-	int i;
+	int i, cars_number;
 	char str[150];
 
 #ifdef DEBUG
 	char aux[50];
-	sprintf(aux, "Team manager created (PID: %d)", getpid());
+	sprintf(aux, "\nTeam manager created (PID: %d), from Team %d", getpid(), team_index);
 	write_log(aux);
 #endif
 
   // fechar pipe de leitura
 	close(fd_team[team_index][0]);
 
+
 	for (int i = 0; i < NR_TEAM; i++) {
-    	if (i == team_index) continue;
+    	if (i != team_index){
     	//fechar pipes das outras equipas
-		else{
 			close(fd_team[i][0]);
 			close(fd_team[i][1]);
 		}
@@ -53,9 +53,10 @@ void team_manager(int team_index) {
 		init_car_stats(&car_stats[i], team_index, i);
 		pthread_create(&car_threads[i], NULL, car_worker, &car_stats[i]);
 	}
-  
+	
   	// wait for threads to finish
-  	for (i = 0; i < NR_CARS; i++) pthread_join(car_threads[i], NULL);
+  	cars_number=(i==NR_CARS)?NR_CARS:i;
+  	for (i = 0; i < cars_number; i++) pthread_join(car_threads[i], NULL);
 
   	// destroy mutex
 	pthread_mutex_destroy(&box_mutex);

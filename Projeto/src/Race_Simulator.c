@@ -5,6 +5,10 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
+#define PIPE_NAME "/home/user/race_pipe"
+//#define PIPE_NAME "race_pipe"
+int fd_race_pipe;
+
 int shm_id;
 shm_struct* shm_info;
 
@@ -55,7 +59,7 @@ int main(int argc, char* argv[]) {
   initiate_resources();
 
   write_log("SERVER STARTED");
-
+  
   // create race manager process
   if (!fork()) race_manager();
 
@@ -71,6 +75,7 @@ int main(int argc, char* argv[]) {
 
 // debug para verificar informações escritas por race_maneger -- uncomment para verificar
 
+/*
 #ifdef DEBUG
   printf("After both processes are closed\n");
   int j;
@@ -85,6 +90,7 @@ int main(int argc, char* argv[]) {
     }
   }
 #endif
+*/
 
 
   write_log("SERVER CLOSED");
@@ -93,6 +99,19 @@ int main(int argc, char* argv[]) {
   destroy_resources();
 
   exit(0);
+}
+
+void create_named_pipe(){
+	unlink(PIPE_NAME);
+  	if (mkfifo(PIPE_NAME, O_CREAT | O_EXCL | 0666) < 0) {
+    	perror("Erro a criar o pipe: ");
+    	exit(-1);
+  	}
+
+  	if ((fd_race_pipe = open(PIPE_NAME, O_RDWR)) < 0) {
+    	perror("Erro: ");
+    	exit(1);
+  	}
 }
 
 void get_id(int* id, key_t key, size_t size, int flag) {
@@ -151,10 +170,10 @@ char str[50];
 #endif
 }
 
-
 void initiate_resources() {
 	initiate_sems();
   initiate_shm(); 
+  create_named_pipe();
 }
 
 void destroy_resources(void) {
@@ -169,9 +188,11 @@ void destroy_resources(void) {
 
   shmdt(shm_info);
   shmctl(shm_id, IPC_RMID, NULL);
+  
+  close(fd_race_pipe);
+  unlink(PIPE_NAME);
 }
 
 void statistics(int sig){
   write_log("GOT SIGTSTP - Statistics coming");
 }
-

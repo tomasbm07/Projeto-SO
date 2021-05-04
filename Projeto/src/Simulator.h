@@ -37,6 +37,6 @@ void initiate_shm();
 void initiate_sems();
 void destroy_resources();
 void statistics(int sig);
-
+void create_named_pipe();
 
 #endif

@@ -9,7 +9,7 @@ Joel Oliveira - 2019227468
 void malfunction_manager(){
 	
 	//Create Message queue
-	create_mq();
+	//create_mq();
 
 	malfunction_msg msg;
 
@@ -17,7 +17,7 @@ void malfunction_manager(){
 	for (int i = 0; i < 10; i++) {
 		printf("messaged added to MQ\n");
 		msg.car_num = i;
-		msgsnd(mqid, &msg, sizeof(malfunction_msg), 0);
+		//msgsnd(mqid, &msg, sizeof(malfunction_msg), 0);
 	}
 	
 	/*
@@ -32,7 +32,7 @@ void malfunction_manager(){
 	sigwait(&set);
 	*/
 
-	pause();
+	//pause();
 
 
 #ifdef DEBUG

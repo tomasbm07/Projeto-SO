@@ -26,10 +26,11 @@ Joel Oliveira - 2019227468
 #define DEBUG
 
 int **fd_team;
-
+extern int fd_race_pipe;
 void race_manager(void);
 void signals(int signal);
 void clean_resources();
 int check_pipe_command_regex(const char *pattern, char *string);
 int car_number_exists(int number);
 int minium_cars();
+int max(int fd1, int other_fds[][2]);
