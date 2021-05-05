@@ -11,7 +11,6 @@ Joel Oliveira - 2019227468
 #include <ctype.h>
 #include <errno.h>
 #include <limits.h>
-#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/select.h>
@@ -27,7 +26,7 @@ Joel Oliveira - 2019227468
 
 int **fd_team;
 extern int fd_race_pipe;
-void race_manager(void);
+void race_manager(pid_t pid);
 void signals(int signal);
 void clean_resources();
 int check_pipe_command_regex(const char *pattern, char *string);

@@ -22,6 +22,7 @@ int main(int argc, char* argv[]) {
   //SIG_IGN = ignorar sinal
   //sa.sa_handler = signal_handler;
   signal(SIGINT, SIG_IGN);
+  signal(SIGUSR2, SIG_IGN);
   signal(SIGTSTP, statistics);
 
   f = fopen("log.txt", "a");

@@ -20,19 +20,18 @@ void malfunction_manager(){
 		//msgsnd(mqid, &msg, sizeof(malfunction_msg), 0);
 	}
 	
-	/*
+	
 	sigset_t set;
 
 	sigemptyset(&set);
-
-	signal(SIGUSR2, malfunction_signals);
-	signal(SIGINT, malfunction_signals);
+	signal(SIGUSR2, malfunction_signal_handler);
+	signal(SIGINT, malfunction_signal_handler);
 
 	sigaddset(&set, SIGUSR2);
-	sigwait(&set);
-	*/
+	//sigwait(&set);
+	
 
-	//pause();
+	pause();
 
 
 #ifdef DEBUG
@@ -77,7 +76,7 @@ void cleanup(){
 void malfunction_signal_handler(int sig){
 	if (sig == SIGUSR2){
 		write_log("[Malfunction Manager] Got SIGUSR2");
-		generator();
+		//generator();
 
 	} else if (sig == SIGINT){
 		cleanup();

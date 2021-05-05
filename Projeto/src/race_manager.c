@@ -39,7 +39,7 @@ void race_manager(pid_t malf_pid) {
 
     	if (strcmp(str, "START RACE") == 0) {
       		write_log("[Race_Pipe] Got START RACE");
-			if (minium_cars() ) {
+			if ( minium_cars() ) {
 				write_log("Buckle Up, race is starting!");
 				
 				  				
@@ -53,14 +53,14 @@ void race_manager(pid_t malf_pid) {
 				}
 				
 				for (i = 0; i < NR_TEAM; i++){
-    				if (fork()==0) team_manager(i);
+    				if (!fork()) team_manager(i);
 					//fechar pipe de escrita
 					close(fd_team[i][1]);
 				}
 				
 				//waiting for child process to be ready
-  				for (i = 0; i < NR_TEAM; i++) {
-    				read(fd_team[i][0], str, 50);
+  				for (i = 0; i < NR_TEAM;) {
+    				read(fd_team[i++][0], str, 256);
 					printf("MESSAGE received!! ----> '%s'\n", str);
   				}
 				break;		
@@ -103,7 +103,9 @@ void race_manager(pid_t malf_pid) {
 									shm_info->cars[i+j].speed = atoi(str_array[6]);
 									shm_info->cars[i+j].consumption = atof(str_array[8]);
 									shm_info->cars[i+j].reliability = atoi(str_array[10]);
-									write_log("CAR ADDDED");
+									
+									sprintf(str, "CAR %s FROM TEAM %s", str_array[4], shm_info->cars[i+j].team_name);
+									write_log(str);
 								}
 							}
 					}else
@@ -115,6 +117,7 @@ void race_manager(pid_t malf_pid) {
          		write_log("[Race_Pipe] Unknown command");      	
 		}  	
 	}
+	
 	
 	kill(0, SIGUSR2);
 	kill(malf_pid, SIGUSR2);
@@ -144,6 +147,8 @@ void race_manager(pid_t malf_pid) {
   // wait for all team processes to finish
   	for (i = 0; i < NR_TEAM; i++) wait(NULL);
   	clean_resources();
+
+	write_log("race manager finished");
 
   	exit(0);
 }

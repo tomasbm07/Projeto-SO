@@ -12,14 +12,13 @@ pthread_t *car_threads;
 
 void team_manager(int team_index) {
 	team_index = team_index*NR_CARS;
-	int i;
+	sigset_t set;
+	int i, sig;
 	char str[256];
-	struct sigaction sa_tmanager;
 	
-	sa_tmanager.sa_handler = start_race;
-	sigaction(SIGUSR2, &sa_tmanager, NULL);
-	
-	
+	sigemptyset(&set);
+  	sigaddset(&set, SIGUSR2);
+  	
 #ifdef DEBUG
 	char aux[50];
 	sprintf(aux, "\nTeam manager created (PID: %d), from Team %d", getpid(), team_index);
@@ -37,7 +36,6 @@ void team_manager(int team_index) {
 		}
   	}
   
-
   // int car_thread_index = 0;
 	box_state = 'E';  // 'R' = Reserved; 'E' = Empty; 'F' = Full;
 	srand((unsigned)team_index);
@@ -49,25 +47,33 @@ void team_manager(int team_index) {
 	sprintf(str, "Team %d sent \"%s\" to unnamed pipe\n", team_index, pipe_str);
 	write_log(str);
 #endif
-*/
-  
+*/	
+	pthread_sigmask(SIG_BLOCK, &set, NULL);
 	for (i = 0; i < NR_CARS; i++) {
 		if (strcmp(shm_info->cars[team_index + i].team_name,"")==0) break; 
-		init_car_stats(&car_stats[i], team_index, i);
+		init_car_stats(&car_stats[i], &set, team_index, i);
 		pthread_create((car_threads+i), NULL, car_worker, &car_stats[i]);
 	}
-  	// wait for threads to finish
+  	
   	cars_number = i;
   	
   	sprintf(str, "Team %d Ready!", team_index);
-	write(fd_team[team_index][1], &str, strlen(str)+1);
-  	
+	write(fd_team[team_index][1], &str, strlen(str)+1);	
+	sigwait(&set, &sig);
+	for (i = 0; i < cars_number; ){
+		pthread_kill(car_threads[i++], SIGUSR1);
+	}
+  	// wait for threads to finish
   	for (i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
 
   	// destroy mutex
 	pthread_mutex_destroy(&box_mutex);
 	
 	free(car_threads);
+	
+	close(fd_team[team_index][1]);
+	
+	write_log("TEam Manager finishing");
   exit(0);
 }
 
@@ -82,33 +88,28 @@ car_struct *create_car_structs_array() {
 }
 
 // set the atributes of the car that aren't set by race_manager
-void init_car_stats(car_struct *stats, int team_index, int car_index) {
+void init_car_stats(car_struct *stats, sigset_t *set, int team_index, int car_index) {
 	stats->car = &shm_info->cars[team_index + car_index];
 
   	stats->state = 'R';
   	stats->fuel = FUEL_CAPACITY;
   	stats->lap_distance = 0;
-}
-
-void start_race(int sig){
-	int i;
-	for (i = 0; i < cars_number;)
-		pthread_kill(car_threads[i++], SIGUSR2);
-
+  	stats->set = set;
 }
 
 //TODO: READ MESSAGE QUEUE MESSAGES AND DETERMINE WHAT TO DO
 // function to run in car thread
 void *car_worker(void *stats) {
+	printf("here\n");
   	// convert argument from void* to car_struct*
 	car_struct *car_info = (car_struct *)stats;
 	malfunction_msg msg;
 	char states[3] = {'E', 'F', 'R'};
 	char str[300];
 	int start;
-
-	while( (start = pause())!=SIGUSR2 );
-
+	
+	while((start = pause())!=SIGUSR1);
+	
 	
 /*
   // just for testing
