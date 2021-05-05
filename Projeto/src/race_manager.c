@@ -56,10 +56,10 @@ void race_manager(pid_t malf_pid) {
 				
 				for (i = 0; i < NR_TEAM; i++){
 					pipe(fd_team[i]);
-    				if ( !fork() ) {/*
+    				if ( !fork() ) {
     					for(int j = 0; j <= i; j++){
     						close(fd_team[j][0]);
-    					}*/
+    					}
     					team_manager(i);
     				}
 					//fechar pipe de escrita

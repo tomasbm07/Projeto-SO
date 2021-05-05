@@ -30,7 +30,7 @@ void team_manager(int team_index) {
 #endif
 
   // fechar pipe de leitura
-	close(fd_team[team_index][0]);
+	/*close(fd_team[team_index/NR_CARS][0]);
 	
 	for (int i = 0; i < NR_TEAM; i++) {
     	if (i != team_index/NR_CARS){
@@ -38,7 +38,7 @@ void team_manager(int team_index) {
 			close(fd_team[i][0]);
 			close(fd_team[i][1]);
 		}
-  	}
+  	}*/
   
 	box_state = 'E';  // 'R' = Reserved; 'E' = Empty; 'F' = Full;
 	srand((unsigned)team_index);
@@ -55,7 +55,7 @@ void team_manager(int team_index) {
   	
   	usleep(1000);
   	sprintf(str, "Team %d Ready!", team_index);
-	write(fd_team[team_index][1], &str, strlen(str)+1);
+	write(fd_team[team_index/NR_CARS][1], &str, strlen(str)+1);
 	
 	sigwait(&set, &sig);
 	
@@ -63,7 +63,7 @@ void team_manager(int team_index) {
   	// wait for threads to finish
   	for (i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
 
-  	// destroy mutex
+  	// destroy resources
 	clean_stuff();
 	
 	write_log("TEam Manager finishing");
