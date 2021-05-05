@@ -9,18 +9,19 @@ pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER, cond_mutex = PTHREAD_MUTE
 pthread_cond_t cond_start = PTHREAD_COND_INITIALIZER;
 char box_state;
 char race_going;
-int cars_number;
+int cars_number, wtv;
 pthread_t *car_threads;
 
 void team_manager(int team_index) {
-	team_index = team_index*NR_CARS;
-	race_going = 'N';
+	wtv = team_index*NR_CARS;
+	team_index = team_index * NR_CARS;
+	
 	sigset_t set;
 	int i, sig;
 	char str[256];
 	sigemptyset(&set);
   	sigaddset(&set, SIGUSR2);
-  	pthread_sigmask(SIG_UNBLOCK, &set, NULL);
+  	pthread_sigmask(SIG_BLOCK, &set, NULL);
   	
 #ifdef DEBUG
 	char aux[50];
@@ -30,9 +31,9 @@ void team_manager(int team_index) {
 
   // fechar pipe de leitura
 	close(fd_team[team_index][0]);
-
+	
 	for (int i = 0; i < NR_TEAM; i++) {
-    	if (i != team_index){
+    	if (i != team_index/NR_CARS){
     	//fechar pipes das outras equipas
 			close(fd_team[i][0]);
 			close(fd_team[i][1]);
@@ -52,26 +53,18 @@ void team_manager(int team_index) {
 	}  	
   	cars_number = i;
   	
-  	pthread_sigmask(SIG_BLOCK, &set, NULL);
-  	
   	usleep(1000);
   	sprintf(str, "Team %d Ready!", team_index);
 	write(fd_team[team_index][1], &str, strlen(str)+1);
 	
-	while( sigwait(&set, &sig)>0 );
-	
-	race_going='Y';
+	sigwait(&set, &sig);
 	
 	pthread_cond_broadcast(&cond_start);
   	// wait for threads to finish
   	for (i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
 
   	// destroy mutex
-	pthread_mutex_destroy(&box_mutex);
-	
-	free(car_threads);
-	
-	close(fd_team[team_index][1]);
+	clean_stuff();
 	
 	write_log("TEam Manager finishing");
   exit(0);
@@ -100,9 +93,16 @@ int randint(int min, int max){
 	return (rand()%(max - min + 1)) + min;
 }
 
-void start_race(int sig){
-	printf("Going!!\n");
+void clean_stuff(){
+	pthread_mutex_destroy(&box_mutex);
+	pthread_mutex_destroy(&cond_mutex);
+	pthread_cond_destroy(&cond_start);
+	free(car_threads);
+	
+	close(fd_team[wtv][1]);
+	exit(0);
 }
+
 
 //TODO: READ MESSAGE QUEUE MESSAGES AND DETERMINE WHAT TO DO
 // function to run in car thread
@@ -111,9 +111,7 @@ void *car_worker(void *stats) {
 	car_struct *car_info = (car_struct *)stats;
 	
 	pthread_mutex_lock(&cond_mutex);
-	while(race_going=='N'){
-		pthread_cond_wait(&cond_start, &cond_mutex);
-	}
+	pthread_cond_wait(&cond_start, &cond_mutex);
 	pthread_mutex_unlock(&cond_mutex);
 	
 	malfunction_msg msg;

@@ -52,11 +52,16 @@ void race_manager(pid_t malf_pid) {
 				fd_team = (int**)malloc(NR_TEAM * sizeof(*fd_team));
   				for (i = 0; i < NR_TEAM; i++){ 
 					fd_team[i] = (int *) malloc(2 * sizeof(**fd_team)); 
-					pipe(fd_team[i]);
 				}
 				
 				for (i = 0; i < NR_TEAM; i++){
-    				if (!fork()) team_manager(i);
+					pipe(fd_team[i]);
+    				if ( !fork() ) {/*
+    					for(int j = 0; j <= i; j++){
+    						close(fd_team[j][0]);
+    					}*/
+    					team_manager(i);
+    				}
 					//fechar pipe de escrita
 					close(fd_team[i][1]);
 				}
@@ -121,7 +126,7 @@ void race_manager(pid_t malf_pid) {
 		}  	
 	}
 	
-	//kill(malf_pid, SIGUSR2);
+	kill(malf_pid, SIGUSR2);
 	kill(0, SIGUSR2);
 	/*
   // while de leitura do pipe
