@@ -15,15 +15,21 @@ shm_struct* shm_info;
 
 int main(int argc, char* argv[]) {
   int i;
-  //struct sigaction sa;
+  
 
   //ignorar o SIGINT no processo principal
   //deixar os outros fecharem
   //SIG_IGN = ignorar sinal
   //sa.sa_handler = signal_handler;
-  signal(SIGINT, end_race);
+  struct sigaction sa_int;
+  sa_int.sa_handler = end_race;
+  sigaction(SIGINT, &sa_int, NULL);
+  
+  struct sigaction sa_tstp;
+  sa_tstp.sa_handler = statistics;
+  sigaction(SIGINT, &sa_tstp, NULL);
+  
   signal(SIGUSR2, SIG_IGN);
-  signal(SIGTSTP, statistics);
 
   f = fopen("log.txt", "a");
 
@@ -75,25 +81,6 @@ int main(int argc, char* argv[]) {
 
 
 // debug para verificar informações escritas por race_maneger -- uncomment para verificar
-
-/*
-#ifdef DEBUG
-  printf("After both processes are closed\n");
-  int j;
-  for (i = 0; i < NR_TEAM*NR_CARS; i+=NR_CARS) {
-    if (strcmp(shm_info->cars[i].team_name,"")==0)
-    	break;
-    printf("TEAM %s:\n", shm_info->cars[i].team_name);
-    for (j = 0; j < NR_CARS; j++) {
-    	if( strcmp(shm_info->cars[i + j].team_name,"") == 0)
-    		break;	
-      	printf("\tCar: %02d\n\t\tSpeed: %d\n\t\t Consumption: %.2f\n\t\tReliability: %d\n\t\tLaps Completed: %d\n", shm_info->cars[i + j].number, shm_info->cars[i + j].speed, shm_info->cars[i + j].consumption, shm_info->cars[i + j].reliability, shm_info->cars[i + j].laps_completed);
-    }
-  }
-#endif
-*/
-
-
   write_log("SERVER CLOSED");
 
   // destroy shared mem and semaphores
@@ -202,7 +189,7 @@ void end_race(){
 	kill(0, SIGTERM);
 	for (int i = 0; i <2; i++) wait(NULL);
 	write_log("SERVER CLOSED");
-	
+	destroy_resources();
 	exit(0);
 	
 }

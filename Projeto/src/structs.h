@@ -32,7 +32,7 @@ typedef struct {
 } car_struct;
 
 typedef struct{
-	long mtype;
+	long team_nr;
     int car_num;
 } malfunction_msg;
 
