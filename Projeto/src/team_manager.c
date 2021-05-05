@@ -8,17 +8,19 @@ Joel Oliveira - 2019227468
 pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER, cond_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond_start = PTHREAD_COND_INITIALIZER;
 char box_state;
+char race_going;
 int cars_number;
 pthread_t *car_threads;
 
 void team_manager(int team_index) {
 	team_index = team_index*NR_CARS;
+	race_going = 'N';
 	sigset_t set;
 	int i, sig;
 	char str[256];
 	sigemptyset(&set);
   	sigaddset(&set, SIGUSR2);
-  	pthread_sigmask(SIG_BLOCK, &set, NULL);
+  	pthread_sigmask(SIG_UNBLOCK, &set, NULL);
   	
 #ifdef DEBUG
 	char aux[50];
@@ -50,12 +52,16 @@ void team_manager(int team_index) {
 	}  	
   	cars_number = i;
   	
+  	pthread_sigmask(SIG_BLOCK, &set, NULL);
+  	
   	usleep(1000);
   	sprintf(str, "Team %d Ready!", team_index);
 	write(fd_team[team_index][1], &str, strlen(str)+1);
 	
-	sigwait(&set, &sig);
-		
+	while( sigwait(&set, &sig)>0 );
+	
+	race_going='Y';
+	
 	pthread_cond_broadcast(&cond_start);
   	// wait for threads to finish
   	for (i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
@@ -105,7 +111,9 @@ void *car_worker(void *stats) {
 	car_struct *car_info = (car_struct *)stats;
 	
 	pthread_mutex_lock(&cond_mutex);
-	pthread_cond_wait(&cond_start, &cond_mutex);
+	while(race_going=='N'){
+		pthread_cond_wait(&cond_start, &cond_mutex);
+	}
 	pthread_mutex_unlock(&cond_mutex);
 	
 	malfunction_msg msg;

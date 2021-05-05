@@ -121,7 +121,7 @@ void race_manager(pid_t malf_pid) {
 		}  	
 	}
 	
-	kill(malf_pid, SIGUSR2);
+	//kill(malf_pid, SIGUSR2);
 	kill(0, SIGUSR2);
 	/*
   // while de leitura do pipe
