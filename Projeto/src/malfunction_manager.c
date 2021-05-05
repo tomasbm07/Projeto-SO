@@ -7,7 +7,7 @@ Joel Oliveira - 2019227468
 
 
 void malfunction_manager(){
-	
+	signal(SIGTSTP, SIG_IGN);
 	//Create Message queue
 	//create_mq();
 

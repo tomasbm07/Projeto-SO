@@ -15,15 +15,21 @@ shm_struct* shm_info;
 
 int main(int argc, char* argv[]) {
   int i;
-  //struct sigaction sa;
+  
 
   //ignorar o SIGINT no processo principal
   //deixar os outros fecharem
   //SIG_IGN = ignorar sinal
   //sa.sa_handler = signal_handler;
-  signal(SIGINT, end_race);
+  struct sigaction sa_int;
+  sa_int.sa_handler = end_race;
+  sigaction(SIGINT, &sa_int, NULL);
+  
+  struct sigaction sa_tstp;
+  sa_tstp.sa_handler = statistics;
+  sigaction(SIGINT, &sa_tstp, NULL);
+  
   signal(SIGUSR2, SIG_IGN);
-  signal(SIGTSTP, statistics);
 
   f = fopen("log.txt", "a");
 

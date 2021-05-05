@@ -11,9 +11,9 @@ void race_manager(pid_t malf_pid) {
 	race_going = 'F'; //T -true, F - false
   	int i, num_chars, teams;
   	char str[256], aux[256];
-  	struct sigaction sa_rmanager_term, sa_rmanager_usr1;
 	fd_set read_set;
 
+	struct sigaction sa_rmanager_term, sa_rmanager_usr1;
   	sa_rmanager_term.sa_handler = sa_rmanager_usr1.sa_handler = signals;
   	//terminar corrida--sigterm
   	sigaction(SIGTERM, &sa_rmanager_term, NULL);
