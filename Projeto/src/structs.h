@@ -32,4 +32,10 @@ typedef struct {
   sigset_t *set;
 } car_struct;
 
+typedef struct{
+	long mtype;
+    int car_num;
+} malfunction_msg;
+
+
 #endif

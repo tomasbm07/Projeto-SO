@@ -8,16 +8,19 @@ Joel Oliveira - 2019227468
 //mudei o named pipe para o processo principal
 
 void race_manager(pid_t malf_pid) {
-	char race_going = 'F'; //T -true, F - false
+	race_going = 'F'; //T -true, F - false
   	int i, num_chars, teams;
   	char str[256], aux[256];
-  	struct sigaction sa_rmanager;
+  	struct sigaction sa_rmanager_term, sa_rmanager_usr1;
 	fd_set read_set;
 
-  	sa_rmanager.sa_handler = signals;
-  	//TODO: sigint é suposto ser recebido por race_simulator, nao por race_manager //
-  	sigaction(SIGINT, &sa_rmanager, NULL);
+  	sa_rmanager_term.sa_handler = sa_rmanager_usr1.sa_handler = signals;
+  	//terminar corrida--sigterm
+  	sigaction(SIGTERM, &sa_rmanager_term, NULL);
+  	//interromper corrida--sigusr1
+  	sigaction(SIGUSR1, &sa_rmanager_term, NULL);
   	signal(SIGTSTP, SIG_IGN);
+  	signal(SIGINT, SIG_IGN);
 
 #ifdef DEBUG
   	sprintf(aux, "Race manager created (PID: %d)", getpid());
@@ -59,8 +62,8 @@ void race_manager(pid_t malf_pid) {
 				}
 				
 				//waiting for child process to be ready
-  				for (i = 0; i < NR_TEAM;) {
-    				read(fd_team[i++][0], str, 256);
+  				for (i = 0; i < NR_TEAM; i++) {
+    				read(fd_team[i][0], str, 256);
 					printf("MESSAGE received!! ----> '%s'\n", str);
   				}
 				break;		
@@ -148,8 +151,6 @@ void race_manager(pid_t malf_pid) {
   	for (i = 0; i < NR_TEAM; i++) wait(NULL);
   	clean_resources();
 
-	write_log("race manager finished");
-
   	exit(0);
 }
 
@@ -158,11 +159,21 @@ void clean_resources() {
 }
 
 void signals(int signal) {
-  #ifdef DEBUG
-    write_log("Got SIGINT\n");
-  #endif
-  	clean_resources();
-  	exit(0);
+	if (signal == SIGTERM){
+		#ifdef DEBUG
+    	write_log("Got SIGTERM\nRace MAnager waiting and cleaning.\n");
+  		#endif
+  		//TODO sinalizar team_manager de fim da corrida.
+  		
+  		for (int i = 0; i < NR_TEAM; i++) wait(NULL);
+  		clean_resources();
+  		exit(0);
+	}else if (signal == SIGUSR1){
+		//TODO sinalizar team_managers de interrupção da corrida 
+		//CORRIDA PODE RECOMEÇAR;
+	
+	}
+  
 }
 
 

@@ -32,11 +32,6 @@ int mqid; // Message queue ID
 
 //define the message struct for the MQ
 //typedef struct malfunction_msg *msg;
-typedef struct{
-	long mtype;
-    int car_num;
-} malfunction_msg;
-
 
 void malfunction_manager(void);
 void malfunction_signal_handler(int sig);

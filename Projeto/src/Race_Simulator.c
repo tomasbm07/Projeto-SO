@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
   //deixar os outros fecharem
   //SIG_IGN = ignorar sinal
   //sa.sa_handler = signal_handler;
-  signal(SIGINT, SIG_IGN);
+  signal(SIGINT, end_race);
   signal(SIGUSR2, SIG_IGN);
   signal(SIGTSTP, statistics);
 
@@ -196,4 +196,13 @@ void destroy_resources(void) {
 
 void statistics(int sig){
   write_log("GOT SIGTSTP - Statistics coming");
+}
+
+void end_race(){
+	kill(0, SIGTERM);
+	for (int i = 0; i <2; i++) wait(NULL);
+	write_log("SERVER CLOSED");
+	
+	exit(0);
+	
 }

@@ -15,9 +15,10 @@ void team_manager(int team_index) {
 	sigset_t set;
 	int i, sig;
 	char str[256];
-	
+	signal(SIGUSR1, SIG_DFL);
 	sigemptyset(&set);
   	sigaddset(&set, SIGUSR2);
+  	pthread_sigmask(SIG_BLOCK, &set, NULL);
   	
 #ifdef DEBUG
 	char aux[50];
@@ -36,27 +37,19 @@ void team_manager(int team_index) {
 		}
   	}
   
-  // int car_thread_index = 0;
 	box_state = 'E';  // 'R' = Reserved; 'E' = Empty; 'F' = Full;
 	srand((unsigned)team_index);
 	car_threads = create_threads_array();
 	car_struct car_stats[NR_CARS];
 
-/*
-#ifdef DEBUG
-	sprintf(str, "Team %d sent \"%s\" to unnamed pipe\n", team_index, pipe_str);
-	write_log(str);
-#endif
-*/	
-	pthread_sigmask(SIG_BLOCK, &set, NULL);
+	//create thread_cars;	
 	for (i = 0; i < NR_CARS; i++) {
 		if (strcmp(shm_info->cars[team_index + i].team_name,"")==0) break; 
 		init_car_stats(&car_stats[i], &set, team_index, i);
 		pthread_create((car_threads+i), NULL, car_worker, &car_stats[i]);
-	}
-  	
+	}  	
   	cars_number = i;
-  	
+
   	sprintf(str, "Team %d Ready!", team_index);
 	write(fd_team[team_index][1], &str, strlen(str)+1);	
 	sigwait(&set, &sig);
@@ -97,40 +90,87 @@ void init_car_stats(car_struct *stats, sigset_t *set, int team_index, int car_in
   	stats->set = set;
 }
 
+int randint(int min, int max){
+	return (rand()%(max - min + 1)) + min;
+}
+
 //TODO: READ MESSAGE QUEUE MESSAGES AND DETERMINE WHAT TO DO
 // function to run in car thread
 void *car_worker(void *stats) {
-	printf("here\n");
   	// convert argument from void* to car_struct*
 	car_struct *car_info = (car_struct *)stats;
 	malfunction_msg msg;
-	char states[3] = {'E', 'F', 'R'};
-	char str[300];
-	int start;
+	//char states[3] = {'E', 'F', 'R'};
+	//char str[300];
+	char enter_box = 'N' // Y = yes, tenta entrar. N = no , nao tenta;
+	int start, steps[2] = {1,1};
+	while( (start=pause()) != SIGUSR1 );
 	
-	while((start = pause())!=SIGUSR1);
+	while(1){
+		
+		//TODO iteracao, antes de começar, bloquear receção de sinais
+		if (car_info->state == 'R'){
+			step[0]=1;
+			step[1]=1;
+		}
+		else if(car_info->state == 'S'){
+			step[0] = 0.3;
+			step[1] = 0.4;
+		}
+		
+				
+		car_info->lap_distance = (car_info->lap_distance+ step[0] * car_info->car->speed)%LAP_DIST;
+		car_info->fuel -= step[1] * car_info->car->consumption;
+			//sincronização ?
+		if ((car_info->lap_distance - car_info->car->speed) <= 0){
+			car_info->car->laps_completed++;
+			if (enter_box == 'Y'){
+				if (car_info->state == 'R'){
+					pthread_mutex_lock(&box_mutex);
+					if (box_state == 'E'){
+						box_state = 'F';
+						pthread_mutex_unlock(&box_mutex);
+						car_info->fuel = FUEL_CAPACITY;
+						car_info->lap_distance = 0;
+						//sleep só aceita inteiros, tem que ser este, usa microvalores;
+						usleep(1000000/NR_UNI_TEMP * randint(MIN_REP, MAX_REP));
+						pthread_mutex_lock(&box_mutex);
+						box_state = 'E';
+					}
+					pthread_mutex_unlock(&box_mutex);
+				}else if (car_info->state == 'S'){
+					pthread_mutex_lock(&box_mutex);
+					if (box_state == 'E' || box_state == 'R'){
+						box_state = 'F';
+						pthread_mutex_unlock(&box_mutex);
+						car_info->fuel = FUEL_CAPACITY;
+						car_info->lap_distance = 0;
+						car_info->state='R';
+						//sleep só aceita inteiros, tem que ser este, usa microvalores;
+						usleep(1000000/NR_UNI_TEMP * randint(MIN_REP, MAX_REP));
+						pthread_mutex_lock(&box_mutex);
+						box_state = 'E';
+					}
+					pthread_mutex_unlock(&box_mutex);
+				}
+				
+				
+			}
+		}
+	}
+		
+		
+		
+		
+		
+		
+		sleep(1/NR_UNI_TEMP);
+		//desbloquear receção de sinais (no fim da volta);
 	
-	
+	}
 /*
-  // just for testing
-#ifdef DEBUG
-  	char str[300];
-  	sprintf(str,
-          "I am Thread %d, from process %d\n\t"
-          "Team: %s | Car Number: %d | Fuel: %.2fL | Box State: %c",
-          (unsigned int)pthread_self(), (unsigned int)getpid(),
-          car_info->car->team_name, car_info->car->number, car_info->fuel,
-          box_state);
-  //write_log(str);
-  	write_log("Thread car created!");
-
-  	pthread_mutex_lock(&box_mutex);
-  	//box_state = states[rand() % 3];
-  	pthread_mutex_unlock(&box_mutex);
-#endif
-*/
 	sprintf(str, "Car %d from team: %s created", car_info->car->number, car_info->car->team_name);
 	write_log(str);
-
+*/
   	pthread_exit(NULL);
 }

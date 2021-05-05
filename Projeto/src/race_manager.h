@@ -26,6 +26,7 @@ Joel Oliveira - 2019227468
 
 int **fd_team;
 extern int fd_race_pipe;
+char race_going;
 void race_manager(pid_t pid);
 void signals(int signal);
 void clean_resources();
