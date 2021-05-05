@@ -9,30 +9,18 @@ Joel Oliveira - 2019227468
 void malfunction_manager(){
 	signal(SIGTSTP, SIG_IGN);
 	//Create Message queue
-	//create_mq();
-
-	malfunction_msg msg;
-
+	create_mq();
 	//fill the mq, just for testing
-	for (int i = 0; i < 10; i++) {
+	/*for (int i = 0; i < 10; i++) {
 		printf("messaged added to MQ\n");
 		msg.car_num = i;
 		//msgsnd(mqid, &msg, sizeof(malfunction_msg), 0);
-	}
-	
-	
-	sigset_t set;
+	}*/
 
-	sigemptyset(&set);
 	signal(SIGUSR2, malfunction_signal_handler);
-	signal(SIGINT, malfunction_signal_handler);
-
-	sigaddset(&set, SIGUSR2);
-	//sigwait(&set);
-	
+	signal(SIGTERM, malfunction_signal_handler);
 
 	pause();
-
 
 #ifdef DEBUG
 	char str[50];
@@ -45,17 +33,23 @@ void malfunction_manager(){
 }
 
 void generator(){
-	int i, reliability;
-
-	for (i = 0; i < NR_TEAM * NR_CARS; i++){
-		reliability = shm_info->cars[i].reliability;
-		
-		int num = rand() % reliability;
-		printf("reliability = %d | num = %d", reliability, num);
-		if (num == reliability - 1){
-			char str[50];
-			snprintf(str, sizeof(str),"Malfunction created for car %d", shm_info->cars[i].number);
-			write_log(str);
+	malfunction_msg msg;
+	int i, j, num;
+	char str[50];
+	while(1){
+		for (i = 0; i < NR_TEAM; i++){
+			for (j = 0; j < NR_CARS; j++){
+			num = rand() % 100 + 1;
+				if (strcmp(shm_info->cars[i*NR_CARS + j].team_name, "") != 0)
+					if (num > shm_info->cars[i].reliability){			
+						msg.team_nr = (long) i;
+						msg.car_num = j;
+						
+						msgsnd(mqid, &msg, sizeof(malfunction_msg)-sizeof(long), 0);
+					}
+				}
+			}
+		usleep(MALFUNCTION_UNI_NR * 1000000/NR_UNI_PS);
 		}
 	}
 }
@@ -76,9 +70,9 @@ void cleanup(){
 void malfunction_signal_handler(int sig){
 	if (sig == SIGUSR2){
 		write_log("[Malfunction Manager] Got SIGUSR2");
-		//generator();
+		generator();
 
-	} else if (sig == SIGINT){
+	} else if (sig == SIGTERM){
 		cleanup();
 		exit(0);
 	}
