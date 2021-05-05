@@ -8831,3 +8831,1689 @@ Race MAnager waiting and cleaning.
 [10:3:43] SERVER STARTED
 [10:3:54] SERVER CLOSED
 [10:3:54] Cleaning up...
+[11:43:53] Semaphore initialized
+[11:43:53] SERVER STARTED
+[11:44:5] [Malfunction Manager] Got SIGUSR2
+[11:44:5] Malfunction manager created (PID: 1969)
+[11:43:53] Semaphore initialized
+[11:43:53] SERVER STARTED
+[11:43:53] Race manager created (PID: 1970)
+[11:43:53] Named pipe 'race_pipe' is ready!
+
+[11:43:56] [Race_Pipe] Got ADDCAR
+[11:43:56] CAR 50 FROM TEAM A
+[11:43:57] [Race_Pipe] Got ADDCAR
+[11:43:57] CAR 55 FROM TEAM A
+[11:43:58] [Race_Pipe] Got ADDCAR
+[11:43:58] Max number of cars reached for this team
+[11:43:59] [Race_Pipe] Unknown command
+[11:44:0] [Race_Pipe] Got ADDCAR
+[11:44:0] CAR 88 FROM TEAM B
+[11:44:1] [Race_Pipe] Got ADDCAR
+[11:44:1] CAR 99 FROM TEAM B
+[11:44:2] [Race_Pipe] Unknown command
+[11:44:3] [Race_Pipe] Got ADDCAR
+[11:44:3] CAR 91 FROM TEAM C
+[11:44:4] [Race_Pipe] Got ADDCAR
+[11:44:4] CAR 36 FROM TEAM C
+[11:44:5] [Race_Pipe] Got START RACE
+[11:44:5] Buckle Up, race is starting!
+[11:44:5] Created 3 team processes
+[11:43:53] Semaphore initialized
+[11:43:53] SERVER STARTED
+[11:44:5] SERVER CLOSED
+[11:44:5] Cleaning up...
+[11:44:45] Semaphore initialized
+[11:44:45] SERVER STARTED
+[11:44:56] [Malfunction Manager] Got SIGUSR2
+[11:44:56] Malfunction manager created (PID: 2003)
+[11:44:45] Semaphore initialized
+[11:44:45] SERVER STARTED
+[11:44:45] Race manager created (PID: 2004)
+[11:44:45] Named pipe 'race_pipe' is ready!
+
+[11:44:47] [Race_Pipe] Got ADDCAR
+[11:44:47] CAR 50 FROM TEAM A
+[11:44:48] [Race_Pipe] Got ADDCAR
+[11:44:48] CAR 55 FROM TEAM A
+[11:44:49] [Race_Pipe] Got ADDCAR
+[11:44:49] Max number of cars reached for this team
+[11:44:50] [Race_Pipe] Got START RACE
+[11:44:50] Not enough teams ready
+[11:44:50] [Race_Pipe] Got ADDCAR
+[11:44:50] CAR 77 FROM TEAM B
+[11:44:51] [Race_Pipe] Got ADDCAR
+[11:44:51] CAR 88 FROM TEAM B
+[11:44:52] [Race_Pipe] Got ADDCAR
+[11:44:52] Max number of cars reached for this team
+[11:44:53] [Race_Pipe] Unknown command
+[11:44:54] [Race_Pipe] Got ADDCAR
+[11:44:54] CAR 91 FROM TEAM C
+[11:44:55] [Race_Pipe] Got ADDCAR
+[11:44:55] CAR 36 FROM TEAM C
+[11:44:56] [Race_Pipe] Got START RACE
+[11:44:56] Buckle Up, race is starting!
+[11:44:56] Created 3 team processes
+[11:44:45] Semaphore initialized
+[11:44:45] SERVER STARTED
+[11:44:56] SERVER CLOSED
+[11:44:56] Cleaning up...
+[11:46:11] Semaphore initialized
+[11:46:11] SERVER STARTED
+[11:46:22] [Malfunction Manager] Got SIGUSR2
+[11:46:22] Malfunction manager created (PID: 2042)
+[11:46:11] Semaphore initialized
+[11:46:11] SERVER STARTED
+[11:46:11] Race manager created (PID: 2043)
+[11:46:11] Named pipe 'race_pipe' is ready!
+
+[11:46:13] [Race_Pipe] Got ADDCAR
+[11:46:13] CAR 50 FROM TEAM A
+[11:46:14] [Race_Pipe] Got ADDCAR
+[11:46:14] CAR 55 FROM TEAM A
+[11:46:15] [Race_Pipe] Got ADDCAR
+[11:46:15] Max number of cars reached for this team
+[11:46:16] [Race_Pipe] Unknown command
+[11:46:17] [Race_Pipe] Got ADDCAR
+[11:46:17] CAR 88 FROM TEAM B
+[11:46:18] [Race_Pipe] Got ADDCAR
+[11:46:18] CAR 99 FROM TEAM B
+[11:46:19] [Race_Pipe] Got START RACE
+[11:46:19] Not enough teams ready
+[11:46:19] [Race_Pipe] Got ADDCAR
+[11:46:19] CAR 81 FROM TEAM C
+[11:46:20] [Race_Pipe] Got ADDCAR
+[11:46:20] CAR 91 FROM TEAM C
+[11:46:21] [Race_Pipe] Got ADDCAR
+[11:46:21] Max number of cars reached for this team
+[11:46:22] [Race_Pipe] Got START RACE
+[11:46:22] Buckle Up, race is starting!
+[11:46:22] Created 3 team processes
+[11:46:11] Semaphore initialized
+[11:46:11] SERVER STARTED
+[11:46:22] SERVER CLOSED
+[11:46:22] Cleaning up...
+[11:47:13] Semaphore initialized
+[11:47:13] SERVER STARTED
+[11:47:13] Race manager created (PID: 2079)
+[11:47:13] Named pipe 'race_pipe' is ready!
+
+[11:47:15] [Race_Pipe] Got ADDCAR
+[11:47:15] CAR 50 FROM TEAM A
+[11:47:16] [Race_Pipe] Got ADDCAR
+[11:47:16] CAR 55 FROM TEAM A
+[11:47:17] [Race_Pipe] Got ADDCAR
+[11:47:17] Max number of cars reached for this team
+[11:47:18] [Race_Pipe] Unknown command
+[11:47:19] [Race_Pipe] Got ADDCAR
+[11:47:19] CAR 88 FROM TEAM B
+[11:47:20] [Race_Pipe] Got ADDCAR
+[11:47:20] CAR 99 FROM TEAM B
+[11:47:21] [Race_Pipe] Got START RACE
+[11:47:21] Not enough teams ready
+[11:47:21] [Race_Pipe] Got ADDCAR
+[11:47:21] CAR 81 FROM TEAM C
+[11:47:22] [Race_Pipe] Got ADDCAR
+[11:47:22] CAR 91 FROM TEAM C
+[11:47:23] [Race_Pipe] Got ADDCAR
+[11:47:23] Max number of cars reached for this team
+[11:47:24] [Race_Pipe] Got START RACE
+[11:47:24] Buckle Up, race is starting!
+[11:47:25] Created 3 team processes
+[11:47:13] Semaphore initialized
+[11:47:13] SERVER STARTED
+[11:47:25] [Malfunction Manager] Got SIGUSR2
+[11:47:25] Malfunction manager created (PID: 2078)
+[11:47:13] Semaphore initialized
+[11:47:13] SERVER STARTED
+[11:47:25] SERVER CLOSED
+[11:47:25] Cleaning up...
+[11:48:57] Semaphore initialized
+[11:48:57] SERVER STARTED
+[11:49:8] [Malfunction Manager] Got SIGUSR2
+[11:49:8] Malfunction manager created (PID: 2115)
+[11:48:57] Semaphore initialized
+[11:48:57] SERVER STARTED
+[11:48:57] Race manager created (PID: 2116)
+[11:48:57] Named pipe 'race_pipe' is ready!
+
+[11:48:58] [Race_Pipe] Got ADDCAR
+[11:48:58] CAR 50 FROM TEAM A
+[11:48:59] [Race_Pipe] Got ADDCAR
+[11:48:59] CAR 55 FROM TEAM A
+[11:49:0] [Race_Pipe] Got ADDCAR
+[11:49:0] Max number of cars reached for this team
+[11:49:1] [Race_Pipe] Unknown command
+[11:49:2] [Race_Pipe] Got ADDCAR
+[11:49:2] CAR 88 FROM TEAM B
+[11:49:3] [Race_Pipe] Got ADDCAR
+[11:49:3] CAR 99 FROM TEAM B
+[11:49:4] [Race_Pipe] Unknown command
+[11:49:5] [Race_Pipe] Got ADDCAR
+[11:49:5] CAR 91 FROM TEAM C
+[11:49:6] [Race_Pipe] Got ADDCAR
+[11:49:6] CAR 36 FROM TEAM C
+[11:49:7] [Race_Pipe] Got START RACE
+[11:49:7] Buckle Up, race is starting!
+[11:49:8] Created 3 team processes
+[11:48:57] Semaphore initialized
+[11:48:57] SERVER STARTED
+[11:49:8] SERVER CLOSED
+[11:49:8] Cleaning up...
+[11:50:28] Semaphore initialized
+[11:50:28] SERVER STARTED
+[11:50:40] [Malfunction Manager] Got SIGUSR2
+[11:50:40] Malfunction manager created (PID: 2151)
+[11:50:28] Semaphore initialized
+[11:50:28] SERVER STARTED
+[11:50:28] Race manager created (PID: 2152)
+[11:50:28] Named pipe 'race_pipe' is ready!
+
+[11:50:30] [Race_Pipe] Got ADDCAR
+[11:50:30] CAR 50 FROM TEAM A
+[11:50:31] [Race_Pipe] Got ADDCAR
+[11:50:31] CAR 55 FROM TEAM A
+[11:50:32] [Race_Pipe] Got ADDCAR
+[11:50:32] Max number of cars reached for this team
+[11:50:33] [Race_Pipe] Unknown command
+[11:50:34] [Race_Pipe] Got ADDCAR
+[11:50:34] CAR 88 FROM TEAM B
+[11:50:35] [Race_Pipe] Got ADDCAR
+[11:50:35] CAR 99 FROM TEAM B
+[11:50:36] [Race_Pipe] Got START RACE
+[11:50:36] Not enough teams ready
+[11:50:36] [Race_Pipe] Got ADDCAR
+[11:50:36] CAR 81 FROM TEAM C
+[11:50:37] [Race_Pipe] Got ADDCAR
+[11:50:37] CAR 91 FROM TEAM C
+[11:50:38] [Race_Pipe] Got ADDCAR
+[11:50:38] Max number of cars reached for this team
+[11:50:39] [Race_Pipe] Got START RACE
+[11:50:39] Buckle Up, race is starting!
+[11:50:39] 
+Team manager created (PID: 2164), from Team 2
+[11:50:54] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[11:50:28] Semaphore initialized
+[11:50:28] SERVER STARTED
+[11:50:28] Race manager created (PID: 2152)
+[11:50:28] Named pipe 'race_pipe' is ready!
+
+[11:50:30] [Race_Pipe] Got ADDCAR
+[11:50:30] CAR 50 FROM TEAM A
+[11:50:31] [Race_Pipe] Got ADDCAR
+[11:50:31] CAR 55 FROM TEAM A
+[11:50:32] [Race_Pipe] Got ADDCAR
+[11:50:32] Max number of cars reached for this team
+[11:50:33] [Race_Pipe] Unknown command
+[11:50:34] [Race_Pipe] Got ADDCAR
+[11:50:34] CAR 88 FROM TEAM B
+[11:50:35] [Race_Pipe] Got ADDCAR
+[11:50:35] CAR 99 FROM TEAM B
+[11:50:36] [Race_Pipe] Got START RACE
+[11:50:36] Not enough teams ready
+[11:50:36] [Race_Pipe] Got ADDCAR
+[11:50:36] CAR 81 FROM TEAM C
+[11:50:37] [Race_Pipe] Got ADDCAR
+[11:50:37] CAR 91 FROM TEAM C
+[11:50:38] [Race_Pipe] Got ADDCAR
+[11:50:38] Max number of cars reached for this team
+[11:50:39] [Race_Pipe] Got START RACE
+[11:50:39] Buckle Up, race is starting!
+[11:50:39] 
+Team manager created (PID: 2163), from Team 0
+[11:50:54] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[11:50:28] Semaphore initialized
+[11:50:28] SERVER STARTED
+[11:50:28] Race manager created (PID: 2152)
+[11:50:28] Named pipe 'race_pipe' is ready!
+
+[11:50:30] [Race_Pipe] Got ADDCAR
+[11:50:30] CAR 50 FROM TEAM A
+[11:50:31] [Race_Pipe] Got ADDCAR
+[11:50:31] CAR 55 FROM TEAM A
+[11:50:32] [Race_Pipe] Got ADDCAR
+[11:50:32] Max number of cars reached for this team
+[11:50:33] [Race_Pipe] Unknown command
+[11:50:34] [Race_Pipe] Got ADDCAR
+[11:50:34] CAR 88 FROM TEAM B
+[11:50:35] [Race_Pipe] Got ADDCAR
+[11:50:35] CAR 99 FROM TEAM B
+[11:50:36] [Race_Pipe] Got START RACE
+[11:50:36] Not enough teams ready
+[11:50:36] [Race_Pipe] Got ADDCAR
+[11:50:36] CAR 81 FROM TEAM C
+[11:50:37] [Race_Pipe] Got ADDCAR
+[11:50:37] CAR 91 FROM TEAM C
+[11:50:38] [Race_Pipe] Got ADDCAR
+[11:50:38] Max number of cars reached for this team
+[11:50:39] [Race_Pipe] Got START RACE
+[11:50:39] Buckle Up, race is starting!
+[11:50:39] 
+Team manager created (PID: 2165), from Team 4
+[11:50:54] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[11:50:28] Semaphore initialized
+[11:50:28] SERVER STARTED
+[11:50:28] Race manager created (PID: 2152)
+[11:50:28] Named pipe 'race_pipe' is ready!
+
+[11:50:30] [Race_Pipe] Got ADDCAR
+[11:50:30] CAR 50 FROM TEAM A
+[11:50:31] [Race_Pipe] Got ADDCAR
+[11:50:31] CAR 55 FROM TEAM A
+[11:50:32] [Race_Pipe] Got ADDCAR
+[11:50:32] Max number of cars reached for this team
+[11:50:33] [Race_Pipe] Unknown command
+[11:50:34] [Race_Pipe] Got ADDCAR
+[11:50:34] CAR 88 FROM TEAM B
+[11:50:35] [Race_Pipe] Got ADDCAR
+[11:50:35] CAR 99 FROM TEAM B
+[11:50:36] [Race_Pipe] Got START RACE
+[11:50:36] Not enough teams ready
+[11:50:36] [Race_Pipe] Got ADDCAR
+[11:50:36] CAR 81 FROM TEAM C
+[11:50:37] [Race_Pipe] Got ADDCAR
+[11:50:37] CAR 91 FROM TEAM C
+[11:50:38] [Race_Pipe] Got ADDCAR
+[11:50:38] Max number of cars reached for this team
+[11:50:39] [Race_Pipe] Got START RACE
+[11:50:39] Buckle Up, race is starting!
+[11:50:40] Created 3 team processes
+[11:50:54] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[11:51:47] Semaphore initialized
+[11:51:47] SERVER STARTED
+[11:52:3] [Malfunction Manager] Got SIGUSR2
+[11:52:3] Malfunction manager created (PID: 2211)
+[11:51:47] Semaphore initialized
+[11:51:47] SERVER STARTED
+[11:51:47] Race manager created (PID: 2212)
+[11:51:47] Named pipe 'race_pipe' is ready!
+
+[11:51:53] [Race_Pipe] Got ADDCAR
+[11:51:53] CAR 50 FROM TEAM A
+[11:51:54] [Race_Pipe] Got ADDCAR
+[11:51:54] CAR 55 FROM TEAM A
+[11:51:55] [Race_Pipe] Got ADDCAR
+[11:51:55] Max number of cars reached for this team
+[11:51:56] [Race_Pipe] Unknown command
+[11:51:57] [Race_Pipe] Got ADDCAR
+[11:51:57] CAR 88 FROM TEAM B
+[11:51:58] [Race_Pipe] Got ADDCAR
+[11:51:58] CAR 99 FROM TEAM B
+[11:51:59] [Race_Pipe] Unknown command
+[11:52:0] [Race_Pipe] Got ADDCAR
+[11:52:0] CAR 91 FROM TEAM C
+[11:52:1] [Race_Pipe] Got ADDCAR
+[11:52:1] CAR 36 FROM TEAM C
+[11:52:2] [Race_Pipe] Got START RACE
+[11:52:2] Buckle Up, race is starting!
+[11:52:2] 
+Team manager created (PID: 2224), from Team 2
+[11:52:28] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[11:51:47] Semaphore initialized
+[11:51:47] SERVER STARTED
+[11:51:47] Race manager created (PID: 2212)
+[11:51:47] Named pipe 'race_pipe' is ready!
+
+[11:51:53] [Race_Pipe] Got ADDCAR
+[11:51:53] CAR 50 FROM TEAM A
+[11:51:54] [Race_Pipe] Got ADDCAR
+[11:51:54] CAR 55 FROM TEAM A
+[11:51:55] [Race_Pipe] Got ADDCAR
+[11:51:55] Max number of cars reached for this team
+[11:51:56] [Race_Pipe] Unknown command
+[11:51:57] [Race_Pipe] Got ADDCAR
+[11:51:57] CAR 88 FROM TEAM B
+[11:51:58] [Race_Pipe] Got ADDCAR
+[11:51:58] CAR 99 FROM TEAM B
+[11:51:59] [Race_Pipe] Unknown command
+[11:52:0] [Race_Pipe] Got ADDCAR
+[11:52:0] CAR 91 FROM TEAM C
+[11:52:1] [Race_Pipe] Got ADDCAR
+[11:52:1] CAR 36 FROM TEAM C
+[11:52:2] [Race_Pipe] Got START RACE
+[11:52:2] Buckle Up, race is starting!
+[11:52:2] 
+Team manager created (PID: 2223), from Team 0
+[11:52:28] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[11:51:47] Semaphore initialized
+[11:51:47] SERVER STARTED
+[11:51:47] Race manager created (PID: 2212)
+[11:51:47] Named pipe 'race_pipe' is ready!
+
+[11:51:53] [Race_Pipe] Got ADDCAR
+[11:51:53] CAR 50 FROM TEAM A
+[11:51:54] [Race_Pipe] Got ADDCAR
+[11:51:54] CAR 55 FROM TEAM A
+[11:51:55] [Race_Pipe] Got ADDCAR
+[11:51:55] Max number of cars reached for this team
+[11:51:56] [Race_Pipe] Unknown command
+[11:51:57] [Race_Pipe] Got ADDCAR
+[11:51:57] CAR 88 FROM TEAM B
+[11:51:58] [Race_Pipe] Got ADDCAR
+[11:51:58] CAR 99 FROM TEAM B
+[11:51:59] [Race_Pipe] Unknown command
+[11:52:0] [Race_Pipe] Got ADDCAR
+[11:52:0] CAR 91 FROM TEAM C
+[11:52:1] [Race_Pipe] Got ADDCAR
+[11:52:1] CAR 36 FROM TEAM C
+[11:52:2] [Race_Pipe] Got START RACE
+[11:52:2] Buckle Up, race is starting!
+[11:52:2] 
+Team manager created (PID: 2225), from Team 4
+[11:52:28] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[11:51:47] Semaphore initialized
+[11:51:47] SERVER STARTED
+[11:51:47] Race manager created (PID: 2212)
+[11:51:47] Named pipe 'race_pipe' is ready!
+
+[11:51:53] [Race_Pipe] Got ADDCAR
+[11:51:53] CAR 50 FROM TEAM A
+[11:51:54] [Race_Pipe] Got ADDCAR
+[11:51:54] CAR 55 FROM TEAM A
+[11:51:55] [Race_Pipe] Got ADDCAR
+[11:51:55] Max number of cars reached for this team
+[11:51:56] [Race_Pipe] Unknown command
+[11:51:57] [Race_Pipe] Got ADDCAR
+[11:51:57] CAR 88 FROM TEAM B
+[11:51:58] [Race_Pipe] Got ADDCAR
+[11:51:58] CAR 99 FROM TEAM B
+[11:51:59] [Race_Pipe] Unknown command
+[11:52:0] [Race_Pipe] Got ADDCAR
+[11:52:0] CAR 91 FROM TEAM C
+[11:52:1] [Race_Pipe] Got ADDCAR
+[11:52:1] CAR 36 FROM TEAM C
+[11:52:2] [Race_Pipe] Got START RACE
+[11:52:2] Buckle Up, race is starting!
+[11:52:3] Created 3 team processes
+[11:52:28] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:2:32] Semaphore initialized
+[12:2:32] SERVER STARTED
+[12:2:44] [Malfunction Manager] Got SIGUSR2
+[12:2:44] Malfunction manager created (PID: 2310)
+[12:2:32] Semaphore initialized
+[12:2:32] SERVER STARTED
+[12:2:32] Race manager created (PID: 2311)
+[12:2:32] Named pipe 'race_pipe' is ready!
+
+[12:2:35] [Race_Pipe] Got ADDCAR
+[12:2:35] CAR 50 FROM TEAM A
+[12:2:36] [Race_Pipe] Got ADDCAR
+[12:2:36] CAR 55 FROM TEAM A
+[12:2:37] [Race_Pipe] Got ADDCAR
+[12:2:37] Max number of cars reached for this team
+[12:2:38] [Race_Pipe] Unknown command
+[12:2:39] [Race_Pipe] Got ADDCAR
+[12:2:39] CAR 88 FROM TEAM B
+[12:2:40] [Race_Pipe] Got ADDCAR
+[12:2:40] CAR 99 FROM TEAM B
+[12:2:41] [Race_Pipe] Unknown command
+[12:2:42] [Race_Pipe] Got ADDCAR
+[12:2:42] CAR 91 FROM TEAM C
+[12:2:43] [Race_Pipe] Got ADDCAR
+[12:2:43] CAR 36 FROM TEAM C
+[12:2:44] [Race_Pipe] Got START RACE
+[12:2:44] Buckle Up, race is starting!
+[12:2:44] 
+Team manager created (PID: 2324), from Team 4
+[12:4:3] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:2:32] Semaphore initialized
+[12:2:32] SERVER STARTED
+[12:2:32] Race manager created (PID: 2311)
+[12:2:32] Named pipe 'race_pipe' is ready!
+
+[12:2:35] [Race_Pipe] Got ADDCAR
+[12:2:35] CAR 50 FROM TEAM A
+[12:2:36] [Race_Pipe] Got ADDCAR
+[12:2:36] CAR 55 FROM TEAM A
+[12:2:37] [Race_Pipe] Got ADDCAR
+[12:2:37] Max number of cars reached for this team
+[12:2:38] [Race_Pipe] Unknown command
+[12:2:39] [Race_Pipe] Got ADDCAR
+[12:2:39] CAR 88 FROM TEAM B
+[12:2:40] [Race_Pipe] Got ADDCAR
+[12:2:40] CAR 99 FROM TEAM B
+[12:2:41] [Race_Pipe] Unknown command
+[12:2:42] [Race_Pipe] Got ADDCAR
+[12:2:42] CAR 91 FROM TEAM C
+[12:2:43] [Race_Pipe] Got ADDCAR
+[12:2:43] CAR 36 FROM TEAM C
+[12:2:44] [Race_Pipe] Got START RACE
+[12:2:44] Buckle Up, race is starting!
+[12:2:44] 
+Team manager created (PID: 2323), from Team 2
+[12:4:3] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:2:32] Semaphore initialized
+[12:2:32] SERVER STARTED
+[12:2:32] Race manager created (PID: 2311)
+[12:2:32] Named pipe 'race_pipe' is ready!
+
+[12:2:35] [Race_Pipe] Got ADDCAR
+[12:2:35] CAR 50 FROM TEAM A
+[12:2:36] [Race_Pipe] Got ADDCAR
+[12:2:36] CAR 55 FROM TEAM A
+[12:2:37] [Race_Pipe] Got ADDCAR
+[12:2:37] Max number of cars reached for this team
+[12:2:38] [Race_Pipe] Unknown command
+[12:2:39] [Race_Pipe] Got ADDCAR
+[12:2:39] CAR 88 FROM TEAM B
+[12:2:40] [Race_Pipe] Got ADDCAR
+[12:2:40] CAR 99 FROM TEAM B
+[12:2:41] [Race_Pipe] Unknown command
+[12:2:42] [Race_Pipe] Got ADDCAR
+[12:2:42] CAR 91 FROM TEAM C
+[12:2:43] [Race_Pipe] Got ADDCAR
+[12:2:43] CAR 36 FROM TEAM C
+[12:2:44] [Race_Pipe] Got START RACE
+[12:2:44] Buckle Up, race is starting!
+[12:2:44] 
+Team manager created (PID: 2322), from Team 0
+[12:4:3] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:2:32] Semaphore initialized
+[12:2:32] SERVER STARTED
+[12:2:32] Race manager created (PID: 2311)
+[12:2:32] Named pipe 'race_pipe' is ready!
+
+[12:2:35] [Race_Pipe] Got ADDCAR
+[12:2:35] CAR 50 FROM TEAM A
+[12:2:36] [Race_Pipe] Got ADDCAR
+[12:2:36] CAR 55 FROM TEAM A
+[12:2:37] [Race_Pipe] Got ADDCAR
+[12:2:37] Max number of cars reached for this team
+[12:2:38] [Race_Pipe] Unknown command
+[12:2:39] [Race_Pipe] Got ADDCAR
+[12:2:39] CAR 88 FROM TEAM B
+[12:2:40] [Race_Pipe] Got ADDCAR
+[12:2:40] CAR 99 FROM TEAM B
+[12:2:41] [Race_Pipe] Unknown command
+[12:2:42] [Race_Pipe] Got ADDCAR
+[12:2:42] CAR 91 FROM TEAM C
+[12:2:43] [Race_Pipe] Got ADDCAR
+[12:2:43] CAR 36 FROM TEAM C
+[12:2:44] [Race_Pipe] Got START RACE
+[12:2:44] Buckle Up, race is starting!
+[12:2:44] Created 3 team processes
+[12:4:3] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:4:11] Semaphore initialized
+[12:4:11] SERVER STARTED
+[12:4:23] [Malfunction Manager] Got SIGUSR2
+[12:4:23] Malfunction manager created (PID: 2365)
+[12:4:11] Semaphore initialized
+[12:4:11] SERVER STARTED
+[12:4:11] Race manager created (PID: 2366)
+[12:4:11] Named pipe 'race_pipe' is ready!
+
+[12:4:14] [Race_Pipe] Got ADDCAR
+[12:4:14] CAR 50 FROM TEAM A
+[12:4:15] [Race_Pipe] Got ADDCAR
+[12:4:15] CAR 55 FROM TEAM A
+[12:4:16] [Race_Pipe] Got ADDCAR
+[12:4:16] Max number of cars reached for this team
+[12:4:17] [Race_Pipe] Unknown command
+[12:4:18] [Race_Pipe] Got ADDCAR
+[12:4:18] CAR 88 FROM TEAM B
+[12:4:19] [Race_Pipe] Got ADDCAR
+[12:4:19] CAR 99 FROM TEAM B
+[12:4:20] [Race_Pipe] Got START RACE
+[12:4:20] Not enough teams ready
+[12:4:20] [Race_Pipe] Got ADDCAR
+[12:4:20] CAR 81 FROM TEAM C
+[12:4:21] [Race_Pipe] Got ADDCAR
+[12:4:21] CAR 91 FROM TEAM C
+[12:4:22] [Race_Pipe] Got ADDCAR
+[12:4:22] Max number of cars reached for this team
+[12:4:23] [Race_Pipe] Got START RACE
+[12:4:23] Buckle Up, race is starting!
+[12:4:23] 
+Team manager created (PID: 2378), from Team 2
+[12:5:3] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:4:11] Semaphore initialized
+[12:4:11] SERVER STARTED
+[12:4:11] Race manager created (PID: 2366)
+[12:4:11] Named pipe 'race_pipe' is ready!
+
+[12:4:14] [Race_Pipe] Got ADDCAR
+[12:4:14] CAR 50 FROM TEAM A
+[12:4:15] [Race_Pipe] Got ADDCAR
+[12:4:15] CAR 55 FROM TEAM A
+[12:4:16] [Race_Pipe] Got ADDCAR
+[12:4:16] Max number of cars reached for this team
+[12:4:17] [Race_Pipe] Unknown command
+[12:4:18] [Race_Pipe] Got ADDCAR
+[12:4:18] CAR 88 FROM TEAM B
+[12:4:19] [Race_Pipe] Got ADDCAR
+[12:4:19] CAR 99 FROM TEAM B
+[12:4:20] [Race_Pipe] Got START RACE
+[12:4:20] Not enough teams ready
+[12:4:20] [Race_Pipe] Got ADDCAR
+[12:4:20] CAR 81 FROM TEAM C
+[12:4:21] [Race_Pipe] Got ADDCAR
+[12:4:21] CAR 91 FROM TEAM C
+[12:4:22] [Race_Pipe] Got ADDCAR
+[12:4:22] Max number of cars reached for this team
+[12:4:23] [Race_Pipe] Got START RACE
+[12:4:23] Buckle Up, race is starting!
+[12:4:23] 
+Team manager created (PID: 2377), from Team 0
+[12:5:3] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:4:11] Semaphore initialized
+[12:4:11] SERVER STARTED
+[12:4:11] Race manager created (PID: 2366)
+[12:4:11] Named pipe 'race_pipe' is ready!
+
+[12:4:14] [Race_Pipe] Got ADDCAR
+[12:4:14] CAR 50 FROM TEAM A
+[12:4:15] [Race_Pipe] Got ADDCAR
+[12:4:15] CAR 55 FROM TEAM A
+[12:4:16] [Race_Pipe] Got ADDCAR
+[12:4:16] Max number of cars reached for this team
+[12:4:17] [Race_Pipe] Unknown command
+[12:4:18] [Race_Pipe] Got ADDCAR
+[12:4:18] CAR 88 FROM TEAM B
+[12:4:19] [Race_Pipe] Got ADDCAR
+[12:4:19] CAR 99 FROM TEAM B
+[12:4:20] [Race_Pipe] Got START RACE
+[12:4:20] Not enough teams ready
+[12:4:20] [Race_Pipe] Got ADDCAR
+[12:4:20] CAR 81 FROM TEAM C
+[12:4:21] [Race_Pipe] Got ADDCAR
+[12:4:21] CAR 91 FROM TEAM C
+[12:4:22] [Race_Pipe] Got ADDCAR
+[12:4:22] Max number of cars reached for this team
+[12:4:23] [Race_Pipe] Got START RACE
+[12:4:23] Buckle Up, race is starting!
+[12:4:23] 
+Team manager created (PID: 2379), from Team 4
+[12:5:3] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:4:11] Semaphore initialized
+[12:4:11] SERVER STARTED
+[12:4:11] Race manager created (PID: 2366)
+[12:4:11] Named pipe 'race_pipe' is ready!
+
+[12:4:14] [Race_Pipe] Got ADDCAR
+[12:4:14] CAR 50 FROM TEAM A
+[12:4:15] [Race_Pipe] Got ADDCAR
+[12:4:15] CAR 55 FROM TEAM A
+[12:4:16] [Race_Pipe] Got ADDCAR
+[12:4:16] Max number of cars reached for this team
+[12:4:17] [Race_Pipe] Unknown command
+[12:4:18] [Race_Pipe] Got ADDCAR
+[12:4:18] CAR 88 FROM TEAM B
+[12:4:19] [Race_Pipe] Got ADDCAR
+[12:4:19] CAR 99 FROM TEAM B
+[12:4:20] [Race_Pipe] Got START RACE
+[12:4:20] Not enough teams ready
+[12:4:20] [Race_Pipe] Got ADDCAR
+[12:4:20] CAR 81 FROM TEAM C
+[12:4:21] [Race_Pipe] Got ADDCAR
+[12:4:21] CAR 91 FROM TEAM C
+[12:4:22] [Race_Pipe] Got ADDCAR
+[12:4:22] Max number of cars reached for this team
+[12:4:23] [Race_Pipe] Got START RACE
+[12:4:23] Buckle Up, race is starting!
+[12:4:23] Created 3 team processes
+[12:5:3] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:43:58] Semaphore initialized
+[12:43:58] SERVER STARTED
+[12:44:9] [Malfunction Manager] Got SIGUSR2
+[12:44:9] Malfunction manager created (PID: 2581)
+[12:43:58] Semaphore initialized
+[12:43:58] SERVER STARTED
+[12:43:58] Race manager created (PID: 2582)
+[12:43:58] Named pipe 'race_pipe' is ready!
+
+[12:44:0] [Race_Pipe] Got ADDCAR
+[12:44:0] CAR 50 FROM TEAM A
+[12:44:1] [Race_Pipe] Got ADDCAR
+[12:44:1] CAR 55 FROM TEAM A
+[12:44:2] [Race_Pipe] Got ADDCAR
+[12:44:2] Max number of cars reached for this team
+[12:44:3] [Race_Pipe] Unknown command
+[12:44:4] [Race_Pipe] Got ADDCAR
+[12:44:4] CAR 88 FROM TEAM B
+[12:44:5] [Race_Pipe] Got ADDCAR
+[12:44:5] CAR 99 FROM TEAM B
+[12:44:6] [Race_Pipe] Unknown command
+[12:44:7] [Race_Pipe] Got ADDCAR
+[12:44:7] CAR 91 FROM TEAM C
+[12:44:8] [Race_Pipe] Got ADDCAR
+[12:44:8] CAR 36 FROM TEAM C
+[12:44:9] [Race_Pipe] Got START RACE
+[12:44:9] Buckle Up, race is starting!
+[12:44:9] 
+Team manager created (PID: 2595), from Team 4
+[12:44:18] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:43:58] Semaphore initialized
+[12:43:58] SERVER STARTED
+[12:43:58] Race manager created (PID: 2582)
+[12:43:58] Named pipe 'race_pipe' is ready!
+
+[12:44:0] [Race_Pipe] Got ADDCAR
+[12:44:0] CAR 50 FROM TEAM A
+[12:44:1] [Race_Pipe] Got ADDCAR
+[12:44:1] CAR 55 FROM TEAM A
+[12:44:2] [Race_Pipe] Got ADDCAR
+[12:44:2] Max number of cars reached for this team
+[12:44:3] [Race_Pipe] Unknown command
+[12:44:4] [Race_Pipe] Got ADDCAR
+[12:44:4] CAR 88 FROM TEAM B
+[12:44:5] [Race_Pipe] Got ADDCAR
+[12:44:5] CAR 99 FROM TEAM B
+[12:44:6] [Race_Pipe] Unknown command
+[12:44:7] [Race_Pipe] Got ADDCAR
+[12:44:7] CAR 91 FROM TEAM C
+[12:44:8] [Race_Pipe] Got ADDCAR
+[12:44:8] CAR 36 FROM TEAM C
+[12:44:9] [Race_Pipe] Got START RACE
+[12:44:9] Buckle Up, race is starting!
+[12:44:9] 
+Team manager created (PID: 2594), from Team 2
+[12:44:18] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:43:58] Semaphore initialized
+[12:43:58] SERVER STARTED
+[12:43:58] Race manager created (PID: 2582)
+[12:43:58] Named pipe 'race_pipe' is ready!
+
+[12:44:0] [Race_Pipe] Got ADDCAR
+[12:44:0] CAR 50 FROM TEAM A
+[12:44:1] [Race_Pipe] Got ADDCAR
+[12:44:1] CAR 55 FROM TEAM A
+[12:44:2] [Race_Pipe] Got ADDCAR
+[12:44:2] Max number of cars reached for this team
+[12:44:3] [Race_Pipe] Unknown command
+[12:44:4] [Race_Pipe] Got ADDCAR
+[12:44:4] CAR 88 FROM TEAM B
+[12:44:5] [Race_Pipe] Got ADDCAR
+[12:44:5] CAR 99 FROM TEAM B
+[12:44:6] [Race_Pipe] Unknown command
+[12:44:7] [Race_Pipe] Got ADDCAR
+[12:44:7] CAR 91 FROM TEAM C
+[12:44:8] [Race_Pipe] Got ADDCAR
+[12:44:8] CAR 36 FROM TEAM C
+[12:44:9] [Race_Pipe] Got START RACE
+[12:44:9] Buckle Up, race is starting!
+[12:44:9] 
+Team manager created (PID: 2593), from Team 0
+[12:44:18] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:43:58] Semaphore initialized
+[12:43:58] SERVER STARTED
+[12:43:58] Race manager created (PID: 2582)
+[12:43:58] Named pipe 'race_pipe' is ready!
+
+[12:44:0] [Race_Pipe] Got ADDCAR
+[12:44:0] CAR 50 FROM TEAM A
+[12:44:1] [Race_Pipe] Got ADDCAR
+[12:44:1] CAR 55 FROM TEAM A
+[12:44:2] [Race_Pipe] Got ADDCAR
+[12:44:2] Max number of cars reached for this team
+[12:44:3] [Race_Pipe] Unknown command
+[12:44:4] [Race_Pipe] Got ADDCAR
+[12:44:4] CAR 88 FROM TEAM B
+[12:44:5] [Race_Pipe] Got ADDCAR
+[12:44:5] CAR 99 FROM TEAM B
+[12:44:6] [Race_Pipe] Unknown command
+[12:44:7] [Race_Pipe] Got ADDCAR
+[12:44:7] CAR 91 FROM TEAM C
+[12:44:8] [Race_Pipe] Got ADDCAR
+[12:44:8] CAR 36 FROM TEAM C
+[12:44:9] [Race_Pipe] Got START RACE
+[12:44:9] Buckle Up, race is starting!
+[12:44:9] Created 3 team processes
+[12:44:18] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:44:54] Semaphore initialized
+[12:44:54] SERVER STARTED
+[12:45:5] [Malfunction Manager] Got SIGUSR2
+[12:45:5] Malfunction manager created (PID: 2644)
+[12:44:54] Semaphore initialized
+[12:44:54] SERVER STARTED
+[12:44:54] Race manager created (PID: 2645)
+[12:44:54] Named pipe 'race_pipe' is ready!
+
+[12:44:56] [Race_Pipe] Got ADDCAR
+[12:44:56] CAR 50 FROM TEAM A
+[12:44:57] [Race_Pipe] Got ADDCAR
+[12:44:57] CAR 55 FROM TEAM A
+[12:44:58] [Race_Pipe] Got ADDCAR
+[12:44:58] Max number of cars reached for this team
+[12:44:59] [Race_Pipe] Got START RACE
+[12:44:59] Not enough teams ready
+[12:44:59] [Race_Pipe] Got ADDCAR
+[12:44:59] CAR 77 FROM TEAM B
+[12:45:0] [Race_Pipe] Got ADDCAR
+[12:45:0] CAR 88 FROM TEAM B
+[12:45:1] [Race_Pipe] Got ADDCAR
+[12:45:1] Max number of cars reached for this team
+[12:45:2] [Race_Pipe] Unknown command
+[12:45:3] [Race_Pipe] Got ADDCAR
+[12:45:3] CAR 91 FROM TEAM C
+[12:45:4] [Race_Pipe] Got ADDCAR
+[12:45:4] CAR 36 FROM TEAM C
+[12:45:5] [Race_Pipe] Got START RACE
+[12:45:5] Buckle Up, race is starting!
+[12:45:5] 
+Team manager created (PID: 2657), from Team 2
+[12:45:29] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:44:54] Semaphore initialized
+[12:44:54] SERVER STARTED
+[12:44:54] Race manager created (PID: 2645)
+[12:44:54] Named pipe 'race_pipe' is ready!
+
+[12:44:56] [Race_Pipe] Got ADDCAR
+[12:44:56] CAR 50 FROM TEAM A
+[12:44:57] [Race_Pipe] Got ADDCAR
+[12:44:57] CAR 55 FROM TEAM A
+[12:44:58] [Race_Pipe] Got ADDCAR
+[12:44:58] Max number of cars reached for this team
+[12:44:59] [Race_Pipe] Got START RACE
+[12:44:59] Not enough teams ready
+[12:44:59] [Race_Pipe] Got ADDCAR
+[12:44:59] CAR 77 FROM TEAM B
+[12:45:0] [Race_Pipe] Got ADDCAR
+[12:45:0] CAR 88 FROM TEAM B
+[12:45:1] [Race_Pipe] Got ADDCAR
+[12:45:1] Max number of cars reached for this team
+[12:45:2] [Race_Pipe] Unknown command
+[12:45:3] [Race_Pipe] Got ADDCAR
+[12:45:3] CAR 91 FROM TEAM C
+[12:45:4] [Race_Pipe] Got ADDCAR
+[12:45:4] CAR 36 FROM TEAM C
+[12:45:5] [Race_Pipe] Got START RACE
+[12:45:5] Buckle Up, race is starting!
+[12:45:5] 
+Team manager created (PID: 2656), from Team 0
+[12:45:29] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:44:54] Semaphore initialized
+[12:44:54] SERVER STARTED
+[12:44:54] Race manager created (PID: 2645)
+[12:44:54] Named pipe 'race_pipe' is ready!
+
+[12:44:56] [Race_Pipe] Got ADDCAR
+[12:44:56] CAR 50 FROM TEAM A
+[12:44:57] [Race_Pipe] Got ADDCAR
+[12:44:57] CAR 55 FROM TEAM A
+[12:44:58] [Race_Pipe] Got ADDCAR
+[12:44:58] Max number of cars reached for this team
+[12:44:59] [Race_Pipe] Got START RACE
+[12:44:59] Not enough teams ready
+[12:44:59] [Race_Pipe] Got ADDCAR
+[12:44:59] CAR 77 FROM TEAM B
+[12:45:0] [Race_Pipe] Got ADDCAR
+[12:45:0] CAR 88 FROM TEAM B
+[12:45:1] [Race_Pipe] Got ADDCAR
+[12:45:1] Max number of cars reached for this team
+[12:45:2] [Race_Pipe] Unknown command
+[12:45:3] [Race_Pipe] Got ADDCAR
+[12:45:3] CAR 91 FROM TEAM C
+[12:45:4] [Race_Pipe] Got ADDCAR
+[12:45:4] CAR 36 FROM TEAM C
+[12:45:5] [Race_Pipe] Got START RACE
+[12:45:5] Buckle Up, race is starting!
+[12:45:5] 
+Team manager created (PID: 2658), from Team 4
+[12:45:29] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:44:54] Semaphore initialized
+[12:44:54] SERVER STARTED
+[12:44:54] Race manager created (PID: 2645)
+[12:44:54] Named pipe 'race_pipe' is ready!
+
+[12:44:56] [Race_Pipe] Got ADDCAR
+[12:44:56] CAR 50 FROM TEAM A
+[12:44:57] [Race_Pipe] Got ADDCAR
+[12:44:57] CAR 55 FROM TEAM A
+[12:44:58] [Race_Pipe] Got ADDCAR
+[12:44:58] Max number of cars reached for this team
+[12:44:59] [Race_Pipe] Got START RACE
+[12:44:59] Not enough teams ready
+[12:44:59] [Race_Pipe] Got ADDCAR
+[12:44:59] CAR 77 FROM TEAM B
+[12:45:0] [Race_Pipe] Got ADDCAR
+[12:45:0] CAR 88 FROM TEAM B
+[12:45:1] [Race_Pipe] Got ADDCAR
+[12:45:1] Max number of cars reached for this team
+[12:45:2] [Race_Pipe] Unknown command
+[12:45:3] [Race_Pipe] Got ADDCAR
+[12:45:3] CAR 91 FROM TEAM C
+[12:45:4] [Race_Pipe] Got ADDCAR
+[12:45:4] CAR 36 FROM TEAM C
+[12:45:5] [Race_Pipe] Got START RACE
+[12:45:5] Buckle Up, race is starting!
+[12:45:5] Created 3 team processes
+[12:45:29] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:46:40] Semaphore initialized
+[12:46:40] SERVER STARTED
+[12:46:52] [Malfunction Manager] Got SIGUSR2
+[12:46:52] Malfunction manager created (PID: 2706)
+[12:46:40] Semaphore initialized
+[12:46:40] SERVER STARTED
+[12:46:40] Race manager created (PID: 2707)
+[12:46:40] Named pipe 'race_pipe' is ready!
+
+[12:46:43] [Race_Pipe] Got ADDCAR
+[12:46:43] CAR 50 FROM TEAM A
+[12:46:44] [Race_Pipe] Got ADDCAR
+[12:46:44] CAR 55 FROM TEAM A
+[12:46:45] [Race_Pipe] Got ADDCAR
+[12:46:45] Max number of cars reached for this team
+[12:46:46] [Race_Pipe] Unknown command
+[12:46:47] [Race_Pipe] Got ADDCAR
+[12:46:47] CAR 88 FROM TEAM B
+[12:46:48] [Race_Pipe] Got ADDCAR
+[12:46:48] CAR 99 FROM TEAM B
+[12:46:49] [Race_Pipe] Got START RACE
+[12:46:49] Not enough teams ready
+[12:46:49] [Race_Pipe] Got ADDCAR
+[12:46:49] CAR 81 FROM TEAM C
+[12:46:50] [Race_Pipe] Got ADDCAR
+[12:46:50] CAR 91 FROM TEAM C
+[12:46:51] [Race_Pipe] Got ADDCAR
+[12:46:51] Max number of cars reached for this team
+[12:46:52] [Race_Pipe] Got START RACE
+[12:46:52] Buckle Up, race is starting!
+[12:46:52] 
+Team manager created (PID: 2720), from Team 4
+[12:46:52] Team 4 STARTING!!
+[12:47:36] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:46:40] Semaphore initialized
+[12:46:40] SERVER STARTED
+[12:46:40] Race manager created (PID: 2707)
+[12:46:40] Named pipe 'race_pipe' is ready!
+
+[12:46:43] [Race_Pipe] Got ADDCAR
+[12:46:43] CAR 50 FROM TEAM A
+[12:46:44] [Race_Pipe] Got ADDCAR
+[12:46:44] CAR 55 FROM TEAM A
+[12:46:45] [Race_Pipe] Got ADDCAR
+[12:46:45] Max number of cars reached for this team
+[12:46:46] [Race_Pipe] Unknown command
+[12:46:47] [Race_Pipe] Got ADDCAR
+[12:46:47] CAR 88 FROM TEAM B
+[12:46:48] [Race_Pipe] Got ADDCAR
+[12:46:48] CAR 99 FROM TEAM B
+[12:46:49] [Race_Pipe] Got START RACE
+[12:46:49] Not enough teams ready
+[12:46:49] [Race_Pipe] Got ADDCAR
+[12:46:49] CAR 81 FROM TEAM C
+[12:46:50] [Race_Pipe] Got ADDCAR
+[12:46:50] CAR 91 FROM TEAM C
+[12:46:51] [Race_Pipe] Got ADDCAR
+[12:46:51] Max number of cars reached for this team
+[12:46:52] [Race_Pipe] Got START RACE
+[12:46:52] Buckle Up, race is starting!
+[12:46:52] 
+Team manager created (PID: 2719), from Team 2
+[12:46:52] Team 2 STARTING!!
+[12:47:36] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:46:40] Semaphore initialized
+[12:46:40] SERVER STARTED
+[12:46:40] Race manager created (PID: 2707)
+[12:46:40] Named pipe 'race_pipe' is ready!
+
+[12:46:43] [Race_Pipe] Got ADDCAR
+[12:46:43] CAR 50 FROM TEAM A
+[12:46:44] [Race_Pipe] Got ADDCAR
+[12:46:44] CAR 55 FROM TEAM A
+[12:46:45] [Race_Pipe] Got ADDCAR
+[12:46:45] Max number of cars reached for this team
+[12:46:46] [Race_Pipe] Unknown command
+[12:46:47] [Race_Pipe] Got ADDCAR
+[12:46:47] CAR 88 FROM TEAM B
+[12:46:48] [Race_Pipe] Got ADDCAR
+[12:46:48] CAR 99 FROM TEAM B
+[12:46:49] [Race_Pipe] Got START RACE
+[12:46:49] Not enough teams ready
+[12:46:49] [Race_Pipe] Got ADDCAR
+[12:46:49] CAR 81 FROM TEAM C
+[12:46:50] [Race_Pipe] Got ADDCAR
+[12:46:50] CAR 91 FROM TEAM C
+[12:46:51] [Race_Pipe] Got ADDCAR
+[12:46:51] Max number of cars reached for this team
+[12:46:52] [Race_Pipe] Got START RACE
+[12:46:52] Buckle Up, race is starting!
+[12:46:52] 
+Team manager created (PID: 2718), from Team 0
+[12:46:52] Team 0 STARTING!!
+[12:47:36] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:46:40] Semaphore initialized
+[12:46:40] SERVER STARTED
+[12:46:40] Race manager created (PID: 2707)
+[12:46:40] Named pipe 'race_pipe' is ready!
+
+[12:46:43] [Race_Pipe] Got ADDCAR
+[12:46:43] CAR 50 FROM TEAM A
+[12:46:44] [Race_Pipe] Got ADDCAR
+[12:46:44] CAR 55 FROM TEAM A
+[12:46:45] [Race_Pipe] Got ADDCAR
+[12:46:45] Max number of cars reached for this team
+[12:46:46] [Race_Pipe] Unknown command
+[12:46:47] [Race_Pipe] Got ADDCAR
+[12:46:47] CAR 88 FROM TEAM B
+[12:46:48] [Race_Pipe] Got ADDCAR
+[12:46:48] CAR 99 FROM TEAM B
+[12:46:49] [Race_Pipe] Got START RACE
+[12:46:49] Not enough teams ready
+[12:46:49] [Race_Pipe] Got ADDCAR
+[12:46:49] CAR 81 FROM TEAM C
+[12:46:50] [Race_Pipe] Got ADDCAR
+[12:46:50] CAR 91 FROM TEAM C
+[12:46:51] [Race_Pipe] Got ADDCAR
+[12:46:51] Max number of cars reached for this team
+[12:46:52] [Race_Pipe] Got START RACE
+[12:46:52] Buckle Up, race is starting!
+[12:46:52] Created 3 team processes
+[12:47:36] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:47:42] Semaphore initialized
+[12:47:42] SERVER STARTED
+[12:47:54] [Malfunction Manager] Got SIGUSR2
+[12:47:54] Malfunction manager created (PID: 2761)
+[12:47:42] Semaphore initialized
+[12:47:42] SERVER STARTED
+[12:47:42] Race manager created (PID: 2762)
+[12:47:42] Named pipe 'race_pipe' is ready!
+
+[12:47:45] [Race_Pipe] Got ADDCAR
+[12:47:45] CAR 50 FROM TEAM A
+[12:47:46] [Race_Pipe] Got ADDCAR
+[12:47:46] CAR 55 FROM TEAM A
+[12:47:47] [Race_Pipe] Got ADDCAR
+[12:47:47] Max number of cars reached for this team
+[12:47:48] [Race_Pipe] Unknown command
+[12:47:49] [Race_Pipe] Got ADDCAR
+[12:47:49] CAR 88 FROM TEAM B
+[12:47:50] [Race_Pipe] Got ADDCAR
+[12:47:50] CAR 99 FROM TEAM B
+[12:47:51] [Race_Pipe] Got START RACE
+[12:47:51] Not enough teams ready
+[12:47:51] [Race_Pipe] Got ADDCAR
+[12:47:51] CAR 81 FROM TEAM C
+[12:47:52] [Race_Pipe] Got ADDCAR
+[12:47:52] CAR 91 FROM TEAM C
+[12:47:53] [Race_Pipe] Got ADDCAR
+[12:47:53] Max number of cars reached for this team
+[12:47:54] [Race_Pipe] Got START RACE
+[12:47:54] Buckle Up, race is starting!
+[12:47:54] 
+Team manager created (PID: 2774), from Team 2
+[12:47:54] Team 2 STARTING!!
+[12:48:5] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:47:42] Semaphore initialized
+[12:47:42] SERVER STARTED
+[12:47:42] Race manager created (PID: 2762)
+[12:47:42] Named pipe 'race_pipe' is ready!
+
+[12:47:45] [Race_Pipe] Got ADDCAR
+[12:47:45] CAR 50 FROM TEAM A
+[12:47:46] [Race_Pipe] Got ADDCAR
+[12:47:46] CAR 55 FROM TEAM A
+[12:47:47] [Race_Pipe] Got ADDCAR
+[12:47:47] Max number of cars reached for this team
+[12:47:48] [Race_Pipe] Unknown command
+[12:47:49] [Race_Pipe] Got ADDCAR
+[12:47:49] CAR 88 FROM TEAM B
+[12:47:50] [Race_Pipe] Got ADDCAR
+[12:47:50] CAR 99 FROM TEAM B
+[12:47:51] [Race_Pipe] Got START RACE
+[12:47:51] Not enough teams ready
+[12:47:51] [Race_Pipe] Got ADDCAR
+[12:47:51] CAR 81 FROM TEAM C
+[12:47:52] [Race_Pipe] Got ADDCAR
+[12:47:52] CAR 91 FROM TEAM C
+[12:47:53] [Race_Pipe] Got ADDCAR
+[12:47:53] Max number of cars reached for this team
+[12:47:54] [Race_Pipe] Got START RACE
+[12:47:54] Buckle Up, race is starting!
+[12:47:54] 
+Team manager created (PID: 2773), from Team 0
+[12:47:54] Team 0 STARTING!!
+[12:48:5] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:47:42] Semaphore initialized
+[12:47:42] SERVER STARTED
+[12:47:42] Race manager created (PID: 2762)
+[12:47:42] Named pipe 'race_pipe' is ready!
+
+[12:47:45] [Race_Pipe] Got ADDCAR
+[12:47:45] CAR 50 FROM TEAM A
+[12:47:46] [Race_Pipe] Got ADDCAR
+[12:47:46] CAR 55 FROM TEAM A
+[12:47:47] [Race_Pipe] Got ADDCAR
+[12:47:47] Max number of cars reached for this team
+[12:47:48] [Race_Pipe] Unknown command
+[12:47:49] [Race_Pipe] Got ADDCAR
+[12:47:49] CAR 88 FROM TEAM B
+[12:47:50] [Race_Pipe] Got ADDCAR
+[12:47:50] CAR 99 FROM TEAM B
+[12:47:51] [Race_Pipe] Got START RACE
+[12:47:51] Not enough teams ready
+[12:47:51] [Race_Pipe] Got ADDCAR
+[12:47:51] CAR 81 FROM TEAM C
+[12:47:52] [Race_Pipe] Got ADDCAR
+[12:47:52] CAR 91 FROM TEAM C
+[12:47:53] [Race_Pipe] Got ADDCAR
+[12:47:53] Max number of cars reached for this team
+[12:47:54] [Race_Pipe] Got START RACE
+[12:47:54] Buckle Up, race is starting!
+[12:47:54] 
+Team manager created (PID: 2775), from Team 4
+[12:47:54] Team 4 STARTING!!
+[12:48:5] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:47:42] Semaphore initialized
+[12:47:42] SERVER STARTED
+[12:47:42] Race manager created (PID: 2762)
+[12:47:42] Named pipe 'race_pipe' is ready!
+
+[12:47:45] [Race_Pipe] Got ADDCAR
+[12:47:45] CAR 50 FROM TEAM A
+[12:47:46] [Race_Pipe] Got ADDCAR
+[12:47:46] CAR 55 FROM TEAM A
+[12:47:47] [Race_Pipe] Got ADDCAR
+[12:47:47] Max number of cars reached for this team
+[12:47:48] [Race_Pipe] Unknown command
+[12:47:49] [Race_Pipe] Got ADDCAR
+[12:47:49] CAR 88 FROM TEAM B
+[12:47:50] [Race_Pipe] Got ADDCAR
+[12:47:50] CAR 99 FROM TEAM B
+[12:47:51] [Race_Pipe] Got START RACE
+[12:47:51] Not enough teams ready
+[12:47:51] [Race_Pipe] Got ADDCAR
+[12:47:51] CAR 81 FROM TEAM C
+[12:47:52] [Race_Pipe] Got ADDCAR
+[12:47:52] CAR 91 FROM TEAM C
+[12:47:53] [Race_Pipe] Got ADDCAR
+[12:47:53] Max number of cars reached for this team
+[12:47:54] [Race_Pipe] Got START RACE
+[12:47:54] Buckle Up, race is starting!
+[12:47:54] Created 3 team processes
+[12:48:5] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:48:29] Semaphore initialized
+[12:48:29] SERVER STARTED
+[12:48:40] [Malfunction Manager] Got SIGUSR2
+[12:48:40] Malfunction manager created (PID: 2816)
+[12:48:29] Semaphore initialized
+[12:48:29] SERVER STARTED
+[12:48:29] Race manager created (PID: 2817)
+[12:48:29] Named pipe 'race_pipe' is ready!
+
+[12:48:31] [Race_Pipe] Got ADDCAR
+[12:48:31] CAR 50 FROM TEAM A
+[12:48:32] [Race_Pipe] Got ADDCAR
+[12:48:32] CAR 55 FROM TEAM A
+[12:48:33] [Race_Pipe] Got ADDCAR
+[12:48:33] Max number of cars reached for this team
+[12:48:34] [Race_Pipe] Unknown command
+[12:48:35] [Race_Pipe] Got ADDCAR
+[12:48:35] CAR 88 FROM TEAM B
+[12:48:36] [Race_Pipe] Got ADDCAR
+[12:48:36] CAR 99 FROM TEAM B
+[12:48:37] [Race_Pipe] Got START RACE
+[12:48:37] Not enough teams ready
+[12:48:37] [Race_Pipe] Got ADDCAR
+[12:48:37] CAR 81 FROM TEAM C
+[12:48:38] [Race_Pipe] Got ADDCAR
+[12:48:38] CAR 91 FROM TEAM C
+[12:48:39] [Race_Pipe] Got ADDCAR
+[12:48:39] Max number of cars reached for this team
+[12:48:40] [Race_Pipe] Got START RACE
+[12:48:40] Buckle Up, race is starting!
+[12:48:40] 
+Team manager created (PID: 2829), from Team 2
+[12:48:40] Team 2 STARTING!!
+[12:49:1] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:48:29] Semaphore initialized
+[12:48:29] SERVER STARTED
+[12:48:29] Race manager created (PID: 2817)
+[12:48:29] Named pipe 'race_pipe' is ready!
+
+[12:48:31] [Race_Pipe] Got ADDCAR
+[12:48:31] CAR 50 FROM TEAM A
+[12:48:32] [Race_Pipe] Got ADDCAR
+[12:48:32] CAR 55 FROM TEAM A
+[12:48:33] [Race_Pipe] Got ADDCAR
+[12:48:33] Max number of cars reached for this team
+[12:48:34] [Race_Pipe] Unknown command
+[12:48:35] [Race_Pipe] Got ADDCAR
+[12:48:35] CAR 88 FROM TEAM B
+[12:48:36] [Race_Pipe] Got ADDCAR
+[12:48:36] CAR 99 FROM TEAM B
+[12:48:37] [Race_Pipe] Got START RACE
+[12:48:37] Not enough teams ready
+[12:48:37] [Race_Pipe] Got ADDCAR
+[12:48:37] CAR 81 FROM TEAM C
+[12:48:38] [Race_Pipe] Got ADDCAR
+[12:48:38] CAR 91 FROM TEAM C
+[12:48:39] [Race_Pipe] Got ADDCAR
+[12:48:39] Max number of cars reached for this team
+[12:48:40] [Race_Pipe] Got START RACE
+[12:48:40] Buckle Up, race is starting!
+[12:48:40] 
+Team manager created (PID: 2828), from Team 0
+[12:48:40] Team 0 STARTING!!
+[12:49:1] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:48:29] Semaphore initialized
+[12:48:29] SERVER STARTED
+[12:48:29] Race manager created (PID: 2817)
+[12:48:29] Named pipe 'race_pipe' is ready!
+
+[12:48:31] [Race_Pipe] Got ADDCAR
+[12:48:31] CAR 50 FROM TEAM A
+[12:48:32] [Race_Pipe] Got ADDCAR
+[12:48:32] CAR 55 FROM TEAM A
+[12:48:33] [Race_Pipe] Got ADDCAR
+[12:48:33] Max number of cars reached for this team
+[12:48:34] [Race_Pipe] Unknown command
+[12:48:35] [Race_Pipe] Got ADDCAR
+[12:48:35] CAR 88 FROM TEAM B
+[12:48:36] [Race_Pipe] Got ADDCAR
+[12:48:36] CAR 99 FROM TEAM B
+[12:48:37] [Race_Pipe] Got START RACE
+[12:48:37] Not enough teams ready
+[12:48:37] [Race_Pipe] Got ADDCAR
+[12:48:37] CAR 81 FROM TEAM C
+[12:48:38] [Race_Pipe] Got ADDCAR
+[12:48:38] CAR 91 FROM TEAM C
+[12:48:39] [Race_Pipe] Got ADDCAR
+[12:48:39] Max number of cars reached for this team
+[12:48:40] [Race_Pipe] Got START RACE
+[12:48:40] Buckle Up, race is starting!
+[12:48:40] 
+Team manager created (PID: 2830), from Team 4
+[12:48:40] Team 4 STARTING!!
+[12:49:1] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:48:29] Semaphore initialized
+[12:48:29] SERVER STARTED
+[12:48:29] Race manager created (PID: 2817)
+[12:48:29] Named pipe 'race_pipe' is ready!
+
+[12:48:31] [Race_Pipe] Got ADDCAR
+[12:48:31] CAR 50 FROM TEAM A
+[12:48:32] [Race_Pipe] Got ADDCAR
+[12:48:32] CAR 55 FROM TEAM A
+[12:48:33] [Race_Pipe] Got ADDCAR
+[12:48:33] Max number of cars reached for this team
+[12:48:34] [Race_Pipe] Unknown command
+[12:48:35] [Race_Pipe] Got ADDCAR
+[12:48:35] CAR 88 FROM TEAM B
+[12:48:36] [Race_Pipe] Got ADDCAR
+[12:48:36] CAR 99 FROM TEAM B
+[12:48:37] [Race_Pipe] Got START RACE
+[12:48:37] Not enough teams ready
+[12:48:37] [Race_Pipe] Got ADDCAR
+[12:48:37] CAR 81 FROM TEAM C
+[12:48:38] [Race_Pipe] Got ADDCAR
+[12:48:38] CAR 91 FROM TEAM C
+[12:48:39] [Race_Pipe] Got ADDCAR
+[12:48:39] Max number of cars reached for this team
+[12:48:40] [Race_Pipe] Got START RACE
+[12:48:40] Buckle Up, race is starting!
+[12:48:40] Created 3 team processes
+[12:49:1] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:49:32] Semaphore initialized
+[12:49:32] SERVER STARTED
+[12:49:46] [Malfunction Manager] Got SIGUSR2
+[12:49:46] Malfunction manager created (PID: 2897)
+[12:49:32] Semaphore initialized
+[12:49:32] SERVER STARTED
+[12:49:32] Race manager created (PID: 2898)
+[12:49:32] Named pipe 'race_pipe' is ready!
+
+[12:49:36] [Race_Pipe] Got ADDCAR
+[12:49:36] CAR 50 FROM TEAM A
+[12:49:37] [Race_Pipe] Got ADDCAR
+[12:49:37] CAR 55 FROM TEAM A
+[12:49:38] [Race_Pipe] Got ADDCAR
+[12:49:38] Max number of cars reached for this team
+[12:49:39] [Race_Pipe] Unknown command
+[12:49:40] [Race_Pipe] Got ADDCAR
+[12:49:40] CAR 88 FROM TEAM B
+[12:49:41] [Race_Pipe] Got ADDCAR
+[12:49:41] CAR 99 FROM TEAM B
+[12:49:42] [Race_Pipe] Unknown command
+[12:49:43] [Race_Pipe] Got ADDCAR
+[12:49:43] CAR 91 FROM TEAM C
+[12:49:44] [Race_Pipe] Got ADDCAR
+[12:49:44] CAR 36 FROM TEAM C
+[12:49:45] [Race_Pipe] Got START RACE
+[12:49:45] Buckle Up, race is starting!
+[12:49:45] 
+Team manager created (PID: 2911), from Team 4
+[12:49:46] Team 4 STARTING!!
+[12:50:14] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:49:32] Semaphore initialized
+[12:49:32] SERVER STARTED
+[12:49:32] Race manager created (PID: 2898)
+[12:49:32] Named pipe 'race_pipe' is ready!
+
+[12:49:36] [Race_Pipe] Got ADDCAR
+[12:49:36] CAR 50 FROM TEAM A
+[12:49:37] [Race_Pipe] Got ADDCAR
+[12:49:37] CAR 55 FROM TEAM A
+[12:49:38] [Race_Pipe] Got ADDCAR
+[12:49:38] Max number of cars reached for this team
+[12:49:39] [Race_Pipe] Unknown command
+[12:49:40] [Race_Pipe] Got ADDCAR
+[12:49:40] CAR 88 FROM TEAM B
+[12:49:41] [Race_Pipe] Got ADDCAR
+[12:49:41] CAR 99 FROM TEAM B
+[12:49:42] [Race_Pipe] Unknown command
+[12:49:43] [Race_Pipe] Got ADDCAR
+[12:49:43] CAR 91 FROM TEAM C
+[12:49:44] [Race_Pipe] Got ADDCAR
+[12:49:44] CAR 36 FROM TEAM C
+[12:49:45] [Race_Pipe] Got START RACE
+[12:49:45] Buckle Up, race is starting!
+[12:49:45] 
+Team manager created (PID: 2910), from Team 2
+[12:49:46] Team 2 STARTING!!
+[12:50:14] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:49:32] Semaphore initialized
+[12:49:32] SERVER STARTED
+[12:49:32] Race manager created (PID: 2898)
+[12:49:32] Named pipe 'race_pipe' is ready!
+
+[12:49:36] [Race_Pipe] Got ADDCAR
+[12:49:36] CAR 50 FROM TEAM A
+[12:49:37] [Race_Pipe] Got ADDCAR
+[12:49:37] CAR 55 FROM TEAM A
+[12:49:38] [Race_Pipe] Got ADDCAR
+[12:49:38] Max number of cars reached for this team
+[12:49:39] [Race_Pipe] Unknown command
+[12:49:40] [Race_Pipe] Got ADDCAR
+[12:49:40] CAR 88 FROM TEAM B
+[12:49:41] [Race_Pipe] Got ADDCAR
+[12:49:41] CAR 99 FROM TEAM B
+[12:49:42] [Race_Pipe] Unknown command
+[12:49:43] [Race_Pipe] Got ADDCAR
+[12:49:43] CAR 91 FROM TEAM C
+[12:49:44] [Race_Pipe] Got ADDCAR
+[12:49:44] CAR 36 FROM TEAM C
+[12:49:45] [Race_Pipe] Got START RACE
+[12:49:45] Buckle Up, race is starting!
+[12:49:45] 
+Team manager created (PID: 2909), from Team 0
+[12:49:46] Team 0 STARTING!!
+[12:50:14] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[12:49:32] Semaphore initialized
+[12:49:32] SERVER STARTED
+[12:49:32] Race manager created (PID: 2898)
+[12:49:32] Named pipe 'race_pipe' is ready!
+
+[12:49:36] [Race_Pipe] Got ADDCAR
+[12:49:36] CAR 50 FROM TEAM A
+[12:49:37] [Race_Pipe] Got ADDCAR
+[12:49:37] CAR 55 FROM TEAM A
+[12:49:38] [Race_Pipe] Got ADDCAR
+[12:49:38] Max number of cars reached for this team
+[12:49:39] [Race_Pipe] Unknown command
+[12:49:40] [Race_Pipe] Got ADDCAR
+[12:49:40] CAR 88 FROM TEAM B
+[12:49:41] [Race_Pipe] Got ADDCAR
+[12:49:41] CAR 99 FROM TEAM B
+[12:49:42] [Race_Pipe] Unknown command
+[12:49:43] [Race_Pipe] Got ADDCAR
+[12:49:43] CAR 91 FROM TEAM C
+[12:49:44] [Race_Pipe] Got ADDCAR
+[12:49:44] CAR 36 FROM TEAM C
+[12:49:45] [Race_Pipe] Got START RACE
+[12:49:45] Buckle Up, race is starting!
+[12:49:46] Created 3 team processes
+[12:50:14] Got SIGTERM
+Race MAnager waiting and cleaning.
+
+[13:5:25] Semaphore initialized
+[13:5:25] SERVER STARTED
+[13:5:37] [Malfunction Manager] Got SIGUSR2
+[13:5:37] Malfunction manager created (PID: 2969)
+[13:5:25] Semaphore initialized
+[13:5:25] SERVER STARTED
+[13:5:25] Race manager created (PID: 2970)
+[13:5:25] Named pipe 'race_pipe' is ready!
+
+[13:5:27] [Race_Pipe] Got ADDCAR
+[13:5:27] CAR 50 FROM TEAM A
+[13:5:28] [Race_Pipe] Got ADDCAR
+[13:5:28] CAR 55 FROM TEAM A
+[13:5:29] [Race_Pipe] Got ADDCAR
+[13:5:29] Max number of cars reached for this team
+[13:5:30] [Race_Pipe] Unknown command
+[13:5:31] [Race_Pipe] Got ADDCAR
+[13:5:31] CAR 88 FROM TEAM B
+[13:5:32] [Race_Pipe] Got ADDCAR
+[13:5:32] CAR 99 FROM TEAM B
+[13:5:33] [Race_Pipe] Unknown command
+[13:5:34] [Race_Pipe] Got ADDCAR
+[13:5:34] CAR 91 FROM TEAM C
+[13:5:35] [Race_Pipe] Got ADDCAR
+[13:5:35] CAR 36 FROM TEAM C
+[13:5:36] [Race_Pipe] Got START RACE
+[13:5:36] Buckle Up, race is starting!
+[13:5:36] 
+Team manager created (PID: 2983), from Team 4
+[13:5:37] Team 4 STARTING!!
+[13:5:38] Car 36 from team: C made lap 1!
+[13:5:38] Car 91 from team: C made lap 1!
+[13:5:39] Car 36 from team: C made lap 2!
+[13:5:39] Car 91 from team: C made lap 2!
+[13:5:40] Car 36 from team: C made lap 3!
+[13:5:40] Car 91 from team: C made lap 3!
+[13:5:41] Car 36 from team: C made lap 4!
+[13:5:41] Car 91 from team: C made lap 4!
+[13:5:42] Car 36 from team: C made lap 5!
+[13:5:42] Car 91 from team: C made lap 5!
+[13:5:42] TEam Manager finishing
+[13:5:25] Semaphore initialized
+[13:5:25] SERVER STARTED
+[13:5:25] Race manager created (PID: 2970)
+[13:5:25] Named pipe 'race_pipe' is ready!
+
+[13:5:27] [Race_Pipe] Got ADDCAR
+[13:5:27] CAR 50 FROM TEAM A
+[13:5:28] [Race_Pipe] Got ADDCAR
+[13:5:28] CAR 55 FROM TEAM A
+[13:5:29] [Race_Pipe] Got ADDCAR
+[13:5:29] Max number of cars reached for this team
+[13:5:30] [Race_Pipe] Unknown command
+[13:5:31] [Race_Pipe] Got ADDCAR
+[13:5:31] CAR 88 FROM TEAM B
+[13:5:32] [Race_Pipe] Got ADDCAR
+[13:5:32] CAR 99 FROM TEAM B
+[13:5:33] [Race_Pipe] Unknown command
+[13:5:34] [Race_Pipe] Got ADDCAR
+[13:5:34] CAR 91 FROM TEAM C
+[13:5:35] [Race_Pipe] Got ADDCAR
+[13:5:35] CAR 36 FROM TEAM C
+[13:5:36] [Race_Pipe] Got START RACE
+[13:5:36] Buckle Up, race is starting!
+[13:5:36] 
+Team manager created (PID: 2981), from Team 0
+[13:5:37] Team 0 STARTING!!
+[13:5:38] Car 55 from team: A made lap 1!
+[13:5:38] Car 50 from team: A made lap 1!
+[13:5:39] Car 55 from team: A made lap 2!
+[13:5:39] Car 50 from team: A made lap 2!
+[13:5:40] Car 55 from team: A made lap 3!
+[13:5:40] Car 50 from team: A made lap 3!
+[13:5:41] Car 55 from team: A made lap 4!
+[13:5:41] Car 50 from team: A made lap 4!
+[13:5:42] Car 55 from team: A made lap 5!
+[13:5:42] Car 50 from team: A made lap 5!
+[13:5:42] TEam Manager finishing
+[13:5:25] Semaphore initialized
+[13:5:25] SERVER STARTED
+[13:5:25] Race manager created (PID: 2970)
+[13:5:25] Named pipe 'race_pipe' is ready!
+
+[13:5:27] [Race_Pipe] Got ADDCAR
+[13:5:27] CAR 50 FROM TEAM A
+[13:5:28] [Race_Pipe] Got ADDCAR
+[13:5:28] CAR 55 FROM TEAM A
+[13:5:29] [Race_Pipe] Got ADDCAR
+[13:5:29] Max number of cars reached for this team
+[13:5:30] [Race_Pipe] Unknown command
+[13:5:31] [Race_Pipe] Got ADDCAR
+[13:5:31] CAR 88 FROM TEAM B
+[13:5:32] [Race_Pipe] Got ADDCAR
+[13:5:32] CAR 99 FROM TEAM B
+[13:5:33] [Race_Pipe] Unknown command
+[13:5:34] [Race_Pipe] Got ADDCAR
+[13:5:34] CAR 91 FROM TEAM C
+[13:5:35] [Race_Pipe] Got ADDCAR
+[13:5:35] CAR 36 FROM TEAM C
+[13:5:36] [Race_Pipe] Got START RACE
+[13:5:36] Buckle Up, race is starting!
+[13:5:36] 
+Team manager created (PID: 2982), from Team 2
+[13:5:37] Team 2 STARTING!!
+[13:5:38] Car 99 from team: B made lap 1!
+[13:5:38] Car 88 from team: B made lap 1!
+[13:5:39] Car 99 from team: B made lap 2!
+[13:5:39] Car 88 from team: B made lap 2!
+[13:5:40] Car 99 from team: B made lap 3!
+[13:5:40] Car 88 from team: B made lap 3!
+[13:5:41] Car 99 from team: B made lap 4!
+[13:5:41] Car 88 from team: B made lap 4!
+[13:5:42] Car 99 from team: B made lap 5!
+[13:5:42] Car 88 from team: B made lap 5!
+[13:5:42] TEam Manager finishing
+[13:5:25] Semaphore initialized
+[13:5:25] SERVER STARTED
+[13:5:25] Race manager created (PID: 2970)
+[13:5:25] Named pipe 'race_pipe' is ready!
+
+[13:5:27] [Race_Pipe] Got ADDCAR
+[13:5:27] CAR 50 FROM TEAM A
+[13:5:28] [Race_Pipe] Got ADDCAR
+[13:5:28] CAR 55 FROM TEAM A
+[13:5:29] [Race_Pipe] Got ADDCAR
+[13:5:29] Max number of cars reached for this team
+[13:5:30] [Race_Pipe] Unknown command
+[13:5:31] [Race_Pipe] Got ADDCAR
+[13:5:31] CAR 88 FROM TEAM B
+[13:5:32] [Race_Pipe] Got ADDCAR
+[13:5:32] CAR 99 FROM TEAM B
+[13:5:33] [Race_Pipe] Unknown command
+[13:5:34] [Race_Pipe] Got ADDCAR
+[13:5:34] CAR 91 FROM TEAM C
+[13:5:35] [Race_Pipe] Got ADDCAR
+[13:5:35] CAR 36 FROM TEAM C
+[13:5:36] [Race_Pipe] Got START RACE
+[13:5:36] Buckle Up, race is starting!
+[13:5:37] Created 3 team processes
+[13:5:25] Semaphore initialized
+[13:5:25] SERVER STARTED
+[13:5:42] SERVER CLOSED
+[13:5:42] Cleaning up...
+[13:8:14] Semaphore initialized
+[13:8:14] SERVER STARTED
+[13:8:27] [Malfunction Manager] Got SIGUSR2
+[13:8:27] Malfunction manager created (PID: 3013)
+[13:8:14] Semaphore initialized
+[13:8:14] SERVER STARTED
+[13:8:14] Race manager created (PID: 3014)
+[13:8:14] Named pipe 'race_pipe' is ready!
+
+[13:8:18] [Race_Pipe] Got ADDCAR
+[13:8:18] CAR 50 FROM TEAM A
+[13:8:19] [Race_Pipe] Got ADDCAR
+[13:8:19] CAR 55 FROM TEAM A
+[13:8:20] [Race_Pipe] Got ADDCAR
+[13:8:20] Max number of cars reached for this team
+[13:8:21] [Race_Pipe] Unknown command
+[13:8:22] [Race_Pipe] Got ADDCAR
+[13:8:22] CAR 88 FROM TEAM B
+[13:8:23] [Race_Pipe] Got ADDCAR
+[13:8:23] CAR 99 FROM TEAM B
+[13:8:24] [Race_Pipe] Unknown command
+[13:8:25] [Race_Pipe] Got ADDCAR
+[13:8:25] CAR 91 FROM TEAM C
+[13:8:26] [Race_Pipe] Got ADDCAR
+[13:8:26] CAR 36 FROM TEAM C
+[13:8:27] [Race_Pipe] Got START RACE
+[13:8:27] Buckle Up, race is starting!
+[13:8:27] 
+Team manager created (PID: 3027), from Team 2
+[13:8:28] Car 99 from team: B made lap 1!
+[13:8:28] Car 88 from team: B made lap 1!
+[13:8:29] Car 99 from team: B made lap 2!
+[13:8:29] Car 88 from team: B made lap 2!
+[13:8:30] Car 99 from team: B made lap 3!
+[13:8:30] Car 88 from team: B made lap 3!
+[13:8:31] Car 99 from team: B made lap 4!
+[13:8:31] Car 88 from team: B made lap 4!
+[13:8:32] Car 99 from team: B made lap 5!
+[13:8:32] Car 88 from team: B made lap 5!
+[13:8:32] TEam Manager finishing
+[13:8:14] Semaphore initialized
+[13:8:14] SERVER STARTED
+[13:8:14] Race manager created (PID: 3014)
+[13:8:14] Named pipe 'race_pipe' is ready!
+
+[13:8:18] [Race_Pipe] Got ADDCAR
+[13:8:18] CAR 50 FROM TEAM A
+[13:8:19] [Race_Pipe] Got ADDCAR
+[13:8:19] CAR 55 FROM TEAM A
+[13:8:20] [Race_Pipe] Got ADDCAR
+[13:8:20] Max number of cars reached for this team
+[13:8:21] [Race_Pipe] Unknown command
+[13:8:22] [Race_Pipe] Got ADDCAR
+[13:8:22] CAR 88 FROM TEAM B
+[13:8:23] [Race_Pipe] Got ADDCAR
+[13:8:23] CAR 99 FROM TEAM B
+[13:8:24] [Race_Pipe] Unknown command
+[13:8:25] [Race_Pipe] Got ADDCAR
+[13:8:25] CAR 91 FROM TEAM C
+[13:8:26] [Race_Pipe] Got ADDCAR
+[13:8:26] CAR 36 FROM TEAM C
+[13:8:27] [Race_Pipe] Got START RACE
+[13:8:27] Buckle Up, race is starting!
+[13:8:27] 
+Team manager created (PID: 3026), from Team 0
+[13:8:28] Car 55 from team: A made lap 1!
+[13:8:28] Car 50 from team: A made lap 1!
+[13:8:29] Car 55 from team: A made lap 2!
+[13:8:29] Car 50 from team: A made lap 2!
+[13:8:30] Car 55 from team: A made lap 3!
+[13:8:30] Car 50 from team: A made lap 3!
+[13:8:31] Car 55 from team: A made lap 4!
+[13:8:31] Car 50 from team: A made lap 4!
+[13:8:32] Car 55 from team: A made lap 5!
+[13:8:32] Car 50 from team: A made lap 5!
+[13:8:32] TEam Manager finishing
+[13:8:14] Semaphore initialized
+[13:8:14] SERVER STARTED
+[13:8:14] Race manager created (PID: 3014)
+[13:8:14] Named pipe 'race_pipe' is ready!
+
+[13:8:18] [Race_Pipe] Got ADDCAR
+[13:8:18] CAR 50 FROM TEAM A
+[13:8:19] [Race_Pipe] Got ADDCAR
+[13:8:19] CAR 55 FROM TEAM A
+[13:8:20] [Race_Pipe] Got ADDCAR
+[13:8:20] Max number of cars reached for this team
+[13:8:21] [Race_Pipe] Unknown command
+[13:8:22] [Race_Pipe] Got ADDCAR
+[13:8:22] CAR 88 FROM TEAM B
+[13:8:23] [Race_Pipe] Got ADDCAR
+[13:8:23] CAR 99 FROM TEAM B
+[13:8:24] [Race_Pipe] Unknown command
+[13:8:25] [Race_Pipe] Got ADDCAR
+[13:8:25] CAR 91 FROM TEAM C
+[13:8:26] [Race_Pipe] Got ADDCAR
+[13:8:26] CAR 36 FROM TEAM C
+[13:8:27] [Race_Pipe] Got START RACE
+[13:8:27] Buckle Up, race is starting!
+[13:8:27] 
+Team manager created (PID: 3028), from Team 4
+[13:8:28] Car 36 from team: C made lap 1!
+[13:8:28] Car 91 from team: C made lap 1!
+[13:8:29] Car 36 from team: C made lap 2!
+[13:8:29] Car 91 from team: C made lap 2!
+[13:8:30] Car 36 from team: C made lap 3!
+[13:8:30] Car 91 from team: C made lap 3!
+[13:8:31] Car 36 from team: C made lap 4!
+[13:8:31] Car 91 from team: C made lap 4!
+[13:8:32] Car 36 from team: C made lap 5!
+[13:8:32] Car 91 from team: C made lap 5!
+[13:8:32] TEam Manager finishing
+[13:8:14] Semaphore initialized
+[13:8:14] SERVER STARTED
+[13:8:14] Race manager created (PID: 3014)
+[13:8:14] Named pipe 'race_pipe' is ready!
+
+[13:8:18] [Race_Pipe] Got ADDCAR
+[13:8:18] CAR 50 FROM TEAM A
+[13:8:19] [Race_Pipe] Got ADDCAR
+[13:8:19] CAR 55 FROM TEAM A
+[13:8:20] [Race_Pipe] Got ADDCAR
+[13:8:20] Max number of cars reached for this team
+[13:8:21] [Race_Pipe] Unknown command
+[13:8:22] [Race_Pipe] Got ADDCAR
+[13:8:22] CAR 88 FROM TEAM B
+[13:8:23] [Race_Pipe] Got ADDCAR
+[13:8:23] CAR 99 FROM TEAM B
+[13:8:24] [Race_Pipe] Unknown command
+[13:8:25] [Race_Pipe] Got ADDCAR
+[13:8:25] CAR 91 FROM TEAM C
+[13:8:26] [Race_Pipe] Got ADDCAR
+[13:8:26] CAR 36 FROM TEAM C
+[13:8:27] [Race_Pipe] Got START RACE
+[13:8:27] Buckle Up, race is starting!
+[13:8:27] Created 3 team processes
+[13:8:14] Semaphore initialized
+[13:8:14] SERVER STARTED
+[13:8:32] SERVER CLOSED
+[13:8:32] Cleaning up...

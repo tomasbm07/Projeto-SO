@@ -29,7 +29,6 @@ typedef struct {
   char state; // 'R' = race; 'S' = safety; 'B' = box; 'D' = DNF; 'F' = finished;
   float fuel; // remaining fuel
   float lap_distance; // distance on lap; 0 - LAP_DIST; 0 = start/finish line
-  sigset_t *set;
 } car_struct;
 
 typedef struct{
