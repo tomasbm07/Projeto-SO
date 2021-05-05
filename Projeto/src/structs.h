@@ -26,14 +26,14 @@ typedef struct {
 // struct with car stats
 typedef struct {
   car_shm_struct *car;
+  int car_index;
   char state; // 'R' = race; 'S' = safety; 'B' = box; 'D' = DNF; 'F' = finished;
   float fuel; // remaining fuel
   float lap_distance; // distance on lap; 0 - LAP_DIST; 0 = start/finish line
 } car_struct;
 
 typedef struct{
-	long team_nr;
-    int car_num;
+	long car_index;
 } malfunction_msg;
 
 

@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-#define PIPE_NAME "/home/user/race_pipe"
-//#define PIPE_NAME "race_pipe"
+//#define PIPE_NAME "/home/user/race_pipe"
+#define PIPE_NAME "race_pipe"
 int fd_race_pipe;
 
 int shm_id;
@@ -16,7 +16,6 @@ shm_struct* shm_info;
 int main(int argc, char* argv[]) {
   int i;
   
-
   //ignorar o SIGINT no processo principal
   //deixar os outros fecharem
   //SIG_IGN = ignorar sinal
@@ -27,7 +26,7 @@ int main(int argc, char* argv[]) {
   
   struct sigaction sa_tstp;
   sa_tstp.sa_handler = statistics;
-  sigaction(SIGINT, &sa_tstp, NULL);
+  sigaction(SIGTSTP, &sa_tstp, NULL);
   
   signal(SIGUSR2, SIG_IGN);
 

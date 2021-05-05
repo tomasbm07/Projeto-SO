@@ -9,11 +9,11 @@ pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER, cond_mutex = PTHREAD_MUTE
 pthread_cond_t cond_start = PTHREAD_COND_INITIALIZER;
 char box_state;
 char race_going;
-int cars_number, wtv;
+int cars_number, index_aux;
 pthread_t *car_threads;
 
 void team_manager(int team_index) {
-	wtv = team_index*NR_CARS;
+	index_aux = team_index*NR_CARS;
 	team_index = team_index * NR_CARS;
 	
 	sigset_t set;
@@ -83,7 +83,7 @@ car_struct *create_car_structs_array() {
 // set the atributes of the car that aren't set by race_manager
 void init_car_stats(car_struct *stats, int team_index, int car_index) {
 	stats->car = &shm_info->cars[team_index + car_index];
-
+	stats->car_index = car_index;
   	stats->state = 'R';
   	stats->fuel = FUEL_CAPACITY;
   	stats->lap_distance = 0;
@@ -99,7 +99,7 @@ void clean_stuff(){
 	pthread_cond_destroy(&cond_start);
 	free(car_threads);
 	
-	close(fd_team[wtv][1]);
+	close(fd_team[index_aux][1]);
 	exit(0);
 }
 
@@ -121,6 +121,10 @@ void *car_worker(void *stats) {
 	char str[300];
 	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
 	while(1/*(++counter) < 6*/){
+
+		if(msgrcv(mqid, &msg, sizeof(malfunction_msg) - sizeof(long), index_aux+car_info->car_index + 1, IPC_NOWAIT) != 0)
+			if ( errno != ENOMSG)
+				printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
 		
 		//TODO iteracao, antes de começar, bloquear receção de sinais
 		if (car_info->state == 'R'){

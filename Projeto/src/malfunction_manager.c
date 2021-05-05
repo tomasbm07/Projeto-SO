@@ -8,8 +8,10 @@ Joel Oliveira - 2019227468
 
 void malfunction_manager(){
 	signal(SIGTSTP, SIG_IGN);
+
 	//Create Message queue
 	create_mq();
+
 	//fill the mq, just for testing
 	/*for (int i = 0; i < 10; i++) {
 		printf("messaged added to MQ\n");
@@ -40,12 +42,10 @@ void generator(){
 		for (i = 0; i < NR_TEAM; i++){
 			for (j = 0; j < NR_CARS; j++){
 			num = rand() % 100 + 1;
-				if (strcmp(shm_info->cars[i*NR_CARS + j].team_name, "") != 0)
+				if (strcmp(shm_info->cars[i*NR_CARS + j].team_name, "") != 0) {
 					if (num > shm_info->cars[i].reliability){			
-						msg.team_nr = (long) i;
-						msg.car_num = j;
-						
-						msgsnd(mqid, &msg, sizeof(malfunction_msg)-sizeof(long), 0);
+						msg.car_index = (long) (i*NR_CARS + j + 1);						
+						msgsnd(mqid, &msg, sizeof(malfunction_msg) - sizeof(long), 0);
 					}
 				}
 			}
@@ -70,7 +70,7 @@ void cleanup(){
 void malfunction_signal_handler(int sig){
 	if (sig == SIGUSR2){
 		write_log("[Malfunction Manager] Got SIGUSR2");
-		generator();
+		//generator();
 
 	} else if (sig == SIGTERM){
 		cleanup();
