@@ -25,7 +25,7 @@ void team_manager(int team_index) {
   	
 #ifdef DEBUG
 	char aux[50];
-	sprintf(aux, "\nTeam manager created (PID: %d), from Team %d", getpid(), team_index);
+	sprintf(aux, "Team manager created (PID: %d), from Team %d\n", getpid(), team_index);
 	write_log(aux);
 #endif
 
@@ -66,7 +66,7 @@ void team_manager(int team_index) {
   	// destroy resources
 	clean_stuff();
 	
-	write_log("TEam Manager finishing");
+	write_log("Team Manager finishing");
   exit(0);
 }
 
@@ -119,25 +119,37 @@ void *car_worker(void *stats) {
 	char enter_box = 'N';
 	int counter = 0;
 	char str[300];
-	float step[2];
-	while(/*1*/ (++counter) < 6){
+	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
+	while(1/*(++counter) < 6*/){
 		
 		//TODO iteracao, antes de começar, bloquear receção de sinais
 		if (car_info->state == 'R'){
-			step[0]=1;
-			step[1]=1;
+			multipliers[0] = 1; // speed multiplier
+			multipliers[1] = 1; // consumption multiplier
 		}
 		else if(car_info->state == 'S'){
-			step[0] = 0.3;
-			step[1] = 0.4;
+			multipliers[0] = 0.3; // speed multiplier
+			multipliers[1] = 0.4; // consumption multiplier
 		}
 		
-				
-		car_info->lap_distance = ((car_info->lap_distance + step[0] * car_info->car->speed)-LAP_DIST>0)? (car_info->lap_distance + step[0] * car_info->car->speed)-LAP_DIST : (car_info->lap_distance + step[0] * car_info->car->speed);
-		car_info->fuel -= step[1] * car_info->car->consumption;
-			//sincronização ?
-		if ((car_info->lap_distance - car_info->car->speed) < 0){
+		//car_info->lap_distance = ((car_info->lap_distance + multipliers[0] * car_info->car->speed)-LAP_DIST>0)? (car_info->lap_distance + multipliers[0] * car_info->car->speed)-LAP_DIST : (car_info->lap_distance + multipliers[0] * car_info->car->speed);
+		car_info->fuel -= multipliers[1] * car_info->car->consumption;
+
+		car_info->lap_distance += multipliers[0] * car_info->car->speed; // aumentar a posição na pista
+		if (car_info->lap_distance - LAP_DIST > 0) { // se ultrapassar a distancia da volta -> distancia = distancia - LAP_DIST
+			car_info->lap_distance = car_info->lap_distance - LAP_DIST;
 			car_info->car->laps_completed++;
+		}
+		printf("Car %d -> Distance = %.3f -> Lap %d\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
+
+		if(car_info->car->laps_completed == NR_LAP){
+			printf("Car %d finished!\n", car_info->car->number);
+			break;
+		}
+
+		// sincronização ?
+		// se vai passar na meta, incrementar voltas e verificar se vai entrar na box
+		if ((car_info->lap_distance - car_info->car->speed*multipliers[0]) <= 0){
 			//verifica se carro está a tentar entrar na box
 			if (enter_box == 'Y'){
 				//se está a tentar entrar e está em race_mode
@@ -145,6 +157,7 @@ void *car_worker(void *stats) {
 					pthread_mutex_lock(&box_mutex);
 					if (box_state == 'E'){
 						box_state = 'F';
+						// posiçao na pista = 0 depois de sair da box
 						pthread_mutex_unlock(&box_mutex);
 						car_info->fuel = FUEL_CAPACITY;
 						car_info->lap_distance = 0;
@@ -164,7 +177,6 @@ void *car_worker(void *stats) {
 						car_info->fuel = FUEL_CAPACITY;
 						car_info->lap_distance = 0;
 						car_info->state='R';
-						//sleep só aceita inteiros, tem que ser este, usa microvalores;
 						usleep(1000000/NR_UNI_PS * randint(MIN_REP, MAX_REP));
 						pthread_mutex_lock(&box_mutex);
 						box_state = 'E';
@@ -177,7 +189,7 @@ void *car_worker(void *stats) {
 		
 		//desbloquear receção de sinais (no fim da volta);
 	}
-	sprintf(str, "Car %d from team: %s made %d laps !", car_info->car->number, car_info->car->team_name, counter);
+	sprintf(str, "Car %d from team: %s made %d laps !", car_info->car->number, car_info->car->team_name, car_info->car->laps_completed);
 	write_log(str);
 	
   	pthread_exit(NULL);
