@@ -82,7 +82,6 @@ int randint(int min, int max){
 }
 
 void clean_stuff(){
-	for (int i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
 	pthread_mutex_destroy(&box_mutex);
 	pthread_mutex_destroy(&cond_mutex);
 	pthread_cond_destroy(&cond_start);
@@ -102,6 +101,7 @@ void *car_worker(void *stats) {
 	pthread_cond_wait(&cond_start, &cond_mutex);
 	pthread_mutex_unlock(&cond_mutex);
 	
+	printf("CAR %d HAS MADE A START!!! \n", index_aux + car_info->car_index);
 	malfunction_msg msg;
 	// Y = yes, tenta entrar. N = no , nao tenta;
 	char enter_box = 'N';
@@ -110,8 +110,7 @@ void *car_worker(void *stats) {
 	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
 	while(1/*(++counter) < 6*/){
 
-		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) < 0)
-			if ( errno != ENOMSG)
+		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) < 0 && errno !=ENOMSG)
 				printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
 		//TODO iteracao, antes de começar, bloquear receção de sinais
 		if (car_info->state == 'R'){

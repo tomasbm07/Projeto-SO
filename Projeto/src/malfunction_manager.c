@@ -27,12 +27,11 @@ void generator(){
 	write_log("[Malfunction Manager] Got SIGUSR2");
 	srand((unsigned) getpid());
 	malfunction_msg msg;
-	int i, j, num, is = 1;
+	int i, j, num;
 	while(1){
 		for (i = 0; i < NR_TEAM; i++){
 			for (j = 0; j < NR_CARS; j++){
 			num = rand() % 100 + 1;
-				if (is)printf("CAR reliability: %d\n", shm_info->cars[i*NR_CARS + j].reliability);
 				if (strcmp(shm_info->cars[i*NR_CARS + j].team_name, "") != 0) {
 					if (num > shm_info->cars[i].reliability){			
 						msg.car_index = (long) (i*NR_CARS + j + 1);						
@@ -42,7 +41,6 @@ void generator(){
 			}
 		}
 		usleep(MALFUNCTION_UNI_NR * 1000000/NR_UNI_PS);
-		is = 0;
 	}
 }
 

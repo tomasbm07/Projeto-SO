@@ -158,7 +158,6 @@ void race_manager(pid_t malf_pid) {
 }
 
 void clean_resources() {
-	for (int i = 0; i < NR_TEAM; i++) wait(NULL);
   	for (int i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
 }
 

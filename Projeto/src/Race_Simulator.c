@@ -29,6 +29,7 @@ int main(int argc, char* argv[]) {
   sigaction(SIGTSTP, &sa_tstp, NULL);
   
   signal(SIGUSR2, SIG_IGN);
+  signal(SIGTERM, SIG_IGN);
 
   f = fopen("log.txt", "a");
 
