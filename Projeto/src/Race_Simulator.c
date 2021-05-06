@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-#define PIPE_NAME "/home/user/race_pipe"
-//#define PIPE_NAME "race_pipe"
+//#define PIPE_NAME "/home/user/race_pipe"
+#define PIPE_NAME "race_pipe"
 int fd_race_pipe;
 
 int shm_id;
@@ -90,15 +90,20 @@ int main(int argc, char* argv[]) {
 
 void create_named_pipe(){
 	unlink(PIPE_NAME);
-  	if (mkfifo(PIPE_NAME, O_CREAT | O_EXCL | 0666) < 0) {
-    	perror("Erro a criar o pipe: ");
-    	exit(-1);
-  	}
+  if (mkfifo(PIPE_NAME, O_CREAT | O_EXCL | 0666) < 0) {
+    perror("Erro a criar o pipe: ");
+    exit(-1);
+  }
 
-  	if ((fd_race_pipe = open(PIPE_NAME, O_RDWR)) < 0) {
-    	perror("Erro: ");
-    	exit(1);
-  	}
+  if ((fd_race_pipe = open(PIPE_NAME, O_RDWR)) < 0) {
+    perror("A abrir o pipe");
+    exit(-1);
+  }
+
+  #ifdef DEBUG
+  write_log("Named pipe 'race_pipe' is ready!\n");
+  #endif
+
 }
 
 void get_id(int* id, key_t key, size_t size, int flag) {
@@ -152,7 +157,7 @@ void initiate_sems() {
   
 #ifdef DEBUG
 char str[50];
-  sprintf(str, "Semaphore initialized");
+  sprintf(str, "Semaphores initialized");
   write_log(str);
 #endif
 }
@@ -182,6 +187,7 @@ void destroy_resources(void) {
 
 void statistics(int sig){
   write_log("GOT SIGTSTP - Statistics coming");
+  // TODO funcao de estatisticas da corrida
 }
 
 void end_race(){
