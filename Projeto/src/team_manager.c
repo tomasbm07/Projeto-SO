@@ -149,7 +149,7 @@ void *car_worker(void *stats) {
 			car_info->car->laps_completed++;
 		}
 
-		//printf("Car %d -> Distance = %.3f -> Lap %d\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
+		printf("Car %d -> Distance = %.3f -> Lap %d -> State = %c -> Fuel %f\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel);
 
 		//check if the car has finished the race
 		if(car_info->car->laps_completed == NR_LAP){
