@@ -95,7 +95,7 @@ void clean_stuff(){
 // function to run in car thread
 void *car_worker(void *stats) {
 
-	mqid = mqid = msgget(ftok(".", 25), 0);
+	mqid = msgget(ftok(".", 25), 0);
 	printf("msqid: %d\n", mqid);
 	char str[300];
 
@@ -117,14 +117,11 @@ void *car_worker(void *stats) {
 	while(1/*(++counter) < 6*/){
 		
 		// chech if there is any malfunctions on MQ -> change car state
-		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) < 0 && errno !=ENOMSG){
+		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >=0){
 			car_info->state = 'S';
 			printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
 		}
 
-
-		if((int)msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >= 0)
-				printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
 		//TODO iteracao, antes de começar, bloquear receção de sinais
 		if (car_info->state == 'R'){ // Race mode multipliers
 			multipliers[0] = 1; // speed multiplier
