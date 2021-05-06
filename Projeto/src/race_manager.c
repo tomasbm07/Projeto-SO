@@ -12,12 +12,13 @@ void race_manager(pid_t malf_pid) {
   	char str[256], aux[256];
 	fd_set read_set;
 
-	struct sigaction sa_rmanager_term, sa_rmanager_usr1;
-  	sa_rmanager_term.sa_handler = sa_rmanager_usr1.sa_handler = signals;
-  	//terminar corrida--sigterm
-  	sigaction(SIGTERM, &sa_rmanager_term, NULL);
+	//terminar corrida--sigterm
+	struct sigaction sa_rmanager;
+  	sa_rmanager.sa_handler = signals;
+  	sigaction(SIGTERM, &sa_rmanager, NULL);
   	//interromper corrida--sigusr1
-  	sigaction(SIGUSR1, &sa_rmanager_term, NULL);
+  	sigaction(SIGUSR1, &sa_rmanager, NULL);
+  	
   	signal(SIGTSTP, SIG_IGN);
   	signal(SIGINT, SIG_IGN);
 
@@ -119,7 +120,7 @@ void race_manager(pid_t malf_pid) {
 		}  	
 	}
 	
-	kill(malf_pid, SIGUSR2);
+	usleep(1000);
 	kill(0, SIGUSR2);
 
 
@@ -143,16 +144,11 @@ void race_manager(pid_t malf_pid) {
 
   	// wait for all team processes to finish
   	for (i = 0; i < NR_TEAM; i++) wait(NULL);
-  	clean_resources();
+  	
+  	for (int i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
 
   	exit(0);
 }
-
-
-void clean_resources() {
-  	for (int i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
-}
-
 
 void signals(int signal) {
 	if (signal == SIGTERM){
@@ -163,7 +159,7 @@ void signals(int signal) {
   		//TODO sinalizar team_manager de fim da corrida.
   		kill(0, SIGTERM);
   		for (int i = 0; i < NR_TEAM; i++) wait(NULL);
-  		clean_resources();
+  		for (int i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
   		exit(0);
 	}else if (signal == SIGUSR1){
 		//TODO sinalizar team_managers de interrupção da corrida 
