@@ -27,7 +27,7 @@ void generator(){
 	write_log("[Malfunction Manager] Got SIGUSR2");
 	srand((unsigned) getpid());
 	malfunction_msg msg;
-	int i, j, num;
+	int i, j, num, is = 1;
 	while(1){
 		for (i = 0; i < NR_TEAM; i++){
 			num = rand() % 100 + 1;
@@ -42,6 +42,7 @@ void generator(){
 			}
 		}
 		usleep(MALFUNCTION_UNI_NR * 1000000/NR_UNI_PS);
+		is = 0;
 	}
 }
 
@@ -56,7 +57,6 @@ void create_mq(){
 
 void cleanup(){
 	msgctl(mqid, IPC_RMID, 0);
-	exit(0);
 }
 
 void malf_term_handler(int sig){

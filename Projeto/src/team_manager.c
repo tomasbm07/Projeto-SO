@@ -94,8 +94,11 @@ void clean_stuff(){
 //TODO: READ MESSAGE QUEUE MESSAGES AND DETERMINE WHAT TO DO
 // function to run in car thread
 void *car_worker(void *stats) {
+
 	mqid = mqid = msgget(ftok(".", 25), 0);
 	printf("msqid: %d\n", mqid);
+	char str[300];
+
   	// convert argument from void* to car_struct*
 	car_struct *car_info = (car_struct *)stats;
 	
@@ -103,36 +106,54 @@ void *car_worker(void *stats) {
 	pthread_cond_wait(&cond_start, &cond_mutex);
 	pthread_mutex_unlock(&cond_mutex);
 	
-	printf("CAR %d HAS MADE A START!!! \n", index_aux + car_info->car_index);
+	sprintf(str, "Car %d from team %s has started the race", car_info->car->number, car_info->car->team_name);
+	write_log(str);
+	//printf("CAR %d has started the race\n", index_aux + car_info->car_index);
 	malfunction_msg msg;
 	// Y = yes, tenta entrar. N = no , nao tenta;
 	char enter_box = 'N';
 	int counter = 0;
-	char str[300];
 	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
 	while(1/*(++counter) < 6*/){
+		
+		// chech if there is any malfunctions on MQ -> change car state
+		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) < 0 && errno !=ENOMSG){
+			car_info->state = 'S';
+			printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
+		}
+
 
 		if((int)msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >= 0)
 				printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
 		//TODO iteracao, antes de começar, bloquear receção de sinais
-		if (car_info->state == 'R'){
+		if (car_info->state == 'R'){ // Race mode multipliers
 			multipliers[0] = 1; // speed multiplier
 			multipliers[1] = 1; // consumption multiplier
 		}
-		else if(car_info->state == 'S'){
+		else if(car_info->state == 'S'){ // Safety mode multipliers
 			multipliers[0] = 0.3; // speed multiplier
 			multipliers[1] = 0.4; // consumption multiplier
 		}
 		
+		// Decrease fuel and check if is > 0
 		car_info->fuel -= multipliers[1] * car_info->car->consumption;
-
+		if (car_info->fuel <= 0){
+			car_info->state = 'D';
+			sprintf(str, "Car %d from team ran out of fuel!", car_info->car->number, car_info->car->team_name, car_info->car->laps_completed);
+			write_log(str);
+			pthread_exit(NULL);
+		}
+		
+		// Increase position on lap and check if lap was completed
 		car_info->lap_distance += multipliers[0] * car_info->car->speed; // aumentar a posição na pista
 		if (car_info->lap_distance - LAP_DIST > 0) { // se ultrapassar a distancia da volta -> distancia = distancia - LAP_DIST
 			car_info->lap_distance = car_info->lap_distance - LAP_DIST;
 			car_info->car->laps_completed++;
 		}
-		//printf("Car %d -> Distance = %.3f -> Lap %d\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
 
+		printf("Car %d -> Distance = %.3f -> Lap %d\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
+
+		//check if the car has finished the race
 		if(car_info->car->laps_completed == NR_LAP){
 			printf("Car %d finished!\n", car_info->car->number);
 			break;
