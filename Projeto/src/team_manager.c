@@ -136,7 +136,7 @@ void *car_worker(void *stats) {
 		car_info->fuel -= multipliers[1] * car_info->car->consumption;
 		if (car_info->fuel <= 0){
 			car_info->state = 'D';
-			sprintf(str, "Car %d from team ran out of fuel!", car_info->car->number, car_info->car->team_name, car_info->car->laps_completed);
+			sprintf(str, "Car %d from team %s ran out of fuel!", car_info->car->number, car_info->car->team_name);
 			write_log(str);
 			pthread_exit(NULL);
 		}

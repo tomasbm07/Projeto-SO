@@ -54,6 +54,10 @@ void race_manager(pid_t malf_pid) {
     				}
 					//fechar pipe de escrita
 					close(fd_team[i][1]);
+					#ifdef DEBUG
+					sprintf(str, "Created team processes");
+					write_log(str);
+					#endif
 				}
 				
 				//waiting for teams to send ready message
@@ -117,28 +121,25 @@ void race_manager(pid_t malf_pid) {
 	
 	kill(malf_pid, SIGUSR2);
 	kill(0, SIGUSR2);
-	/*
-  // while de leitura do pipe
-  	while (1) {
+
+
+
+//TODO MULTIPLEXING ENTRE NAMED PIPE E UNNAMED PIPES DOS CARROS ALGURES AQUI PARA BAIXO
+	while (1) {
   		FD_ZERO(&read_set);
-  		FD_SET(fd_named_pipe, &read_set);
+  		FD_SET(fd_race_pipe, &read_set);
+
   		for (i = 0; i < NR_TEAM;)
   			FD_SET(fd_team[i++][0], &read_set);
   		
-  		if (select(max(fd_named_pipe, fd_team)+1, &read_set, NULL, NULL, NULL)>0) {
-    		if (FD_ISSET(fd_named_pipe, &read_set)) {
-    			}
+  		if (select(max(fd_race_pipe, fd_team)+1, &read_set, NULL, NULL, NULL)>0) {
+    		if (FD_ISSET(fd_race_pipe, &read_set)) {
+
+    		}
   		}
-  	}*/
+	}
 
 
-
-//TODO MULTIPLEXING ENTRE NAMED PIPE E UNNAMED PIPES DOS CARROS ALGURES AQUI PARA BAIXO 	
-
-#ifdef DEBUG
-  sprintf(str, "Created %d team processes", i);
-  write_log(str);
-#endif
 
   	// wait for all team processes to finish
   	for (i = 0; i < NR_TEAM; i++) wait(NULL);
