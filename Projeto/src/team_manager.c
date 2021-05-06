@@ -12,6 +12,7 @@ char race_going;
 int cars_number, index_aux;
 pthread_t *car_threads;
 
+
 void team_manager(int team_index) {
 	index_aux = team_index*NR_CARS;
 	signal(SIGTERM, clean_stuff);
@@ -58,15 +59,18 @@ void team_manager(int team_index) {
   exit(0);
 }
 
+
 // allocates space for array with car threads
 pthread_t *create_threads_array() {
 	return (pthread_t *)malloc(sizeof(pthread_t) * NR_CARS);
 }
 
+
 // allocates space for array with car struct atributes
 car_struct *create_car_structs_array() {
 	return (car_struct *)malloc(sizeof(car_struct) * NR_CARS);
 }
+
 
 // set the atributes of the car that aren't set by race_manager
 void init_car_stats(car_struct *stats, int team_index, int car_index) {
@@ -77,9 +81,16 @@ void init_car_stats(car_struct *stats, int team_index, int car_index) {
   	stats->lap_distance = 0;
 }
 
+
 int randint(int min, int max){
 	return (rand()%(max - min + 1)) + min;
 }
+
+
+int laps_from_fuel(car_struct *car_info){
+	return ((car_info->fuel*car_info->car->speed)/car_info->car->consumption) / LAP_DIST;
+}
+
 
 void clean_stuff(){
 	pthread_cond_broadcast(&cond_start);
@@ -95,32 +106,34 @@ void clean_stuff(){
 //TODO: READ MESSAGE QUEUE MESSAGES AND DETERMINE WHAT TO DO
 // function to run in car thread
 void *car_worker(void *stats) {
+	malfunction_msg msg;
+	char str[300];
+	// Y = yes, tenta entrar. N = no , nao tenta;
+	char enter_box = 'N';
+	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
+	bool fuel_flag = true;
 
 	mqid = msgget(ftok(".", 25), 0);
 	printf("msqid: %d\n", mqid);
-	char str[300];
 
   	// convert argument from void* to car_struct*
 	car_struct *car_info = (car_struct *)stats;
 	
+	//wait for condition variable to unlock mutex
 	pthread_mutex_lock(&cond_mutex);
 	pthread_cond_wait(&cond_start, &cond_mutex);
 	pthread_mutex_unlock(&cond_mutex);
 	
 	sprintf(str, "Car %d from team %s has started the race", car_info->car->number, car_info->car->team_name);
 	write_log(str);
-	//printf("CAR %d has started the race\n", index_aux + car_info->car_index);
-	malfunction_msg msg;
-	// Y = yes, tenta entrar. N = no , nao tenta;
-	char enter_box = 'N';
-	int counter = 0;
-	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
-	while(1/*(++counter) < 6*/){
-		
+	
+	// Race loop
+	while(1){
 		// chech if there is any malfunctions on MQ -> change car state
 		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >=0){
 			car_info->state = 'S';
-			printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
+			sprintf(str, "Car %d received a malfunction -> Safety mode ON", car_info->car->number);
+			write_log(str);
 		}
 
 		//TODO iteracao, antes de começar, bloquear receção de sinais
@@ -143,35 +156,75 @@ void *car_worker(void *stats) {
 		}
 		
 		// Increase position on lap and check if lap was completed
-		car_info->lap_distance += multipliers[0] * car_info->car->speed; // aumentar a posição na pista
+		car_info->lap_distance += multipliers[0] * (double)car_info->car->speed; // aumentar a posição na pista
 		if (car_info->lap_distance - LAP_DIST > 0) { // se ultrapassar a distancia da volta -> distancia = distancia - LAP_DIST
 			car_info->lap_distance = car_info->lap_distance - LAP_DIST;
 			car_info->car->laps_completed++;
 		}
 
-		printf("Car %d -> Distance = %.3f -> Lap %d -> State = %c -> Fuel %f\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel);
+		//printf("Car %d -> Distance = %.3f -> Lap %d -> State = %c -> Fuel %f\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel);
 
 		//check if the car has finished the race
-		if(car_info->car->laps_completed == NR_LAP){
-			printf("Car %d finished!\n", car_info->car->number);
-			break;
+		if(car_info->car->laps_completed == NR_LAP) break;
+		
+		// Selecionar que quer entrar na box se tiver menos de 4 volta de fuel e em modo safety se tiver menos de 2
+		if(laps_from_fuel(car_info) <= 2){
+
+			if(fuel_flag){
+				sprintf(str, "Car %d only has fuel for 2 laps -> Safety mode ON", car_info->car->number);
+				write_log(str);
+				fuel_flag = false;
+			}
+	
+			enter_box = 'Y';
+			car_info->state = 'S'; 
+
+		} else if (laps_from_fuel(car_info) <= 4){
+
+			pthread_mutex_lock(&box_mutex);
+			if(box_state != 'R'){ // se tiver 4 voltas de combustivel, nao pode entrar se a box estiver reservada
+				enter_box =  'Y';
+
+				if(fuel_flag){
+					sprintf(str, "Car %d only has 4 laps of fuel -> Box was empty!", car_info->car->number);
+					write_log(str);
+					fuel_flag = false;
+				}
+
+			} else{
+				if(fuel_flag){
+					sprintf(str, "Car %d can't box -> Box already reserved!", car_info->car->number);
+					write_log(str);
+					fuel_flag = false;
+				}
+			}
+			pthread_mutex_unlock(&box_mutex);
 		}
 
+		// se o carro estiver em safety mode -> reservar a box
+		if (car_info->state == 'S'){
+			pthread_mutex_lock(&box_mutex);
+			box_state = 'R';
+			pthread_mutex_unlock(&box_mutex);
+		}
+		
 		// sincronização ?
-		// se vai passar na meta, incrementar voltas e verificar se vai entrar na box
-		if ((car_info->lap_distance - car_info->car->speed*multipliers[0]) <= 0){
+		// se vai passar na meta -> verificar se precisa de entrar na box
+		if ((car_info->lap_distance - (double)car_info->car->speed*multipliers[0]) <= 0){
 			//verifica se carro está a tentar entrar na box
 			if (enter_box == 'Y'){
 				//se está a tentar entrar e está em race_mode
 				if (car_info->state == 'R'){
 					pthread_mutex_lock(&box_mutex);
-					if (box_state == 'E'){
-						box_state = 'F';
-						// posiçao na pista = 0 depois de sair da box
+					if (box_state == 'E'){ // se a box estiver vazia
+						box_state = 'F'; // ocupar a box
 						pthread_mutex_unlock(&box_mutex);
 						
+						// Refuel e posiçao na pista = 0 depois de sair da box 
 						car_info->fuel = FUEL_CAPACITY;
 						car_info->lap_distance = 0;
+						fuel_flag = false;
+
 						//sleep só aceita inteiros, tem que ser este, usa microssegundos;
 						usleep(1000000/NR_UNI_PS * randint(MIN_REP, MAX_REP));
 						
@@ -190,6 +243,7 @@ void *car_worker(void *stats) {
 						car_info->fuel = FUEL_CAPACITY;
 						car_info->lap_distance = 0;
 						car_info->state='R';
+						fuel_flag = false;
 						usleep(1000000/NR_UNI_PS * randint(MIN_REP, MAX_REP));
 						
 						pthread_mutex_lock(&box_mutex);
@@ -204,7 +258,7 @@ void *car_worker(void *stats) {
 		//sprintf(str, "Car %d postiion :: %.2f in lap:: %d !", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
 		//desbloquear receção de sinais (no fim da volta);
 	}
-	sprintf(str, "Car %d from team: %s made %d laps !", car_info->car->number, car_info->car->team_name, car_info->car->laps_completed);
+	sprintf(str, "Car %d from team: %s has finished the race", car_info->car->number, car_info->car->team_name);
 	write_log(str);
 	
   	pthread_exit(NULL);

@@ -15,9 +15,7 @@ Joel Oliveira - 2019227468
 #include <signal.h>
 #include <string.h>
 
-#include <ctype.h>
 #include <errno.h>
-#include <limits.h>
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>

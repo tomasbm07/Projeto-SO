@@ -124,9 +124,8 @@ void race_manager(pid_t malf_pid) {
 	kill(0, SIGUSR2);
 
 
-
 //TODO MULTIPLEXING ENTRE NAMED PIPE E UNNAMED PIPES DOS CARROS ALGURES AQUI PARA BAIXO
-	while (1) {
+	/*while (1) {
   		FD_ZERO(&read_set);
   		FD_SET(fd_race_pipe, &read_set);
 
@@ -139,6 +138,7 @@ void race_manager(pid_t malf_pid) {
     		}
   		}
 	}
+	*/
 
 
 
