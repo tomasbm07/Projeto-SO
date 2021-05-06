@@ -27,7 +27,6 @@ void generator(){
 	write_log("[Malfunction Manager] Got SIGUSR2");
 	srand((unsigned) getpid());
 	malfunction_msg msg;
-	int i, j, num;
 	int i, j, num, is = 1;
 	while(1){
 		for (i = 0; i < NR_TEAM; i++){

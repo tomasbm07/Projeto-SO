@@ -156,7 +156,7 @@ void clean_resources() {
 void signals(int signal) {
 	if (signal == SIGTERM){
 		#ifdef DEBUG
-    	write_log("Got SIGTERM");
+    	write_log("[Race Manager]Got SIGTERM");
 		write_log("Race Manager waiting for race to end");
   		#endif
   		//TODO sinalizar team_manager de fim da corrida.

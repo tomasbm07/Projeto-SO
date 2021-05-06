@@ -193,7 +193,7 @@ void statistics(int sig){
 
 void end_race(){
 	kill(0, SIGTERM);
-	for (int i = 0; i <2; i++) wait(NULL);
+	for (int i = 0; i < 2; i++) wait(NULL);
 	write_log("SERVER CLOSED");
 	destroy_resources();
 	exit(0);
