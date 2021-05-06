@@ -32,7 +32,6 @@ void generator(){
 		for (i = 0; i < NR_TEAM; i++){
 			for (j = 0; j < NR_CARS; j++){
 			num = rand() % 100 + 1;
-				//há algum problema com a escrita das reliabities, acho.. mas amanhã vejo melhor
 				if (is)printf("CAR reliability: %d\n", shm_info->cars[i*NR_CARS + j].reliability);
 				if (strcmp(shm_info->cars[i*NR_CARS + j].team_name, "") != 0) {
 					if (num > shm_info->cars[i].reliability){			

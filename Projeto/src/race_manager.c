@@ -38,7 +38,7 @@ void race_manager(pid_t malf_pid) {
 
 	while(1){
 		num_chars = read(fd_race_pipe, str, sizeof(str));
-    	str[num_chars - 1] = '\0';  // put a \0 in the end of string
+    	str[num_chars - 1] = '\0';  // put a \0 in the end of string (that will be a \n)
 
     	if (strcmp(str, "START RACE") == 0) {
       		write_log("[Race_Pipe] Got START RACE");
@@ -75,21 +75,19 @@ void race_manager(pid_t malf_pid) {
 			}else
 				write_log("Not enough teams ready");
     	} else { 
-    			if ( check_pipe_command_regex("^ADDCAR*", str) ){
-    				write_log("[Race_Pipe] Got ADDCAR");
+    			if ( check_pipe_command_regex("^ADDCAR*", str) ) {
 					if( check_pipe_command_regex("^ADDCAR TEAM: [a-zA-Z]{1,31}, CAR: (0?[1-9]|[1-9][0-9]), SPEED: [1-9][0-9]{0,9}, CONSUMPTION: ([0-9]*[.][0-9]{1,2}|[1-9][0-9]*), RELIABILITY: (100|[1-9][0-9]|[0-9])$", str) ) {
 					// se addcar corretamente especificado, split da string
       					char **str_array = NULL;
       					int num_spaces = 0, j;
-      					char *aux = strtok(str, " ");
+      					char *aux = strtok(str, ":, ");
 	
       					while (aux) {
         					str_array = realloc(str_array, sizeof(char *) * ++num_spaces);
 	
         					str_array[num_spaces - 1] = aux;
-        					aux = strtok(NULL, ", ");
+        					aux = strtok(NULL, ":, ");
       					}
-      					
 						//se numero de carro nao existe, vai adicionar
 						if (!car_number_exists( atoi(str_array[4]) ) ) {
 							//percorre equipas até encontrar equipa com o mesmo nome ou slot vazio para nova equipa
@@ -97,17 +95,17 @@ void race_manager(pid_t malf_pid) {
 								if ( strcmp(shm_info->cars[i].team_name, "")==0 || strcmp(shm_info->cars[i].team_name, str_array[2])==0)
 									break;
 					
-							if (i >= NR_TEAM * NR_CARS)
+							if (i == NR_TEAM * NR_CARS)
 								write_log("[ERROR] MAX NUMBER OF TEAMS ALREADY REACHED");
 							else{
 								//percorre carros da equipa até encontrar slot vazio para novo carro
 								for (j = 0; j < NR_CARS; j++)
-									if ( strcmp(shm_info->cars[i+j].team_name, "")==0)
+									if ( strcmp(shm_info->cars[i+j].team_name, "")==0 )
 										break;
 								if (j == NR_CARS)
 									write_log("Max number of cars reached for this team");
 								else{
-									sprintf(shm_info->cars[i+j].team_name, "%s", str_array[2]);
+									strcpy(shm_info->cars[i+j].team_name,str_array[2]);
 									sscanf(str_array[4], "%d", &shm_info->cars[i+j].number);
 									sscanf(str_array[6], "%d", &shm_info->cars[i+j].speed);
 									sscanf(str_array[8], "%f", &shm_info->cars[i+j].consumption);
@@ -160,6 +158,7 @@ void race_manager(pid_t malf_pid) {
 }
 
 void clean_resources() {
+	for (int i = 0; i < NR_TEAM; i++) wait(NULL);
   	for (int i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
 }
 
