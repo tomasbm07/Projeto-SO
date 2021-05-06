@@ -94,6 +94,8 @@ void clean_stuff(){
 //TODO: READ MESSAGE QUEUE MESSAGES AND DETERMINE WHAT TO DO
 // function to run in car thread
 void *car_worker(void *stats) {
+	mqid = mqid = msgget(ftok(".", 25), 0);
+	printf("msqid: %d\n", mqid);
   	// convert argument from void* to car_struct*
 	car_struct *car_info = (car_struct *)stats;
 	
@@ -110,7 +112,7 @@ void *car_worker(void *stats) {
 	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
 	while(1/*(++counter) < 6*/){
 
-		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) < 0 && errno !=ENOMSG)
+		if((int)msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >= 0)
 				printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
 		//TODO iteracao, antes de começar, bloquear receção de sinais
 		if (car_info->state == 'R'){
@@ -148,10 +150,12 @@ void *car_worker(void *stats) {
 						box_state = 'F';
 						// posiçao na pista = 0 depois de sair da box
 						pthread_mutex_unlock(&box_mutex);
+						
 						car_info->fuel = FUEL_CAPACITY;
 						car_info->lap_distance = 0;
-						//sleep só aceita inteiros, tem que ser este, usa microvalores;
+						//sleep só aceita inteiros, tem que ser este, usa microssegundos;
 						usleep(1000000/NR_UNI_PS * randint(MIN_REP, MAX_REP));
+						
 						pthread_mutex_lock(&box_mutex);
 						box_state = 'E';
 					}
@@ -163,10 +167,12 @@ void *car_worker(void *stats) {
 					if (box_state == 'E' || box_state == 'R'){
 						box_state = 'F';
 						pthread_mutex_unlock(&box_mutex);
+						
 						car_info->fuel = FUEL_CAPACITY;
 						car_info->lap_distance = 0;
 						car_info->state='R';
 						usleep(1000000/NR_UNI_PS * randint(MIN_REP, MAX_REP));
+						
 						pthread_mutex_lock(&box_mutex);
 						box_state = 'E';
 					}

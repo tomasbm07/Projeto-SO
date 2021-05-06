@@ -30,8 +30,9 @@ void generator(){
 	int i, j, num;
 	while(1){
 		for (i = 0; i < NR_TEAM; i++){
-			for (j = 0; j < NR_CARS; j++){
 			num = rand() % 100 + 1;
+			printf("KEy: %d\n", num);
+			for (j = 0; j < NR_CARS; j++){
 				if (strcmp(shm_info->cars[i*NR_CARS + j].team_name, "") != 0) {
 					if (num > shm_info->cars[i].reliability){			
 						msg.car_index = (long) (i*NR_CARS + j + 1);						
@@ -45,11 +46,12 @@ void generator(){
 }
 
 void create_mq(){
-	mqid = msgget(IPC_PRIVATE, IPC_CREAT|0777);
+	mqid = msgget(ftok(".", 25), IPC_CREAT|0777);
   	if (mqid < 0){
     	write_log("Error creating message queue");
       	exit(-1);
     }
+    printf("MSQID: %d\n", mqid);
 }
 
 void cleanup(){
