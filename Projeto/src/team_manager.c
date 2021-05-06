@@ -82,6 +82,7 @@ int randint(int min, int max){
 }
 
 void clean_stuff(){
+	pthread_cond_broadcast(&cond_start);
 	pthread_mutex_destroy(&box_mutex);
 	pthread_mutex_destroy(&cond_mutex);
 	pthread_cond_destroy(&cond_start);
@@ -148,7 +149,7 @@ void *car_worker(void *stats) {
 			car_info->car->laps_completed++;
 		}
 
-		printf("Car %d -> Distance = %.3f -> Lap %d\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
+		//printf("Car %d -> Distance = %.3f -> Lap %d\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
 
 		//check if the car has finished the race
 		if(car_info->car->laps_completed == NR_LAP){
@@ -200,7 +201,7 @@ void *car_worker(void *stats) {
 		}						
 		usleep(1000000/NR_UNI_PS);
 		
-		sprintf(str, "Car %d postiion :: %.2f in lap:: %d !", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
+		//sprintf(str, "Car %d postiion :: %.2f in lap:: %d !", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
 		//desbloquear receção de sinais (no fim da volta);
 	}
 	sprintf(str, "Car %d from team: %s made %d laps !", car_info->car->number, car_info->car->team_name, car_info->car->laps_completed);

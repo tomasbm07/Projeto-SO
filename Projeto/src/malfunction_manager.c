@@ -20,6 +20,7 @@ void malfunction_manager(){
 	sigaction(SIGTERM, &sa_malf, NULL);
 	pause();
 
+	msgctl(mqid, IPC_RMID, 0);
 	exit(0);
 }
 
@@ -30,11 +31,10 @@ void generator(){
 	int i, j, num, is = 1;
 	while(1){
 		for (i = 0; i < NR_TEAM; i++){
-			num = rand() % 100 + 1;
-			printf("KEy: %d\n", num);
 			for (j = 0; j < NR_CARS; j++){
+				num = rand() % 100 + 1;
 				if (strcmp(shm_info->cars[i*NR_CARS + j].team_name, "") != 0) {
-					if (num > shm_info->cars[i].reliability){			
+					if (num > shm_info->cars[i*NR_CARS + j].reliability){			
 						msg.car_index = (long) (i*NR_CARS + j + 1);						
 						msgsnd(mqid, &msg, 0, 0);
 					}
@@ -55,12 +55,8 @@ void create_mq(){
     printf("MSQID: %d\n", mqid);
 }
 
-void cleanup(){
-	msgctl(mqid, IPC_RMID, 0);
-}
-
 void malf_term_handler(int sig){
 	write_log("[Malfunction Manager] Got SIGTERM");
-	cleanup();
+	msgctl(mqid, IPC_RMID, 0);
 	exit(0);
 }
