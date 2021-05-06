@@ -18,6 +18,7 @@ void team_manager(int team_index) {
 	sigset_t set;
 	int i, sig;
 	char str[256];
+	
 	sigemptyset(&set);
   	sigaddset(&set, SIGUSR2);
   	pthread_sigmask(SIG_BLOCK, &set, NULL);
@@ -27,6 +28,7 @@ void team_manager(int team_index) {
 	sprintf(aux, "Team manager created (PID: %d), from Team %d\n", getpid(), team_index);
 	write_log(aux);
 #endif
+	printf("TM%d PGID: %ld\n", team_index,(long)getpgid( getpid() ));
   
 	box_state = 'E';  // 'R' = Reserved; 'E' = Empty; 'F' = Full;
 	srand((unsigned)getpid());

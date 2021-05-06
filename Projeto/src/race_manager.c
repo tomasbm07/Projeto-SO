@@ -15,6 +15,9 @@ void race_manager(pid_t malf_pid) {
 	//terminar corrida--sigterm
 	struct sigaction sa_rmanager;
   	sa_rmanager.sa_handler = signals;
+  	sigemptyset(&sa_rmanager.sa_mask);
+  	sigaddset(&sa_rmanager.sa_mask, SIGTERM);
+  	sigaddset(&sa_rmanager.sa_mask, SIGUSR1);
   	sigaction(SIGTERM, &sa_rmanager, NULL);
   	//interromper corrida--sigusr1
   	sigaction(SIGUSR1, &sa_rmanager, NULL);
@@ -26,7 +29,7 @@ void race_manager(pid_t malf_pid) {
   	sprintf(aux, "Race manager created (PID: %d)", getpid());
   	write_log(aux);
 #endif
-
+	printf("RM PGID: %ld\n", (long)getpgid( getpid() ));
 
 	while(1){
 		num_chars = read(fd_race_pipe, str, sizeof(str));
