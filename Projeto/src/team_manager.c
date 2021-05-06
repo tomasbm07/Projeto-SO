@@ -27,17 +27,6 @@ void team_manager(int team_index) {
 	sprintf(aux, "Team manager created (PID: %d), from Team %d\n", getpid(), team_index);
 	write_log(aux);
 #endif
-
-  // fechar pipe de leitura
-	/*close(fd_team[team_index/NR_CARS][0]);
-	
-	for (int i = 0; i < NR_TEAM; i++) {
-    	if (i != team_index/NR_CARS){
-    	//fechar pipes das outras equipas
-			close(fd_team[i][0]);
-			close(fd_team[i][1]);
-		}
-  	}*/
   
 	box_state = 'E';  // 'R' = Reserved; 'E' = Empty; 'F' = Full;
 	srand((unsigned)getpid());
@@ -97,7 +86,6 @@ void clean_stuff(){
 	pthread_mutex_destroy(&cond_mutex);
 	pthread_cond_destroy(&cond_start);
 	free(car_threads);
-	
 	close(fd_team[index_aux/NR_TEAM][1]);
 	exit(0);
 }
@@ -113,6 +101,7 @@ void *car_worker(void *stats) {
 	pthread_cond_wait(&cond_start, &cond_mutex);
 	pthread_mutex_unlock(&cond_mutex);
 	
+	printf("CAR %d HAS MADE A START!!! \n", index_aux + car_info->car_index);
 	malfunction_msg msg;
 	// Y = yes, tenta entrar. N = no , nao tenta;
 	char enter_box = 'N';
@@ -121,10 +110,8 @@ void *car_worker(void *stats) {
 	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
 	while(1/*(++counter) < 6*/){
 
-		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) < 0)
-			if ( errno != ENOMSG)
-				//printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
-				continue;
+		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) < 0 && errno !=ENOMSG)
+				printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
 		//TODO iteracao, antes de começar, bloquear receção de sinais
 		if (car_info->state == 'R'){
 			multipliers[0] = 1; // speed multiplier
@@ -189,6 +176,7 @@ void *car_worker(void *stats) {
 		}						
 		usleep(1000000/NR_UNI_PS);
 		
+		sprintf(str, "Car %d postiion :: %.2f in lap:: %d !", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
 		//desbloquear receção de sinais (no fim da volta);
 	}
 	sprintf(str, "Car %d from team: %s made %d laps !", car_info->car->number, car_info->car->team_name, car_info->car->laps_completed);
