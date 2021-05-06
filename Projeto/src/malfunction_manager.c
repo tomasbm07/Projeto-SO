@@ -15,9 +15,15 @@ void malfunction_manager(){
 	create_mq();
 	
 	signal(SIGUSR2, generator);
+	
 	struct sigaction sa_malf;
 	sa_malf.sa_handler = malf_term_handler;
+	sigemptyset(&sa_malf.sa_mask);
+	sigaddset(&sa_malf.sa_mask, SIGTERM);
+	sigaddset(&sa_malf.sa_mask, SIGUSR2);
 	sigaction(SIGTERM, &sa_malf, NULL);
+	
+	printf("MALF PGID: %ld\n", (long)getpgid( getpid() ));
 	pause();
 
 	msgctl(mqid, IPC_RMID, 0);
@@ -28,7 +34,7 @@ void generator(){
 	write_log("[Malfunction Manager] Got SIGUSR2");
 	srand((unsigned) getpid());
 	malfunction_msg msg;
-	int i, j, num, is = 1;
+	int i, j, num;
 	while(1){
 		for (i = 0; i < NR_TEAM; i++){
 			for (j = 0; j < NR_CARS; j++){
@@ -42,7 +48,6 @@ void generator(){
 			}
 		}
 		usleep(MALFUNCTION_UNI_NR * 1000000/NR_UNI_PS);
-		is = 0;
 	}
 }
 

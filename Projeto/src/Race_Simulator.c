@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-//#define PIPE_NAME "/home/user/race_pipe"
-#define PIPE_NAME "race_pipe"
+#define PIPE_NAME "/home/user/race_pipe"
+//#define PIPE_NAME "race_pipe"
 int fd_race_pipe;
 
 int shm_id;
@@ -22,10 +22,15 @@ int main(int argc, char* argv[]) {
   //sa.sa_handler = signal_handler;
   struct sigaction sa_int;
   sa_int.sa_handler = end_race;
+  sigemptyset(&sa_int.sa_mask);
+  sigaddset(&sa_int.sa_mask, SIGINT);
+  sigaddset(&sa_int.sa_mask, SIGTSTP);
   sigaction(SIGINT, &sa_int, NULL);
   
   struct sigaction sa_tstp;
   sa_tstp.sa_handler = statistics;
+  sigemptyset(&sa_tstp.sa_mask);
+  sigaddset(&sa_tstp.sa_mask, SIGTSTP);
   sigaction(SIGTSTP, &sa_tstp, NULL);
   
   signal(SIGUSR2, SIG_IGN);
@@ -66,6 +71,7 @@ int main(int argc, char* argv[]) {
   initiate_resources();
 
   write_log("SERVER STARTED");
+  printf("RS PGID: %ld\n", (long)getpgid( getpid() ));
    // create malfunction manager process
    pid_t malf_pid;
   if ( !(malf_pid = fork()) ) malfunction_manager();
