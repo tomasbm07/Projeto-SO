@@ -53,6 +53,8 @@ void team_manager(int team_index) {
 	pthread_cond_broadcast(&cond_start);
   	// wait for threads to finish
   	for (i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
+	//TODO send signal to unanamed pipe that cars have finished
+	//TODO on race manager: when all cars finish -> signal malfunction to stop
 
   	// destroy resources
 	clean_stuff();
