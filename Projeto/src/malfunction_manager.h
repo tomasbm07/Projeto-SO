@@ -34,7 +34,7 @@ int mqid; // Message queue ID
 //typedef struct malfunction_msg *msg;
 
 void malfunction_manager(void);
-void malfunction_signal_handler(int sig);
+void malf_term_handler(int sig);
 void generator();
 void cleanup();
 void create_mq();

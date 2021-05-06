@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-//#define PIPE_NAME "/home/user/race_pipe"
-#define PIPE_NAME "race_pipe"
+#define PIPE_NAME "/home/user/race_pipe"
+//#define PIPE_NAME "race_pipe"
 int fd_race_pipe;
 
 int shm_id;
@@ -83,7 +83,7 @@ int main(int argc, char* argv[]) {
   write_log("SERVER CLOSED");
 
   // destroy shared mem and semaphores
-  destroy_resources();
+  end_race();
 
   exit(0);
 }

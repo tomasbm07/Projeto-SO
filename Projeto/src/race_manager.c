@@ -89,6 +89,7 @@ void race_manager(pid_t malf_pid) {
         					str_array[num_spaces - 1] = aux;
         					aux = strtok(NULL, ", ");
       					}
+      					
 						//se numero de carro nao existe, vai adicionar
 						if (!car_number_exists( atoi(str_array[4]) ) ) {
 							//percorre equipas até encontrar equipa com o mesmo nome ou slot vazio para nova equipa
@@ -107,10 +108,10 @@ void race_manager(pid_t malf_pid) {
 									write_log("Max number of cars reached for this team");
 								else{
 									sprintf(shm_info->cars[i+j].team_name, "%s", str_array[2]);
-									shm_info->cars[i+j].number = atoi(str_array[4]);
-									shm_info->cars[i+j].speed = atoi(str_array[6]);
-									shm_info->cars[i+j].consumption = atof(str_array[8]);
-									shm_info->cars[i+j].reliability = atoi(str_array[10]);
+									sscanf(str_array[4], "%d", &shm_info->cars[i+j].number);
+									sscanf(str_array[6], "%d", &shm_info->cars[i+j].speed);
+									sscanf(str_array[8], "%f", &shm_info->cars[i+j].consumption);
+									sscanf(str_array[10], "%d", &shm_info->cars[i+j].reliability);
 									
 									sprintf(str, "CAR %s FROM TEAM %s", str_array[4], shm_info->cars[i+j].team_name);
 									write_log(str);
@@ -169,7 +170,7 @@ void signals(int signal) {
 		write_log("Race Manager waiting for race to end");
   		#endif
   		//TODO sinalizar team_manager de fim da corrida.
-  		
+  		kill(0, SIGTERM);
   		for (int i = 0; i < NR_TEAM; i++) wait(NULL);
   		clean_resources();
   		exit(0);

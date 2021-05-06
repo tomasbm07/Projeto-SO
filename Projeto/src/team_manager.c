@@ -14,8 +14,7 @@ pthread_t *car_threads;
 
 void team_manager(int team_index) {
 	index_aux = team_index*NR_CARS;
-	team_index = team_index * NR_CARS;
-	
+	signal(SIGTERM, clean_stuff);
 	sigset_t set;
 	int i, sig;
 	char str[256];
@@ -41,21 +40,21 @@ void team_manager(int team_index) {
   	}*/
   
 	box_state = 'E';  // 'R' = Reserved; 'E' = Empty; 'F' = Full;
-	srand((unsigned)team_index);
+	srand((unsigned)getpid());
 	car_threads = create_threads_array();
 	car_struct car_stats[NR_CARS];
 
 	//create thread_cars;	
 	for (i = 0; i < NR_CARS; i++) {
-		if (strcmp(shm_info->cars[team_index + i].team_name,"")==0) break; 
-		init_car_stats(&car_stats[i], team_index, i);
+		if (strcmp(shm_info->cars[index_aux + i].team_name,"")==0) break; 
+		init_car_stats(&car_stats[i], index_aux, i);
 		pthread_create((car_threads+i), NULL, car_worker, &car_stats[i]);
 	}  	
   	cars_number = i;
   	
   	usleep(1000);
   	sprintf(str, "Team %d Ready!", team_index);
-	write(fd_team[team_index/NR_CARS][1], &str, strlen(str)+1);
+	write(fd_team[team_index][1], &str, strlen(str)+1);
 	
 	sigwait(&set, &sig);
 	
@@ -99,7 +98,7 @@ void clean_stuff(){
 	pthread_cond_destroy(&cond_start);
 	free(car_threads);
 	
-	close(fd_team[index_aux][1]);
+	close(fd_team[index_aux/NR_TEAM][1]);
 	exit(0);
 }
 
@@ -122,10 +121,10 @@ void *car_worker(void *stats) {
 	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
 	while(1/*(++counter) < 6*/){
 
-		if(msgrcv(mqid, &msg, sizeof(malfunction_msg) - sizeof(long), index_aux+car_info->car_index + 1, IPC_NOWAIT) != 0)
+		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) < 0)
 			if ( errno != ENOMSG)
-				printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
-		
+				//printf("--------------------Car %d got malfunction------------------!\n", car_info->car->number);
+				continue;
 		//TODO iteracao, antes de começar, bloquear receção de sinais
 		if (car_info->state == 'R'){
 			multipliers[0] = 1; // speed multiplier
@@ -136,7 +135,6 @@ void *car_worker(void *stats) {
 			multipliers[1] = 0.4; // consumption multiplier
 		}
 		
-		//car_info->lap_distance = ((car_info->lap_distance + multipliers[0] * car_info->car->speed)-LAP_DIST>0)? (car_info->lap_distance + multipliers[0] * car_info->car->speed)-LAP_DIST : (car_info->lap_distance + multipliers[0] * car_info->car->speed);
 		car_info->fuel -= multipliers[1] * car_info->car->consumption;
 
 		car_info->lap_distance += multipliers[0] * car_info->car->speed; // aumentar a posição na pista
@@ -144,7 +142,7 @@ void *car_worker(void *stats) {
 			car_info->lap_distance = car_info->lap_distance - LAP_DIST;
 			car_info->car->laps_completed++;
 		}
-		printf("Car %d -> Distance = %.3f -> Lap %d\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
+		//printf("Car %d -> Distance = %.3f -> Lap %d\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
 
 		if(car_info->car->laps_completed == NR_LAP){
 			printf("Car %d finished!\n", car_info->car->number);
