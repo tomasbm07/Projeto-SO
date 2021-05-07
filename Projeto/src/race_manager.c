@@ -143,8 +143,6 @@ void race_manager(pid_t malf_pid) {
 	}
 	*/
 
-
-
   	// wait for all team processes to finish
   	for (i = 0; i < NR_TEAM; i++) wait(NULL);
   	

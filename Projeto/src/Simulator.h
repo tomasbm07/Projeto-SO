@@ -36,8 +36,9 @@ void initiate_resources();
 void initiate_shm();
 void initiate_sems();
 void destroy_resources();
-void statistics(int sig);
+void statistics();
 void create_named_pipe();
 void end_race();
+void swap(car_shm_struct *array, int a, int b);
 
 #endif
