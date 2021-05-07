@@ -26,11 +26,14 @@ Joel Oliveira - 2019227468
 
 int **fd_team;
 extern int fd_race_pipe;
+extern pid_t cpid[2];
 char race_going;
-void race_manager(pid_t pid);
-void signals(int signal);
+void race_manager();
+void interrupt_race(int sig);
+void terminate_teams(int signal);
 void clean_resources();
 int check_pipe_command_regex(const char *pattern, char *string);
 int car_number_exists(int number);
 int minium_cars();
 int max(int fd1, int other_fds[][2]);
+pid_t * teams_pid_array();

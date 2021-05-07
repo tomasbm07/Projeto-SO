@@ -11,7 +11,7 @@ int fd_race_pipe;
 
 int shm_id;
 shm_struct* shm_info;
-
+pid_t cpid[2];
 
 int main(int argc, char* argv[]) {
   int i;
@@ -20,19 +20,21 @@ int main(int argc, char* argv[]) {
   //deixar os outros fecharem
   //SIG_IGN = ignorar sinal
   //sa.sa_handler = signal_handler;
-  struct sigaction sa_int;
+  struct sigaction sa_int, sa_tstp;
+  sigset_t int_mask;
+  
   sa_int.sa_handler = end_race;
-  sigemptyset(&sa_int.sa_mask);
-  sigaddset(&sa_int.sa_mask, SIGINT);
-  sigaddset(&sa_int.sa_mask, SIGTSTP);
+  sigemptyset(&int_mask);
+  sigaddset(&int_mask, SIGTSTP);
+  sa_int.sa_mask = int_mask;
+  sa_int.sa_flags = 0;
   sigaction(SIGINT, &sa_int, NULL);
   
-  struct sigaction sa_tstp;
   sa_tstp.sa_handler = statistics;
-  sigemptyset(&sa_tstp.sa_mask);
-  sigaddset(&sa_tstp.sa_mask, SIGTSTP);
+  sa_tstp.sa_flags = 0;
   sigaction(SIGTSTP, &sa_tstp, NULL);
   
+  signal(SIGUSR1, SIG_IGN);
   signal(SIGUSR2, SIG_IGN);
   signal(SIGTERM, SIG_IGN);
 
@@ -71,13 +73,11 @@ int main(int argc, char* argv[]) {
   initiate_resources();
 
   write_log("SERVER STARTED");
-  printf("RS PGID: %ld\n", (long)getpgid( getpid() ));
    // create malfunction manager process
-   pid_t malf_pid;
-  if ( !(malf_pid = fork()) ) malfunction_manager();
+  if ( !(cpid[0] = fork()) ) malfunction_manager();
   
   // create race manager process
-  if (!fork()) race_manager(malf_pid);
+  if (!(cpid[1] = fork()) ) race_manager();
 
   //sleep(1);
   //kill(0, SIGUSR2);
@@ -198,7 +198,8 @@ void statistics(int sig){
 }
 
 void end_race(){
-	kill(0, SIGTERM);
+	kill(cpid[0], SIGTERM);
+	kill(cpid[1], SIGTERM);
 	for (int i = 0; i < 2; i++) wait(NULL);
 	write_log("SERVER CLOSED");
 	destroy_resources();

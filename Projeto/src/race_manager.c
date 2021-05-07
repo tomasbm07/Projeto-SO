@@ -5,22 +5,33 @@ Joel Oliveira - 2019227468
 
 #include "race_manager.h"
 
-
-void race_manager(pid_t malf_pid) {
-	race_going = 'F'; //T -true, F - false
+pid_t *teams_pid;
+void race_manager() {
+	bool flag_first_start = true;
   	int i, num_chars, teams;
   	char str[256], aux[256];
 	fd_set read_set;
 
 	//terminar corrida--sigterm
-	struct sigaction sa_rmanager;
-  	sa_rmanager.sa_handler = signals;
-  	sigemptyset(&sa_rmanager.sa_mask);
-  	sigaddset(&sa_rmanager.sa_mask, SIGTERM);
-  	sigaddset(&sa_rmanager.sa_mask, SIGUSR1);
-  	sigaction(SIGTERM, &sa_rmanager, NULL);
-  	//interromper corrida--sigusr1
-  	sigaction(SIGUSR1, &sa_rmanager, NULL);
+	struct sigaction sa_term, sa_usr1;
+	sigset_t term_mask, usr1_mask;
+	
+  	sa_term.sa_handler = terminate_teams;
+  	sa_usr1.sa_handler = interrupt_race;
+  	
+  	sigemptyset(&term_mask);
+  	sigaddset(&term_mask, SIGUSR1);
+  	
+  	sigemptyset(&usr1_mask);
+  	sigaddset(&usr1_mask, SIGTERM);
+  	
+  	sa_term.sa_mask = term_mask;
+  	sa_usr1.sa_mask = usr1_mask;
+  	sa_term.sa_flags = 0;
+  	sa_usr1.sa_flags = 0;
+  	sigaction(SIGTERM, &sa_term, NULL);
+  	//TODO interromper corrida--sigusr1
+  	sigaction(SIGUSR1, &sa_usr1, NULL);
   	
   	signal(SIGTSTP, SIG_IGN);
   	signal(SIGINT, SIG_IGN);
@@ -40,36 +51,42 @@ void race_manager(pid_t malf_pid) {
 			if ( minium_cars() ) {
 				write_log("Buckle Up, race is starting!");
 				
-  				// unnamed pipes stuff - 1 pipe per team
-  				// unname pipe direction: race_manager <- team_manager
-  				// fd[0] = read; fd[1] = write
-				fd_team = (int**)malloc(NR_TEAM * sizeof(*fd_team));
-  				for (i = 0; i < NR_TEAM; i++){ 
-					fd_team[i] = (int *) malloc(2 * sizeof(**fd_team)); 
-				}
+				if (flag_first_start){
+					flag_first_start = false;
+					//criar array para guardar os pid dos team_manager
+					teams_pid=teams_pid_array();
 				
-				for (i = 0; i < NR_TEAM; i++){
-					pipe(fd_team[i]);
-    				if ( !fork() ) {
-    					for(int j = 0; j <= i; j++){
-    						close(fd_team[j][0]);
+  					// unnamed pipes stuff - 1 pipe per team
+  					// unname pipe direction: race_manager <- team_manager
+  					// fd[0] = read; fd[1] = write
+					fd_team = (int**)malloc(NR_TEAM * sizeof(*fd_team));
+  					for (i = 0; i < NR_TEAM; i++){ 
+						fd_team[i] = (int *) malloc(2 * sizeof(**fd_team)); 
+					}
+				
+					for (i = 0; i < NR_TEAM; i++){
+						pipe(fd_team[i]);
+    					if ( !(teams_pid[i]=fork()) ) {
+    						for(int j = 0; j <= i; j++){
+    							close(fd_team[j][0]);
+    						}
+    						team_manager(i);
     					}
-    					team_manager(i);
-    				}
-					//fechar pipe de escrita
-					close(fd_team[i][1]);
-					#ifdef DEBUG
-					sprintf(str, "Created team processes");
-					write_log(str);
-					#endif
-				}
+						//fechar pipe de escrita
+						close(fd_team[i][1]);
+						#ifdef DEBUG
+						sprintf(str, "Created team processes");
+						write_log(str);
+						#endif
+					}
 				
-				//waiting for teams to send ready message
-  				for (i = 0; i < NR_TEAM; i++) {
-    				read(fd_team[i][0], str, 256);
-					printf("MESSAGE received!! ----> '%s'\n", str);
-  				}
-				break;		
+					//waiting for teams to send ready message
+  					for (i = 0; i < NR_TEAM; i++) {
+    					read(fd_team[i][0], str, 256);
+						printf("MESSAGE received!! ----> '%s'\n", str);
+  					}
+					break;		
+				}
 			}else
 				write_log("Not enough teams ready");
     	} else { 
@@ -124,7 +141,9 @@ void race_manager(pid_t malf_pid) {
 	}
 	
 	usleep(1000);
-	kill(0, SIGUSR2);
+	kill(cpid[0], SIGUSR2);
+	for (i = 0; i <NR_TEAM;i++)
+		kill(teams_pid[i], SIGUSR2);
 
 
 //TODO MULTIPLEXING ENTRE NAMED PIPE E UNNAMED PIPES DOS CARROS ALGURES AQUI PARA BAIXO
@@ -153,23 +172,28 @@ void race_manager(pid_t malf_pid) {
   	exit(0);
 }
 
-void signals(int signal) {
-	if (signal == SIGTERM){
+void interrupt_race(int sig){
+	//TODO sinalizar team_managers de interrupção da corrida 
+	write_log("INTERRUPTING RACE");
+	if (teams_pid!=NULL)
+		for (int i = 0; i < NR_TEAM; i++) 
+			kill(teams_pid[i], SIGUSR1);
+}
+
+void terminate_teams(int signal) {
 		#ifdef DEBUG
     	write_log("[Race Manager]Got SIGTERM");
 		write_log("Race Manager waiting for race to end");
   		#endif
+  		int i;
   		//TODO sinalizar team_manager de fim da corrida.
-  		kill(0, SIGTERM);
-  		for (int i = 0; i < NR_TEAM; i++) wait(NULL);
-  		for (int i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
+  		if (teams_pid!=NULL)
+  			for (i = 0; i < NR_TEAM; i++) 
+  				kill(teams_pid[i], SIGTERM);
+  		for (i = 0; i < NR_TEAM; i++) wait(NULL);
+  		for (i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
+  		free(teams_pid);
   		exit(0);
-	}else if (signal == SIGUSR1){
-		//TODO sinalizar team_managers de interrupção da corrida 
-		//CORRIDA PODE RECOMEÇAR;
-	
-	}
-  
 }
 
 
@@ -214,4 +238,8 @@ int max(int fd1, int other_fds[][2]){
 		if (other_fds[i][0]>max)
 			max = other_fds[i][0];
 	return max;
+}
+
+pid_t * teams_pid_array(){
+	return (pid_t*) malloc(sizeof(pid_t)*NR_TEAM);
 }

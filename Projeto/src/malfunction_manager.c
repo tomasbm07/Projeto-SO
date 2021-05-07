@@ -10,7 +10,7 @@ void malfunction_manager(){
 	//ignora sinais a serem recebidos pelo race_simulator
 	signal(SIGTSTP, SIG_IGN);
 	signal(SIGINT, SIG_IGN);
-	
+	signal(SIGUSR1, SIG_IGN);
 	//Create Message queue
 	create_mq();
 	
@@ -18,12 +18,9 @@ void malfunction_manager(){
 	
 	struct sigaction sa_malf;
 	sa_malf.sa_handler = malf_term_handler;
-	sigemptyset(&sa_malf.sa_mask);
-	sigaddset(&sa_malf.sa_mask, SIGTERM);
-	sigaddset(&sa_malf.sa_mask, SIGUSR2);
+	sa_malf.sa_flags = 0;
 	sigaction(SIGTERM, &sa_malf, NULL);
 	
-	printf("MALF PGID: %ld\n", (long)getpgid( getpid() ));
 	pause();
 
 	msgctl(mqid, IPC_RMID, 0);
