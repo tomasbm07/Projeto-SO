@@ -2404,3 +2404,45 @@ Team manager created (PID: 3046), from Team 2
 [15:55:27] SERVER STARTED
 [15:55:31] SERVER CLOSED
 [15:55:31] Cleaning up...
+[16:55:24] Semaphores initialized
+[16:55:24] ERRO: a criar o pipe: 
+[16:55:24] Cleaning up...
+[16:55:44] Semaphores initialized
+[16:55:44] Named pipe 'race_pipe' is ready!
+
+[16:55:44] SERVER STARTED
+[16:55:44] SERVER STARTED
+[16:55:51] [Malfunction Manager] Got SIGUSR2
+[16:56:27] [Malfunction Manager] Got SIGTERM
+[16:55:44] Semaphores initialized
+[16:55:44] Named pipe 'race_pipe' is ready!
+
+[16:55:44] SERVER STARTED
+[16:55:44] SERVER STARTED
+[16:55:44] Race manager created (PID: 3025)
+[16:55:49] ADDED CAR 55 FROM TEAM A
+[16:55:49] Max number of cars reached for this team
+[16:55:49] [Race_Pipe] Got START RACE
+[16:55:49] Not enough teams ready
+[16:55:50] ADDED CAR 77 FROM TEAM B
+[16:55:50] ADDED CAR 88 FROM TEAM B
+[16:55:50] Max number of cars reached for this team
+[16:55:50] [Race_Pipe] Got START RACE
+[16:55:50] Not enough teams ready
+[16:55:50] ADDED CAR 81 FROM TEAM C
+[16:55:51] ADDED CAR 91 FROM TEAM C
+[16:55:51] Max number of cars reached for this team
+[16:55:51] [Race_Pipe] Got START RACE
+[16:55:51] Buckle Up, race is starting!
+[16:55:51] Created team processes
+[16:55:51] Created team processes
+[16:55:51] Created team processes
+[16:56:27] [Race Manager]Got SIGTERM
+[16:56:27] Race Manager waiting for race to end
+[16:55:44] Semaphores initialized
+[16:55:44] Named pipe 'race_pipe' is ready!
+
+[16:55:44] SERVER STARTED
+[16:55:44] SERVER STARTED
+[16:56:27] SERVER CLOSED
+[16:56:27] Cleaning up...

@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-//#define PIPE_NAME "/home/user/race_pipe"
-#define PIPE_NAME "race_pipe"
+#define PIPE_NAME "/home/user/race_pipe"
+//#define PIPE_NAME "race_pipe"
 int fd_race_pipe;
 
 int shm_id;
@@ -83,10 +83,10 @@ int main(int argc, char* argv[]) {
     //printf("RS PGID: %ld\n", (long)getpgid( getpid() ));
     // create malfunction manager process
     
-    if ( !(malf_pid = fork()) ) malfunction_manager();
+    if ( !(cpid[0] = fork()) ) malfunction_manager();
     
     // create race manager process
-    if (!fork()) race_manager(malf_pid);
+    if (!(cpid[1] = fork())) race_manager();
 
     //sleep(1);
     //kill(0, SIGUSR2);

@@ -148,7 +148,7 @@ void repair_car(car_struct *car_info, bool *fuel_flag){
 	car_info->state = 'B'; //mudar o estado da box para na box;
 	// Re-fuel e posiçao na pista = 0 depois de sair da box 
 	car_info->fuel = FUEL_CAPACITY;
-	car_info->lap_distance = 0;
+	car_info->car->lap_distance = 0;
 	car_info->state='R';
 	*fuel_flag = false;
 
@@ -215,7 +215,7 @@ void *car_worker(void *stats) {
 			car_info->car->laps_completed++;
 		}
 
-		printf("Car %d -> Distance = %.3f -> Lap %d -> State = %c -> Fuel %f\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel);
+		//printf("Car %d -> Distance = %.3f -> Lap %d -> State = %c -> Fuel %f\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel);
 
 		//check if the car has finished the race
 		if(car_info->car->laps_completed == NR_LAP){
