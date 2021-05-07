@@ -141,35 +141,51 @@ void interrupt_cars(int sig){
 
 
 
-void repair_car(car_struct *car_info, bool *fuel_flag){
+void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction){
 	box_state = 'F'; // ocupar a box
 	pthread_mutex_unlock(&box_mutex);
+
+	char str[256];
+
+	sprintf(str, "Car %d from team %s is in the box! -> State = %c", car_info->car->number, car_info->car->team_name, car_info->state);
+	write_log(str);
 						
 	car_info->state = 'B'; //mudar o estado da box para na box;
 	// Re-fuel e posiçao na pista = 0 depois de sair da box 
 	car_info->fuel = FUEL_CAPACITY;
 	car_info->car->lap_distance = 0;
-	car_info->state='R';
+	car_info->state = 'R';
 	*fuel_flag = false;
 
-	//sleep só aceita inteiros, tem que ser este, usa microssegundos;
-	usleep(1000000/NR_UNI_PS * randint(MIN_REP, MAX_REP));
-						
+	// if it has malfunction -> wait repair time, else wait a few moments
+	if(*has_malfunction){
+		sprintf(str, "[BOX -> Team %s] Car %d waiting to be repaired", car_info->car->team_name, car_info->car->number);
+		write_log(str);
+		usleep(1000000/NR_UNI_PS * randint(MIN_REP, MAX_REP));
+	} else{
+		sprintf(str, "[BOX -> Team %s] Car %d is just fueling", car_info->car->team_name, car_info->car->number);
+		write_log(str);
+		usleep(1000000 / randint(1, 3));
+	}
+
+	has_malfunction = false;
+	(shm_info->refill_counter)++;	
 	pthread_mutex_lock(&box_mutex);
 	box_state = 'E';
+
+	sprintf(str, "Car %d from team %s has left the box! -> State = %c", car_info->car->number, car_info->car->team_name, car_info->state);
+	write_log(str);
 }
 
 // function to run in car thread
 void *car_worker(void *stats) {
-  	// convert argument from void* to car_struct*
-	car_struct *car_info = (car_struct *)stats;
-	
+	car_struct *car_info = (car_struct *)stats; // convert argument from void* to car_struct*
 	malfunction_msg msg;
 	char str[300];
-	// Y = yes, tenta entrar. N = no , nao tenta;
-	char enter_box = 'N';
+	bool enter_box = false; // Y = yes, tenta entrar. N = no , nao tenta;
+	bool has_malfunction = false;
 	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
-	bool fuel_flag = true;
+	bool fuel_flag = true; // flag to only log fuel warnings once
 	mqid = msgget(ftok(".", 25), 0);
 	
 	//sprintf(str, "Car %d from team %s has started the race", car_info->car->number, car_info->car->team_name);
@@ -182,11 +198,15 @@ void *car_worker(void *stats) {
 		while(race_going == 'N')
 			pthread_cond_wait(&cond_start, &cond_mutex);
 		pthread_mutex_unlock(&cond_mutex);
+		
 		// chech if there is any malfunctions on MQ -> change car state
 		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >=0){
+			if(!has_malfunction){
+				sprintf(str, "Car %d received a malfunction -> Safety mode ON", car_info->car->number);
+				write_log(str);
+			}
+			has_malfunction = true;
 			car_info->state = 'S';
-			sprintf(str, "Car %d received a malfunction -> Safety mode ON", car_info->car->number);
-			write_log(str);
 		}
 
 		//TODO iteracao, antes de começar, bloquear receção de sinais
@@ -199,7 +219,7 @@ void *car_worker(void *stats) {
 			multipliers[1] = 0.4; // consumption multiplier
 		}
 		
-		// Decrease fuel and check if is > 0
+		// Decrease fuel and check if is < 0
 		car_info->fuel -= multipliers[1] * car_info->car->consumption;
 		if (car_info->fuel <= 0){
 			car_info->state = 'D';
@@ -232,11 +252,11 @@ void *car_worker(void *stats) {
 				fuel_flag = false;
 			}
 	
-			enter_box = 'Y';
+			enter_box = true;
 			car_info->state = 'S'; 
 
 		} else if (laps_from_fuel(car_info) <= 4){
-			enter_box =  'Y';
+			enter_box = true;
 			pthread_mutex_lock(&box_mutex);
 			if(box_state != 'R'){ // se tiver 4 voltas de combustivel, nao pode entrar se a box estiver reservada
 				
@@ -259,7 +279,7 @@ void *car_worker(void *stats) {
 
 		// se o carro estiver em safety mode -> reservar a box
 		if (car_info->state == 'S'){
-			enter_box = 'Y';
+			enter_box = true;
 			pthread_mutex_lock(&box_mutex);
 			box_state = 'R';
 			pthread_mutex_unlock(&box_mutex);
@@ -270,12 +290,13 @@ void *car_worker(void *stats) {
 		// se vai passar na meta -> verificar se precisa de entrar na box
 		if ((car_info->car->lap_distance - (double)car_info->car->speed*multipliers[0]) <= 0){
 			//verifica se carro está a tentar entrar na box
-			if (enter_box == 'Y'){
+			if (enter_box){
 				//se está a tentar entrar e está em race_mode
 				if (car_info->state == 'R'){
 					pthread_mutex_lock(&box_mutex);
 					if (box_state == 'E'){ // se a box estiver vazia
-						repair_car(car_info, &fuel_flag);
+						repair_car(car_info, &fuel_flag, &has_malfunction);
+						enter_box = false;
 					}
 					pthread_mutex_unlock(&box_mutex);
 					
@@ -283,7 +304,8 @@ void *car_worker(void *stats) {
 				}else if (car_info->state == 'S'){
 					pthread_mutex_lock(&box_mutex);
 					if (box_state == 'E' || box_state == 'R'){
-						repair_car(car_info, &fuel_flag);
+						repair_car(car_info, &fuel_flag, &has_malfunction);
+						enter_box = false;
 					}
 					pthread_mutex_unlock(&box_mutex);
 				}

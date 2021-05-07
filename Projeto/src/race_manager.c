@@ -144,6 +144,8 @@ void race_manager() {
 	kill(cpid[0], SIGUSR2);
 	for (i = 0; i <NR_TEAM;i++)
 		kill(teams_pid[i], SIGUSR2);
+	
+	write_log("---RACE HAS STARTED---");
 
 
 //TODO MULTIPLEXING ENTRE NAMED PIPE E UNNAMED PIPES DOS CARROS ALGURES AQUI PARA BAIXO

@@ -10,7 +10,7 @@ void malfunction_manager(){
 	//ignora sinais a serem recebidos pelo race_simulator
 	signal(SIGTSTP, SIG_IGN);
 	signal(SIGINT, SIG_IGN);
-	signal(SIGUSR1, SIG_IGN);
+	
 	//Create Message queue
 	create_mq();
 	
@@ -18,9 +18,12 @@ void malfunction_manager(){
 	
 	struct sigaction sa_malf;
 	sa_malf.sa_handler = malf_term_handler;
-	sa_malf.sa_flags = 0;
+	sigemptyset(&sa_malf.sa_mask);
+	sigaddset(&sa_malf.sa_mask, SIGTERM);
+	sigaddset(&sa_malf.sa_mask, SIGUSR2);
 	sigaction(SIGTERM, &sa_malf, NULL);
 	
+	printf("MALF PGID: %ld\n", (long)getpgid( getpid() ));
 	pause();
 
 	msgctl(mqid, IPC_RMID, 0);
@@ -29,7 +32,7 @@ void malfunction_manager(){
 
 void generator(){
 	write_log("[Malfunction Manager] Got SIGUSR2");
-	srand((unsigned) getpid());
+	srand(time(NULL));
 	malfunction_msg msg;
 	int i, j, num;
 	while(1){
@@ -40,6 +43,7 @@ void generator(){
 					if (num > shm_info->cars[i*NR_CARS + j].reliability){			
 						msg.car_index = (long) (i*NR_CARS + j + 1);						
 						msgsnd(mqid, &msg, 0, 0);
+						(shm_info->malfunctions_counter)++;
 					}
 				}
 			}

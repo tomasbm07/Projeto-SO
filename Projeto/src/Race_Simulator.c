@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-#define PIPE_NAME "/home/user/race_pipe"
-//#define PIPE_NAME "race_pipe"
+//#define PIPE_NAME "/home/user/race_pipe"
+#define PIPE_NAME "race_pipe"
 int fd_race_pipe;
 
 int shm_id;
@@ -14,77 +14,77 @@ shm_struct* shm_info;
 pid_t cpid[2];
 
 int main(int argc, char* argv[]) {
-  int i;
+    int i;
   
-  //ignorar o SIGINT no processo principal
-  //deixar os outros fecharem
-  //SIG_IGN = ignorar sinal
-  //sa.sa_handler = signal_handler;
-  struct sigaction sa_int, sa_tstp;
-  sigset_t int_mask;
-  
-  sa_int.sa_handler = end_race;
-  sigemptyset(&int_mask);
-  sigaddset(&int_mask, SIGTSTP);
-  sa_int.sa_mask = int_mask;
-  sa_int.sa_flags = 0;
-  sigaction(SIGINT, &sa_int, NULL);
-  
-  sa_tstp.sa_handler = statistics;
-  sa_tstp.sa_flags = 0;
-  sigaction(SIGTSTP, &sa_tstp, NULL);
-  
-  signal(SIGUSR1, SIG_IGN);
-  signal(SIGUSR2, SIG_IGN);
-  signal(SIGTERM, SIG_IGN);
+    //ignorar o SIGINT no processo principal
+    //deixar os outros fecharem
+    //SIG_IGN = ignorar sinal
+    //sa.sa_handler = signal_handler;
+    struct sigaction sa_int, sa_tstp;
+    sigset_t int_mask;
+    
+    sa_int.sa_handler = end_race;
+    sigemptyset(&int_mask);
+    sigaddset(&int_mask, SIGTSTP);
+    sa_int.sa_mask = int_mask;
+    sa_int.sa_flags = 0;
+    sigaction(SIGINT, &sa_int, NULL);
+    
+    sa_tstp.sa_handler = statistics;
+    sa_tstp.sa_flags = 0;
+    sigaction(SIGTSTP, &sa_tstp, NULL);
+    
+    signal(SIGUSR1, SIG_IGN);
+    signal(SIGUSR2, SIG_IGN);
+    signal(SIGTERM, SIG_IGN);
 
-  f = fopen("log.txt", "a");
+    f = fopen("log.txt", "a");
 
-  if (argc < 2) {
-    printf("No config file was passed!\n");
-    exit(1);
-  } else if (argc > 2) {
-#ifdef DEBUG
-    printf("Program only takes config filename as argument");
-#endif
-    exit(1);
-  }
+    if (argc < 2) {
+        printf("No config file was passed!\n");
+        exit(1);
+    } else if (argc > 2) {
+    #ifdef DEBUG
+        printf("Program only takes config filename as argument");
+    #endif
+        exit(1);
+    }
 
-  // read config file
-  read_file(argv[1]);
+    // read config file
+    read_file(argv[1]);
 
-#ifdef DEBUG
-  printf("Successfully read config file");
-  printf("--Configurações lidas do ficheiro--\n\n");
-  printf("Numero de unidade de tempo /s: %dut\n", NR_UNI_PS);
-  printf("Distancia de uma volta: %dm, Numero de voltas da corrida: %d\n",LAP_DIST, NR_LAP);
-  printf("Numero de equipas: %d\n", NR_TEAM);
-  printf("Numero de carros por equipa: %d\n", NR_CARS);
-  printf("Numero de unidades de tempo entre possivel avaria: %dut\n",MALFUNCTION_UNI_NR);
-  printf("Tempo min de reparacao: %dut, Tempo max dereparacao: %dut\n", MIN_REP,MAX_REP);
-  printf("Capacidade do deposito: %dL\n", FUEL_CAPACITY);
-  printf("--------------------------\n");
-  printf("ut - unidades de tempo\n");
-  printf("m - metros\n");
-  printf("L - litros\n");
-  printf("--------------------------\n\n\n");
-#endif
+    #ifdef DEBUG
+    printf("Successfully read config file");
+    printf("--Configurações lidas do ficheiro--\n\n");
+    printf("Numero de unidade de tempo /s: %dut\n", NR_UNI_PS);
+    printf("Distancia de uma volta: %dm, Numero de voltas da corrida: %d\n",LAP_DIST, NR_LAP);
+    printf("Numero de equipas: %d\n", NR_TEAM);
+    printf("Numero de carros por equipa: %d\n", NR_CARS);
+    printf("Numero de unidades de tempo entre possivel avaria: %dut\n",MALFUNCTION_UNI_NR);
+    printf("Tempo min de reparacao: %dut, Tempo max dereparacao: %dut\n", MIN_REP,MAX_REP);
+    printf("Capacidade do deposito: %dL\n", FUEL_CAPACITY);
+    printf("--------------------------\n");
+    printf("ut - unidades de tempo\n");
+    printf("m - metros\n");
+    printf("L - litros\n");
+    printf("--------------------------\n\n\n");
+    #endif
 
-  initiate_resources();
+    initiate_resources();
 
-  write_log("SERVER STARTED");
-   // create malfunction manager process
-  if ( !(cpid[0] = fork()) ) malfunction_manager();
-  
-  // create race manager process
-  if (!(cpid[1] = fork()) ) race_manager();
+    write_log("SERVER STARTED");
+    // create malfunction manager process
+    if ( !(cpid[0] = fork()) ) malfunction_manager();
+    
+    // create race manager process
+    if (!(cpid[1] = fork()) ) race_manager();
 
     write_log("SERVER STARTED");
     //printf("RS PGID: %ld\n", (long)getpgid( getpid() ));
     // create malfunction manager process
-    
+        
     if ( !(cpid[0] = fork()) ) malfunction_manager();
-    
+        
     // create race manager process
     if (!(cpid[1] = fork())) race_manager();
 
@@ -208,6 +208,7 @@ void destroy_resources(void) {
 
 
 void statistics(){
+    char str[256];
     write_log("GOT SIGTSTP - Statistics coming");
 
     int x = 0;
@@ -243,9 +244,14 @@ void statistics(){
     //print aux array
     x = 0;
     for (i = 0; i < NR_TEAM * NR_CARS; i++){
-        printf("%d -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", ++x, array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
+        if(i == 0 || i == 1 || i == 3 || i == NR_TEAM * NR_CARS - 1)
+            printf("%d -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", ++x, array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
 	}
 
+    printf(/*str, */"Total de malfuntions %d\n", shm_info->malfunctions_counter);
+    //printf(str);
+    printf(/*str, */"Total de paragens na box %d\n", shm_info->refill_counter);
+    //printf(str);
 }
 
 //swap 2 cars on aux array
