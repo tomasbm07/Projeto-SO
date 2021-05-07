@@ -162,8 +162,6 @@ void race_manager() {
 	}
 	*/
 
-
-
   	// wait for all team processes to finish
   	for (i = 0; i < NR_TEAM; i++) wait(NULL);
   	

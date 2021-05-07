@@ -83,7 +83,7 @@ void team_manager(int team_index) {
 	terminate_cars_exit(SIGTERM);
 	
 	write_log("Team Manager finishing");
-  exit(0);
+  	exit(0);
 }
 
 
@@ -105,7 +105,7 @@ void init_car_stats(car_struct *stats, int team_index, int car_index) {
 	stats->car_index = car_index;
   	stats->state = 'R';
   	stats->fuel = FUEL_CAPACITY;
-  	stats->lap_distance = 0;
+  	stats->car->lap_distance = 0;
 }
 
 
@@ -209,16 +209,19 @@ void *car_worker(void *stats) {
 		}
 		
 		// Increase position on lap and check if lap was completed
-		car_info->lap_distance += multipliers[0] * (double)car_info->car->speed; // aumentar a posição na pista
-		if (car_info->lap_distance - LAP_DIST > 0) { // se ultrapassar a distancia da volta -> distancia = distancia - LAP_DIST
-			car_info->lap_distance = car_info->lap_distance - LAP_DIST;
+		car_info->car->lap_distance += multipliers[0] * (double)car_info->car->speed; // aumentar a posição na pista
+		if (car_info->car->lap_distance - LAP_DIST > 0) { // se ultrapassar a distancia da volta -> distancia = distancia - LAP_DIST
+			car_info->car->lap_distance = car_info->car->lap_distance - LAP_DIST;
 			car_info->car->laps_completed++;
 		}
 
 		printf("Car %d -> Distance = %.3f -> Lap %d -> State = %c -> Fuel %f\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel);
 
 		//check if the car has finished the race
-		if(car_info->car->laps_completed == NR_LAP) break;
+		if(car_info->car->laps_completed == NR_LAP){
+			car_info->car->lap_distance = 0; // reset lap_distance if car has finished race
+			break;
+		}
 		
 		// Selecionar que quer entrar na box se tiver menos de 4 volta de fuel e em modo safety se tiver menos de 2
 		if(laps_from_fuel(car_info) <= 2){
@@ -239,7 +242,7 @@ void *car_worker(void *stats) {
 				
 
 				if(fuel_flag){
-					sprintf(str, "Car %d only has 4 laps of fuel -> Box was empty!", car_info->car->number);
+					sprintf(str, "Car %d only has 4 laps of fuel -> Box is empty!", car_info->car->number);
 					write_log(str);
 					fuel_flag = false;
 				}
@@ -265,7 +268,7 @@ void *car_worker(void *stats) {
 		// sincronização ?
 		
 		// se vai passar na meta -> verificar se precisa de entrar na box
-		if ((car_info->lap_distance - (double)car_info->car->speed*multipliers[0]) <= 0){
+		if ((car_info->car->lap_distance - (double)car_info->car->speed*multipliers[0]) <= 0){
 			//verifica se carro está a tentar entrar na box
 			if (enter_box == 'Y'){
 				//se está a tentar entrar e está em race_mode
