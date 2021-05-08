@@ -16,10 +16,6 @@ pid_t cpid[2];
 int main(int argc, char* argv[]) {
     int i;
   
-    //ignorar o SIGINT no processo principal
-    //deixar os outros fecharem
-    //SIG_IGN = ignorar sinal
-    //sa.sa_handler = signal_handler;
     struct sigaction sa_int, sa_tstp;
     sigset_t int_mask;
     
@@ -80,16 +76,10 @@ int main(int argc, char* argv[]) {
     // create race manager process
     if (!(cpid[1] = fork())) race_manager();
 
-    //sleep(1);
-    //kill(0, SIGUSR2);
-
     // wait for race manager and malfunction manager
     for (i = 0; i < 2; i++) wait(NULL);
 
-    // debug para verificar informações escritas por race_maneger -- uncomment para verificar
-    write_log("SERVER CLOSED");
-
-    // destroy shared mem and semaphores
+    // destroy resources used
     end_race();
 
     exit(0);
@@ -112,7 +102,6 @@ void create_named_pipe(){
     #ifdef DEBUG
     write_log("Named pipe 'race_pipe' is ready!\n");
     #endif
-
 }
 
 
@@ -121,7 +110,7 @@ void get_id(int* id, key_t key, size_t size, int flag) {
     if (*id < 1) {
         write_log("Error creating shm memory!");
         destroy_resources();
-        exit(1);
+        exit(-1);
     }
 }
 
@@ -130,7 +119,7 @@ void check_shmat(void* pointer){
     if (pointer < (void*)1){
           write_log("Error attaching memory!");
         destroy_resources();
-        exit(1);
+        exit(-1);
     }
 }
 
@@ -140,7 +129,7 @@ void initiate_shm() {
     if ((shmkey = ftok(".", getpid())) == (key_t)-1) {
         write_log("IPC error: ftok");
         destroy_resources();
-        exit(1);
+        exit(-1);
     }
 
     get_id(&shm_id, shmkey,sizeof(shm_struct) + sizeof(car_shm_struct) * NR_TEAM * NR_CARS, IPC_CREAT | IPC_EXCL | 0700);
@@ -156,7 +145,7 @@ void create_sem(char * name, sem_t ** sem){
     if (*sem == SEM_FAILED){
         write_log("Failed to create the semaphore MUTEX");
         destroy_resources();
-        exit(1);
+        exit(-1);
     }
 }
 
@@ -238,7 +227,7 @@ void statistics(){
     //print aux array
     x = 0;
     for (i = 0; i < NR_TEAM * NR_CARS; i++){
-        if(i == 0 || i == 1 || i == 3 || i == NR_TEAM * NR_CARS - 1)
+        if(i == 0 || i == 1 || i == 2 || i == NR_TEAM * NR_CARS - 1)
             printf("%d -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", ++x, array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
 	}
 
