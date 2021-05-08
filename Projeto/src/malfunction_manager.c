@@ -32,7 +32,9 @@ void malfunction_manager(){
 
 
 void generator(){
+	#ifdef DEBUG
 	write_log("[Malfunction Manager] Got SIGUSR2 -> Starting");
+	#endif
 	srand(time(NULL));
 	malfunction_msg msg;
 	int i, j, num;

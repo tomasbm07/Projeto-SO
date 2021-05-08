@@ -5,17 +5,16 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-#define PIPE_NAME "/home/user/race_pipe"
-//#define PIPE_NAME "race_pipe"
-int fd_race_pipe;
+//#define PIPE_NAME "/home/user/race_pipe"
+#define PIPE_NAME "race_pipe"
 
+int fd_race_pipe;
 int shm_id;
 shm_struct* shm_info;
 pid_t cpid[2];
 
+
 int main(int argc, char* argv[]) {
-    int i;
-  
     struct sigaction sa_int, sa_tstp;
     sigset_t int_mask;
     
@@ -49,7 +48,7 @@ int main(int argc, char* argv[]) {
     read_file(argv[1]);
 
     #ifdef DEBUG
-    printf("Successfully read config file");
+    printf("Successfully read config file\n");
     printf("--Configurações lidas do ficheiro--\n\n");
     printf("Numero de unidade de tempo /s: %dut\n", NR_UNI_PS);
     printf("Distancia de uma volta: %dm, Numero de voltas da corrida: %d\n",LAP_DIST, NR_LAP);
@@ -73,10 +72,10 @@ int main(int argc, char* argv[]) {
     if (!(cpid[0] = fork())) malfunction_manager();
         
     // create race manager process
-    if (!(cpid[1] = fork())) race_manager();
+    if (!(cpid[1] = fork())) race_manager(cpid[0]);
 
     // wait for race manager and malfunction manager
-    while (  wait(NULL) == -1 && errno==EINTR  );
+    while (wait(NULL) == -1 && errno==EINTR);
 	
     // debug para verificar informações escritas por race_maneger -- uncomment para verificar
     write_log("SERVER CLOSED");
@@ -86,6 +85,7 @@ int main(int argc, char* argv[]) {
 
     exit(0);
 }
+
 
 void create_named_pipe(){
     unlink(PIPE_NAME);
@@ -191,7 +191,7 @@ void destroy_resources(void) {
 
 
 void statistics(){
-    char str[256];
+    //char str[256];
     write_log("GOT SIGTSTP - Statistics coming");
 
     int x = 0;
@@ -254,8 +254,8 @@ void swap(car_shm_struct *array, int a, int b){
 
 
 void end_race(){
-	kill(cpid[0], SIGTERM);
-	kill(cpid[1], SIGTERM);
+	//kill(cpid[0], SIGTERM); // malfunction_manager
+	kill(cpid[1], SIGTERM); // race_manager
 	for (int i = 0; i < 2; i++) wait(NULL);
 	write_log("SERVER CLOSED");
 	destroy_resources();

@@ -24,10 +24,7 @@ Joel Oliveira - 2019227468
 
 #define DEBUG  // coment this this line to remove debug information
 
-/*Debug stuff
-#ifdef DEBUG
-#endif
-*/
+
 key_t shmkey;
 sem_t *log_mutex, *car_mutex;
 FILE *f;

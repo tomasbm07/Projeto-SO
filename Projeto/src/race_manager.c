@@ -6,9 +6,12 @@ Joel Oliveira - 2019227468
 #include "race_manager.h"
 
 pid_t *teams_pid;
-void race_manager() {
+pid_t malfunction_pid;
+
+void race_manager(pid_t malf_pid) {
+	malfunction_pid = malf_pid;
 	bool flag_first_start = true;
-  	int i = 0, num_chars, teams;
+  	int i = 0, num_chars;
   	char str[256], aux[256];
 	fd_set read_set;
 
@@ -30,17 +33,15 @@ void race_manager() {
   	sa_term.sa_flags = 0;
   	sa_usr1.sa_flags = 0;
   	sigaction(SIGTERM, &sa_term, NULL);
-  	//TODO interromper corrida--sigusr1
   	sigaction(SIGUSR1, &sa_usr1, NULL);
   	
   	signal(SIGTSTP, SIG_IGN);
   	signal(SIGINT, SIG_IGN);
 
-#ifdef DEBUG
+	#ifdef DEBUG
   	sprintf(aux, "Race manager created (PID: %d)", getpid());
   	write_log(aux);
-#endif
-	//printf("RM PGID: %ld\n", (long)getpgid( getpid() ));
+	#endif
 
 	while(1){
 		num_chars = read(fd_race_pipe, str, sizeof(str));
@@ -72,7 +73,7 @@ void race_manager() {
     						}
     						team_manager(i);
     					}
-						//fechar pipe de escrita
+						//fechar parte de escrita dos pipes
 						close(fd_team[i][1]);
 						#ifdef DEBUG
 						sprintf(str, "Created team processes");
@@ -147,8 +148,6 @@ void race_manager() {
 	
 	write_log("---RACE HAS STARTED---");
 
-
-	//TODO MULTIPLEXING ENTRE NAMED PIPE E UNNAMED PIPES DOS CARROS ALGURES AQUI PARA BAIXO
 	// Multiplex read from pipes after race has started
 	/*
 	while (1) {
@@ -186,7 +185,6 @@ void race_manager() {
 	}
 	*/
 	
-
   	// wait for all team processes to finish
   	for (i = 0; i < NR_TEAM; i++) wait(NULL);
   	
@@ -212,12 +210,13 @@ void terminate_teams(int signal) {
 		write_log("Race Manager waiting for race to end");
   		#endif
   		int i;
-  		//TODO sinalizar team_manager de fim da corrida.
+
   		if (teams_pid != NULL)
   			for (i = 0; i < NR_TEAM; i++) 
   				kill(teams_pid[i], SIGTERM);
 
   		for (i = 0; i < NR_TEAM; i++) wait(NULL);
+		kill(malfunction_pid, SIGTERM); //signal malfunction_manager to stop
   		for (i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
 
   		free(teams_pid);
@@ -261,7 +260,7 @@ int minium_cars(){
 }
 
 
-int max(int fd1, int other_fds[][2]){
+int max(int fd1, int other_fds[NR_TEAM][2]){
 	int max = fd1, i;
 	for (i = 0; i < NR_TEAM; i++)
 		if (other_fds[i][0]>max)

@@ -28,9 +28,6 @@ Joel Oliveira - 2019227468
 
 int mqid; // Message queue ID
 
-//define the message struct for the MQ
-//typedef struct malfunction_msg *msg;
-
 void malfunction_manager(void);
 void malf_term_handler(int sig);
 void generator();

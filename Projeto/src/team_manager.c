@@ -8,7 +8,7 @@ Joel Oliveira - 2019227468
 pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER, cond_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond_start = PTHREAD_COND_INITIALIZER;
 char box_state;
-char race_going;
+bool race_going;
 int cars_number, index_aux;
 pthread_t *car_threads;
 
@@ -40,8 +40,8 @@ void team_manager(int team_index) {
   	sigaddset(&usr1_mask, SIGUSR1);
   	
 #ifdef DEBUG
-	char aux[50];
-	sprintf(aux, "Team manager created (PID: %d), from Team %d\n", getpid(), team_index);
+	char aux[256];
+	sprintf(aux, "Team manager created (PID: %d), for Team %s\n", getpid(), shm_info->cars[team_index*NR_CARS].team_name);
 	write_log(aux);
 #endif
 	
@@ -51,7 +51,7 @@ void team_manager(int team_index) {
 	car_struct car_stats[NR_CARS];
 
 	//create thread_cars;	
-	race_going = 'N';
+	race_going = false;
 	for (i = 0; i < NR_CARS; i++) {
 		if (strcmp(shm_info->cars[index_aux + i].team_name,"")==0) break; 
 		init_car_stats(&car_stats[i], set, index_aux, i);
@@ -73,7 +73,7 @@ void team_manager(int team_index) {
 	
 	//sinalizar às thread carro o inicio da corrida;
 	pthread_mutex_lock(&cond_mutex);
-	race_going = 'Y';
+	race_going = true;
 	pthread_cond_broadcast(&cond_start);
 	pthread_mutex_unlock(&cond_mutex);
 
@@ -133,6 +133,8 @@ int laps_from_fuel(car_struct *car_info){
 
 
 void terminate_cars_exit(int sig){
+	for (int i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
+	
 	pthread_cond_broadcast(&cond_start);
 	
 	for(int i = 0; i < cars_number; i++)
@@ -149,7 +151,7 @@ void terminate_cars_exit(int sig){
 
 void interrupt_cars(int sig){
 	pthread_mutex_lock(&cond_mutex);
-	race_going = 'N';
+	race_going = false;
 	pthread_mutex_unlock(&cond_mutex);
 }
 
@@ -212,7 +214,7 @@ void *car_worker(void *stats) {
 	while(1){
 		//wait for condition variable to unlock mutex
 		pthread_mutex_lock(&cond_mutex);
-		while(race_going == 'N')
+		while(!race_going)
 			pthread_cond_wait(&cond_start, &cond_mutex);
 		pthread_mutex_unlock(&cond_mutex);
 		
