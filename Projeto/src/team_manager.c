@@ -18,13 +18,15 @@ void team_manager(int team_index) {
 	sigset_t set, usr1_mask, term_mask;
 	int i, sig;
 	char str[256];
-	
+		
 	sigemptyset(&set);
 	sigemptyset(&usr1_mask);
 	sigemptyset(&term_mask);
 	
   	sigaddset(&set, SIGUSR2);
-  	pthread_sigmask(SIG_BLOCK, &set, NULL);
+  	sigaddset(&set, SIGTSTP);
+  	sigaddset(&set, SIGINT);
+  	sigaddset(&set, SIGTERM);
   	
   	struct sigaction sa_tterm, sa_tusr1;
   	
@@ -52,10 +54,13 @@ void team_manager(int team_index) {
 	race_going = 'N';
 	for (i = 0; i < NR_CARS; i++) {
 		if (strcmp(shm_info->cars[index_aux + i].team_name,"")==0) break; 
-		init_car_stats(&car_stats[i], index_aux, i);
+		init_car_stats(&car_stats[i], set, index_aux, i);
 		pthread_create((car_threads+i), NULL, car_worker, &car_stats[i]);
 	}  	
   	cars_number = i;
+  	
+  	sigdelset(&set, SIGTERM);
+  	pthread_sigmask(SIG_BLOCK, &set, NULL);
   	
   	sigaction(SIGTERM, &sa_tterm, NULL);
   	sigaction(SIGUSR1, &sa_tusr1, NULL);
@@ -107,12 +112,13 @@ car_struct *create_car_structs_array() {
 
 
 // set the atributes of the car that aren't set by race_manager
-void init_car_stats(car_struct *stats, int team_index, int car_index) {
+void init_car_stats(car_struct *stats,sigset_t set, int team_index, int car_index) {
 	stats->car = &shm_info->cars[team_index + car_index];
 	stats->car_index = car_index;
   	stats->state = 'R';
   	stats->fuel = FUEL_CAPACITY;
   	stats->car->lap_distance = 0;
+  	stats->car_set = set;
 }
 
 
@@ -199,6 +205,8 @@ void *car_worker(void *stats) {
 	
 	sprintf(str, "Car %d from team %s has started the race", car_info->car->number, car_info->car->team_name);
 	write_log(str);
+	
+	pthread_sigmask(SIG_BLOCK, &car_info->car_set, NULL);
 	
 	// Race loop
 	while(1){

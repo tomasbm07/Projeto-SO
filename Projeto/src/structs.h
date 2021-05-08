@@ -32,6 +32,7 @@ typedef struct {
   int car_index;
   char state; // 'R' = race; 'S' = safety; 'B' = box; 'D' = DNF; 'F' = finished;
   float fuel; // remaining fuel
+  sigset_t car_set;
 } car_struct;
 
 
