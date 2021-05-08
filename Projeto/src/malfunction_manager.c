@@ -46,7 +46,6 @@ void generator(){
 					if (num > shm_info->cars[i*NR_CARS + j].reliability){			
 						msg.car_index = (long) (i*NR_CARS + j + 1);						
 						msgsnd(mqid, &msg, 0, 0);
-						(shm_info->malfunctions_counter)++;
 					}
 				}
 			}

@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
     
     sa_int.sa_handler = end_race;
     sigfillset(&int_mask);
+    sigdelset(&int_mask, SIGTSTP);
     sa_int.sa_mask = int_mask;
     sa_int.sa_flags = 0;
     sigaction(SIGINT, &sa_int, NULL);
@@ -27,7 +28,8 @@ int main(int argc, char* argv[]) {
     sa_tstp.sa_handler = statistics;
     sa_tstp.sa_flags = 0;
     sigaction(SIGTSTP, &sa_tstp, NULL);
-    
+
+    //signals to ignore on this process
     signal(SIGUSR1, SIG_IGN);
     signal(SIGUSR2, SIG_IGN);
     signal(SIGTERM, SIG_IGN);
@@ -49,13 +51,13 @@ int main(int argc, char* argv[]) {
 
     #ifdef DEBUG
     printf("Successfully read config file\n");
-    printf("--Configurações lidas do ficheiro--\n\n");
+    printf("\n--Configurações lidas do ficheiro--\n");
     printf("Numero de unidade de tempo /s: %dut\n", NR_UNI_PS);
     printf("Distancia de uma volta: %dm, Numero de voltas da corrida: %d\n",LAP_DIST, NR_LAP);
     printf("Numero de equipas: %d\n", NR_TEAM);
     printf("Numero de carros por equipa: %d\n", NR_CARS);
     printf("Numero de unidades de tempo entre possivel avaria: %dut\n",MALFUNCTION_UNI_NR);
-    printf("Tempo min de reparacao: %dut, Tempo max dereparacao: %dut\n", MIN_REP,MAX_REP);
+    printf("Tempo min de reparacao: %dut, Tempo max de reparacao: %dut\n", MIN_REP,MAX_REP);
     printf("Capacidade do deposito: %dL\n", FUEL_CAPACITY);
     printf("--------------------------\n");
     printf("ut - unidades de tempo\n");
@@ -75,7 +77,7 @@ int main(int argc, char* argv[]) {
     if (!(cpid[1] = fork())) race_manager(cpid[0]);
 
     // wait for race manager and malfunction manager
-    while (wait(NULL) == -1 && errno==EINTR);
+    while (wait(NULL) == -1 && errno == EINTR);
 
     // destroy resources and kill malfunction
     kill(cpid[0], SIGTERM); //signal malfunction to end if race ends normally, i.e, without ctrl c in the middle of the race
@@ -200,16 +202,16 @@ void statistics(){
 
     //copy the cars from shm to array
     for (i = 0; i < NR_TEAM; i++){
-		for (j = 0; j < NR_CARS; j++){
-			array[x++] = shm_info->cars[i * NR_CARS + j];
-		}
-	}
+        for (j = 0; j < NR_CARS; j++){
+            array[x++] = shm_info->cars[i * NR_CARS + j];
+        }
+    }
 
     //sort cars by track position with bubble sort with conditional varaiable :)
     bool no_swaps;
     for (i = 0; i < NR_TEAM * NR_CARS; i++){
-    	no_swaps = true;
-		for (j = 0; j < NR_TEAM * NR_CARS - i - 1; j++){
+        no_swaps = true;
+        for (j = 0; j < NR_TEAM * NR_CARS - i - 1; j++){
             //se um estiver numa volta á frente -> trocar
             if (array[j].laps_completed < array[j + 1].laps_completed){
                 swap(array, j, j + 1);
@@ -223,20 +225,20 @@ void statistics(){
                    no_swaps = false;
                 }
             }
-		}
-		if (no_swaps) break;
-	}
+        }
+        if (no_swaps) break;
+    }
     
     //print statistics
     char chars[][3] = {"st", "nd", "rd", "th"};
     printf("-------------------------------------------------\n");
     for (i = 0, x = 0; i < NR_TEAM * NR_CARS; i++, x++){
         if(i == 0 || i == 1 || i == 2 || i == 3 || i == 4)
-            printf("%d %s -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
+            printf("%d%s -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
         else if (i == NR_TEAM * NR_CARS - 1)
-            printf("%d %s -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", NR_TEAM * NR_CARS, chars[3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
+            printf("%d%s -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", NR_TEAM * NR_CARS, chars[3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
 
-	}
+    }
     printf(/*str, */"Total de malfuntions %d\n", shm_info->malfunctions_counter);
     //printf(str);
     printf(/*str, */"Total de paragens na box %d\n", shm_info->refill_counter);
@@ -253,10 +255,11 @@ void swap(car_shm_struct *array, int a, int b){
 
 
 void end_race(){
-	kill(cpid[1], SIGTERM); // race_manager
-	for (int i = 0; i < 2; i++) wait(NULL);
-	write_log("SERVER CLOSED");
+    kill(cpid[1], SIGTERM); // race_manager
+    //for (int i = 0; i < 2; i++) wait(NULL);
+    while (wait(NULL) == -1 && errno == EINTR);
+    write_log("SERVER CLOSED");
     statistics();
-	destroy_resources();
-	exit(0);
+    destroy_resources();
+    exit(0);
 }
