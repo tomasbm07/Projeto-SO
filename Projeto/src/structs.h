@@ -18,11 +18,13 @@ typedef struct {
 	float lap_distance; // distance on lap; 0 - LAP_DIST; 0 = start/finish line
 } car_shm_struct;
 
+
 typedef struct {
 	int malfunctions_counter;
 	int refill_counter;
 	car_shm_struct cars[];
 } shm_struct;
+
 
 // struct with car stats
 typedef struct {
@@ -31,6 +33,7 @@ typedef struct {
   char state; // 'R' = race; 'S' = safety; 'B' = box; 'D' = DNF; 'F' = finished;
   float fuel; // remaining fuel
 } car_struct;
+
 
 typedef struct{
 	long car_index;

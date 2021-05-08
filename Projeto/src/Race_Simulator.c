@@ -73,17 +73,9 @@ int main(int argc, char* argv[]) {
     initiate_resources();
 
     write_log("SERVER STARTED");
-    // create malfunction manager process
-    if ( !(cpid[0] = fork()) ) malfunction_manager();
-    
-    // create race manager process
-    if (!(cpid[1] = fork()) ) race_manager();
 
-    write_log("SERVER STARTED");
-    //printf("RS PGID: %ld\n", (long)getpgid( getpid() ));
     // create malfunction manager process
-        
-    if ( !(cpid[0] = fork()) ) malfunction_manager();
+    if (!(cpid[0] = fork())) malfunction_manager();
         
     // create race manager process
     if (!(cpid[1] = fork())) race_manager();
@@ -241,6 +233,8 @@ void statistics(){
 		}
 	}
 
+    //print statistics
+    printf("-------------------------------------------------\n");
     //print aux array
     x = 0;
     for (i = 0; i < NR_TEAM * NR_CARS; i++){
@@ -252,6 +246,7 @@ void statistics(){
     //printf(str);
     printf(/*str, */"Total de paragens na box %d\n", shm_info->refill_counter);
     //printf(str);
+    printf("-------------------------------------------------\n");
 }
 
 //swap 2 cars on aux array
@@ -269,5 +264,4 @@ void end_race(){
 	write_log("SERVER CLOSED");
 	destroy_resources();
 	exit(0);
-	
 }

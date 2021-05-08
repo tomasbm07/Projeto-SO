@@ -8,11 +8,11 @@ Joel Oliveira - 2019227468
 pid_t *teams_pid;
 void race_manager() {
 	bool flag_first_start = true;
-  	int i, num_chars, teams;
+  	int i = 0, num_chars, teams;
   	char str[256], aux[256];
 	fd_set read_set;
 
-	//terminar corrida--sigterm
+	//terminar corrida--SIGTERM
 	struct sigaction sa_term, sa_usr1;
 	sigset_t term_mask, usr1_mask;
 	
@@ -40,7 +40,7 @@ void race_manager() {
   	sprintf(aux, "Race manager created (PID: %d)", getpid());
   	write_log(aux);
 #endif
-	printf("RM PGID: %ld\n", (long)getpgid( getpid() ));
+	//printf("RM PGID: %ld\n", (long)getpgid( getpid() ));
 
 	while(1){
 		num_chars = read(fd_race_pipe, str, sizeof(str));
@@ -54,7 +54,7 @@ void race_manager() {
 				if (flag_first_start){
 					flag_first_start = false;
 					//criar array para guardar os pid dos team_manager
-					teams_pid=teams_pid_array();
+					teams_pid = teams_pid_array();
 				
   					// unnamed pipes stuff - 1 pipe per team
   					// unname pipe direction: race_manager <- team_manager
@@ -148,51 +148,80 @@ void race_manager() {
 	write_log("---RACE HAS STARTED---");
 
 
-//TODO MULTIPLEXING ENTRE NAMED PIPE E UNNAMED PIPES DOS CARROS ALGURES AQUI PARA BAIXO
-	/*while (1) {
+	//TODO MULTIPLEXING ENTRE NAMED PIPE E UNNAMED PIPES DOS CARROS ALGURES AQUI PARA BAIXO
+	// Multiplex read from pipes after race has started
+	/*
+	while (1) {
   		FD_ZERO(&read_set);
-  		FD_SET(fd_race_pipe, &read_set);
+  		FD_SET(fd_race_pipe, &read_set);	
 
   		for (i = 0; i < NR_TEAM;)
   			FD_SET(fd_team[i++][0], &read_set);
   		
-  		if (select(max(fd_race_pipe, fd_team)+1, &read_set, NULL, NULL, NULL)>0) {
-    		if (FD_ISSET(fd_race_pipe, &read_set)) {
+  		if (select(max(fd_race_pipe, fd_team) + 1, &read_set, NULL, NULL, NULL)>0) {
 
+    		if (FD_ISSET(fd_race_pipe, &read_set)) {
+				num_chars = read(fd_race_pipe, str, sizeof(str));
+    			str[num_chars - 1] = '\0';  // put a \0 in the end of string
+				
+				if (strcmp(str, "START RACE") == 0){
+					write_log("[Race_Pipe] Got START RACE");
+					write_log("[Race_Pipe] Race has alredy started!");
+				} else if(strcmp(str, "STOP") == 0){
+					//stop the race. for testting :)
+					write_log("[Race_Pipe] Got STOP");
+				}
+				else
+					write_log("[Race_Pipe] Unknown command");
     		}
+
+			for (i = 0; i < NR_TEAM; i++) {
+				if (FD_ISSET(fd_team[0][0], &read_set)) {
+					read(fd_team[i][0], str, sizeof(str));
+					printf("MESSAGE received!! ----> '%s'\n", str);
+    			}
+  			}
+
   		}
 	}
 	*/
+	
 
   	// wait for all team processes to finish
   	for (i = 0; i < NR_TEAM; i++) wait(NULL);
   	
+	//close all unnamed pipes
   	for (int i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
 
   	exit(0);
 }
 
+
 void interrupt_race(int sig){
 	//TODO sinalizar team_managers de interrupção da corrida 
 	write_log("INTERRUPTING RACE");
-	if (teams_pid!=NULL)
+	if (teams_pid != NULL)
 		for (int i = 0; i < NR_TEAM; i++) 
 			kill(teams_pid[i], SIGUSR1);
 }
 
+
 void terminate_teams(int signal) {
 		#ifdef DEBUG
-    	write_log("[Race Manager]Got SIGTERM");
+    	write_log("[Race Manager] Got SIGTERM");
 		write_log("Race Manager waiting for race to end");
   		#endif
   		int i;
   		//TODO sinalizar team_manager de fim da corrida.
-  		if (teams_pid!=NULL)
+  		if (teams_pid != NULL)
   			for (i = 0; i < NR_TEAM; i++) 
   				kill(teams_pid[i], SIGTERM);
+
   		for (i = 0; i < NR_TEAM; i++) wait(NULL);
   		for (i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
+
   		free(teams_pid);
+
   		exit(0);
 }
 

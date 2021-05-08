@@ -44,7 +44,7 @@ void team_manager(int team_index) {
 #endif
 	
 	box_state = 'E';  // 'R' = Reserved; 'E' = Empty; 'F' = Full;
-	srand((unsigned)getpid());
+	srand(time(NULL));
 	car_threads = create_threads_array();
 	car_struct car_stats[NR_CARS];
 
@@ -61,7 +61,7 @@ void team_manager(int team_index) {
   	sigaction(SIGUSR1, &sa_tusr1, NULL);
   	
   	usleep(1000);
-  	sprintf(str, "Team %d Ready!", team_index);
+  	sprintf(str, "Team %s Ready!", shm_info->cars[team_index * NR_CARS].team_name);
 	write(fd_team[team_index][1], &str, strlen(str)+1);
 	
 	sigwait(&set, &sig);
@@ -71,11 +71,18 @@ void team_manager(int team_index) {
 	race_going = 'Y';
 	pthread_cond_broadcast(&cond_start);
 	pthread_mutex_unlock(&cond_mutex);
-	
-	sigdelset(&set, SIGUSR1);
-	sigdelset(&set, SIGTERM);
+
+	//sigdelset(&set, SIGUSR1);
+	//sigdelset(&set, SIGTERM);
+
   	// wait for threads to finish
   	for (i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
+
+	sigdelset(&set, SIGUSR1);
+	sigdelset(&set, SIGTERM);
+	
+	sprintf(str, "Team %s -> All cars finished", shm_info->cars[team_index * NR_CARS].team_name);
+	write(fd_team[team_index][1], &str, strlen(str)+1);
 	//TODO send signal to unanamed pipe that cars have finished
 	//TODO on race manager: when all cars finish -> signal malfunction to stop
 
@@ -117,6 +124,7 @@ int randint(int min, int max){
 int laps_from_fuel(car_struct *car_info){
 	return ((car_info->fuel*car_info->car->speed)/car_info->car->consumption) / LAP_DIST;
 }
+
 
 void terminate_cars_exit(int sig){
 	pthread_cond_broadcast(&cond_start);
@@ -180,16 +188,17 @@ void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction){
 // function to run in car thread
 void *car_worker(void *stats) {
 	car_struct *car_info = (car_struct *)stats; // convert argument from void* to car_struct*
-	malfunction_msg msg;
-	char str[300];
-	bool enter_box = false; // Y = yes, tenta entrar. N = no , nao tenta;
-	bool has_malfunction = false;
-	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
+	malfunction_msg msg; // MQ struct
+	char str[300]; //auxilary string to pass parameters to write_log with sprintf
+	bool enter_box = false; // true -> tenta entrar. false -> nao tenta;
+	bool has_malfunction = false; // flag to only log received malfunctions once and sleep repair
 	bool fuel_flag = true; // flag to only log fuel warnings once
-	mqid = msgget(ftok(".", 25), 0);
+	float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
+	int counter = 0; // iteration counter. To print cars states every x iterations
+	mqid = msgget(ftok(".", 25), 0); // MQ id
 	
-	//sprintf(str, "Car %d from team %s has started the race", car_info->car->number, car_info->car->team_name);
-	//write_log(str);
+	sprintf(str, "Car %d from team %s has started the race", car_info->car->number, car_info->car->team_name);
+	write_log(str);
 	
 	// Race loop
 	while(1){
@@ -199,8 +208,8 @@ void *car_worker(void *stats) {
 			pthread_cond_wait(&cond_start, &cond_mutex);
 		pthread_mutex_unlock(&cond_mutex);
 		
-		// chech if there is any malfunctions on MQ -> change car state
-		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >=0){
+		// check if there is any malfunctions on MQ -> change car state
+		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >= 0){
 			if(!has_malfunction){
 				sprintf(str, "Car %d received a malfunction -> Safety mode ON", car_info->car->number);
 				write_log(str);
@@ -235,8 +244,12 @@ void *car_worker(void *stats) {
 			car_info->car->laps_completed++;
 		}
 
-		//printf("Car %d -> Distance = %.3f -> Lap %d -> State = %c -> Fuel %f\n", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel);
-
+		//only print every 10 iterations. just so the console isn't spammed
+		if(++counter == 10){
+			printf("Car %d -> Distance = %.3f -> Lap %d -> State = %c -> Fuel %f\n", car_info->car->number, car_info->car->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel);
+			counter = 0;
+		}
+			
 		//check if the car has finished the race
 		if(car_info->car->laps_completed == NR_LAP){
 			car_info->car->lap_distance = 0; // reset lap_distance if car has finished race
@@ -245,13 +258,11 @@ void *car_worker(void *stats) {
 		
 		// Selecionar que quer entrar na box se tiver menos de 4 volta de fuel e em modo safety se tiver menos de 2
 		if(laps_from_fuel(car_info) <= 2){
-
 			if(fuel_flag){
 				sprintf(str, "Car %d only has fuel for 2 laps -> Safety mode ON", car_info->car->number);
 				write_log(str);
 				fuel_flag = false;
 			}
-	
 			enter_box = true;
 			car_info->state = 'S'; 
 
@@ -285,7 +296,7 @@ void *car_worker(void *stats) {
 			pthread_mutex_unlock(&box_mutex);
 		}
 		
-		// sincronização ?
+		//TODO sincronização ???
 		
 		// se vai passar na meta -> verificar se precisa de entrar na box
 		if ((car_info->car->lap_distance - (double)car_info->car->speed*multipliers[0]) <= 0){

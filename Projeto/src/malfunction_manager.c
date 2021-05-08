@@ -23,15 +23,16 @@ void malfunction_manager(){
 	sigaddset(&sa_malf.sa_mask, SIGUSR2);
 	sigaction(SIGTERM, &sa_malf, NULL);
 	
-	printf("MALF PGID: %ld\n", (long)getpgid( getpid() ));
+	//printf("MALF PGID: %ld\n", (long)getpgid( getpid() ));
 	pause();
 
 	msgctl(mqid, IPC_RMID, 0);
 	exit(0);
 }
 
+
 void generator(){
-	write_log("[Malfunction Manager] Got SIGUSR2");
+	write_log("[Malfunction Manager] Got SIGUSR2 -> Starting");
 	srand(time(NULL));
 	malfunction_msg msg;
 	int i, j, num;
@@ -52,14 +53,17 @@ void generator(){
 	}
 }
 
+
 void create_mq(){
 	mqid = msgget(ftok(".", 25), IPC_CREAT|0777);
   	if (mqid < 0){
     	write_log("Error creating message queue");
+		msgctl(mqid, IPC_RMID, 0);
       	exit(-1);
     }
-    printf("MSQID: %d\n", mqid);
+    //printf("MSQID: %d\n", mqid);
 }
+
 
 void malf_term_handler(int sig){
 	write_log("[Malfunction Manager] Got SIGTERM");
