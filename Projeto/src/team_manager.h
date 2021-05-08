@@ -27,7 +27,7 @@ int NR_CARS, NR_TEAM;
 void team_manager(int team_index);
 pthread_t* create_threads_array();
 car_struct* create_car_structs_array();
-void init_car_stats(car_struct* stats, int team_nr, int car_nr);
+void init_car_stats(car_struct* stats, sigset_t set, int team_nr, int car_nr);
 void* car_worker(void* stats);
 void terminate_cars_exit(int sig);
 void interrupt_cars(int sig);

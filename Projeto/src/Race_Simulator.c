@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-//#define PIPE_NAME "/home/user/race_pipe"
-#define PIPE_NAME "race_pipe"
+#define PIPE_NAME "/home/user/race_pipe"
+//#define PIPE_NAME "race_pipe"
 int fd_race_pipe;
 
 int shm_id;
@@ -24,8 +24,7 @@ int main(int argc, char* argv[]) {
     sigset_t int_mask;
     
     sa_int.sa_handler = end_race;
-    sigemptyset(&int_mask);
-    sigaddset(&int_mask, SIGTSTP);
+    sigfillset(&int_mask);
     sa_int.sa_mask = int_mask;
     sa_int.sa_flags = 0;
     sigaction(SIGINT, &sa_int, NULL);
@@ -84,8 +83,8 @@ int main(int argc, char* argv[]) {
     //kill(0, SIGUSR2);
 
     // wait for race manager and malfunction manager
-    for (i = 0; i < 2; i++) wait(NULL);
-
+    while (  wait(NULL) == -1 && errno==EINTR  );
+	
     // debug para verificar informações escritas por race_maneger -- uncomment para verificar
     write_log("SERVER CLOSED");
 
@@ -216,21 +215,26 @@ void statistics(){
 		}
 	}
 
-    //sort cars by track position with bubble sort :)
+    //sort cars by track position with bubble sort with conditional varaiable :)
+    bool no_swaps;
     for (i = 0; i < NR_TEAM * NR_CARS; i++){
+    	no_swaps = true;
 		for (j = 0; j < NR_TEAM * NR_CARS - i - 1; j++){
             //se um estiver numa volta á frente -> trocar
             if (array[j].laps_completed < array[j + 1].laps_completed){
                 swap(array, j, j + 1);
+                no_swaps = false;
             } 
 
             //se estiverem na mesma volta -> ver quem está á frente
-            if(array[j].laps_completed == array[j + 1].laps_completed){
+            else if(array[j].laps_completed == array[j + 1].laps_completed){
                 if (array[j].lap_distance < array[j + 1].lap_distance){
                    swap(array, j, j + 1);
+                   no_swaps = false;
                 }
             }
 		}
+		if (no_swaps) break;
 	}
 
     //print statistics
