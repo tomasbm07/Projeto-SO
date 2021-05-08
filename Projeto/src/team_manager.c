@@ -221,7 +221,7 @@ void *car_worker(void *stats) {
 		// check if there is any malfunctions on MQ -> change car state
 		if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >= 0){
 			if(!has_malfunction){
-				sprintf(str, "Car %d received a malfunction -> Safety mode ON", car_info->car->number);
+				sprintf(str, "** Car %d received a malfunction -> Safety mode ON", car_info->car->number);
 				write_log(str);
 			}
 			has_malfunction = true;
@@ -256,7 +256,8 @@ void *car_worker(void *stats) {
 
 		//only print every 10 iterations. just so the console isn't spammed
 		if(++counter == 10){
-			printf("Car %d -> Distance = %.3f -> Lap %d -> State = %c -> Fuel %f\n", car_info->car->number, car_info->car->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel);
+			sprintf(str,"Car %d -> Distance = %.3f -> Lap %d -> State = %c -> Fuel %.3f", car_info->car->number, car_info->car->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel);
+			write_log(str);
 			counter = 0;
 		}
 			
@@ -269,7 +270,7 @@ void *car_worker(void *stats) {
 		// Selecionar que quer entrar na box se tiver menos de 4 volta de fuel e em modo safety se tiver menos de 2
 		if(laps_from_fuel(car_info) <= 2){
 			if(fuel_flag){
-				sprintf(str, "Car %d only has fuel for 2 laps -> Safety mode ON", car_info->car->number);
+				sprintf(str, "-- Car %d only has fuel for 2 laps -> Safety mode ON", car_info->car->number);
 				write_log(str);
 				fuel_flag = false;
 			}
@@ -283,14 +284,14 @@ void *car_worker(void *stats) {
 				
 
 				if(fuel_flag){
-					sprintf(str, "Car %d only has 4 laps of fuel -> Box is empty!", car_info->car->number);
+					sprintf(str, "-- Car %d only has 4 laps of fuel -> Box is empty!", car_info->car->number);
 					write_log(str);
 					fuel_flag = false;
 				}
 
 			} else{
 				if(fuel_flag){
-					sprintf(str, "Car %d can't box -> Box already reserved!", car_info->car->number);
+					sprintf(str, "-- Car %d can't box -> Box already reserved!", car_info->car->number);
 					write_log(str);
 					fuel_flag = false;
 				}
@@ -337,7 +338,7 @@ void *car_worker(void *stats) {
 		//sprintf(str, "Car %d postiion :: %.2f in lap:: %d !", car_info->car->number, car_info->lap_distance, car_info->car->laps_completed);
 		//desbloquear receção de sinais (no fim da volta);
 	}
-	sprintf(str, "Car %d from team: %s has finished the race", car_info->car->number, car_info->car->team_name);
+	sprintf(str, "++ Car %d from team: %s has finished the race ++", car_info->car->number, car_info->car->team_name);
 	write_log(str);
 	
   	pthread_exit(NULL);

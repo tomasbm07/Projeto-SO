@@ -148,7 +148,16 @@ void race_manager(pid_t malf_pid) {
 	
 	write_log("---RACE HAS STARTED---");
 
-	// Multiplex read from pipes after race has started
+	//TODO depois da corrida começar, apenas ler do named pipe, para recomeçar a corrida
+
+	while(1){
+		num_chars = read(fd_race_pipe, str, sizeof(str));
+    	str[num_chars - 1] = '\0';  // put a \0 in the end of string
+		
+		if(strcmp(str, "START RACE") == 0){
+			write_log("[Race_Pipe] Got START RACE");
+		}
+	}
 	/*
 	while (1) {
   		FD_ZERO(&read_set);
@@ -196,7 +205,6 @@ void race_manager(pid_t malf_pid) {
 
 
 void interrupt_race(int sig){
-	//TODO sinalizar team_managers de interrupção da corrida 
 	write_log("INTERRUPTING RACE");
 	if (teams_pid != NULL)
 		for (int i = 0; i < NR_TEAM; i++) 

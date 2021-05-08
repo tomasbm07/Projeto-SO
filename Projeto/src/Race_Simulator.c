@@ -76,11 +76,9 @@ int main(int argc, char* argv[]) {
 
     // wait for race manager and malfunction manager
     while (wait(NULL) == -1 && errno==EINTR);
-	
-    // debug para verificar informações escritas por race_maneger -- uncomment para verificar
-    write_log("SERVER CLOSED");
 
-    // destroy shared mem and semaphores
+    // destroy resources and kill malfunction
+    kill(cpid[0], SIGTERM); //signal malfunction to end if race ends normally, i.e, without ctrl c in the middle of the race
     end_race();
 
     exit(0);
@@ -134,7 +132,7 @@ void initiate_shm() {
         exit(-1);
     }
 
-    get_id(&shm_id, shmkey,sizeof(shm_struct) + sizeof(car_shm_struct) * NR_TEAM * NR_CARS, IPC_CREAT | IPC_EXCL | 0700);
+    get_id(&shm_id, shmkey, sizeof(shm_struct) + sizeof(car_shm_struct) * NR_TEAM * NR_CARS, IPC_CREAT | IPC_EXCL | 0700);
 
     shm_info = (shm_struct*)shmat(shm_id, NULL, 0);
     check_shmat(shm_info);
@@ -228,16 +226,17 @@ void statistics(){
 		}
 		if (no_swaps) break;
 	}
-
+    
     //print statistics
+    char chars[][3] = {"st", "nd", "rd", "th"};
     printf("-------------------------------------------------\n");
-    //print aux array
-    x = 0;
-    for (i = 0; i < NR_TEAM * NR_CARS; i++){
-        if(i == 0 || i == 1 || i == 2 || i == NR_TEAM * NR_CARS - 1)
-            printf("%d -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", ++x, array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
-	}
+    for (i = 0, x = 0; i < NR_TEAM * NR_CARS; i++, x++){
+        if(i == 0 || i == 1 || i == 2 || i == 3 || i == 4)
+            printf("%d %s -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
+        else if (i == NR_TEAM * NR_CARS - 1)
+            printf("%d %s -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", NR_TEAM * NR_CARS, chars[3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
 
+	}
     printf(/*str, */"Total de malfuntions %d\n", shm_info->malfunctions_counter);
     //printf(str);
     printf(/*str, */"Total de paragens na box %d\n", shm_info->refill_counter);
@@ -254,10 +253,10 @@ void swap(car_shm_struct *array, int a, int b){
 
 
 void end_race(){
-	//kill(cpid[0], SIGTERM); // malfunction_manager
 	kill(cpid[1], SIGTERM); // race_manager
 	for (int i = 0; i < 2; i++) wait(NULL);
 	write_log("SERVER CLOSED");
+    statistics();
 	destroy_resources();
 	exit(0);
 }
