@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-//#define PIPE_NAME "/home/user/race_pipe"
-#define PIPE_NAME "race_pipe"
+#define PIPE_NAME "/home/user/race_pipe"
+//#define PIPE_NAME "race_pipe"
 
 int fd_race_pipe;
 int shm_id;
@@ -77,12 +77,15 @@ int main(int argc, char* argv[]) {
     if (!(cpid[1] = fork())) race_manager(cpid[0]);
 
     // wait for race manager and malfunction manager
-    while (wait(NULL) == -1 && errno == EINTR);
+    int wait_status;
+    while ( (wait_status=wait(NULL))>=0 || (wait_status == -1 && errno == EINTR) );
 
     // destroy resources and kill malfunction
     kill(cpid[0], SIGTERM); //signal malfunction to end if race ends normally, i.e, without ctrl c in the middle of the race
-    end_race();
-
+    write_log("SERVER CLOSED");
+	statistics();
+    destroy_resources();
+    
     exit(0);
 }
 
@@ -257,7 +260,8 @@ void swap(car_shm_struct *array, int a, int b){
 void end_race(){
     kill(cpid[1], SIGTERM); // race_manager
     //for (int i = 0; i < 2; i++) wait(NULL);
-    while (wait(NULL) == -1 && errno == EINTR);
+    int wait_status;
+    while ( (wait_status=wait(NULL))>=0 || (wait_status == -1 && errno == EINTR));
     write_log("SERVER CLOSED");
     statistics();
     destroy_resources();

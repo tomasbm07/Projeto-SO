@@ -37,5 +37,5 @@ void clean_resources();
 int check_pipe_command_regex(const char *pattern, char *string);
 int car_number_exists(int number);
 int minium_cars();
-int max(int fd1, int other_fds[][2]);
+int max(int fd1, int **other_fds);
 pid_t * teams_pid_array();

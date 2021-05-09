@@ -5,13 +5,16 @@ Joel Oliveira - 2019227468
 
 #include "race_manager.h"
 
+#define PIPE_NAME "/home/user/race_pipe"
+//#define PIPE_NAME "race_pipe"
+
 pid_t *teams_pid;
 pid_t malfunction_pid;
 
 void race_manager(pid_t malf_pid) {
     malfunction_pid = malf_pid;
     bool flag_first_start = true;
-      int i = 0, num_chars;
+      int i = 0, num_chars, wait_status;
       char str[256], aux[256];
     fd_set read_set;
 
@@ -22,8 +25,7 @@ void race_manager(pid_t malf_pid) {
       sa_term.sa_handler = terminate_teams;
       sa_usr1.sa_handler = interrupt_race;
       
-      sigemptyset(&term_mask);
-      sigaddset(&term_mask, SIGUSR1);
+      sigfillset(&term_mask);
       
       sigemptyset(&usr1_mask);
       sigaddset(&usr1_mask, SIGTERM);
@@ -190,8 +192,8 @@ void race_manager(pid_t malf_pid) {
           FD_ZERO(&read_set);
           FD_SET(fd_race_pipe, &read_set);	
 
-          for (i = 0; i < NR_TEAM;)
-              FD_SET(fd_team[i++][0], &read_set);
+          for (i = 0; i < NR_TEAM;i++)
+              FD_SET(fd_team[i][0], &read_set);
           
           if (select(max(fd_race_pipe, fd_team) + 1, &read_set, NULL, NULL, NULL)>0) {
 
@@ -211,19 +213,23 @@ void race_manager(pid_t malf_pid) {
             }
 
             for (i = 0; i < NR_TEAM; i++) {
-                if (FD_ISSET(fd_team[0][0], &read_set)) {
+                if (FD_ISSET(fd_team[i][0], &read_set)) {
                     read(fd_team[i][0], str, sizeof(str));
                     printf("MESSAGE received!! ----> '%s'\n", str);
                 }
               }
-
-          }
+			close(fd_race_pipe);
+			if ((fd_race_pipe = open(PIPE_NAME, O_RDWR)) < 0) {
+        		write_log("ERRO: A abrir o pipe");
+        		destroy_resources();
+        		exit(-1);
+    		}
+       }
     }
     
     
     // wait for all team processes to finish
-    for (i = 0; i < NR_TEAM; i++) wait(NULL);
-      
+    while ( (wait_status=wait(NULL))>=0 || (wait_status == -1 && errno == EINTR));    
     //close all unnamed pipes
     for (int i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
 
@@ -244,14 +250,15 @@ void terminate_teams(int signal) {
         write_log("[Race Manager] Got SIGTERM");
         write_log("Race Manager waiting for race to end");
           #endif
-          int i;
+          int i, wait_status;
 
           if (teams_pid != NULL)
               for (i = 0; i < NR_TEAM; i++) 
                   kill(teams_pid[i], SIGTERM);
-
-          for (i = 0; i < NR_TEAM; i++) wait(NULL);
-        kill(malfunction_pid, SIGTERM); //signal malfunction_manager to stop
+          while ( wait_status=wait(NULL)>=0 || (wait_status == -1 && errno == EINTR) );
+		 
+		  kill(malfunction_pid, SIGTERM); //signal malfunction_manager to stop
+			  
           for (i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
 
           free(teams_pid);
@@ -295,7 +302,7 @@ int minium_cars(){
 }
 
 
-int max(int fd1, int other_fds[NR_TEAM][2]){
+int max(int fd1, int **other_fds){
     int max = fd1, i;
     for (i = 0; i < NR_TEAM; i++)
         if (other_fds[i][0]>max)
