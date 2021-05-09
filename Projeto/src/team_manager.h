@@ -22,7 +22,8 @@ Joel Oliveira - 2019227468
 
 
 shm_struct *shm_info;  
-int NR_CARS, NR_TEAM; 
+int NR_CARS, NR_TEAM;
+bool race_going;
 
 void team_manager(int team_index);
 pthread_t* create_threads_array();

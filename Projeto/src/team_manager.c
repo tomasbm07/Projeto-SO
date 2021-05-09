@@ -8,7 +8,6 @@ Joel Oliveira - 2019227468
 pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER, cond_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond_start = PTHREAD_COND_INITIALIZER;
 char box_state;
-bool race_going;
 int cars_number, index_aux;
 pthread_t *car_threads;
 
@@ -201,6 +200,7 @@ void *car_worker(void *stats) {
     bool enter_box = false; // true -> tenta entrar. false -> nao tenta;
     bool has_malfunction = false; // flag to only log received malfunctions once and sleep repair
     bool fuel_flag = true; // flag to only log fuel warnings once
+    bool crossed_start_line = false; // flag if car crossed the start/finish line. to make it easier for the box condition
     float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
     int counter = 0; // iteration counter. To print cars states every x iterations
     mqid = msgget(ftok(".", 25), 0); // MQ id
@@ -253,6 +253,7 @@ void *car_worker(void *stats) {
         if (car_info->car->lap_distance - LAP_DIST >= 0) { // se ultrapassar a distancia da volta -> distancia = distancia - LAP_DIST
             car_info->car->lap_distance -= LAP_DIST;
             car_info->car->laps_completed++;
+            crossed_start_line = true;
         }
 
         //only print every 10 iterations. just so the console isn't spammed
@@ -312,7 +313,8 @@ void *car_worker(void *stats) {
         
         // se está na linha da meta -> verificar se precisa de entrar na box
         //if ((car_info->car->lap_distance - (double)car_info->car->speed*multipliers[0]) <= 0){
-        if (car_info->car->lap_distance == 0) {
+        if (crossed_start_line) {
+            crossed_start_line = false;
             //verifica se carro está a tentar entrar na box
             if (enter_box){
                 //se está a tentar entrar e está em race_mode

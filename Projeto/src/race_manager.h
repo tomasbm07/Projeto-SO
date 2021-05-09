@@ -19,6 +19,8 @@ Joel Oliveira - 2019227468
 #include <sys/wait.h>
 #include <unistd.h>
 
+#include <poll.h>
+
 #include "team_manager.h"
 #include "write_output.h"
 
@@ -27,7 +29,6 @@ Joel Oliveira - 2019227468
 int **fd_team;
 extern int fd_race_pipe;
 extern pid_t cpid[2];
-bool race_going;
 
 void race_manager(pid_t malf_pid);
 void interrupt_race(int sig);
