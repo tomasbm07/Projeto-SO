@@ -193,28 +193,28 @@ void race_manager(pid_t malf_pid) {
                     		//printf("COMMAND RECEIVED :::::>>>> %s with %d chars\n", from_car_pipe, num_chars);
                         	if (check_pipe_command_regex("^S[0-9][1-9]$", from_car_pipe)){
                         		sscanf(from_car_pipe, "S%d", &car_num);
-                        		sprintf(str, "UPDATE ==> CAR %d GOT A MALFUNCTION", car_num);
+                        		sprintf(str, "UPDATE ==> CAR %02d GOT SWAPPED TO SAFETY MODE", car_num);
                         		write_log(str);
                         	}
                         	if (check_pipe_command_regex("^D[0-9][1-9]$", from_car_pipe)){
                         		sscanf(from_car_pipe, "D%d", &car_num);
-                        		sprintf(str, "UPDATE ==> CAR %d ISN'T HABLE TO CONTINUE THE RACE", car_num);
+                        		sprintf(str, "UPDATE ==> CAR %02d ISN'T HABLE TO CONTINUE THE RACE", car_num);
                         		write_log(str);
                         		counter_cars_finished++;
                         	}
                       		if (check_pipe_command_regex("^R[0-9][1-9]$", from_car_pipe)){
                         		sscanf(from_car_pipe, "R%d", &car_num);
-                        		sprintf(str, "UPDATE ==> CAR %d IS BACK AT FULL SPEED", car_num);
+                        		sprintf(str, "UPDATE ==> CAR %02d IS BACK AT FULL SPEED", car_num);
                         		write_log(str);
                         	}
                         	if (check_pipe_command_regex("^B[0-9][1-9]$", from_car_pipe)){
                         		sscanf(from_car_pipe, "B%d", &car_num);
-                        		sprintf(str, "UPDATE ==> CAR %d ENTERED THE BOX", car_num);
+                        		sprintf(str, "UPDATE ==> CAR %02d ENTERED THE BOX", car_num);
                         		write_log(str);
                        		}
                        		if (check_pipe_command_regex("^F[0-9][1-9]$", from_car_pipe)){
                         		sscanf(from_car_pipe, "F%d", &car_num);
-                        		sprintf(str, "UPDATE ==> CAR %d FINISHED THE RACE", car_num);
+                        		sprintf(str, "UPDATE ==> CAR %02d FINISHED THE RACE", car_num);
                         		write_log(str);
                         		counter_cars_finished++;
                        		}

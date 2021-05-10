@@ -297,7 +297,17 @@ void *car_worker(void *stats) {
            // sprintf(str, "Car %d from team %s ran out of fuel!", car_info->car->number, car_info->car->team_name);
            // write_log(str);
             pthread_exit(NULL);
-        } else if(car_info->fuel)
+        } else if(laps_from_fuel(car_info) <= 2){
+        	if (car_info->state !='S'){
+            	//comunicate change state to safety to race_manager.. sends state + car_number, for clean printing
+            	sprintf(to_car_pipe,"S%02d", car_info->car->number);
+            	write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  5);
+            	car_info->state = 'S';
+            }
+            enter_box = true;
+        } else if(laps_from_fuel(car_info)<=4){
+        	enter_box = true;
+        }
         
         // Increase position on lap and check if lap was completed
         car_info->car->lap_distance += multipliers[0] * (double)car_info->car->speed; // aumentar a posição na pista
@@ -357,7 +367,10 @@ void *car_worker(void *stats) {
                 write_log(str);
             }
             has_malfunction = true;
+            enter_box = true;
             if (car_info->state !='S'){
+            	sprintf(str, "CAR %02d GOT A MALFUNCTION", car_info->car->number);
+            	write_log(str);
             	//comunicate change state to safety to race_manager.. sends state + car_number, for clean printing
             	sprintf(to_car_pipe,"S%02d", car_info->car->number);
             	write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  5);
