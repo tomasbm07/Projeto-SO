@@ -154,7 +154,7 @@ void end_car_race(int sig){
 	//ou assim, de modo a sabermos a posição em que ficou no fim da corrida, visto que no fim estão todos na posição 0 
 	//e não dá para ver pelo par volta-distâcia.
 	char to_car_pipe[5];
-	sprintf(to_car_pipe, "E\0\0\0\0");
+	sprintf(to_car_pipe, "E");
     write(fd_team[index_aux/NR_CARS][1], to_car_pipe, 5);
 	
 	pthread_exit(NULL);
@@ -170,7 +170,7 @@ void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction, ch
     //sprintf(str, "Car %d from team %s is in the box! -> State = %c", car_info->car->number, car_info->car->team_name, car_info->state);
     //write_log(str);
     
-    sprintf(to_car_pipe,"B%02d\0\0", car_info->car->number);
+    sprintf(to_car_pipe,"B%02d", car_info->car->number);
     write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  5);
     car_info->state = 'B'; //mudar o estado do carro para na box;
     
@@ -190,7 +190,7 @@ void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction, ch
     //write_log(str);
    	usleep(1000000/NR_UNI_PS * 2);
    	
-   	sprintf(to_car_pipe,"R%02d\0\0", car_info->car->number);
+   	sprintf(to_car_pipe,"R%02d", car_info->car->number);
     write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  5);
     car_info->state = 'R';
     
@@ -237,7 +237,7 @@ void *car_worker(void *stats) {
         	if(car_info->car->laps_completed == NR_LAP){
             	car_info->car->lap_distance = 0; // reset lap_distance if car has finished race
             
-            	sprintf(to_car_pipe, "F%02d\0\0", car_info->car->number);
+            	sprintf(to_car_pipe, "F%02d", car_info->car->number);
             	write(fd_team[index_aux/NR_CARS][1], to_car_pipe, 5);
             
             	//car_info->state = 'F';
@@ -290,7 +290,7 @@ void *car_worker(void *stats) {
         // Decrease fuel and check if is < 0
         car_info->fuel -= multipliers[1] * car_info->car->consumption;
         if (car_info->fuel <= 0){            
-            sprintf(to_car_pipe, "D%02d\0\0", car_info->car->number);
+            sprintf(to_car_pipe, "D%02d", car_info->car->number);
             write(fd_team[index_aux/NR_CARS][1], to_car_pipe, 5);
             
             car_info->state = 'D';
@@ -359,7 +359,7 @@ void *car_worker(void *stats) {
             has_malfunction = true;
             if (car_info->state !='S'){
             	//comunicate change state to safety to race_manager.. sends state + car_number, for clean printing
-            	sprintf(to_car_pipe,"S%02d\0\0", car_info->car->number);
+            	sprintf(to_car_pipe,"S%02d", car_info->car->number);
             	write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  5);
             	car_info->state = 'S';
             }
