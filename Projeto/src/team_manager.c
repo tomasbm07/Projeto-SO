@@ -5,7 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "team_manager.h"
 
-pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER, cond_mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER, 
+				cond_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond_start = PTHREAD_COND_INITIALIZER;
 char box_state;
 int cars_number, index_aux;
@@ -26,7 +27,7 @@ void team_manager(int team_index) {
       struct sigaction sa_tterm, sa_tusr1, sa_tusr2;
       
       sa_tterm.sa_handler = terminate_cars_exit;
-      sa_tusr1.sa_handler = interrupt_cars;
+      sa_tusr1.sa_handler = swap_race_state;
       sa_tusr2.sa_handler = end_car_race;
       
       sa_tterm.sa_flags = 0;
@@ -80,16 +81,8 @@ void team_manager(int team_index) {
     pthread_cond_broadcast(&cond_start);
     pthread_mutex_unlock(&cond_mutex);
 
-    //sigdelset(&set, SIGUSR1);
-    //sigdelset(&set, SIGTERM);
-
       // wait for threads to finish
       for (i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
-
-/*
-    sigdelset(&set, SIGUSR1);
-    sigdelset(&set, SIGTERM);
-    */
     
     sprintf(str, "Team %s -> All cars finished", shm_info->cars[team_index * NR_CARS].team_name);
     write(fd_team[team_index][1], &str, strlen(str)+1);
@@ -154,14 +147,19 @@ void terminate_cars_exit(int sig){
     exit(0);
 }
 
-void interrupt_cars(int sig){
+void swap_race_state(int sig){
     pthread_mutex_lock(&cond_mutex);
-    race_going = false;
+    race_going = !race_going;
+    if (race_going)
+    	pthread_cond_broadcast(&cond_start);
     pthread_mutex_unlock(&cond_mutex);
 }
 
 void end_car_race(int sig){
 	printf("CAR ENDING\n");
+	//TODO na shm struct do carro penso que não seria mal pensado adicionar um integer posição, para se preencher aqui
+	//ou assim, de modo a sabermos a posição em que ficou no fim da corrida, visto que no fim estão todos na posição 0 
+	// e não dá para ver pelo par volta-distâcia.
 	pthread_exit(NULL);
 }
 

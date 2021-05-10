@@ -189,41 +189,37 @@ void race_manager(pid_t malf_pid) {
 
     
     while (1) {
-          FD_ZERO(&read_set);
-          FD_SET(fd_race_pipe, &read_set);	
-
-          for (i = 0; i < NR_TEAM;i++)
-              FD_SET(fd_team[i][0], &read_set);
+          	
+		FD_ZERO(&read_set);
+        FD_SET(fd_race_pipe, &read_set);
+        for (i = 0; i < NR_TEAM;i++)
+        	FD_SET(fd_team[i][0], &read_set);
           
-          if (select(max(fd_race_pipe, fd_team) + 1, &read_set, NULL, NULL, NULL)>0) {
+        if (select(max(fd_race_pipe, fd_team) + 1, &read_set, NULL, NULL, NULL)>0) {
 
-            if (FD_ISSET(fd_race_pipe, &read_set)) {
-                num_chars = read(fd_race_pipe, str, sizeof(str));
-                str[num_chars - 1] = '\0';  // put a \0 in the end of string
+          if (FD_ISSET(fd_race_pipe, &read_set)) {
+              num_chars = read(fd_race_pipe, str, sizeof(str));
+              str[num_chars - 1] = '\0';  // put a \0 in the end of string
                 
-                if (strcmp(str, "START RACE") == 0){
-                    write_log("[Race_Pipe] Got START RACE");
-                    write_log("[Race_Pipe] Race has alredy started!");
-                } else if(strcmp(str, "STOP") == 0){
-                    //stop the race. for testting :)
-                    write_log("[Race_Pipe] Got STOP");
-                }
+              if (strcmp(str, "START RACE") == 0){
+                  write_log("[Race_Pipe] Got START RACE");
+                  write_log("[Race_Pipe] Restarting race!");
+                  for (i = 0; i <NR_TEAM;i++)
+        				kill(teams_pid[i], SIGUSR1);
+              } else if(strcmp(str, "STOP") == 0){
+                  //stop the race. for testting :)
+                  write_log("[Race_Pipe] Got STOP");
+              }
                 else
-                    write_log("[Race_Pipe] Unknown command");
-            }
+                  write_log("[Race_Pipe] Unknown command");
+          }
 
             for (i = 0; i < NR_TEAM; i++) {
                 if (FD_ISSET(fd_team[i][0], &read_set)) {
                     read(fd_team[i][0], str, sizeof(str));
                     printf("MESSAGE received!! ----> '%s'\n", str);
                 }
-              }
-			close(fd_race_pipe);
-			if ((fd_race_pipe = open(PIPE_NAME, O_RDWR)) < 0) {
-        		write_log("ERRO: A abrir o pipe");
-        		destroy_resources();
-        		exit(-1);
-    		}
+            }
        }
     }
     
