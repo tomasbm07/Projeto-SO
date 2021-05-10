@@ -39,6 +39,7 @@ void generator(){
 	malfunction_msg msg;
 	int i, j, num;
 	while(1){
+		usleep(MALFUNCTION_UNI_NR * 1000000/NR_UNI_PS);
 		for (i = 0; i < NR_TEAM; i++){
 			for (j = 0; j < NR_CARS; j++){
 				num = rand() % 100 + 1;
@@ -50,7 +51,6 @@ void generator(){
 				}
 			}
 		}
-		usleep(MALFUNCTION_UNI_NR * 1000000/NR_UNI_PS);
 	}
 }
 
