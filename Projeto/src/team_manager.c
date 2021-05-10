@@ -5,8 +5,7 @@ Joel Oliveira - 2019227468
 
 #include "team_manager.h"
 
-pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER, 
-				cond_mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t box_mutex = PTHREAD_MUTEX_INITIALIZER, cond_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond_start = PTHREAD_COND_INITIALIZER;
 char box_state;
 int cars_number, index_aux;
@@ -86,14 +85,12 @@ void team_manager(int team_index) {
     
     sprintf(str, "Team %s -> All cars finished", shm_info->cars[team_index * NR_CARS].team_name);
     write(fd_team[team_index][1], &str, strlen(str)+1);
-    //TODO send signal to unanamed pipe that cars have finished
-    //TODO on race manager: when all cars finish -> signal malfunction to stop
 
       // destroy resources
     terminate_cars_exit(SIGTERM);
     
     write_log("Team Manager finishing");
-      exit(0);
+    exit(0);
 }
 
 
@@ -113,9 +110,9 @@ car_struct *create_car_structs_array() {
 void init_car_stats(car_struct *stats, int team_index, int car_index) {
     stats->car = &shm_info->cars[team_index + car_index];
     stats->car_index = car_index;
-      stats->state = 'R';
-      stats->fuel = FUEL_CAPACITY;
-      stats->car->lap_distance = 0;
+    stats->state = 'R';
+    stats->fuel = FUEL_CAPACITY;
+    stats->car->lap_distance = 0;
 }
 
 
@@ -156,10 +153,10 @@ void swap_race_state(int sig){
 }
 
 void end_car_race(int sig){
-	printf("CAR ENDING\n");
+	printf("CAR %d ENDING\n");
 	//TODO na shm struct do carro penso que não seria mal pensado adicionar um integer posição, para se preencher aqui
 	//ou assim, de modo a sabermos a posição em que ficou no fim da corrida, visto que no fim estão todos na posição 0 
-	// e não dá para ver pelo par volta-distâcia.
+	//e não dá para ver pelo par volta-distâcia.
 	pthread_exit(NULL);
 }
 
@@ -323,7 +320,7 @@ void *car_worker(void *stats) {
                     fuel_flag = false;
                 }
 
-            } else{
+            } else {
                 if(fuel_flag){
                     sprintf(str, "-- Car %d can't box -> Box already reserved!", car_info->car->number);
                     write_log(str);
@@ -340,8 +337,6 @@ void *car_worker(void *stats) {
             box_state = 'R';
             pthread_mutex_unlock(&box_mutex);
         }
-        
-        //TODO sincronização ???
         				
         usleep(1000000/NR_UNI_PS);
         

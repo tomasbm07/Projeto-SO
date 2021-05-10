@@ -19,8 +19,6 @@ Joel Oliveira - 2019227468
 #include <sys/wait.h>
 #include <unistd.h>
 
-#include <poll.h>
-
 #include "team_manager.h"
 #include "write_output.h"
 
