@@ -141,17 +141,15 @@ void terminate_cars_exit(int sig){
 
 void swap_race_state(int sig){
     pthread_mutex_lock(&cond_mutex);
-    race_going = !race_going;
-    if (race_going)
+    if (race_going){
         pthread_cond_broadcast(&cond_start);
+        race_going = false;
+    }
     pthread_mutex_unlock(&cond_mutex);
 }
 
 void end_car_race(int sig){
     printf("CAR ENDING\n");
-    //TODO na shm struct do carro penso que não seria mal pensado adicionar um integer posição, para se preencher aqui
-    //ou assim, de modo a sabermos a posição em que ficou no fim da corrida, visto que no fim estão todos na posição 0 
-    //e não dá para ver pelo par volta-distâcia.
     char to_car_pipe[10];
     sprintf(to_car_pipe, "E");
     pthread_mutex_lock(&pipe_mutex);
@@ -272,8 +270,9 @@ void *car_worker(void *stats) {
             
             //wait for condition variable to unlock mutex
             pthread_mutex_lock(&cond_mutex);
-            while(!race_going)
+            while(!race_going){
                 pthread_cond_wait(&cond_start, &cond_mutex);
+            }
             pthread_mutex_unlock(&cond_mutex);
             
             //unblock signal sigusr2 to see if signal is in queue to end race, then block again.
