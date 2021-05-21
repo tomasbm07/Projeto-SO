@@ -32,6 +32,7 @@ void malfunction_manager(){
 
 
 void generator(){
+	usleep(100);
 	#ifdef DEBUG
 	write_log("[Malfunction Manager] Got SIGUSR2 -> Starting");
 	#endif

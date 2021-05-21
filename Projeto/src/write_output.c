@@ -14,7 +14,7 @@ void write_log(char *line){
     timeinfo = localtime(&my_time); //converts time into struct timeinfo
 
     sem_wait(log_mutex);
-    fprintf(stdout, "[%d:%d:%d] %s\n", timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, line);
-    fprintf(f, "[%d:%d:%d] %s\n", timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, line);
+    fprintf(stdout, "[%02d:%02d:%02d] %s\n", timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, line);
+    fprintf(f, "[%02d:%02d:%02d] %s\n", timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, line);
     sem_post(log_mutex);
 }

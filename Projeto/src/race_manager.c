@@ -15,13 +15,21 @@ void race_manager(pid_t malf_pid) {
     malfunction_pid = malf_pid;
     bool flag_first_start = true;
     bool race_started = false;
-    int i = 0, num_chars, wait_status, car_num;
-    char str[256], aux[256], from_car_pipe[5];
+    int i = 0, num_chars, wait_status, car_num, counter_cars_finished=0;
+    char str[256], aux[256], from_car_pipe[10];
     fd_set read_set;
 
     //terminar corrida--SIGTERM
     struct sigaction sa_term, sa_usr1;
     sigset_t term_mask, usr1_mask;
+
+    sa_term.sa_handler = terminate_teams;
+    sa_usr1.sa_handler = interrupt_race;
+    
+    sigfillset(&term_mask);
+    
+    sigemptyset(&usr1_mask);
+    sigaddset(&usr1_mask, SIGTERM);
     
     sa_term.sa_handler = terminate_teams;
     sa_usr1.sa_handler = interrupt_race;
@@ -47,7 +55,7 @@ void race_manager(pid_t malf_pid) {
       sprintf(aux, "Race manager created (PID: %d)", getpid());
       write_log(aux);
     #endif
-	
+    
     while(1){
         if (!race_started){
             num_chars = read(fd_race_pipe, str, sizeof(str));
@@ -94,7 +102,7 @@ void race_manager(pid_t malf_pid) {
                             printf("MESSAGE received!! ----> '%s'\n", str);
                         }
 
-                        usleep(1000);
+                        //usleep(1000);
                         kill(cpid[0], SIGUSR2);
                         for (i = 0; i <NR_TEAM;i++)
                             kill(teams_pid[i], SIGUSR2);
@@ -238,7 +246,7 @@ void race_manager(pid_t malf_pid) {
     while ( (wait_status = wait(NULL)) >= 0 || (wait_status == -1 && errno == EINTR));    
     //close all unnamed pipes
     for (int i = 0; i < NR_TEAM; i++) close(fd_team[i][0]);
-	
+    
     exit(0);
 }
 

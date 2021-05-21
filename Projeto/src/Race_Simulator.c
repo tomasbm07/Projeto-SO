@@ -82,7 +82,7 @@ int main(int argc, char* argv[]) {
 
     // destroy resources and kill malfunction
     write_log("SERVER CLOSED");
-	statistics();
+    statistics();
     destroy_resources();
     
     exit(0);
@@ -209,26 +209,26 @@ void statistics(){
         }
     }
 
-    //sort cars by track position with bubble sort with conditional varaiable :)
-    bool no_swaps;
+    //sort cars by track position with improved bubble sort :)
+    //bool no_swaps;
     for (i = 0; i < NR_TEAM * NR_CARS; i++){
-        no_swaps = true;
-        for (j = 0; j < NR_TEAM * NR_CARS - i - 1; j++){
+        //no_swaps = true;
+        for (j = i; j < NR_TEAM * NR_CARS - 1; j++){
             //se um estiver numa volta á frente -> trocar
             if (array[j].laps_completed < array[j + 1].laps_completed){
                 swap(array, j, j + 1);
-                no_swaps = false;
-            } 
-
-            //se estiverem na mesma volta -> ver quem está á frente
-            else if(array[j].laps_completed == array[j + 1].laps_completed){
+                //no_swaps = false;
+            }
+            if(array[j].laps_completed == array[j + 1].laps_completed && array[j].laps_completed != NR_LAP){
                 if (array[j].lap_distance < array[j + 1].lap_distance){
-                   swap(array, j, j + 1);
-                   no_swaps = false;
+                swap(array, j, j + 1);
+                //no_swaps = false;
                 }
             }
+            
+        
         }
-        if (no_swaps) break;
+        //if (no_swaps) break;
     }
     
     //print statistics
@@ -236,9 +236,9 @@ void statistics(){
     printf("-------------------------------------------------\n");
     for (i = 0, x = 0; i < NR_TEAM * NR_CARS; i++, x++){
         if(i == 0 || i == 1 || i == 2 || i == 3 || i == 4)
-            printf("%d%s -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
+            printf("%d%s -> Car %d from team %s [lap: %d, lap_distance: %7.2f]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
         else if (i == NR_TEAM * NR_CARS - 1)
-            printf("%d%s -> Car %d from team %s [lap: %d, lap_distance: %.3f]\n", NR_TEAM * NR_CARS, chars[3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
+            printf("%d%s -> Car %d from team %s [lap: %d, lap_distance: %7.2f]\n", NR_TEAM * NR_CARS, chars[3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
 
     }
     printf(/*str, */"Total de malfuntions %d\n", shm_info->malfunctions_counter);
