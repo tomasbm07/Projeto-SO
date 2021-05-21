@@ -13,7 +13,6 @@ int shm_id;
 shm_struct* shm_info;
 pid_t cpid[2];
 
-
 int main(int argc, char* argv[]) {
     struct sigaction sa_int, sa_tstp;
     sigset_t int_mask;
@@ -157,8 +156,7 @@ void create_sem(char * name, sem_t ** sem){
 void initiate_sems() {
     // create semaphores
     create_sem("LOG_MUTEX", &log_mutex);  
-    create_sem("CAR_MUTEX", &car_mutex);
-    
+    create_sem("COUNTER_MUTEX", &counter_mutex);
     #ifdef DEBUG
     char str[50];
     sprintf(str, "Semaphores initialized");
@@ -181,8 +179,8 @@ void destroy_resources(void) {
     sem_close(log_mutex);
     sem_unlink("LOG_MUTEX");
   
-    sem_close(car_mutex);
-    sem_unlink("CAR_MUTEX");  
+    sem_close(counter_mutex);
+    sem_unlink("COUNTER_MUTEX");  
 
     shmdt(shm_info);
     shmctl(shm_id, IPC_RMID, NULL);
@@ -245,6 +243,9 @@ void statistics(){
     //printf(str);
     printf(/*str, */"Total de paragens na box %d\n", shm_info->refill_counter);
     //printf(str);
+    sem_wait(counter_mutex);
+    printf("Carros em pista: %d\n", NR_CARS*NR_TEAM - shm_info->counter_cars_finished);
+    sem_post(counter_mutex);
     printf("-------------------------------------------------\n");
 }
 

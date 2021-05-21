@@ -127,6 +127,7 @@ float laps_from_fuel(car_struct *car_info){
 
 
 void terminate_cars_exit(int sig){
+	race_going = true;
     pthread_cond_broadcast(&cond_start);
     
     for(int i = 0; i < cars_number; i++)
@@ -145,9 +146,9 @@ void terminate_cars_exit(int sig){
 
 void swap_race_state(int sig){
     pthread_mutex_lock(&cond_mutex);
+    race_going = !race_going;
     if (race_going){
         pthread_cond_broadcast(&cond_start);
-        race_going = false;
     }
     pthread_mutex_unlock(&cond_mutex);
 }
@@ -204,6 +205,7 @@ void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction, ch
     
     *has_malfunction = false;
     (shm_info->refill_counter)++;	
+    (car_info->car->box_stops_counter)++;	
     
     pthread_sigmask(SIG_BLOCK, &set_control_ending, NULL);
     

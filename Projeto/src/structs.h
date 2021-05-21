@@ -2,7 +2,10 @@
 Tomás Mendes - 2019232272
 Joel Oliveira - 2019227468
 */
-
+/*
+Tomás Mendes - 2019232272
+Joel Oliveira - 2019227468
+*/
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
@@ -22,6 +25,7 @@ typedef struct {
 typedef struct {
 	int malfunctions_counter; // number of malfunctions generated in total
 	int refill_counter; // number of stops made
+	int counter_cars_finished;
 	car_shm_struct cars[];
 } shm_struct;
 
