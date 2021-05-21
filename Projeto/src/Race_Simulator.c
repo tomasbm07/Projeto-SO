@@ -81,7 +81,6 @@ int main(int argc, char* argv[]) {
     while ( (wait_status=wait(NULL))>=0 || (wait_status == -1 && errno == EINTR) );
 
     // destroy resources and kill malfunction
-    kill(cpid[0], SIGTERM); //signal malfunction to end if race ends normally, i.e, without ctrl c in the middle of the race
     write_log("SERVER CLOSED");
 	statistics();
     destroy_resources();

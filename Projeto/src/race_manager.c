@@ -15,7 +15,7 @@ void race_manager(pid_t malf_pid) {
     malfunction_pid = malf_pid;
     bool flag_first_start = true;
     bool race_started = false;
-    int i = 0, num_chars, wait_status, car_num, counter_cars_finished=0;
+    int i = 0, num_chars, wait_status, car_num;
     char str[256], aux[256], from_car_pipe[5];
     fd_set read_set;
 
@@ -23,18 +23,20 @@ void race_manager(pid_t malf_pid) {
     struct sigaction sa_term, sa_usr1;
     sigset_t term_mask, usr1_mask;
     
-      sa_term.sa_handler = terminate_teams;
-      sa_usr1.sa_handler = interrupt_race;
+    sa_term.sa_handler = terminate_teams;
+    sa_usr1.sa_handler = interrupt_race;
       
       sigfillset(&term_mask);
       
       sigemptyset(&usr1_mask);
       sigaddset(&usr1_mask, SIGTERM);
-      
+	  
       sa_term.sa_mask = term_mask;
       sa_usr1.sa_mask = usr1_mask;
+      
       sa_term.sa_flags = 0;
       sa_usr1.sa_flags = 0;
+      
       sigaction(SIGTERM, &sa_term, NULL);
       sigaction(SIGUSR1, &sa_usr1, NULL);
       
@@ -185,11 +187,11 @@ void race_manager(pid_t malf_pid) {
 
                 for (i = 0; i < NR_TEAM; i++) {
                     if (FD_ISSET(fd_team[i][0], &read_set)) {
-                    	num_chars = read(fd_team[i][0], from_car_pipe, 5);
+                    	while( (num_chars = read(fd_team[i][0], from_car_pipe, 5))<0 && errno == EINTR) ;
                     	if (num_chars == 0) 
                     		continue;
                     	else{
-                    		from_car_pipe[num_chars - 1] = '\0';
+                    		//from_car_pipe[num_chars - 1] = '\0';
                     		//printf("COMMAND RECEIVED :::::>>>> %s with %d chars\n", from_car_pipe, num_chars);
                         	if (check_pipe_command_regex("^S[0-9][1-9]$", from_car_pipe)){
                         		sscanf(from_car_pipe, "S%d", &car_num);
@@ -200,7 +202,7 @@ void race_manager(pid_t malf_pid) {
                         		sscanf(from_car_pipe, "D%d", &car_num);
                         		sprintf(str, "UPDATE ==> CAR %02d ISN'T HABLE TO CONTINUE THE RACE", car_num);
                         		write_log(str);
-                        		counter_cars_finished++;
+                        		//counter_cars_finished++;
                         	}
                       		if (check_pipe_command_regex("^R[0-9][1-9]$", from_car_pipe)){
                         		sscanf(from_car_pipe, "R%d", &car_num);
@@ -216,27 +218,22 @@ void race_manager(pid_t malf_pid) {
                         		sscanf(from_car_pipe, "F%d", &car_num);
                         		sprintf(str, "UPDATE ==> CAR %02d FINISHED THE RACE", car_num);
                         		write_log(str);
-                        		counter_cars_finished++;
+                        		//counter_cars_finished++;
                        		}
-                       		if (check_pipe_command_regex("^E$", from_car_pipe)){
+                       		if (check_pipe_command_regex("^E", from_car_pipe)){
                         		sprintf(str, "UPDATE ==> UNSPECIFIED CAR FINISHED THE RACE");
                         		write_log(str);
-                        		counter_cars_finished++;
+                        		//counter_cars_finished++;
                        		}
                     	}
 					}
                 }
             }
-            if (counter_cars_finished == NR_CARS*NR_TEAM){
-            	printf("////-----------------FINISHING RACE_MANAGER ---------------\\\\ \n");
-            	break;
-            }
         }
-            
     } // end while(1)
-    
-    kill(cpid[0],SIGTERM);
-
+	
+	
+	printf("////......-----FINISHING------.....\\\\ \n");
     // wait for all team processes to finish
     while ( (wait_status = wait(NULL)) >= 0 || (wait_status == -1 && errno == EINTR));    
     //close all unnamed pipes
@@ -322,3 +319,4 @@ int max(int fd1, int **other_fds){
 pid_t * teams_pid_array(){
     return (pid_t*) malloc(sizeof(pid_t)*NR_TEAM);
 }
+
