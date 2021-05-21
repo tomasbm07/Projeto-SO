@@ -155,11 +155,10 @@ void swap_race_state(int sig){
 
 void end_car_race(int sig){
     printf("CAR ENDING\n");
-    char to_car_pipe[10];
-    sprintf(to_car_pipe, "E");
-    pthread_mutex_lock(&pipe_mutex);
-    write(fd_team[index_aux/NR_CARS][1], to_car_pipe, sizeof(to_car_pipe));
-    pthread_mutex_unlock(&pipe_mutex);
+    
+    sem_wait(counter_mutex);
+    shm_info->counter_cars_finished++;
+    sem_post(counter_mutex);
     
     pthread_exit(NULL);
 }
@@ -175,7 +174,7 @@ void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction, ch
             
     sprintf(to_car_pipe,"B%02d", car_info->car->number);
     pthread_mutex_lock(&pipe_mutex);
-    write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  sizeof(to_car_pipe));
+    write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  strlen(to_car_pipe)+1);
     pthread_mutex_unlock(&pipe_mutex);
 
     car_info->state = 'B'; //mudar o estado do carro para na box;
@@ -198,7 +197,7 @@ void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction, ch
        
     sprintf(to_car_pipe,"R%02d", car_info->car->number);
     pthread_mutex_lock(&pipe_mutex);
-    write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  sizeof(to_car_pipe));
+    write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  strlen(to_car_pipe)+1);
     pthread_mutex_unlock(&pipe_mutex);
 
     car_info->state = 'R';
@@ -267,7 +266,7 @@ void *car_worker(void *stats) {
                 //comunicate change state to safety to race_manager.. sends state + car_number, for clean printing
                 sprintf(to_car_pipe,"S%02d", car_info->car->number);
                 pthread_mutex_lock(&pipe_mutex);
-                write(fd_team[index_aux/NR_CARS][1], to_car_pipe, sizeof(to_car_pipe));
+                write(fd_team[index_aux/NR_CARS][1], to_car_pipe, strlen(to_car_pipe)+1);
                 pthread_mutex_unlock(&pipe_mutex);
                 car_info->state = 'S';
             }
@@ -281,7 +280,7 @@ void *car_worker(void *stats) {
             
                 sprintf(to_car_pipe, "F%02d", car_info->car->number);
                 pthread_mutex_lock(&pipe_mutex);
-                write(fd_team[index_aux/NR_CARS][1], to_car_pipe, sizeof(to_car_pipe));
+                write(fd_team[index_aux/NR_CARS][1], to_car_pipe, strlen(to_car_pipe)+1);
                 pthread_mutex_unlock(&pipe_mutex);
                 
                 //car_info->state = 'F';
@@ -337,7 +336,7 @@ void *car_worker(void *stats) {
         if (car_info->fuel <= 0){            
             sprintf(to_car_pipe, "D%02d", car_info->car->number);
             pthread_mutex_lock(&pipe_mutex);
-            write(fd_team[index_aux/NR_CARS][1], to_car_pipe, sizeof(to_car_pipe));
+            write(fd_team[index_aux/NR_CARS][1], to_car_pipe, strlen(to_car_pipe)+1);
             pthread_mutex_unlock(&pipe_mutex);
             
             car_info->state = 'D';
@@ -351,7 +350,7 @@ void *car_worker(void *stats) {
         	
             	//comunicate change state to safety to race_manager.. sends state + car_number, for clean printing
             	sprintf(to_car_pipe,"S%02d", car_info->car->number);
-            	write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  5);
+            	write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  strlen(to_car_pipe)+1);
             	car_info->state = 'S';
             }
             enter_box = true;
@@ -386,8 +385,8 @@ void *car_worker(void *stats) {
 
     }
 
-    sprintf(str, "++++ Car %d from team: %s has finished the race ++++", car_info->car->number, car_info->car->team_name);
-    write_log(str);
+    //sprintf(str, "++++ Car %d from team: %s has finished the race ++++", car_info->car->number, car_info->car->team_name);
+    //write_log(str);
     
     pthread_exit(NULL);
 }
