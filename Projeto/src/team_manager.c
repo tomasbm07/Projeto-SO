@@ -81,8 +81,12 @@ void team_manager(int team_index) {
     pthread_mutex_unlock(&cond_mutex);
 
       // wait for threads to finish
-      for (i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
-
+    for (i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
+	
+	kill(getppid(), SIGUSR2);
+	//printf("team manager writing\n");
+	//write(fd_team[index_aux/NR_TEAM], "T", 5);
+	
       // destroy resources
     terminate_cars_exit(SIGTERM);
     
@@ -161,15 +165,14 @@ void end_car_race(int sig){
 }
 
 
-void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction, char to_car_pipe[]){
+void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction, char to_car_pipe[], sigset_t set_control_ending){
     box_state = 'F'; // ocupar a box
     pthread_mutex_unlock(&box_mutex);
 
-    char str[256];
+    //char str[256];
 
-    //sprintf(str, "Car %d from team %s is in the box! -> State = %c", car_info->car->number, car_info->car->team_name, car_info->state);
-    //write_log(str);
-    
+    pthread_sigmask(SIG_UNBLOCK, &set_control_ending, NULL);
+            
     sprintf(to_car_pipe,"B%02d", car_info->car->number);
     write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  5);
     car_info->state = 'B'; //mudar o estado do carro para na box;
@@ -197,6 +200,9 @@ void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction, ch
 
     *has_malfunction = false;
     (shm_info->refill_counter)++;	
+    
+    pthread_sigmask(SIG_BLOCK, &set_control_ending, NULL);
+    
     pthread_mutex_lock(&box_mutex);
     box_state = 'E';
 
@@ -261,7 +267,7 @@ void *car_worker(void *stats) {
                 if (car_info->state == 'R'){
                     pthread_mutex_lock(&box_mutex);
                     if (box_state == 'E'){ // se a box estiver vazia
-                        repair_car(car_info, &fuel_flag, &has_malfunction, to_car_pipe);
+                        repair_car(car_info, &fuel_flag, &has_malfunction, to_car_pipe, set_control_ending);
                         enter_box = false;
                     }
                     pthread_mutex_unlock(&box_mutex);
@@ -270,7 +276,7 @@ void *car_worker(void *stats) {
                 }else if (car_info->state == 'S'){
                     pthread_mutex_lock(&box_mutex);
                     if (box_state == 'E' || box_state == 'R'){
-                        repair_car(car_info, &fuel_flag, &has_malfunction, to_car_pipe);
+                        repair_car(car_info, &fuel_flag, &has_malfunction, to_car_pipe, set_control_ending);
                         enter_box = false;
                     }
                     pthread_mutex_unlock(&box_mutex);
@@ -294,11 +300,14 @@ void *car_worker(void *stats) {
             write(fd_team[index_aux/NR_CARS][1], to_car_pipe, 5);
             
             car_info->state = 'D';
-           // sprintf(str, "Car %d from team %s ran out of fuel!", car_info->car->number, car_info->car->team_name);
-           // write_log(str);
+           //sprintf(str, "Car %d from team %s ran out of fuel!", car_info->car->number, car_info->car->team_name);
+           //write_log(str);
             pthread_exit(NULL);
         } else if(laps_from_fuel(car_info) <= 2){
         	if (car_info->state !='S'){
+        		sprintf(str, "CAR %02d LOW ON FUEL", car_info->car->number);
+            	write_log(str);
+        	
             	//comunicate change state to safety to race_manager.. sends state + car_number, for clean printing
             	sprintf(to_car_pipe,"S%02d", car_info->car->number);
             	write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  5);
@@ -363,15 +372,16 @@ void *car_worker(void *stats) {
         if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >= 0){
             if(!has_malfunction){
                 (shm_info->malfunctions_counter)++;
-                sprintf(str, "** Car %d received a malfunction -> Safety mode ON", car_info->car->number);
-                write_log(str);
+                //sprintf(str, "** Car %d received a malfunction -> Safety mode ON", car_info->car->number);
+                //write_log(str);
             }
             has_malfunction = true;
             enter_box = true;
             if (car_info->state !='S'){
             	sprintf(str, "CAR %02d GOT A MALFUNCTION", car_info->car->number);
             	write_log(str);
-            	//comunicate change state to safety to race_manager.. sends state + car_number, for clean printing
+            	
+            	//comunicate change state to safety to race_manager.. sends state + car_number
             	sprintf(to_car_pipe,"S%02d", car_info->car->number);
             	write(fd_team[index_aux/NR_CARS][1], to_car_pipe,  5);
             	car_info->state = 'S';
@@ -386,8 +396,8 @@ void *car_worker(void *stats) {
             pthread_mutex_unlock(&box_mutex);
         }  
     }
-    sprintf(str, "++ Car %d from team: %s has finished the race ++", car_info->car->number, car_info->car->team_name);
-    write_log(str);
+    //sprintf(str, "++ Car %d from team: %s has finished the race ++", car_info->car->number, car_info->car->team_name);
+    //write_log(str);
     
     pthread_exit(NULL);
 }
