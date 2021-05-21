@@ -26,7 +26,7 @@ Joel Oliveira - 2019227468
 
 
 key_t shmkey;
-sem_t *log_mutex, *counter_mutex, *statistics_mutex;
+sem_t *log_mutex, *counter_mutex, *statistics_mutex, *cond_sem_stat, *cond_sem_car, *sem_car_count;
 FILE *f;
 
 void initiate_resources();

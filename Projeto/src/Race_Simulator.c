@@ -139,6 +139,10 @@ void initiate_shm() {
 
     shm_info = (shm_struct*)shmat(shm_id, NULL, 0);
     check_shmat(shm_info);
+    
+    shm_info->wait_statistics = false;
+    shm_info->counter_cars_finished = 0;
+    
 }
 
 
@@ -157,7 +161,11 @@ void initiate_sems() {
     // create semaphores
     create_sem("LOG_MUTEX", &log_mutex, 1);  
     create_sem("COUNTER_MUTEX", &counter_mutex, 1);
-    create_sem("STAISTICS_MUTEX", &statistics_mutex, 1);
+    create_sem("STATISTICS_MUTEX", &statistics_mutex, 1);
+    create_sem("COND_STAT", &cond_sem_stat, 0);
+    create_sem("COND_CAR", &cond_sem_car, 0);
+    create_sem("CAR_COUNT", &sem_car_count, NR_CARS*NR_TEAM);
+    
     //create_sem("STAISTICS_STOPS", &statistics_mutex, NR_TEAM*NR_CARS);
     #ifdef DEBUG
     char str[50];
@@ -183,7 +191,19 @@ void destroy_resources(void) {
   
     sem_close(counter_mutex);
     sem_unlink("COUNTER_MUTEX");  
-
+	
+	sem_close(statistics_mutex);
+    sem_unlink("STATISTICS_MUTEX");  
+    
+    sem_close(cond_sem_stat);
+    sem_unlink("COND_STAT");  
+    
+    sem_close(cond_sem_car);
+    sem_unlink("COND_CAR");  
+    
+    sem_close(sem_car_count);
+    sem_unlink("CAR_COUNT");  
+    
     shmdt(shm_info);
     shmctl(shm_id, IPC_RMID, NULL);
   
@@ -196,12 +216,28 @@ void statistics(){
     //char str[256];
     write_log("GOT SIGTSTP - Statistics coming");
 
-    int i, j, x = 0, value = 0;
+    int i, j, x = 0, value;
     car_shm_struct array[NR_TEAM*NR_CARS]; // array com uma copia dos carros
 
-    //mldasdasidj
-    for (i = 0; i < NR_CARS*NR_TEAM; i++){
-        sem_wait(statistics_mutex);
+
+	sem_getvalue(sem_car_count, &value);
+    
+    sem_wait(counter_mutex);
+    if (value > NR_CARS*NR_TEAM - shm_info->counter_cars_finished){
+    	for( i = 0; i < value - (NR_CARS*NR_TEAM - shm_info->counter_cars_finished);i++ )
+    		sem_wait(sem_car_count);
+    }
+
+    //alterar a flag
+    sem_wait(statistics_mutex);
+    shm_info->wait_statistics = true;
+    sem_post(statistics_mutex);
+  
+    sem_post(counter_mutex);
+    //esperar que todos os carros parem
+    while(value>0){
+    	sem_wait(cond_sem_stat);
+    	sem_getvalue(sem_car_count, &value);
     }
 
     //copy the cars from shm to array
@@ -226,6 +262,16 @@ void statistics(){
         }
     }
     
+    //alterar a flag a indicar fim do procedimento
+    sem_wait(statistics_mutex);
+    shm_info->wait_statistics = false;
+    sem_post(statistics_mutex);
+    
+    //permitir aos carros avançar
+    sem_wait(counter_mutex);
+    for(i = 0; i < NR_CARS*NR_TEAM - shm_info->counter_cars_finished; i++)
+    	sem_post(cond_sem_car);
+    sem_post(counter_mutex);
     //print statistics
     char chars[][3] = {"st", "nd", "rd", "th"};
     printf("-------------------------------------------------\n");

@@ -240,8 +240,21 @@ void *car_worker(void *stats) {
     
     // Race loop
     while(1){
-        sem_wait(statistics_mutex);
-
+        
+		sem_wait(sem_car_count);
+		sem_post(cond_sem_stat);
+		
+		sem_wait(statistics_mutex);
+		while(shm_info->wait_statistics){
+		
+			sem_post(statistics_mutex);
+			sem_wait(cond_sem_car);
+			
+			sem_wait(statistics_mutex);
+		}
+		sem_post(statistics_mutex);
+		sem_post(sem_car_count);
+		
         // check if there is any malfunctions on MQ -> change car state
         if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >= 0){
             if(!has_malfunction){
@@ -369,7 +382,6 @@ void *car_worker(void *stats) {
             box_state = 'R';
             pthread_mutex_unlock(&box_mutex);
         } 
-        sem_post(statistics_mutex);
         usleep(1000000/NR_UNI_PS);
 
     }
