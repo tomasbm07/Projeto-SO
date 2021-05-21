@@ -251,6 +251,8 @@ void race_manager(pid_t malf_pid) {
             sem_wait(counter_mutex);
             if (shm_info->counter_cars_finished == NR_CARS*NR_TEAM){
             	sem_post(counter_mutex);
+                sprintf(str, "-------All cars finished-------");
+                write_log(str);
             	break;
             }
             sem_post(counter_mutex);

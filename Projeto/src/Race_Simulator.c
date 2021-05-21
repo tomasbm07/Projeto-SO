@@ -142,9 +142,9 @@ void initiate_shm() {
 }
 
 
-void create_sem(char * name, sem_t ** sem){
+void create_sem(char * name, sem_t ** sem, int sem_value){
     sem_unlink(name);
-    *sem = sem_open(name, O_CREAT | O_EXCL, 0700, 1);
+    *sem = sem_open(name, O_CREAT | O_EXCL, 0700, sem_value);
     if (*sem == SEM_FAILED){
         write_log("Failed to create the semaphore MUTEX");
         destroy_resources();
@@ -155,8 +155,10 @@ void create_sem(char * name, sem_t ** sem){
 
 void initiate_sems() {
     // create semaphores
-    create_sem("LOG_MUTEX", &log_mutex);  
-    create_sem("COUNTER_MUTEX", &counter_mutex);
+    create_sem("LOG_MUTEX", &log_mutex, 1);  
+    create_sem("COUNTER_MUTEX", &counter_mutex, 1);
+    create_sem("STAISTICS_MUTEX", &statistics_mutex, 1);
+    //create_sem("STAISTICS_STOPS", &statistics_mutex, NR_TEAM*NR_CARS);
     #ifdef DEBUG
     char str[50];
     sprintf(str, "Semaphores initialized");
@@ -194,11 +196,13 @@ void statistics(){
     //char str[256];
     write_log("GOT SIGTSTP - Statistics coming");
 
-    int x = 0;
-    int i, j;
+    int i, j, x = 0, value = 0;
     car_shm_struct array[NR_TEAM*NR_CARS]; // array com uma copia dos carros
 
-    //TODO sincronizacao para isto. pause(), copiar e enviar um sinal para a corrida recomeçar? 
+    //mldasdasidj
+    for (i = 0; i < NR_CARS*NR_TEAM; i++){
+        sem_wait(statistics_mutex);
+    }
 
     //copy the cars from shm to array
     for (i = 0; i < NR_TEAM; i++){
@@ -207,26 +211,19 @@ void statistics(){
         }
     }
 
-    //sort cars by track position with improved bubble sort :)
-    //bool no_swaps;
+    //sort cars by track position with bubble sort :)
     for (i = 0; i < NR_TEAM * NR_CARS; i++){
-        //no_swaps = true;
         for (j = i; j < NR_TEAM * NR_CARS - 1; j++){
             //se um estiver numa volta á frente -> trocar
             if (array[j].laps_completed < array[j + 1].laps_completed){
                 swap(array, j, j + 1);
-                //no_swaps = false;
             }
             if(array[j].laps_completed == array[j + 1].laps_completed && array[j].laps_completed != NR_LAP){
                 if (array[j].lap_distance < array[j + 1].lap_distance){
                 swap(array, j, j + 1);
-                //no_swaps = false;
                 }
             }
-            
-        
         }
-        //if (no_swaps) break;
     }
     
     //print statistics

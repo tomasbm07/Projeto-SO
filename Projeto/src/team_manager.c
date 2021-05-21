@@ -165,7 +165,7 @@ void end_car_race(int sig){
 }
 
 
-void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction, char to_car_pipe[], sigset_t set_control_ending){
+void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction, char *to_car_pipe, sigset_t set_control_ending){
     box_state = 'F'; // ocupar a box
     pthread_mutex_unlock(&box_mutex);
 
@@ -240,6 +240,8 @@ void *car_worker(void *stats) {
     
     // Race loop
     while(1){
+        sem_wait(statistics_mutex);
+
         // check if there is any malfunctions on MQ -> change car state
         if(msgrcv(mqid, &msg, 0, (long)(index_aux + car_info->car_index + 1), IPC_NOWAIT) >= 0){
             if(!has_malfunction){
@@ -367,7 +369,7 @@ void *car_worker(void *stats) {
             box_state = 'R';
             pthread_mutex_unlock(&box_mutex);
         } 
-        
+        sem_post(statistics_mutex);
         usleep(1000000/NR_UNI_PS);
 
     }

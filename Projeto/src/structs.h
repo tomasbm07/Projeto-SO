@@ -25,7 +25,8 @@ typedef struct {
 typedef struct {
 	int malfunctions_counter; // number of malfunctions generated in total
 	int refill_counter; // number of stops made
-	int counter_cars_finished;
+	int counter_cars_finished; // number of cars that have finished or quit the race
+	bool wait_statistics;
 	car_shm_struct cars[];
 } shm_struct;
 
