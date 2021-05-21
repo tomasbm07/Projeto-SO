@@ -201,7 +201,7 @@ void race_manager(pid_t malf_pid) {
                     		continue;
                     	else{
                     		//from_car_pipe[num_chars - 1] = '\0';
-                    		//printf("COMMAND RECEIVED :::::>>>> %s with %d chars\n", from_car_pipe, num_chars);
+                    		
                         	if (check_pipe_command_regex("^S[0-9][0-9]$", from_car_pipe)){
                         		sscanf(from_car_pipe, "S%d", &car_num);
                         		sprintf(str, "UPDATE ==> CAR %02d GOT SWAPPED TO SAFETY MODE", car_num);
@@ -235,15 +235,7 @@ void race_manager(pid_t malf_pid) {
                         		sem_wait(counter_mutex);
                         		shm_info->counter_cars_finished++;
                         		sem_post(counter_mutex);
-                       		}
-                       		if (check_pipe_command_regex("^E", from_car_pipe)){
-                        		sprintf(str, "UPDATE ==> UNSPECIFIED CAR FINISHED THE RACE");
-                        		write_log(str);
-                        		
-                        		sem_wait(counter_mutex);
-                        		shm_info->counter_cars_finished++;
-                        		sem_post(counter_mutex);
-                       		}
+                       		}                 
                     	}
 					}
                 }
