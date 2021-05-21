@@ -5,8 +5,6 @@ Joel Oliveira - 2019227468
 
 #include "race_manager.h"
 
-#define PIPE_NAME "/home/user/race_pipe"
-//#define PIPE_NAME "race_pipe"
 
 pid_t *teams_pid;
 pid_t malfunction_pid;
@@ -255,7 +253,8 @@ void race_manager(pid_t malf_pid) {
                 write_log(str);
             	break;
             }
-            sem_post(counter_mutex);
+            else
+                sem_post(counter_mutex);
         }
     } // end while(1)
 	

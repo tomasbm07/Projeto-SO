@@ -240,7 +240,6 @@ void *car_worker(void *stats) {
     
     // Race loop
     while(1){
-        
 		sem_wait(sem_car_count);
 		sem_post(cond_sem_stat);
 		
@@ -381,7 +380,8 @@ void *car_worker(void *stats) {
             pthread_mutex_lock(&box_mutex);
             box_state = 'R';
             pthread_mutex_unlock(&box_mutex);
-        } 
+        }
+
         usleep(1000000/NR_UNI_PS);
 
     }

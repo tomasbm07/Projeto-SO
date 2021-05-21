@@ -219,7 +219,6 @@ void statistics(){
     int i, j, x = 0, value;
     car_shm_struct array[NR_TEAM*NR_CARS]; // array com uma copia dos carros
 
-
 	sem_getvalue(sem_car_count, &value);
     
     sem_wait(counter_mutex);
@@ -274,21 +273,33 @@ void statistics(){
     sem_post(counter_mutex);
     //print statistics
     char chars[][3] = {"st", "nd", "rd", "th"};
+    char statistics[500*NR_CARS*NR_TEAM];
+    char aux[500];
     printf("-------------------------------------------------\n");
+    strcat(statistics, "----Statistics----\n");
     for (i = 0, x = 0; i < NR_TEAM * NR_CARS; i++, x++){
-        if(i == 0 || i == 1 || i == 2 || i == 3 || i == 4)
-            printf("%d%s -> Car %d from team %s [lap: %d, lap_distance: %7.2f]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
-        else if (i == NR_TEAM * NR_CARS - 1)
-            printf("%d%s -> Car %d from team %s [lap: %d, lap_distance: %7.2f]\n", NR_TEAM * NR_CARS, chars[3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance);
+        if(i == 0 || i == 1 || i == 2 || i == 3 || i == 4){
+            sprintf(aux, "%d%s -> Car %d from team %s [lap: %d, lap_distance: %7.2f, stops: %d]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance, array[i].box_stops_counter);
+            strcat(statistics, aux);
+        }
+        else if (i == NR_TEAM * NR_CARS - 1){
+            sprintf(aux, "   .\n   .\n   .\n");
+            strcat(statistics, aux);
 
+            sprintf(aux, "%d%s -> Car %d from team %s [lap: %d, lap_distance: %7.2f, stops: %d]\n", NR_TEAM * NR_CARS, chars[3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance, array[i].box_stops_counter);
+            strcat(statistics, aux);
+        }
     }
-    printf(/*str, */"Total de malfuntions %d\n", shm_info->malfunctions_counter);
-    //printf(str);
-    printf(/*str, */"Total de paragens na box %d\n", shm_info->refill_counter);
-    //printf(str);
+    sprintf(aux, "Total de malfuntions %d\n", shm_info->malfunctions_counter);
+    strcat(statistics, aux);
+    sprintf(aux, "Total de paragens na box %d\n", shm_info->refill_counter);
+    strcat(statistics, aux);
+
     sem_wait(counter_mutex);
-    printf("Carros em pista: %d\n", NR_CARS*NR_TEAM - shm_info->counter_cars_finished);
+    sprintf(aux, "Carros em pista: %d\n", NR_CARS*NR_TEAM - shm_info->counter_cars_finished);
     sem_post(counter_mutex);
+    strcat(statistics, aux);
+    write_log(statistics);
     printf("-------------------------------------------------\n");
 }
 
