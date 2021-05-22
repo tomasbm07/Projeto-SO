@@ -278,33 +278,45 @@ void statistics(){
     
     //print statistics
     char chars[][3] = {"st", "nd", "rd", "th"};
-    char statistics[500*NR_CARS*NR_TEAM];
+    char statistics[500*(shm_info->nr_cars)];
     strcpy(statistics, "");
     
     char aux[500]="";
     
     printf("-------------------------------------------------\n");
     strcat(statistics, "----Statistics----\n");
-    for (i = 0, x = 0; i < NR_TEAM * NR_CARS; i++, x++){
+    
+    sem_wait(counter_mutex);
+    for (i = 0, x = 0; i < (shm_info->nr_cars); i++, x++){
+    	sem_post(counter_mutex);
+    	
+    	sem_wait(counter_mutex);
         if(0<=i && i<=4){
             sprintf(aux, "%d%s -> Car %d from team %s [lap: %d, lap_distance: %7.2f, stops: %d]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance, array[i].box_stops_counter);
             strcat(statistics, aux);
         }
-        else if (i == NR_TEAM * NR_CARS - 1){
+        else if (i == (shm_info->nr_cars) - 1){
+        	
             sprintf(aux, "   .\n   .\n   .\n");
             strcat(statistics, aux);
 
             sprintf(aux, "%d%s -> Car %d from team %s [lap: %d, lap_distance: %7.2f, stops: %d]\n", NR_TEAM * NR_CARS, chars[3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance, array[i].box_stops_counter);
             strcat(statistics, aux);
+            
         }
+        sem_post(counter_mutex);
+        
+        sem_wait(counter_mutex);
     }
+    sem_post(counter_mutex);
+    
     sprintf(aux, "Total de malfuntions %d\n", shm_info->malfunctions_counter);
     strcat(statistics, aux);
     sprintf(aux, "Total de paragens na box %d\n", shm_info->refill_counter);
     strcat(statistics, aux);
 
     sem_wait(counter_mutex);
-    sprintf(aux, "Carros em pista: %d\n", NR_CARS*NR_TEAM - shm_info->counter_cars_finished);
+    sprintf(aux, "Carros em pista: %d\n", (shm_info->nr_cars) - shm_info->counter_cars_finished);
     sem_post(counter_mutex);
     strcat(statistics, aux);
     write_log(statistics);
