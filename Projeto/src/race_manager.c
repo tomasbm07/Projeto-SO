@@ -105,6 +105,7 @@ void race_manager(pid_t malf_pid) {
                         kill(teams_pid[i], SIGUSR2);
                     
                     write_log("---RACE HAS STARTED---");
+                    race_going = true;
 
                     //break;		
                 }else

@@ -250,16 +250,17 @@ void statistics(){
         }
     }
 
-    //sort cars by track position with bubble sort :)
+    //sort cars by track position with bubble sort
     for (i = 0; i < NR_TEAM * NR_CARS; i++){
-        for (j = i; j < NR_TEAM * NR_CARS - 1; j++){
+        for (j = 0; j < NR_TEAM * NR_CARS - 1; j++){
             //se um estiver numa volta á frente -> trocar
             if (array[j].laps_completed < array[j + 1].laps_completed){
                 swap(array, j, j + 1);
             }
-            if(array[j].laps_completed == array[j + 1].laps_completed && array[j].laps_completed != NR_LAP){
+            //se estiverem na mesma volta e j ainda não acabou -> ver lap_distance
+            else if(array[j].laps_completed == array[j + 1].laps_completed && array[j].laps_completed != NR_LAP){
                 if (array[j].lap_distance < array[j + 1].lap_distance){
-                swap(array, j, j + 1);
+                    swap(array, j, j + 1);
                 }
             }
         }
