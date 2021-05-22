@@ -33,6 +33,8 @@ int main(int argc, char* argv[]) {
     signal(SIGUSR2, SIG_IGN);
     signal(SIGTERM, SIG_IGN);
 
+    printf("Race Simulator created (PID: %d)\n", getpid());
+
     f = fopen("log.txt", "a");
 
     if (argc < 2) {

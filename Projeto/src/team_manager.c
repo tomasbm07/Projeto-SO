@@ -86,7 +86,7 @@ void team_manager(int team_index) {
 	//printf("team manager writing\n");
 	//write(fd_team[index_aux/NR_TEAM], "T", 5);
 	
-      // destroy resources
+    // destroy resources
     terminate_cars_exit(SIGTERM);
     
     write_log("Team Manager finishing");
