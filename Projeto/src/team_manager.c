@@ -170,8 +170,11 @@ void end_car_race(int sig){
 }
 
 float laps_from_fuel(car_struct *car_info){
-    return ( ((double)car_info->fuel*car_info->car->speed*multipliers[0])/(car_info->car->consumption*multipliers[1]) ) / (double) LAP_DIST;
-}
+    if (car_info->state == 'S')
+        return ( ((double)(car_info->fuel*car_info->car->speed*(1 + multipliers[0])))/((double)(car_info->car->consumption*(1 + multipliers[1]))) ) / (double) LAP_DIST;
+    else
+        return ( ((double)(car_info->fuel*car_info->car->speed))/((double)(car_info->car->consumption)) ) / (double) LAP_DIST;
+}        
 
 
 void repair_car(car_struct *car_info, bool *fuel_flag, bool *has_malfunction, char *to_car_pipe, sigset_t set_control_ending){
