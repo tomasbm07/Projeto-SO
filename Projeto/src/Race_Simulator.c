@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-#define PIPE_NAME "/home/user/race_pipe"
-//#define PIPE_NAME "race_pipe"
+//#define PIPE_NAME "/home/user/race_pipe"
+#define PIPE_NAME "race_pipe"
 
 int fd_race_pipe;
 int shm_id;
@@ -145,7 +145,7 @@ void initiate_shm() {
     shm_info->wait_statistics = false;
     shm_info->counter_cars_finished = 0;
     shm_info->nr_cars = 0;
-    
+    shm_info->end_counter = 0;
 }
 
 
@@ -253,14 +253,20 @@ void statistics(){
     //sort cars by track position with bubble sort
     for (i = 0; i < NR_TEAM * NR_CARS; i++){
         for (j = 0; j < NR_TEAM * NR_CARS - 1; j++){
-            //se um estiver numa volta á frente -> trocar
-            if (array[j].laps_completed < array[j + 1].laps_completed){
-                swap(array, j, j + 1);
-            }
-            //se estiverem na mesma volta e j ainda não acabou -> ver lap_distance
-            else if(array[j].laps_completed == array[j + 1].laps_completed && array[j].laps_completed != NR_LAP){
-                if (array[j].lap_distance < array[j + 1].lap_distance){
+            if(array[j].end_position != 0){
+                if (array[j+1].end_position != 0 && array[j].end_position > array[j+1].end_position)
                     swap(array, j, j + 1);
+            }
+            else{
+                //se um estiver numa volta á frente -> trocar
+                if (array[j].laps_completed < array[j + 1].laps_completed){
+                    swap(array, j, j + 1);
+                }
+                //se estiverem na mesma volta e j ainda não acabou -> ver lap_distance
+                else if(array[j].laps_completed == array[j + 1].laps_completed && array[j].laps_completed != NR_LAP){
+                    if (array[j].lap_distance < array[j + 1].lap_distance){
+                        swap(array, j, j + 1);
+                    }
                 }
             }
         }
@@ -297,7 +303,6 @@ void statistics(){
             strcat(statistics, aux);
         }
         else if (i == (shm_info->nr_cars) - 1){
-        	
             sprintf(aux, "   .\n   .\n   .\n");
             strcat(statistics, aux);
 

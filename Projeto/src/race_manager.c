@@ -224,14 +224,21 @@ void race_manager(pid_t malf_pid) {
                                 write_log(str);
                             }
                             if (check_pipe_command_regex("^F[0-9][0-9]$", from_car_pipe)){
+                                int counter;
+                                sem_wait(counter_mutex);
+                                (shm_info->counter_cars_finished)++;
+                                counter = ++(shm_info->end_counter);
+                                sem_post(counter_mutex);
+
                                 sscanf(from_car_pipe, "F%d", &car_num);
+                                for (int k = 0; k < NR_CARS*NR_TEAM; k++){
+                                    if(shm_info->cars[k].number == car_num){
+                                        shm_info->cars[k].end_position = counter;
+                                        break;
+                                    }
+                                }
                                 sprintf(str, "UPDATE ==> CAR %02d FINISHED THE RACE", car_num);
                                 write_log(str);
-                                
-                                
-                                sem_wait(counter_mutex);
-                                shm_info->counter_cars_finished++;
-                                sem_post(counter_mutex);
                             }                 
                         }
                     }

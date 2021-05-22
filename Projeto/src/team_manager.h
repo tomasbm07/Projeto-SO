@@ -28,6 +28,7 @@ bool race_going;
 void team_manager(int team_index);
 pthread_t* create_threads_array();
 car_struct* create_car_structs_array();
+float laps_from_fuel(car_struct *car_info);
 void init_car_stats(car_struct* stats, int team_nr, int car_nr);
 void* car_worker(void* stats);
 void terminate_cars_exit(int sig);

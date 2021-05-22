@@ -11,6 +11,7 @@ char box_state;
 int cars_number, index_aux;
 pthread_t *car_threads;
 bool race_going;
+float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
 
 void team_manager(int team_index) {
     index_aux = team_index*NR_CARS;
@@ -119,16 +120,12 @@ void init_car_stats(car_struct *stats, int team_index, int car_index) {
     stats->state = 'R';
     stats->fuel = FUEL_CAPACITY;
     stats->car->lap_distance = 0;
+    stats->car->end_position = 0;
 }
 
 
 int randint(int min, int max){
     return (rand()%(max - min + 1)) + min;
-}
-
-
-float laps_from_fuel(car_struct *car_info){
-    return (((double)car_info->fuel*car_info->car->speed)/car_info->car->consumption) / (double)LAP_DIST;
 }
 
 
@@ -143,6 +140,7 @@ void terminate_cars_exit(int sig){
 
     pthread_mutex_destroy(&box_mutex);
     pthread_mutex_destroy(&cond_mutex);
+    pthread_mutex_destroy(&pipe_mutex);
     pthread_cond_destroy(&cond_start);
     
     free(car_threads);
@@ -167,6 +165,10 @@ void end_car_race(int sig){
     sem_post(counter_mutex);
     
     pthread_exit(NULL);
+}
+
+float laps_from_fuel(car_struct *car_info){
+    return ( ((double)car_info->fuel*car_info->car->speed*multipliers[0])/(car_info->car->consumption*multipliers[1]) ) / (double) LAP_DIST;
 }
 
 
@@ -230,7 +232,6 @@ void *car_worker(void *stats) {
     bool has_malfunction = false; // flag to only log received malfunctions once and sleep repair
     bool fuel_flag = true; // flag to only log fuel warnings once
     bool crossed_start_line = true; // flag if car crossed the start/finish line. to make it easier for the box condition
-    float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
     int counter = 0; // iteration counter. To print cars states every x iterations
     mqid = msgget(ftok(".", 25), 0); // MQ id
     
@@ -278,12 +279,20 @@ void *car_worker(void *stats) {
             }
         }
 
+        if (car_info->state == 'R'){ // Race mode multipliers
+            multipliers[0] = 1; // speed multiplier
+            multipliers[1] = 1; // consumption multiplier
+        }
+        else if(car_info->state == 'S'){ // Safety mode multipliers
+            multipliers[0] = 0.3; // speed multiplier
+            multipliers[1] = 0.4; // consumption multiplier
+        }
+
         // se está na linha da meta -> verificar se precisa de entrar na box
         if (crossed_start_line) {
             //check if the car has finished the race
             if(car_info->car->laps_completed == NR_LAP){
                 car_info->car->lap_distance = 0; // reset lap_distance if car has finished race
-            
                 sprintf(to_car_pipe, "F%02d", car_info->car->number);
                 pthread_mutex_lock(&pipe_mutex);
                 write(fd_team[index_aux/NR_CARS][1], to_car_pipe, strlen(to_car_pipe)+1);
@@ -328,14 +337,6 @@ void *car_worker(void *stats) {
             }
         } // end if	
         
-        if (car_info->state == 'R'){ // Race mode multipliers
-            multipliers[0] = 1; // speed multiplier
-            multipliers[1] = 1; // consumption multiplier
-        }
-        else if(car_info->state == 'S'){ // Safety mode multipliers
-            multipliers[0] = 0.3; // speed multiplier
-            multipliers[1] = 0.4; // consumption multiplier
-        }
         
         // Decrease fuel and check if is < 0
         car_info->fuel -= multipliers[1] * car_info->car->consumption;
@@ -396,3 +397,4 @@ void *car_worker(void *stats) {
     
     pthread_exit(NULL);
 }
+
