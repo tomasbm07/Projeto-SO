@@ -144,6 +144,7 @@ void initiate_shm() {
     
     shm_info->wait_statistics = false;
     shm_info->counter_cars_finished = 0;
+    shm_info->nr_cars = 0;
     
 }
 
@@ -166,7 +167,7 @@ void initiate_sems() {
     create_sem("STATISTICS_MUTEX", &statistics_mutex, 1);
     create_sem("COND_STAT", &cond_sem_stat, 0);
     create_sem("COND_CAR", &cond_sem_car, 0);
-    create_sem("CAR_COUNT", &sem_car_count, NR_CARS*NR_TEAM);
+    create_sem("CAR_COUNT", &sem_car_count, 0);
     
     //create_sem("STAISTICS_STOPS", &statistics_mutex, NR_TEAM*NR_CARS);
     #ifdef DEBUG
@@ -224,17 +225,18 @@ void statistics(){
 	sem_getvalue(sem_car_count, &value);
     
     sem_wait(counter_mutex);
-    if (value > NR_CARS*NR_TEAM - shm_info->counter_cars_finished){
-    	for( i = 0; i < value - (NR_CARS*NR_TEAM - shm_info->counter_cars_finished);i++ )
+    if (value > (shm_info->nr_cars) - (shm_info->counter_cars_finished) ){
+    	for( i = 0; i < value - ( (shm_info->nr_cars) - shm_info->counter_cars_finished);i++ )
     		sem_wait(sem_car_count);
     }
-
+	sem_post(counter_mutex);
+	
     //alterar a flag
     sem_wait(statistics_mutex);
     shm_info->wait_statistics = true;
     sem_post(statistics_mutex);
   
-    sem_post(counter_mutex);
+    
     //esperar que todos os carros parem
     while(value>0){
     	sem_wait(cond_sem_stat);
@@ -270,17 +272,21 @@ void statistics(){
     
     //permitir aos carros avançar
     sem_wait(counter_mutex);
-    for(i = 0; i < NR_CARS*NR_TEAM - shm_info->counter_cars_finished; i++)
+    for(i = 0; i < (shm_info->nr_cars) - shm_info->counter_cars_finished; i++)
     	sem_post(cond_sem_car);
     sem_post(counter_mutex);
+    
     //print statistics
     char chars[][3] = {"st", "nd", "rd", "th"};
     char statistics[500*NR_CARS*NR_TEAM];
-    char aux[500];
+    strcpy(statistics, "");
+    
+    char aux[500]="";
+    
     printf("-------------------------------------------------\n");
     strcat(statistics, "----Statistics----\n");
     for (i = 0, x = 0; i < NR_TEAM * NR_CARS; i++, x++){
-        if(i == 0 || i == 1 || i == 2 || i == 3 || i == 4){
+        if(0<=i && i<=4){
             sprintf(aux, "%d%s -> Car %d from team %s [lap: %d, lap_distance: %7.2f, stops: %d]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance, array[i].box_stops_counter);
             strcat(statistics, aux);
         }
