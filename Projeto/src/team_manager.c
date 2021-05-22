@@ -375,7 +375,7 @@ void *car_worker(void *stats) {
 
         //only print every x iterations. just so the log isn't spammed too much
         if(++counter == 20){
-            sprintf(str,"Car %d | Distance = %7.2f | Lap %d | State = %c | Fuel = %04.2f(%04.2f laps)", car_info->car->number, car_info->car->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel, laps_from_fuel(car_info));
+            sprintf(str,"Car %02d | Distance = %7.2f | Lap %d | State = %c | Fuel = %04.2f(%04.2f laps)", car_info->car->number, car_info->car->lap_distance, car_info->car->laps_completed, car_info->state, car_info->fuel, laps_from_fuel(car_info));
             write_log(str);
             counter = 0;
         }

@@ -238,7 +238,7 @@ void statistics(){
   
     
     //esperar que todos os carros parem
-    while(value>0){
+    while(value > 0){
     	sem_wait(cond_sem_stat);
     	sem_getvalue(sem_car_count, &value);
     }
@@ -254,7 +254,7 @@ void statistics(){
     for (i = 0; i < NR_TEAM * NR_CARS; i++){
         for (j = 0; j < NR_TEAM * NR_CARS - 1; j++){
             if(array[j].end_position != 0){
-                if (array[j+1].end_position != 0 && array[j].end_position > array[j+1].end_position)
+                if (array[j + 1].end_position != 0 && array[j].end_position > array[j + 1].end_position)
                     swap(array, j, j + 1);
             }
             else{
@@ -299,14 +299,14 @@ void statistics(){
     	
     	sem_wait(counter_mutex);
         if(0<=i && i<=4){
-            sprintf(aux, "%d%s -> Car %d from team %s [lap: %d, lap_distance: %7.2f, stops: %d]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance, array[i].box_stops_counter);
+            sprintf(aux, "%d%s -> Car %02d from team %s [lap: %d, lap_distance: %7.2f, stops: %d]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance, array[i].box_stops_counter);
             strcat(statistics, aux);
         }
         else if (i == (shm_info->nr_cars) - 1){
             sprintf(aux, "   .\n   .\n   .\n");
             strcat(statistics, aux);
 
-            sprintf(aux, "%d%s -> Car %d from team %s [lap: %d, lap_distance: %7.2f, stops: %d]\n", NR_TEAM * NR_CARS, chars[3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance, array[i].box_stops_counter);
+            sprintf(aux, "%d%s -> Car %02d from team %s [lap: %d, lap_distance: %7.2f, stops: %d]\n", NR_TEAM * NR_CARS, chars[3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance, array[i].box_stops_counter);
             strcat(statistics, aux);
             
         }
@@ -328,6 +328,7 @@ void statistics(){
     write_log(statistics);
     printf("-------------------------------------------------\n");
 }
+
 
 //swap 2 cars on aux array
 void swap(car_shm_struct *array, int a, int b){
