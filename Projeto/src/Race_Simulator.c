@@ -5,8 +5,8 @@ Joel Oliveira - 2019227468
 
 #include "Simulator.h"
 
-//#define PIPE_NAME "/home/user/race_pipe"
-#define PIPE_NAME "race_pipe"
+#define PIPE_NAME "/home/user/race_pipe"
+//#define PIPE_NAME "race_pipe"
 
 int fd_race_pipe;
 int shm_id;
@@ -221,15 +221,6 @@ void statistics(){
 
     int i, j, x = 0, value;
     car_shm_struct array[NR_TEAM*NR_CARS]; // array com uma copia dos carros
-
-	sem_getvalue(sem_car_count, &value);
-    
-    sem_wait(counter_mutex);
-    if (value > (shm_info->nr_cars) - (shm_info->counter_cars_finished) ){
-    	for( i = 0; i < value - ( (shm_info->nr_cars) - shm_info->counter_cars_finished);i++ )
-    		sem_wait(sem_car_count);
-    }
-	sem_post(counter_mutex);
 	
     //alterar a flag
     sem_wait(statistics_mutex);
