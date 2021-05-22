@@ -55,6 +55,7 @@ void team_manager(int team_index) {
         if (strcmp(shm_info->cars[index_aux + i].team_name,"")==0) break; 
         init_car_stats(&car_stats[i], index_aux, i);
         pthread_create((car_threads+i), NULL, car_worker, &car_stats[i]);
+        
         sem_wait(counter_mutex);
         shm_info->nr_cars++;
         sem_post(counter_mutex);
@@ -165,6 +166,7 @@ void end_car_race(int sig){
     sem_post(counter_mutex);
     
     sem_wait(sem_car_count);
+	sem_post(cond_sem_stat);
     
     pthread_exit(NULL);
 }
@@ -300,6 +302,8 @@ void *car_worker(void *stats) {
                 write(fd_team[index_aux/NR_CARS][1], to_car_pipe, strlen(to_car_pipe)+1);
                 pthread_mutex_unlock(&pipe_mutex);
                 
+                sem_wait(sem_car_count);
+				sem_post(cond_sem_stat);
                 //car_info->state = 'F';
                 break;
             }
@@ -307,11 +311,14 @@ void *car_worker(void *stats) {
             crossed_start_line = false;
             
             //wait for condition variable to unlock mutex
+            sem_wait(sem_car_count);
+			sem_post(cond_sem_stat);
             pthread_mutex_lock(&cond_mutex);
             while(!race_going){
                 pthread_cond_wait(&cond_start, &cond_mutex);
             }
             pthread_mutex_unlock(&cond_mutex);
+            sem_post(sem_car_count);
             
             //unblock signal sigusr2 to see if signal is in queue to end race, then block again.
             pthread_sigmask(SIG_UNBLOCK, &set_control_ending, NULL);

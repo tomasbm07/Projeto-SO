@@ -12,6 +12,7 @@ pid_t malfunction_pid;
 void race_manager(pid_t malf_pid) {
     malfunction_pid = malf_pid;
     bool race_started = false;
+    
     int i = 0, num_chars, wait_status, car_num;
     char str[256], aux[256], from_car_pipe[10];
     fd_set read_set;
@@ -176,6 +177,7 @@ void race_manager(pid_t malf_pid) {
                     if (strcmp(str, "START RACE") == 0){
                         write_log("[Race_Pipe] Got START RACE");
                         if (!race_going){
+                        race_going = true;
                             sigaction(SIGUSR1, &sa_usr1, NULL);
                             write_log("[Race_Pipe] Restarting race!");
                             for (int i = 0; i < NR_TEAM; i++)
@@ -213,7 +215,6 @@ void race_manager(pid_t malf_pid) {
                                 shm_info->counter_cars_finished++;
                                 sem_post(counter_mutex);
                                 
-                                sem_wait(sem_car_count);
                             }
                               if (check_pipe_command_regex("^R[0-9][0-9]$", from_car_pipe)){
                                 sscanf(from_car_pipe, "R%d", &car_num);
@@ -232,8 +233,6 @@ void race_manager(pid_t malf_pid) {
                                 counter = ++(shm_info->end_counter);
                                 sem_post(counter_mutex);
 								
-								sem_wait(sem_car_count);
-								
                                 sscanf(from_car_pipe, "F%d", &car_num);
                                 for (int k = 0; k < NR_CARS*NR_TEAM; k++){
                                     if(shm_info->cars[k].number == car_num){
@@ -249,7 +248,7 @@ void race_manager(pid_t malf_pid) {
                 }
             }
             sem_wait(counter_mutex);
-            if (shm_info->counter_cars_finished == NR_CARS*NR_TEAM){
+            if (shm_info->counter_cars_finished == shm_info->nr_cars){
                 sem_post(counter_mutex);
                 sprintf(str, "-------All cars finished-------");
                 write_log(str);
@@ -277,6 +276,7 @@ void interrupt_race(int sig){
         for (int i = 0; i < NR_TEAM; i++)
             kill(teams_pid[i], SIGUSR1);
     signal(SIGUSR1, SIG_IGN);
+    race_going = false;
 }
 
 

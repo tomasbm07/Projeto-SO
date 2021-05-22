@@ -226,10 +226,11 @@ void statistics(){
     sem_wait(statistics_mutex);
     shm_info->wait_statistics = true;
     sem_post(statistics_mutex);
-  
-    
+  	
+  	sem_getvalue(sem_car_count, &value);
     //esperar que todos os carros parem
     while(value>0){
+    //printf("VALUE:: %d\n", value);
     	sem_wait(cond_sem_stat);
     	sem_getvalue(sem_car_count, &value);
     }
