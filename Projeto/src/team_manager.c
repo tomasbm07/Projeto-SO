@@ -10,7 +10,6 @@ pthread_cond_t cond_start = PTHREAD_COND_INITIALIZER;
 char box_state;
 int cars_number, index_aux;
 pthread_t *car_threads;
-bool race_going;
 float multipliers[2]; //multipliers[0] = SPEED; multipliers[1] = CONSUMPTION -> speed and consumption multipliers for race and safety mode
 
 void team_manager(int team_index) {
@@ -257,7 +256,7 @@ void *car_worker(void *stats) {
 		sem_wait(statistics_mutex);
 		while(shm_info->wait_statistics){
 		
-			sem_post(statistics_mutex);
+		    sem_post(statistics_mutex);
 			sem_wait(cond_sem_car);
 			
 			sem_wait(statistics_mutex);

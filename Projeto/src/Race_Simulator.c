@@ -289,7 +289,7 @@ void statistics(){
     	sem_post(counter_mutex);
     	
     	sem_wait(counter_mutex);
-        if(0<=i && i<=4){
+        if(0 <= i && i <= 4){
             sprintf(aux, "%d%s -> Car %02d from team %s [lap: %d, lap_distance: %7.2f, stops: %d]\n", x+1, chars[x <= 3 ? x : 3], array[i].number, array[i].team_name, array[i].laps_completed, array[i].lap_distance, array[i].box_stops_counter);
             strcat(statistics, aux);
         }
@@ -333,7 +333,7 @@ void end_race(){
     kill(cpid[1], SIGTERM); // race_manager
     //for (int i = 0; i < 2; i++) wait(NULL);
     int wait_status;
-    while ( (wait_status=wait(NULL))>=0 || (wait_status == -1 && errno == EINTR));
+    while ( (wait_status=wait(NULL)) >= 0 || (wait_status == -1 && errno == EINTR));
     write_log("SERVER CLOSED");
     statistics();
     destroy_resources();

@@ -193,12 +193,11 @@ void race_manager(pid_t malf_pid) {
 
                 for (i = 0; i < NR_TEAM; i++) {
                     if (FD_ISSET(fd_team[i][0], &read_set)) {
-                        while( (num_chars = read(fd_team[i][0], from_car_pipe, 5))<0 && errno == EINTR) ;
+                        while( (num_chars = read(fd_team[i][0], from_car_pipe, 5)) < 0 && errno == EINTR) ;
                         if (num_chars == 0) 
                             continue;
                         else{
                             //from_car_pipe[num_chars - 1] = '\0';
-                            
                             if (check_pipe_command_regex("^S[0-9][0-9]$", from_car_pipe)){
                                 sscanf(from_car_pipe, "S%d", &car_num);
                                 sprintf(str, "UPDATE ==> CAR %02d GOT SWAPPED TO SAFETY MODE", car_num);
