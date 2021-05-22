@@ -54,7 +54,13 @@ void team_manager(int team_index) {
         if (strcmp(shm_info->cars[index_aux + i].team_name,"")==0) break; 
         init_car_stats(&car_stats[i], index_aux, i);
         pthread_create((car_threads+i), NULL, car_worker, &car_stats[i]);
+        sem_wait(counter_mutex);
+        shm_info->nr_cars++;
+        sem_post(counter_mutex);
+        
+        sem_post(sem_car_count);
     }  	
+    
     cars_number = i;
     sigemptyset(&set); 
     

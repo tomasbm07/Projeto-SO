@@ -11,7 +11,6 @@ pid_t malfunction_pid;
 
 void race_manager(pid_t malf_pid) {
     malfunction_pid = malf_pid;
-    bool flag_first_start = true;
     bool race_started = false;
     int i = 0, num_chars, wait_status, car_num;
     char str[256], aux[256], from_car_pipe[10];
@@ -65,50 +64,49 @@ void race_manager(pid_t malf_pid) {
                     write_log("Buckle Up, race is starting!");
                     race_started = true;
                     
-                    if (flag_first_start){
-                        flag_first_start = false;
-                        //criar array para guardar os pid dos team_manager
-                        teams_pid = teams_pid_array();
                     
-                        // unnamed pipes stuff - 1 pipe per team
-                        // unname pipe direction: race_manager <- team_manager
-                        // fd[0] = read; fd[1] = write
-                        fd_team = (int**)malloc(NR_TEAM * sizeof(*fd_team));
-                        for (i = 0; i < NR_TEAM; i++){ 
-                            fd_team[i] = (int *) malloc(2 * sizeof(**fd_team)); 
-                        }
-                    
-                        for (i = 0; i < NR_TEAM; i++){
-                            pipe(fd_team[i]);
-                            if ( !(teams_pid[i]=fork()) ) {
-                                for(int j = 0; j <= i; j++){
-                                    close(fd_team[j][0]);
-                                }
-                                team_manager(i);
-                            }
-                            //fechar parte de escrita dos pipes
-                            close(fd_team[i][1]);
-                            #ifdef DEBUG
-                            sprintf(str, "Created team processes");
-                            write_log(str);
-                            #endif
-                        }
-                    
-                        //waiting for teams to send ready message
-                        for (i = 0; i < NR_TEAM; i++) {
-                            read(fd_team[i][0], str, 256);
-                            printf("MESSAGE received!! ----> '%s'\n", str);
-                        }
-
-                        //usleep(1000);
-                        kill(cpid[0], SIGUSR2);
-                        for (i = 0; i <NR_TEAM;i++)
-                            kill(teams_pid[i], SIGUSR2);
-                        
-                        write_log("---RACE HAS STARTED---");
-
-                        //break;		
+                    //criar array para guardar os pid dos team_manager
+                    teams_pid = teams_pid_array();
+                
+                    // unnamed pipes stuff - 1 pipe per team
+                    // unname pipe direction: race_manager <- team_manager
+                    // fd[0] = read; fd[1] = write
+                    fd_team = (int**)malloc(NR_TEAM * sizeof(*fd_team));
+                    for (i = 0; i < NR_TEAM; i++){ 
+                        fd_team[i] = (int *) malloc(2 * sizeof(**fd_team)); 
                     }
+                
+                    for (i = 0; i < NR_TEAM; i++){
+                        pipe(fd_team[i]);
+                        if ( !(teams_pid[i]=fork()) ) {
+                            for(int j = 0; j <= i; j++){
+                                close(fd_team[j][0]);
+                            }
+                            team_manager(i);
+                        }
+       
+                        //fechar parte de escrita dos pipes
+                        close(fd_team[i][1]);
+                        #ifdef DEBUG
+                        sprintf(str, "Created team processes");
+                        write_log(str);
+                        #endif
+                    }
+                
+                    //waiting for teams to send ready message
+                    for (i = 0; i < NR_TEAM; i++) {
+                        read(fd_team[i][0], str, 256);
+                        printf("MESSAGE received!! ----> '%s'\n", str);
+                    }
+
+                    //usleep(1000);
+                    kill(cpid[0], SIGUSR2);
+                    for (i = 0; i <NR_TEAM;i++)
+                        kill(teams_pid[i], SIGUSR2);
+                    
+                    write_log("---RACE HAS STARTED---");
+
+                    //break;		
                 }else
                     write_log("Not enough teams ready");
             } else {
