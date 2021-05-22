@@ -212,6 +212,8 @@ void race_manager(pid_t malf_pid) {
                                 sem_wait(counter_mutex);
                                 shm_info->counter_cars_finished++;
                                 sem_post(counter_mutex);
+                                
+                                sem_wait(sem_car_count);
                             }
                               if (check_pipe_command_regex("^R[0-9][0-9]$", from_car_pipe)){
                                 sscanf(from_car_pipe, "R%d", &car_num);
@@ -229,7 +231,9 @@ void race_manager(pid_t malf_pid) {
                                 (shm_info->counter_cars_finished)++;
                                 counter = ++(shm_info->end_counter);
                                 sem_post(counter_mutex);
-
+								
+								sem_wait(sem_car_count);
+								
                                 sscanf(from_car_pipe, "F%d", &car_num);
                                 for (int k = 0; k < NR_CARS*NR_TEAM; k++){
                                     if(shm_info->cars[k].number == car_num){

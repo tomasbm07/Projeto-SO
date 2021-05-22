@@ -164,6 +164,8 @@ void end_car_race(int sig){
     shm_info->counter_cars_finished++;
     sem_post(counter_mutex);
     
+    sem_wait(sem_car_count);
+    
     pthread_exit(NULL);
 }
 
