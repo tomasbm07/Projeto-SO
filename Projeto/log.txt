@@ -2446,3 +2446,1641 @@ Team manager created (PID: 3046), from Team 2
 [16:55:44] SERVER STARTED
 [16:56:27] SERVER CLOSED
 [16:56:27] Cleaning up...
+[19:52:52] Semaphores initialized
+[19:52:52] ERRO: a criar o pipe: 
+[19:52:52] Cleaning up...
+[19:53:43] Semaphores initialized
+[19:53:43] Named pipe 'race_pipe' is ready!
+
+[19:53:43] SERVER STARTED
+[19:53:43] Race manager created (PID: 2226)
+[19:53:46] ADDED CAR 50 FROM TEAM A
+[19:53:46] ADDED CAR 55 FROM TEAM A
+[19:53:46] Max number of cars reached for this team
+[19:53:46] [Race_Pipe] Got START RACE
+[19:53:46] Not enough teams ready
+[19:53:46] ADDED CAR 77 FROM TEAM B
+[19:53:46] ADDED CAR 80 FROM TEAM B
+[19:53:46] Max number of cars reached for this team
+[19:53:47] [Race_Pipe] Got START RACE
+[19:53:47] Not enough teams ready
+[19:53:47] ADDED CAR 81 FROM TEAM C
+[19:53:47] ADDED CAR 91 FROM TEAM C
+[19:53:47] Max number of cars reached for this team
+[19:53:47] [Race_Pipe] Got START RACE
+[19:53:47] Buckle Up, race is starting!
+[19:53:47] Team manager created (PID: 2251), for Team A
+
+[19:53:47] Car 55 from team A has started the race
+[19:53:47] Car 50 from team A has started the race
+[19:53:47] CAR 50 LOW ON FUEL
+[19:53:49] Car 50 | Distance =  335.00 | Lap 0 | State = S | Fuel = 27.40(0.25 laps)
+[19:53:49] Car 55 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:53:51] Car 55 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:53:51] Car 50 | Distance =  635.00 | Lap 0 | State = S | Fuel = 19.40(0.18 laps)
+[19:53:53] Car 55 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:53:53] Car 50 | Distance =  935.00 | Lap 0 | State = S | Fuel = 11.40(0.11 laps)
+[19:53:55] Car 55 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:53:55] Car 50 | Distance = 1235.00 | Lap 0 | State = S | Fuel = 3.40(0.03 laps)
+[19:53:57] Car 55 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:53:43] Semaphores initialized
+[19:53:43] Named pipe 'race_pipe' is ready!
+
+[19:53:43] SERVER STARTED
+[19:53:43] Race manager created (PID: 2226)
+[19:53:46] ADDED CAR 50 FROM TEAM A
+[19:53:46] ADDED CAR 55 FROM TEAM A
+[19:53:46] Max number of cars reached for this team
+[19:53:46] [Race_Pipe] Got START RACE
+[19:53:46] Not enough teams ready
+[19:53:46] ADDED CAR 77 FROM TEAM B
+[19:53:46] ADDED CAR 80 FROM TEAM B
+[19:53:46] Max number of cars reached for this team
+[19:53:47] [Race_Pipe] Got START RACE
+[19:53:47] Not enough teams ready
+[19:53:47] ADDED CAR 81 FROM TEAM C
+[19:53:47] ADDED CAR 91 FROM TEAM C
+[19:53:47] Max number of cars reached for this team
+[19:53:47] [Race_Pipe] Got START RACE
+[19:53:47] Buckle Up, race is starting!
+[19:53:47] Created team processes
+[19:53:47] Team manager created (PID: 2252), for Team B
+
+[19:53:47] Car 80 from team B has started the race
+[19:53:47] Car 77 from team B has started the race
+[19:53:49] Car 77 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:53:49] Car 80 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:53:51] Car 77 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:53:51] Car 80 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:53:53] Car 77 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:53:53] Car 80 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:53:55] Car 77 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:53:55] Car 80 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:53:57] Car 77 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:53:57] Car 80 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:53:43] Semaphores initialized
+[19:53:43] Named pipe 'race_pipe' is ready!
+
+[19:53:43] SERVER STARTED
+[19:53:43] Race manager created (PID: 2226)
+[19:53:46] ADDED CAR 50 FROM TEAM A
+[19:53:46] ADDED CAR 55 FROM TEAM A
+[19:53:46] Max number of cars reached for this team
+[19:53:46] [Race_Pipe] Got START RACE
+[19:53:46] Not enough teams ready
+[19:53:46] ADDED CAR 77 FROM TEAM B
+[19:53:46] ADDED CAR 80 FROM TEAM B
+[19:53:46] Max number of cars reached for this team
+[19:53:47] [Race_Pipe] Got START RACE
+[19:53:47] Not enough teams ready
+[19:53:47] ADDED CAR 81 FROM TEAM C
+[19:53:47] ADDED CAR 91 FROM TEAM C
+[19:53:47] Max number of cars reached for this team
+[19:53:47] [Race_Pipe] Got START RACE
+[19:53:47] Buckle Up, race is starting!
+[19:53:47] Created team processes
+[19:53:47] Created team processes
+[19:53:47] Team manager created (PID: 2253), for Team C
+
+[19:53:47] Car 91 from team C has started the race
+[19:53:47] Car 81 from team C has started the race
+[19:53:49] Car 81 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:53:49] Car 91 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:53:51] Car 81 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:53:51] Car 91 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:53:53] Car 81 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:53:53] Car 91 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:53:55] Car 91 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:53:55] Car 81 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:53:57] Car 91 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:53:57] Car 81 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:53:43] Semaphores initialized
+[19:53:43] Named pipe 'race_pipe' is ready!
+
+[19:53:43] SERVER STARTED
+[19:53:43] Race manager created (PID: 2226)
+[19:53:46] ADDED CAR 50 FROM TEAM A
+[19:53:46] ADDED CAR 55 FROM TEAM A
+[19:53:46] Max number of cars reached for this team
+[19:53:46] [Race_Pipe] Got START RACE
+[19:53:46] Not enough teams ready
+[19:53:46] ADDED CAR 77 FROM TEAM B
+[19:53:46] ADDED CAR 80 FROM TEAM B
+[19:53:46] Max number of cars reached for this team
+[19:53:47] [Race_Pipe] Got START RACE
+[19:53:47] Not enough teams ready
+[19:53:47] ADDED CAR 81 FROM TEAM C
+[19:53:47] ADDED CAR 91 FROM TEAM C
+[19:53:47] Max number of cars reached for this team
+[19:53:47] [Race_Pipe] Got START RACE
+[19:53:47] Buckle Up, race is starting!
+[19:53:47] Created team processes
+[19:53:47] Created team processes
+[19:53:47] Created team processes
+[19:53:47] ---RACE HAS STARTED---
+[19:53:47] UPDATE ==> CAR 50 GOT SWAPPED TO SAFETY MODE
+[19:53:56] UPDATE ==> CAR 50 ISN'T HABLE TO CONTINUE THE RACE
+[19:53:57] [Race Manager] Got SIGTERM
+[19:53:57] [Race Manager] Waiting for all cars to finish their lap
+[19:53:43] Semaphores initialized
+[19:53:43] Named pipe 'race_pipe' is ready!
+
+[19:53:43] SERVER STARTED
+[19:53:47] [Malfunction Manager] Got SIGUSR2 -> Starting
+[19:53:57] [Malfunction Manager] Got SIGTERM
+[19:56:33] Semaphores initialized
+[19:56:33] Named pipe 'race_pipe' is ready!
+
+[19:56:33] SERVER STARTED
+[19:56:33] Race manager created (PID: 2316)
+[19:56:37] ADDED CAR 50 FROM TEAM A
+[19:56:37] ADDED CAR 55 FROM TEAM A
+[19:56:37] Max number of cars reached for this team
+[19:56:37] [Race_Pipe] Got START RACE
+[19:56:37] Not enough teams ready
+[19:56:37] ADDED CAR 77 FROM TEAM B
+[19:56:37] ADDED CAR 80 FROM TEAM B
+[19:56:37] Max number of cars reached for this team
+[19:56:37] [Race_Pipe] Got START RACE
+[19:56:37] Not enough teams ready
+[19:56:38] ADDED CAR 81 FROM TEAM C
+[19:56:38] ADDED CAR 91 FROM TEAM C
+[19:56:38] Max number of cars reached for this team
+[19:56:38] [Race_Pipe] Got START RACE
+[19:56:38] Buckle Up, race is starting!
+[19:56:38] Team manager created (PID: 2341), for Team A
+
+[19:56:38] Car 55 from team A has started the race
+[19:56:38] Car 50 from team A has started the race
+[19:56:38] CAR 50 LOW ON FUEL
+[19:56:40] Car 50 | Distance =  335.00 | Lap 0 | State = S | Fuel = 27.40(0.25 laps)
+[19:56:40] Car 55 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:56:42] Car 55 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:56:42] Car 50 | Distance =  635.00 | Lap 0 | State = S | Fuel = 19.40(0.18 laps)
+[19:56:44] Car 50 | Distance =  935.00 | Lap 0 | State = S | Fuel = 11.40(0.11 laps)
+[19:56:44] Car 55 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:56:46] Car 50 | Distance = 1235.00 | Lap 0 | State = S | Fuel = 3.40(0.03 laps)
+[19:56:46] Car 55 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:56:48] Car 55 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:56:33] Semaphores initialized
+[19:56:33] Named pipe 'race_pipe' is ready!
+
+[19:56:33] SERVER STARTED
+[19:56:33] Race manager created (PID: 2316)
+[19:56:37] ADDED CAR 50 FROM TEAM A
+[19:56:37] ADDED CAR 55 FROM TEAM A
+[19:56:37] Max number of cars reached for this team
+[19:56:37] [Race_Pipe] Got START RACE
+[19:56:37] Not enough teams ready
+[19:56:37] ADDED CAR 77 FROM TEAM B
+[19:56:37] ADDED CAR 80 FROM TEAM B
+[19:56:37] Max number of cars reached for this team
+[19:56:37] [Race_Pipe] Got START RACE
+[19:56:37] Not enough teams ready
+[19:56:38] ADDED CAR 81 FROM TEAM C
+[19:56:38] ADDED CAR 91 FROM TEAM C
+[19:56:38] Max number of cars reached for this team
+[19:56:38] [Race_Pipe] Got START RACE
+[19:56:38] Buckle Up, race is starting!
+[19:56:38] Created team processes
+[19:56:38] Team manager created (PID: 2342), for Team B
+
+[19:56:38] Car 80 from team B has started the race
+[19:56:38] Car 77 from team B has started the race
+[19:56:40] Car 80 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:56:40] Car 77 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:56:42] Car 77 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:56:42] Car 80 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:56:44] Car 80 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:56:44] Car 77 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:56:46] Car 80 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:56:46] Car 77 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:56:48] Car 80 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:56:48] Car 77 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:56:33] Semaphores initialized
+[19:56:33] Named pipe 'race_pipe' is ready!
+
+[19:56:33] SERVER STARTED
+[19:56:33] Race manager created (PID: 2316)
+[19:56:37] ADDED CAR 50 FROM TEAM A
+[19:56:37] ADDED CAR 55 FROM TEAM A
+[19:56:37] Max number of cars reached for this team
+[19:56:37] [Race_Pipe] Got START RACE
+[19:56:37] Not enough teams ready
+[19:56:37] ADDED CAR 77 FROM TEAM B
+[19:56:37] ADDED CAR 80 FROM TEAM B
+[19:56:37] Max number of cars reached for this team
+[19:56:37] [Race_Pipe] Got START RACE
+[19:56:37] Not enough teams ready
+[19:56:38] ADDED CAR 81 FROM TEAM C
+[19:56:38] ADDED CAR 91 FROM TEAM C
+[19:56:38] Max number of cars reached for this team
+[19:56:38] [Race_Pipe] Got START RACE
+[19:56:38] Buckle Up, race is starting!
+[19:56:38] Created team processes
+[19:56:38] Created team processes
+[19:56:38] Team manager created (PID: 2343), for Team C
+
+[19:56:38] Car 91 from team C has started the race
+[19:56:38] Car 81 from team C has started the race
+[19:56:40] Car 81 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:56:40] Car 91 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:56:42] Car 91 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:56:42] Car 81 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:56:44] Car 91 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:56:44] Car 81 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:56:46] Car 91 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:56:46] Car 81 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:56:48] Car 91 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:56:48] Car 81 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:56:33] Semaphores initialized
+[19:56:33] Named pipe 'race_pipe' is ready!
+
+[19:56:33] SERVER STARTED
+[19:56:33] Race manager created (PID: 2316)
+[19:56:37] ADDED CAR 50 FROM TEAM A
+[19:56:37] ADDED CAR 55 FROM TEAM A
+[19:56:37] Max number of cars reached for this team
+[19:56:37] [Race_Pipe] Got START RACE
+[19:56:37] Not enough teams ready
+[19:56:37] ADDED CAR 77 FROM TEAM B
+[19:56:37] ADDED CAR 80 FROM TEAM B
+[19:56:37] Max number of cars reached for this team
+[19:56:37] [Race_Pipe] Got START RACE
+[19:56:37] Not enough teams ready
+[19:56:38] ADDED CAR 81 FROM TEAM C
+[19:56:38] ADDED CAR 91 FROM TEAM C
+[19:56:38] Max number of cars reached for this team
+[19:56:38] [Race_Pipe] Got START RACE
+[19:56:38] Buckle Up, race is starting!
+[19:56:38] Created team processes
+[19:56:38] Created team processes
+[19:56:38] Created team processes
+[19:56:38] ---RACE HAS STARTED---
+[19:56:38] UPDATE ==> CAR 50 GOT SWAPPED TO SAFETY MODE
+[19:56:41] [Race Manager] Got SIGTERM
+[19:56:41] [Race Manager] Waiting for all cars to finish their lap
+[19:56:33] Semaphores initialized
+[19:56:33] Named pipe 'race_pipe' is ready!
+
+[19:56:33] SERVER STARTED
+[19:56:38] [Malfunction Manager] Got SIGUSR2 -> Starting
+[19:56:48] [Malfunction Manager] Got SIGTERM
+[20:01:45] Semaphores initialized
+[20:01:45] Named pipe 'race_pipe' is ready!
+
+[20:01:45] SERVER STARTED
+[20:05:05] [Malfunction Manager] Got SIGTERM
+[20:01:45] Semaphores initialized
+[20:01:45] Named pipe 'race_pipe' is ready!
+
+[20:01:45] SERVER STARTED
+[20:05:05] SERVER CLOSED
+[20:05:05] GOT SIGTSTP - Statistics coming
+[20:05:05] ----Statistics----
+Total de malfuntions 0
+Total de paragens na box 0
+Carros em pista: 0
+
+[20:05:05] Cleaning up...
+[20:06:29] Semaphores initialized
+[20:06:29] Named pipe 'race_pipe' is ready!
+
+[20:06:29] SERVER STARTED
+[20:06:39] [Malfunction Manager] Got SIGTERM
+[20:06:29] Semaphores initialized
+[20:06:29] Named pipe 'race_pipe' is ready!
+
+[20:06:29] SERVER STARTED
+[20:06:39] SERVER CLOSED
+[20:06:39] GOT SIGTSTP - Statistics coming
+[20:06:39] ----Statistics----
+Total de malfuntions 0
+Total de paragens na box 0
+Carros em pista: 0
+
+[20:06:39] Cleaning up...
+[20:06:51] Semaphores initialized
+[20:06:51] Named pipe 'race_pipe' is ready!
+
+[20:06:51] SERVER STARTED
+[20:06:53] [Malfunction Manager] Got SIGTERM
+[20:06:51] Semaphores initialized
+[20:06:51] Named pipe 'race_pipe' is ready!
+
+[20:06:51] SERVER STARTED
+[20:06:53] SERVER CLOSED
+[20:06:53] GOT SIGTSTP - Statistics coming
+[20:06:53] ----Statistics----
+Total de malfuntions 0
+Total de paragens na box 0
+Carros em pista: 0
+
+[20:06:53] Cleaning up...
+[20:07:32] Semaphores initialized
+[20:07:32] Named pipe 'race_pipe' is ready!
+
+[20:07:32] SERVER STARTED
+[20:10:23] [Malfunction Manager] Got SIGTERM
+[20:07:32] Semaphores initialized
+[20:07:32] Named pipe 'race_pipe' is ready!
+
+[20:07:32] SERVER STARTED
+[20:10:23] SERVER CLOSED
+[20:10:23] GOT SIGTSTP - Statistics coming
+[20:10:23] ----Statistics----
+Total de malfuntions 0
+Total de paragens na box 0
+Carros em pista: 0
+
+[20:10:23] Cleaning up...
+[20:10:24] Semaphores initialized
+[20:10:24] Named pipe 'race_pipe' is ready!
+
+[20:10:24] SERVER STARTED
+[20:10:50] [Malfunction Manager] Got SIGTERM
+[20:10:24] Semaphores initialized
+[20:10:24] Named pipe 'race_pipe' is ready!
+
+[20:10:24] SERVER STARTED
+[20:10:50] SERVER CLOSED
+[20:10:50] GOT SIGTSTP - Statistics coming
+[20:10:50] ----Statistics----
+Total de malfuntions 0
+Total de paragens na box 0
+Carros em pista: 0
+
+[20:10:50] Cleaning up...
+[20:10:52] Semaphores initialized
+[20:10:52] Named pipe 'race_pipe' is ready!
+
+[20:10:52] SERVER STARTED
+[20:10:52] Race manager created (PID: 2667)
+[20:10:53] ADDED CAR 10 FROM TEAM AA
+[20:10:53] ADDED CAR 20 FROM TEAM BB
+[20:10:53] ADDED CAR 21 FROM TEAM BB
+[20:10:53] ADDED CAR 30 FROM TEAM CC
+[20:10:53] ADDED CAR 40 FROM TEAM DD
+[20:10:53] ADDED CAR 41 FROM TEAM DD
+[20:10:53] [Race_Pipe] Got START RACE
+[20:10:53] Buckle Up, race is starting!
+[20:10:53] Team manager created (PID: 2669), for Team AA
+
+[20:10:53] Car 10 from team AA has started the race
+[20:11:04] Car 10 | Distance = 3000.00 | Lap 6 | State = R | Fuel = 30.00(3.30 laps)
+[20:10:52] Semaphores initialized
+[20:10:52] Named pipe 'race_pipe' is ready!
+
+[20:10:52] SERVER STARTED
+[20:10:52] Race manager created (PID: 2667)
+[20:10:53] ADDED CAR 10 FROM TEAM AA
+[20:10:53] ADDED CAR 20 FROM TEAM BB
+[20:10:53] ADDED CAR 21 FROM TEAM BB
+[20:10:53] ADDED CAR 30 FROM TEAM CC
+[20:10:53] ADDED CAR 40 FROM TEAM DD
+[20:10:53] ADDED CAR 41 FROM TEAM DD
+[20:10:53] [Race_Pipe] Got START RACE
+[20:10:53] Buckle Up, race is starting!
+[20:10:53] Created team processes
+[20:10:53] Created team processes
+[20:10:53] Team manager created (PID: 2671), for Team CC
+
+[20:10:53] Car 30 from team CC has started the race
+[20:11:03] Car 30 | Distance = 2000.00 | Lap 5 | State = R | Fuel = 30.00(5.20 laps)
+[20:10:52] Semaphores initialized
+[20:10:52] Named pipe 'race_pipe' is ready!
+
+[20:10:52] SERVER STARTED
+[20:10:52] Race manager created (PID: 2667)
+[20:10:53] ADDED CAR 10 FROM TEAM AA
+[20:10:53] ADDED CAR 20 FROM TEAM BB
+[20:10:53] ADDED CAR 21 FROM TEAM BB
+[20:10:53] ADDED CAR 30 FROM TEAM CC
+[20:10:53] ADDED CAR 40 FROM TEAM DD
+[20:10:53] ADDED CAR 41 FROM TEAM DD
+[20:10:53] [Race_Pipe] Got START RACE
+[20:10:53] Buckle Up, race is starting!
+[20:10:53] Created team processes
+[20:10:53] Team manager created (PID: 2670), for Team BB
+
+[20:10:53] Car 21 from team BB has started the race
+[20:10:53] Car 20 from team BB has started the race
+[20:11:04] Car 20 | Distance = 7200.00 | Lap 6 | State = R | Fuel = 36.00(4.08 laps)
+[20:11:08] Car 21 | Distance = 4000.00 | Lap 7 | State = R | Fuel = 54.50(3.96 laps)
+[20:10:52] Semaphores initialized
+[20:10:52] Named pipe 'race_pipe' is ready!
+
+[20:10:52] SERVER STARTED
+[20:10:52] Race manager created (PID: 2667)
+[20:10:53] ADDED CAR 10 FROM TEAM AA
+[20:10:53] ADDED CAR 20 FROM TEAM BB
+[20:10:53] ADDED CAR 21 FROM TEAM BB
+[20:10:53] ADDED CAR 30 FROM TEAM CC
+[20:10:53] ADDED CAR 40 FROM TEAM DD
+[20:10:53] ADDED CAR 41 FROM TEAM DD
+[20:10:53] [Race_Pipe] Got START RACE
+[20:10:53] Buckle Up, race is starting!
+[20:10:53] Created team processes
+[20:10:53] Created team processes
+[20:10:53] Created team processes
+[20:10:53] Team manager created (PID: 2672), for Team DD
+
+[20:10:53] Car 41 from team DD has started the race
+[20:10:53] Car 40 from team DD has started the race
+[20:11:07] Car 40 | Distance = 2000.00 | Lap 5 | State = R | Fuel = 44.00(3.30 laps)
+[20:11:07] Car 41 | Distance = 3000.00 | Lap 5 | State = R | Fuel = 56.00(4.20 laps)
+[20:11:22] Car 40 | Distance = 2000.00 | Lap 10 | State = R | Fuel = 44.00(3.30 laps)
+[20:10:52] Semaphores initialized
+[20:10:52] Named pipe 'race_pipe' is ready!
+
+[20:10:52] SERVER STARTED
+[20:10:53] [Malfunction Manager] Got SIGUSR2 -> Starting
+[20:11:22] [Malfunction Manager] Got SIGTERM
+[20:10:52] Semaphores initialized
+[20:10:52] Named pipe 'race_pipe' is ready!
+
+[20:10:52] SERVER STARTED
+[20:10:52] Race manager created (PID: 2667)
+[20:10:53] ADDED CAR 10 FROM TEAM AA
+[20:10:53] ADDED CAR 20 FROM TEAM BB
+[20:10:53] ADDED CAR 21 FROM TEAM BB
+[20:10:53] ADDED CAR 30 FROM TEAM CC
+[20:10:53] ADDED CAR 40 FROM TEAM DD
+[20:10:53] ADDED CAR 41 FROM TEAM DD
+[20:10:53] [Race_Pipe] Got START RACE
+[20:10:53] Buckle Up, race is starting!
+[20:10:53] Created team processes
+[20:10:53] Created team processes
+[20:10:53] Created team processes
+[20:10:53] Created team processes
+[20:10:53] ---RACE HAS STARTED---
+[20:10:53] [Race_Pipe] Got ADDCAR
+[20:10:53] [Race_Pipe] Can't add cars once the race has started!
+[20:10:55] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:10:55] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:10:56] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:10:56] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:10:57] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:10:57] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:10:58] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:10:58] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:10:58] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:10:58] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:10:59] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:10:59] UPDATE ==> CAR 20 ENTERED THE BOX
+[20:10:59] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:11:00] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:11:00] UPDATE ==> CAR 20 IS BACK AT FULL SPEED
+[20:11:01] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:11:01] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:11:01] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:11:02] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:11:02] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:11:03] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:11:03] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:11:04] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:11:04] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:11:04] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:11:04] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:11:05] UPDATE ==> CAR 20 ENTERED THE BOX
+[20:11:05] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:11:05] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:11:06] UPDATE ==> CAR 20 IS BACK AT FULL SPEED
+[20:11:06] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:11:07] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:11:07] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:11:07] UPDATE ==> CAR 30 ENTERED THE BOX
+[20:11:07] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:11:08] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:11:08] UPDATE ==> CAR 30 IS BACK AT FULL SPEED
+[20:11:08] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:11:09] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:11:09] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:11:10] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:11:10] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:11:10] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:11:10] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:11:10] UPDATE ==> CAR 20 FINISHED THE RACE
+[20:11:11] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:11:11] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:11:12] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:11:12] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:11:13] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:11:13] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:11:13] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:11:13] UPDATE ==> CAR 10 FINISHED THE RACE
+[20:11:14] UPDATE ==> CAR 30 FINISHED THE RACE
+[20:11:14] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:11:14] UPDATE ==> CAR 21 FINISHED THE RACE
+[20:11:15] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:11:16] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:11:16] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:11:17] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:11:18] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:11:19] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:11:19] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:11:20] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:11:21] UPDATE ==> CAR 41 FINISHED THE RACE
+[20:11:22] UPDATE ==> CAR 40 FINISHED THE RACE
+[20:11:22] -------All cars finished-------
+[20:10:52] Semaphores initialized
+[20:10:52] Named pipe 'race_pipe' is ready!
+
+[20:10:52] SERVER STARTED
+[20:11:22] SERVER CLOSED
+[20:11:22] GOT SIGTSTP - Statistics coming
+[20:11:22] ----Statistics----
+1st -> Car 20 from team BB [lap: 10, lap_distance:    0.00, stops: 2]
+2nd -> Car 10 from team AA [lap: 10, lap_distance:    0.00, stops: 3]
+3rd -> Car 30 from team CC [lap: 10, lap_distance:    0.00, stops: 1]
+4th -> Car 21 from team BB [lap: 10, lap_distance:    0.00, stops: 7]
+5th -> Car 41 from team DD [lap: 10, lap_distance:    0.00, stops: 8]
+   .
+   .
+   .
+8th -> Car 40 from team DD [lap: 10, lap_distance:    0.00, stops: 9]
+Total de malfuntions 0
+Total de paragens na box 30
+Carros em pista: 0
+
+[20:11:22] Cleaning up...
+[20:12:37] Semaphores initialized
+[20:12:37] Named pipe 'race_pipe' is ready!
+
+[20:12:37] SERVER STARTED
+[20:12:37] Race manager created (PID: 2688)
+[20:12:41] ADDED CAR 10 FROM TEAM AA
+[20:12:41] ADDED CAR 20 FROM TEAM BB
+[20:12:41] ADDED CAR 21 FROM TEAM BB
+[20:12:41] ADDED CAR 30 FROM TEAM CC
+[20:12:41] ADDED CAR 40 FROM TEAM DD
+[20:12:41] ADDED CAR 41 FROM TEAM DD
+[20:12:41] [Race_Pipe] Got START RACE
+[20:12:41] Buckle Up, race is starting!
+[20:12:41] Created team processes
+[20:12:41] Created team processes
+[20:12:41] Team manager created (PID: 2692), for Team CC
+
+[20:12:41] Car 30 from team CC has started the race
+[20:12:50] Car 30 | Distance = 2000.00 | Lap 5 | State = R | Fuel = 30.00(5.20 laps)
+[20:12:37] Semaphores initialized
+[20:12:37] Named pipe 'race_pipe' is ready!
+
+[20:12:37] SERVER STARTED
+[20:12:37] Race manager created (PID: 2688)
+[20:12:41] ADDED CAR 10 FROM TEAM AA
+[20:12:41] ADDED CAR 20 FROM TEAM BB
+[20:12:41] ADDED CAR 21 FROM TEAM BB
+[20:12:41] ADDED CAR 30 FROM TEAM CC
+[20:12:41] ADDED CAR 40 FROM TEAM DD
+[20:12:41] ADDED CAR 41 FROM TEAM DD
+[20:12:41] [Race_Pipe] Got START RACE
+[20:12:41] Buckle Up, race is starting!
+[20:12:41] Created team processes
+[20:12:41] Team manager created (PID: 2691), for Team BB
+
+[20:12:41] Car 21 from team BB has started the race
+[20:12:41] Car 20 from team BB has started the race
+[20:12:51] Car 20 | Distance = 7200.00 | Lap 6 | State = R | Fuel = 36.00(4.08 laps)
+[20:12:53] CAR 21 GOT A MALFUNCTION
+[20:12:54] CAR 20 GOT A MALFUNCTION
+[20:12:59] Car 21 | Distance = 9200.00 | Lap 6 | State = R | Fuel = 46.80(3.40 laps)
+[20:13:01] CAR 21 GOT A MALFUNCTION
+[20:13:09] CAR 21 GOT A MALFUNCTION
+[20:13:18] Car 21 | Distance = 3200.00 | Lap 10 | State = R | Fuel = 41.30(3.00 laps)
+[20:13:18] CAR 21 GOT A MALFUNCTION
+[20:12:37] Semaphores initialized
+[20:12:37] Named pipe 'race_pipe' is ready!
+
+[20:12:37] SERVER STARTED
+[20:12:37] Race manager created (PID: 2688)
+[20:12:41] ADDED CAR 10 FROM TEAM AA
+[20:12:41] ADDED CAR 20 FROM TEAM BB
+[20:12:41] ADDED CAR 21 FROM TEAM BB
+[20:12:41] ADDED CAR 30 FROM TEAM CC
+[20:12:41] ADDED CAR 40 FROM TEAM DD
+[20:12:41] ADDED CAR 41 FROM TEAM DD
+[20:12:41] [Race_Pipe] Got START RACE
+[20:12:41] Buckle Up, race is starting!
+[20:12:41] Created team processes
+[20:12:41] Created team processes
+[20:12:41] Created team processes
+[20:12:41] Team manager created (PID: 2693), for Team DD
+
+[20:12:41] Car 40 from team DD has started the race
+[20:12:41] Car 41 from team DD has started the race
+[20:12:54] Car 40 | Distance = 3000.00 | Lap 5 | State = R | Fuel = 56.00(4.20 laps)
+[20:12:54] Car 41 | Distance = 2000.00 | Lap 5 | State = R | Fuel = 44.00(3.30 laps)
+[20:12:56] CAR 40 GOT A MALFUNCTION
+[20:13:00] CAR 41 LOW ON FUEL
+[20:13:07] Car 41 | Distance = 9000.00 | Lap 9 | State = R | Fuel = 48.00(3.60 laps)
+[20:13:08] CAR 40 GOT A MALFUNCTION
+[20:13:11] Car 40 | Distance = 8400.00 | Lap 8 | State = S | Fuel = 46.40(3.23 laps)
+[20:12:37] Semaphores initialized
+[20:12:37] Named pipe 'race_pipe' is ready!
+
+[20:12:37] SERVER STARTED
+[20:12:37] Race manager created (PID: 2688)
+[20:12:41] ADDED CAR 10 FROM TEAM AA
+[20:12:41] ADDED CAR 20 FROM TEAM BB
+[20:12:41] ADDED CAR 21 FROM TEAM BB
+[20:12:41] ADDED CAR 30 FROM TEAM CC
+[20:12:41] ADDED CAR 40 FROM TEAM DD
+[20:12:41] ADDED CAR 41 FROM TEAM DD
+[20:12:41] [Race_Pipe] Got START RACE
+[20:12:41] Buckle Up, race is starting!
+[20:12:41] Team manager created (PID: 2690), for Team AA
+
+[20:12:41] Car 10 from team AA has started the race
+[20:12:43] CAR 10 GOT A MALFUNCTION
+[20:12:50] CAR 10 GOT A MALFUNCTION
+[20:12:55] Car 10 | Distance =  890.00 | Lap 3 | State = S | Fuel = 46.80(4.78 laps)
+[20:12:58] CAR 10 GOT A MALFUNCTION
+[20:13:12] Car 10 | Distance = 7390.00 | Lap 6 | State = R | Fuel = 34.80(3.83 laps)
+[20:13:17] CAR 10 GOT A MALFUNCTION
+[20:13:24] CAR 10 GOT A MALFUNCTION
+[20:13:28] Car 10 | Distance =  890.00 | Lap 9 | State = S | Fuel = 46.80(4.78 laps)
+[20:13:33] CAR 10 GOT A MALFUNCTION
+[20:12:37] Semaphores initialized
+[20:12:37] Named pipe 'race_pipe' is ready!
+
+[20:12:37] SERVER STARTED
+[20:12:41] [Malfunction Manager] Got SIGUSR2 -> Starting
+[20:13:37] [Malfunction Manager] Got SIGTERM
+[20:12:37] Semaphores initialized
+[20:12:37] Named pipe 'race_pipe' is ready!
+
+[20:12:37] SERVER STARTED
+[20:12:37] Race manager created (PID: 2688)
+[20:12:41] ADDED CAR 10 FROM TEAM AA
+[20:12:41] ADDED CAR 20 FROM TEAM BB
+[20:12:41] ADDED CAR 21 FROM TEAM BB
+[20:12:41] ADDED CAR 30 FROM TEAM CC
+[20:12:41] ADDED CAR 40 FROM TEAM DD
+[20:12:41] ADDED CAR 41 FROM TEAM DD
+[20:12:41] [Race_Pipe] Got START RACE
+[20:12:41] Buckle Up, race is starting!
+[20:12:41] Created team processes
+[20:12:41] Created team processes
+[20:12:41] Created team processes
+[20:12:41] Created team processes
+[20:12:41] ---RACE HAS STARTED---
+[20:12:42] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:12:43] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:12:43] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:12:43] UPDATE ==> CAR 10 GOT SWAPPED TO SAFETY MODE
+[20:12:44] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:12:44] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:12:45] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:12:45] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:12:45] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:12:46] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:12:46] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:12:47] UPDATE ==> CAR 20 ENTERED THE BOX
+[20:12:47] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:12:47] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:12:48] UPDATE ==> CAR 20 IS BACK AT FULL SPEED
+[20:12:48] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:12:48] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:12:49] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:12:49] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:12:50] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:12:50] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:12:50] UPDATE ==> CAR 10 GOT SWAPPED TO SAFETY MODE
+[20:12:50] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:12:51] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:12:51] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:12:52] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:12:52] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:12:52] UPDATE ==> CAR 20 ENTERED THE BOX
+[20:12:53] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:12:53] UPDATE ==> CAR 20 IS BACK AT FULL SPEED
+[20:12:53] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:12:53] UPDATE ==> CAR 21 GOT SWAPPED TO SAFETY MODE
+[20:12:54] UPDATE ==> CAR 20 GOT SWAPPED TO SAFETY MODE
+[20:12:54] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:12:54] UPDATE ==> CAR 30 ENTERED THE BOX
+[20:12:55] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:12:55] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:12:55] UPDATE ==> CAR 30 IS BACK AT FULL SPEED
+[20:12:56] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:12:56] UPDATE ==> CAR 40 GOT SWAPPED TO SAFETY MODE
+[20:12:57] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:12:57] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:12:57] UPDATE ==> CAR 20 ENTERED THE BOX
+[20:12:58] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:12:58] UPDATE ==> CAR 10 GOT SWAPPED TO SAFETY MODE
+[20:12:59] UPDATE ==> CAR 20 IS BACK AT FULL SPEED
+[20:13:00] UPDATE ==> CAR 41 GOT SWAPPED TO SAFETY MODE
+[20:13:00] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:13:01] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:13:01] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:13:01] UPDATE ==> CAR 21 GOT SWAPPED TO SAFETY MODE
+[20:13:01] UPDATE ==> CAR 30 FINISHED THE RACE
+[20:13:02] UPDATE ==> CAR 20 FINISHED THE RACE
+[20:13:02] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:13:03] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:13:03] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:13:04] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:13:04] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:13:05] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:13:05] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:13:06] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:13:07] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:13:08] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:13:08] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:13:08] UPDATE ==> CAR 41 FINISHED THE RACE
+[20:13:09] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:13:09] UPDATE ==> CAR 21 GOT SWAPPED TO SAFETY MODE
+[20:13:12] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:13:13] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:13:13] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:13:14] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:13:14] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:13:16] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:13:17] UPDATE ==> CAR 10 GOT SWAPPED TO SAFETY MODE
+[20:13:18] UPDATE ==> CAR 21 GOT SWAPPED TO SAFETY MODE
+[20:13:19] UPDATE ==> CAR 40 FINISHED THE RACE
+[20:13:20] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:13:23] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:13:24] UPDATE ==> CAR 10 GOT SWAPPED TO SAFETY MODE
+[20:13:29] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:13:31] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:13:33] UPDATE ==> CAR 10 GOT SWAPPED TO SAFETY MODE
+[20:13:37] [Race Manager] Got SIGTERM
+[20:13:37] [Race Manager] Waiting for all cars to finish their lap
+[20:12:37] Semaphores initialized
+[20:12:37] Named pipe 'race_pipe' is ready!
+
+[20:12:37] SERVER STARTED
+[20:13:14] GOT SIGTSTP - Statistics coming
+[20:13:17] ----Statistics----
+1st -> Car 30 from team CC [lap: 10, lap_distance:    0.00, stops: 1]
+2nd -> Car 20 from team BB [lap: 10, lap_distance:    0.00, stops: 3]
+3rd -> Car 41 from team DD [lap: 10, lap_distance:    0.00, stops: 7]
+4th -> Car 21 from team BB [lap: 9, lap_distance: 1200.00, stops: 8]
+5th -> Car 40 from team DD [lap: 9, lap_distance:  900.00, stops: 8]
+   .
+   .
+   .
+8th -> Car 10 from team AA [lap: 7, lap_distance: 3300.00, stops: 4]
+Total de malfuntions 10
+Total de paragens na box 31
+Carros em pista: 3
+
+[20:13:37] SERVER CLOSED
+[20:13:37] GOT SIGTSTP - Statistics coming
+[20:13:37] ----Statistics----
+1st -> Car 10 from team AA [lap: 10, lap_distance:    0.00, stops: 6]
+2nd -> Car 20 from team BB [lap: 10, lap_distance:    0.00, stops: 3]
+3rd -> Car 21 from team BB [lap: 10, lap_distance:    0.00, stops: 8]
+4th -> Car 30 from team CC [lap: 10, lap_distance:    0.00, stops: 1]
+5th -> Car 41 from team DD [lap: 10, lap_distance:    0.00, stops: 7]
+   .
+   .
+   .
+8th -> Car 40 from team DD [lap: 10, lap_distance:    0.00, stops: 8]
+Total de malfuntions 13
+Total de paragens na box 33
+Carros em pista: 2
+
+[20:13:37] Cleaning up...
+[20:14:25] Semaphores initialized
+[20:14:25] Named pipe 'race_pipe' is ready!
+
+[20:14:25] SERVER STARTED
+[20:14:25] Race manager created (PID: 2709)
+[20:14:31] ADDED CAR 10 FROM TEAM AA
+[20:14:31] ADDED CAR 20 FROM TEAM BB
+[20:14:31] ADDED CAR 21 FROM TEAM BB
+[20:14:31] ADDED CAR 30 FROM TEAM CC
+[20:14:31] ADDED CAR 40 FROM TEAM DD
+[20:14:31] ADDED CAR 41 FROM TEAM DD
+[20:14:31] [Race_Pipe] Got START RACE
+[20:14:31] Buckle Up, race is starting!
+[20:14:31] Team manager created (PID: 2711), for Team AA
+
+[20:14:31] Car 10 from team AA has started the race
+[20:14:36] CAR 10 GOT A MALFUNCTION
+[20:14:44] Car 10 | Distance =  690.00 | Lap 6 | State = R | Fuel = 31.80(3.50 laps)
+[20:14:25] Semaphores initialized
+[20:14:25] Named pipe 'race_pipe' is ready!
+
+[20:14:25] SERVER STARTED
+[20:14:25] Race manager created (PID: 2709)
+[20:14:31] ADDED CAR 10 FROM TEAM AA
+[20:14:31] ADDED CAR 20 FROM TEAM BB
+[20:14:31] ADDED CAR 21 FROM TEAM BB
+[20:14:31] ADDED CAR 30 FROM TEAM CC
+[20:14:31] ADDED CAR 40 FROM TEAM DD
+[20:14:31] ADDED CAR 41 FROM TEAM DD
+[20:14:31] [Race_Pipe] Got START RACE
+[20:14:31] Buckle Up, race is starting!
+[20:14:31] Created team processes
+[20:14:31] Created team processes
+[20:14:31] Created team processes
+[20:14:31] Team manager created (PID: 2714), for Team DD
+
+[20:14:31] Car 40 from team DD has started the race
+[20:14:31] Car 41 from team DD has started the race
+[20:14:44] Car 40 | Distance = 3000.00 | Lap 5 | State = R | Fuel = 56.00(4.20 laps)
+[20:14:44] Car 41 | Distance = 2000.00 | Lap 5 | State = R | Fuel = 44.00(3.30 laps)
+[20:14:25] Semaphores initialized
+[20:14:25] Named pipe 'race_pipe' is ready!
+
+[20:14:25] SERVER STARTED
+[20:14:25] Race manager created (PID: 2709)
+[20:14:31] ADDED CAR 10 FROM TEAM AA
+[20:14:31] ADDED CAR 20 FROM TEAM BB
+[20:14:31] ADDED CAR 21 FROM TEAM BB
+[20:14:31] ADDED CAR 30 FROM TEAM CC
+[20:14:31] ADDED CAR 40 FROM TEAM DD
+[20:14:31] ADDED CAR 41 FROM TEAM DD
+[20:14:31] [Race_Pipe] Got START RACE
+[20:14:31] Buckle Up, race is starting!
+[20:14:31] Created team processes
+[20:14:31] Created team processes
+[20:14:31] Team manager created (PID: 2713), for Team CC
+
+[20:14:31] Car 30 from team CC has started the race
+[20:14:40] Car 30 | Distance = 2000.00 | Lap 5 | State = R | Fuel = 30.00(5.20 laps)
+[20:14:25] Semaphores initialized
+[20:14:25] Named pipe 'race_pipe' is ready!
+
+[20:14:25] SERVER STARTED
+[20:14:25] Race manager created (PID: 2709)
+[20:14:31] ADDED CAR 10 FROM TEAM AA
+[20:14:31] ADDED CAR 20 FROM TEAM BB
+[20:14:31] ADDED CAR 21 FROM TEAM BB
+[20:14:31] ADDED CAR 30 FROM TEAM CC
+[20:14:31] ADDED CAR 40 FROM TEAM DD
+[20:14:31] ADDED CAR 41 FROM TEAM DD
+[20:14:31] [Race_Pipe] Got START RACE
+[20:14:31] Buckle Up, race is starting!
+[20:14:31] Created team processes
+[20:14:31] Team manager created (PID: 2712), for Team BB
+
+[20:14:31] Car 21 from team BB has started the race
+[20:14:31] Car 20 from team BB has started the race
+[20:14:34] CAR 21 GOT A MALFUNCTION
+[20:14:36] CAR 20 GOT A MALFUNCTION
+[20:14:44] Car 20 | Distance = 3600.00 | Lap 5 | State = R | Fuel = 48.00(5.44 laps)
+[20:14:46] CAR 20 GOT A MALFUNCTION
+[20:14:47] Car 21 | Distance = 6000.00 | Lap 5 | State = R | Fuel = 38.00(2.76 laps)
+[20:14:48] CAR 21 LOW ON FUEL
+[20:14:25] Semaphores initialized
+[20:14:25] Named pipe 'race_pipe' is ready!
+
+[20:14:25] SERVER STARTED
+[20:14:25] Race manager created (PID: 2709)
+[20:14:31] ADDED CAR 10 FROM TEAM AA
+[20:14:31] ADDED CAR 20 FROM TEAM BB
+[20:14:31] ADDED CAR 21 FROM TEAM BB
+[20:14:31] ADDED CAR 30 FROM TEAM CC
+[20:14:31] ADDED CAR 40 FROM TEAM DD
+[20:14:31] ADDED CAR 41 FROM TEAM DD
+[20:14:31] [Race_Pipe] Got START RACE
+[20:14:31] Buckle Up, race is starting!
+[20:14:31] Created team processes
+[20:14:31] Created team processes
+[20:14:31] Created team processes
+[20:14:31] Created team processes
+[20:14:31] ---RACE HAS STARTED---
+[20:14:32] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:14:33] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:14:33] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:14:34] UPDATE ==> CAR 21 GOT SWAPPED TO SAFETY MODE
+[20:14:34] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:14:34] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:14:35] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:14:36] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:14:36] UPDATE ==> CAR 10 GOT SWAPPED TO SAFETY MODE
+[20:14:36] UPDATE ==> CAR 20 GOT SWAPPED TO SAFETY MODE
+[20:14:36] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:14:37] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:14:37] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:14:38] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:14:39] UPDATE ==> CAR 20 ENTERED THE BOX
+[20:14:39] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:14:39] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:14:40] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:14:40] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:14:40] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:14:41] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:14:42] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:14:42] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:14:42] UPDATE ==> CAR 20 IS BACK AT FULL SPEED
+[20:14:43] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:14:43] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:14:43] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:14:44] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:14:44] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:14:44] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:14:44] UPDATE ==> CAR 30 ENTERED THE BOX
+[20:14:45] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:14:45] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:14:45] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:14:45] UPDATE ==> CAR 30 IS BACK AT FULL SPEED
+[20:14:46] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:14:46] UPDATE ==> CAR 20 GOT SWAPPED TO SAFETY MODE
+[20:14:46] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:14:47] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:14:48] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:14:48] UPDATE ==> CAR 21 GOT SWAPPED TO SAFETY MODE
+[20:14:48] [Race Manager] Got SIGTERM
+[20:14:48] [Race Manager] Waiting for all cars to finish their lap
+[20:14:25] Semaphores initialized
+[20:14:25] Named pipe 'race_pipe' is ready!
+
+[20:14:25] SERVER STARTED
+[20:14:31] [Malfunction Manager] Got SIGUSR2 -> Starting
+[20:14:51] [Malfunction Manager] Got SIGTERM
+[20:14:25] Semaphores initialized
+[20:14:25] Named pipe 'race_pipe' is ready!
+
+[20:14:25] SERVER STARTED
+[20:14:51] SERVER CLOSED
+[20:14:51] GOT SIGTSTP - Statistics coming
+[20:14:51] ----Statistics----
+1st -> Car 30 from team CC [lap: 9, lap_distance:  800.00, stops: 1]
+2nd -> Car 10 from team AA [lap: 8, lap_distance: 3100.00, stops: 2]
+3rd -> Car 40 from team DD [lap: 7, lap_distance: 2000.00, stops: 5]
+4th -> Car 20 from team BB [lap: 7, lap_distance:  940.00, stops: 1]
+5th -> Car 21 from team BB [lap: 7, lap_distance:    0.00, stops: 4]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 6, lap_distance:    0.00, stops: 5]
+Total de malfuntions 5
+Total de paragens na box 18
+Carros em pista: 0
+
+[20:14:51] Cleaning up...
+[20:16:52] Semaphores initialized
+[20:16:52] Named pipe 'race_pipe' is ready!
+
+[20:16:52] SERVER STARTED
+[20:17:02] [Malfunction Manager] Got SIGTERM
+[20:16:52] Semaphores initialized
+[20:16:52] Named pipe 'race_pipe' is ready!
+
+[20:16:52] SERVER STARTED
+[20:17:03] SERVER CLOSED
+[20:17:03] GOT SIGTSTP - Statistics coming
+[20:17:03] ----Statistics----
+Total de malfuntions 0
+Total de paragens na box 0
+Carros em pista: 0
+
+[20:17:03] Cleaning up...
+[20:17:09] Semaphores initialized
+[20:17:09] Named pipe 'race_pipe' is ready!
+
+[20:17:09] SERVER STARTED
+[20:17:09] Race manager created (PID: 2750)
+[20:17:10] ADDED CAR 10 FROM TEAM AA
+[20:17:10] ADDED CAR 20 FROM TEAM BB
+[20:17:10] ADDED CAR 21 FROM TEAM BB
+[20:17:10] ADDED CAR 30 FROM TEAM CC
+[20:17:10] ADDED CAR 40 FROM TEAM DD
+[20:17:10] ADDED CAR 41 FROM TEAM DD
+[20:17:10] [Race_Pipe] Got START RACE
+[20:17:10] Buckle Up, race is starting!
+[20:17:10] Created team processes
+[20:17:10] Team manager created (PID: 2753), for Team BB
+
+[20:17:10] Car 21 from team BB has started the race
+[20:17:10] Car 20 from team BB has started the race
+[20:17:09] Semaphores initialized
+[20:17:09] Named pipe 'race_pipe' is ready!
+
+[20:17:09] SERVER STARTED
+[20:17:09] Race manager created (PID: 2750)
+[20:17:10] ADDED CAR 10 FROM TEAM AA
+[20:17:10] ADDED CAR 20 FROM TEAM BB
+[20:17:10] ADDED CAR 21 FROM TEAM BB
+[20:17:10] ADDED CAR 30 FROM TEAM CC
+[20:17:10] ADDED CAR 40 FROM TEAM DD
+[20:17:10] ADDED CAR 41 FROM TEAM DD
+[20:17:10] [Race_Pipe] Got START RACE
+[20:17:10] Buckle Up, race is starting!
+[20:17:10] Created team processes
+[20:17:10] Created team processes
+[20:17:10] Created team processes
+[20:17:10] Team manager created (PID: 2755), for Team DD
+
+[20:17:10] Car 41 from team DD has started the race
+[20:17:10] Car 40 from team DD has started the race
+[20:17:09] Semaphores initialized
+[20:17:09] Named pipe 'race_pipe' is ready!
+
+[20:17:09] SERVER STARTED
+[20:17:09] Race manager created (PID: 2750)
+[20:17:10] ADDED CAR 10 FROM TEAM AA
+[20:17:10] ADDED CAR 20 FROM TEAM BB
+[20:17:10] ADDED CAR 21 FROM TEAM BB
+[20:17:10] ADDED CAR 30 FROM TEAM CC
+[20:17:10] ADDED CAR 40 FROM TEAM DD
+[20:17:10] ADDED CAR 41 FROM TEAM DD
+[20:17:10] [Race_Pipe] Got START RACE
+[20:17:10] Buckle Up, race is starting!
+[20:17:10] Created team processes
+[20:17:10] Created team processes
+[20:17:10] Team manager created (PID: 2754), for Team CC
+
+[20:17:10] Car 30 from team CC has started the race
+[20:17:09] Semaphores initialized
+[20:17:09] Named pipe 'race_pipe' is ready!
+
+[20:17:09] SERVER STARTED
+[20:17:09] Race manager created (PID: 2750)
+[20:17:10] ADDED CAR 10 FROM TEAM AA
+[20:17:10] ADDED CAR 20 FROM TEAM BB
+[20:17:10] ADDED CAR 21 FROM TEAM BB
+[20:17:10] ADDED CAR 30 FROM TEAM CC
+[20:17:10] ADDED CAR 40 FROM TEAM DD
+[20:17:10] ADDED CAR 41 FROM TEAM DD
+[20:17:10] [Race_Pipe] Got START RACE
+[20:17:10] Buckle Up, race is starting!
+[20:17:10] Team manager created (PID: 2752), for Team AA
+
+[20:17:10] Car 10 from team AA has started the race
+[20:17:09] Semaphores initialized
+[20:17:09] Named pipe 'race_pipe' is ready!
+
+[20:17:09] SERVER STARTED
+[20:17:09] Race manager created (PID: 2750)
+[20:17:10] ADDED CAR 10 FROM TEAM AA
+[20:17:10] ADDED CAR 20 FROM TEAM BB
+[20:17:10] ADDED CAR 21 FROM TEAM BB
+[20:17:10] ADDED CAR 30 FROM TEAM CC
+[20:17:10] ADDED CAR 40 FROM TEAM DD
+[20:17:10] ADDED CAR 41 FROM TEAM DD
+[20:17:10] [Race_Pipe] Got START RACE
+[20:17:10] Buckle Up, race is starting!
+[20:17:10] Created team processes
+[20:17:10] Created team processes
+[20:17:10] Created team processes
+[20:17:10] Created team processes
+[20:17:10] ---RACE HAS STARTED---
+[20:17:10] [Race_Pipe] Got ADDCAR
+[20:17:10] [Race_Pipe] Can't add cars once the race has started!
+[20:17:12] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:17:12] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:17:13] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:17:13] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:17:14] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:17:14] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:17:15] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:17:15] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:17:16] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:17:16] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:17:17] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:17:17] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:17:17] UPDATE ==> CAR 20 ENTERED THE BOX
+[20:17:17] [Race Manager] Got SIGTERM
+[20:17:17] [Race Manager] Waiting for all cars to finish their lap
+[20:17:09] Semaphores initialized
+[20:17:09] Named pipe 'race_pipe' is ready!
+
+[20:17:09] SERVER STARTED
+[20:17:10] [Malfunction Manager] Got SIGUSR2 -> Starting
+[20:17:19] [Malfunction Manager] Got SIGTERM
+[20:17:09] Semaphores initialized
+[20:17:09] Named pipe 'race_pipe' is ready!
+
+[20:17:09] SERVER STARTED
+[20:17:15] GOT SIGTSTP - Statistics coming
+[20:17:16] ----Statistics----
+1st -> Car 20 from team BB [lap: 3, lap_distance: 4000.00, stops: 0]
+2nd -> Car 10 from team AA [lap: 3, lap_distance: 3000.00, stops: 0]
+3rd -> Car 30 from team CC [lap: 2, lap_distance: 6000.00, stops: 0]
+4th -> Car 21 from team BB [lap: 2, lap_distance: 4000.00, stops: 2]
+5th -> Car 40 from team DD [lap: 2, lap_distance: 3000.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 2, lap_distance: 2000.00, stops: 1]
+Total de malfuntions 0
+Total de paragens na box 4
+Carros em pista: 6
+
+[20:17:19] SERVER CLOSED
+[20:17:19] GOT SIGTSTP - Statistics coming
+[20:17:19] ----Statistics----
+1st -> Car 10 from team AA [lap: 4, lap_distance: 3200.00, stops: 1]
+2nd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+3rd -> Car 20 from team BB [lap: 4, lap_distance:    0.00, stops: 0]
+4th -> Car 21 from team BB [lap: 4, lap_distance:    0.00, stops: 2]
+5th -> Car 40 from team DD [lap: 3, lap_distance: 2000.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 0
+Total de paragens na box 6
+Carros em pista: 0
+
+[20:17:19] Cleaning up...
+[20:18:18] Semaphores initialized
+[20:18:18] Named pipe 'race_pipe' is ready!
+
+[20:18:18] SERVER STARTED
+[20:18:20] [Malfunction Manager] Got SIGTERM
+[20:18:18] Semaphores initialized
+[20:18:18] Named pipe 'race_pipe' is ready!
+
+[20:18:18] SERVER STARTED
+[20:18:20] SERVER CLOSED
+[20:18:20] GOT SIGTSTP - Statistics coming
+[20:18:20] ----Statistics----
+Total de malfuntions 0
+Total de paragens na box 0
+Carros em pista: 0
+
+[20:18:20] Cleaning up...
+[20:18:24] Semaphores initialized
+[20:18:24] Named pipe 'race_pipe' is ready!
+
+[20:18:24] SERVER STARTED
+[20:19:11] GOT SIGTSTP - Statistics coming
+[20:19:12] ----Statistics----
+1st -> Car 20 from team BB [lap: 3, lap_distance:  600.00, stops: 0]
+2nd -> Car 10 from team AA [lap: 2, lap_distance: 9700.00, stops: 0]
+3rd -> Car 21 from team BB [lap: 2, lap_distance: 4000.00, stops: 2]
+4th -> Car 30 from team CC [lap: 2, lap_distance: 3400.00, stops: 0]
+5th -> Car 40 from team DD [lap: 2, lap_distance: 3000.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 1, lap_distance: 9000.00, stops: 1]
+Total de malfuntions 1
+Total de paragens na box 4
+Carros em pista: 6
+
+[20:19:27] GOT SIGTSTP - Statistics coming
+[20:19:27] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:28] GOT SIGTSTP - Statistics coming
+[20:19:28] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:28] GOT SIGTSTP - Statistics coming
+[20:19:28] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:29] GOT SIGTSTP - Statistics coming
+[20:19:29] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:29] GOT SIGTSTP - Statistics coming
+[20:19:29] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:29] GOT SIGTSTP - Statistics coming
+[20:19:29] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:30] GOT SIGTSTP - Statistics coming
+[20:19:30] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:30] GOT SIGTSTP - Statistics coming
+[20:19:30] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:30] GOT SIGTSTP - Statistics coming
+[20:19:30] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:31] GOT SIGTSTP - Statistics coming
+[20:19:31] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:31] GOT SIGTSTP - Statistics coming
+[20:19:31] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:31] GOT SIGTSTP - Statistics coming
+[20:19:31] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:31] GOT SIGTSTP - Statistics coming
+[20:19:31] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:32] GOT SIGTSTP - Statistics coming
+[20:19:32] ----Statistics----
+1st ->[20:18:24] Semaphores initialized
+[20:18:24] Named pipe 'race_pipe' is ready!
+
+[20:18:24] SERVER STARTED
+[20:18:24] Race manager created (PID: 2774)
+[20:19:07] ADDED CAR 10 FROM TEAM AA
+[20:19:07] ADDED CAR 20 FROM TEAM BB
+[20:19:07] ADDED CAR 21 FROM TEAM BB
+[20:19:07] ADDED CAR 30 FROM TEAM CC
+[20:19:07] ADDED CAR 40 FROM TEAM DD
+[20:19:07] ADDED CAR 41 FROM TEAM DD
+[20:19:07] [Race_Pipe] Got START RACE
+[20:19:07] Buckle Up, race is starting!
+[20:19:07] Created team processes
+[20:19:07] Created team processes
+[20:19:07] Team manager created (PID: 2784), for Team CC
+
+[20:19:07] Car 30 from team CC has started the race
+[20:20:03] Car 30 | Distance = 2000.00 | Lap 5 | State = R | Fuel = 30.00(5.20 laps)
+[20:18:24] Semaphores initialized
+[20:18:24] Named pipe 'race_pipe' is ready!
+
+[20:18:24] SERVER STARTED
+[20:18:24] Race manager created (PID: 2774)
+[20:19:07] ADDED CAR 10 FROM TEAM AA
+[20:19:07] ADDED CAR 20 FROM TEAM BB
+[20:19:07] ADDED CAR 21 FROM TEAM BB
+[20:19:07] ADDED CAR 30 FROM TEAM CC
+[20:19:07] ADDED CAR 40 FROM TEAM DD
+[20:19:07] ADDED CAR 41 FROM TEAM DD
+[20:19:07] [Race_Pipe] Got START RACE
+[20:19:07] Buckle Up, race is starting!
+[20:19:07] Team manager created (PID: 2782), for Team AA
+
+[20:19:07] Car 10 from team AA has started the race
+[20:19:12] CAR 10 GOT A MALFUNCTION
+[20:19:19] CAR 10 GOT A MALFUNCTION
+[20:19:23] Car 10 | Distance = 9900.00 | Lap 3 | State = S | Fuel = 48.00(4.90 laps)
+[20:20:06] CAR 10 GOT A MALFUNCTION
+[20:20:20] Car 10 | Distance = 4090.00 | Lap 7 | State = R | Fuel = 37.80(4.16 laps)
+[20:20:22] CAR 10 GOT A MALFUNCTION
+[20:18:24] Semaphores initialized
+[20:18:24] Named pipe 'race_pipe' is ready!
+
+[20:18:24] SERVER STARTED
+[20:18:24] Race manager created (PID: 2774)
+[20:19:07] ADDED CAR 10 FROM TEAM AA
+[20:19:07] ADDED CAR 20 FROM TEAM BB
+[20:19:07] ADDED CAR 21 FROM TEAM BB
+[20:19:07] ADDED CAR 30 FROM TEAM CC
+[20:19:07] ADDED CAR 40 FROM TEAM DD
+[20:19:07] ADDED CAR 41 FROM TEAM DD
+[20:19:07] [Race_Pipe] Got START RACE
+[20:19:07] Buckle Up, race is starting!
+[20:19:07] Created team processes
+[20:19:07] Team manager created (PID: 2783), for Team BB
+
+[20:19:07] Car 21 from team BB has started the race
+[20:19:07] Car 20 from team BB has started the race
+[20:19:12] CAR 21 GOT A MALFUNCTION
+[20:20:02] CAR 20 GOT A MALFUNCTION
+[20:20:03] CAR 21 GOT A MALFUNCTION
+[20:20:04] Car 21 | Distance = 6000.00 | Lap 4 | State = S | Fuel = 49.00(3.31 laps)
+[20:20:04] Car 20 | Distance =  740.00 | Lap 5 | State = S | Fuel = 39.60(4.17 laps)
+[20:20:12] CAR 20 GOT A MALFUNCTION
+[20:20:13] CAR 21 GOT A MALFUNCTION
+[20:20:19] CAR 20 GOT A MALFUNCTION
+[20:18:24] Semaphores initialized
+[20:18:24] Named pipe 'race_pipe' is ready!
+
+[20:18:24] SERVER STARTED
+[20:18:24] Race manager created (PID: 2774)
+[20:19:07] ADDED CAR 10 FROM TEAM AA
+[20:19:07] ADDED CAR 20 FROM TEAM BB
+[20:19:07] ADDED CAR 21 FROM TEAM BB
+[20:19:07] ADDED CAR 30 FROM TEAM CC
+[20:19:07] ADDED CAR 40 FROM TEAM DD
+[20:19:07] ADDED CAR 41 FROM TEAM DD
+[20:19:07] [Race_Pipe] Got START RACE
+[20:19:07] Buckle Up, race is starting!
+[20:19:07] Created team processes
+[20:19:07] Created team processes
+[20:19:07] Created team processes
+[20:19:07] Team manager created (PID: 2785), for Team DD
+
+[20:19:07] Car 40 from team DD has started the race
+[20:19:07] Car 41 from team DD has started the race
+[20:20:02] CAR 40 GOT A MALFUNCTION
+[20:20:03] CAR 41 GOT A MALFUNCTION
+[20:20:03] Car 40 | Distance = 8600.00 | Lap 4 | State = S | Fuel = 33.60(2.34 laps)
+[20:20:06] Car 41 | Distance = 7200.00 | Lap 3 | State = S | Fuel = 47.20(3.29 laps)
+[20:20:11] CAR 40 GOT A MALFUNCTION
+[20:20:16] CAR 41 LOW ON FUEL
+[20:20:20] Car 41 | Distance = 9100.00 | Lap 6 | State = S | Fuel = 15.20(1.06 laps)
+[20:20:22] CAR 41 GOT A MALFUNCTION
+[20:18:24] Semaphores initialized
+[20:18:24] Named pipe 'race_pipe' is ready!
+
+[20:18:24] SERVER STARTED
+[20:18:24] Race manager created (PID: 2774)
+[20:19:07] ADDED CAR 10 FROM TEAM AA
+[20:19:07] ADDED CAR 20 FROM TEAM BB
+[20:19:07] ADDED CAR 21 FROM TEAM BB
+[20:19:07] ADDED CAR 30 FROM TEAM CC
+[20:19:07] ADDED CAR 40 FROM TEAM DD
+[20:19:07] ADDED CAR 41 FROM TEAM DD
+[20:19:07] [Race_Pipe] Got START RACE
+[20:19:07] Buckle Up, race is starting!
+[20:19:07] Created team processes
+[20:19:07] Created team processes
+[20:19:07] Created team processes
+[20:19:07] Created team processes
+[20:19:07] ---RACE HAS STARTED---
+[20:19:08] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:19:09] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:19:09] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:19:10] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:19:10] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:19:11] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:19:11] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:19:12] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:19:12] UPDATE ==> CAR 20 ENTERED THE BOX
+[20:19:12] UPDATE ==> CAR 10 GOT SWAPPED TO SAFETY MODE
+[20:19:12] UPDATE ==> CAR 21 GOT SWAPPED TO SAFETY MODE
+[20:19:13] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:19:13] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:19:13] UPDATE ==> CAR 20 IS BACK AT FULL SPEED
+[20:19:14] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:19:15] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:19:15] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:19:15] INTERRUPTING RACE
+[20:19:18] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:19:19] UPDATE ==> CAR 10 GOT SWAPPED TO SAFETY MODE
+[20:19:20] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:20:01] [Race_Pipe] Got ADDCAR
+[20:20:01] [Race_Pipe] Can't add cars once the race has started!
+[20:20:01] [Race_Pipe] Got ADDCAR
+[20:20:01] [Race_Pipe] Can't add cars once the race has started!
+[20:20:01] [Race_Pipe] Got ADDCAR
+[20:20:01] [Race_Pipe] Can't add cars once the race has started!
+[20:20:01] [Race_Pipe] Got ADDCAR
+[20:20:01] [Race_Pipe] Can't add cars once the race has started!
+[20:20:01] [Race_Pipe] Got ADDCAR
+[20:20:01] [Race_Pipe] Can't add cars once the race has started!
+[20:20:01] [Race_Pipe] Got START RACE
+[20:20:01] [Race_Pipe] Restarting race!
+[20:20:01] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:20:01] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:20:01] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:20:01] [Race_Pipe] Got ADDCAR
+[20:20:01] [Race_Pipe] Can't add cars once the race has started!
+[20:20:02] UPDATE ==> CAR 20 GOT SWAPPED TO SAFETY MODE
+[20:20:02] UPDATE ==> CAR 40 GOT SWAPPED TO SAFETY MODE
+[20:20:02] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:20:02] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:20:03] UPDATE ==> CAR 21 GOT SWAPPED TO SAFETY MODE
+[20:20:03] UPDATE ==> CAR 41 GOT SWAPPED TO SAFETY MODE
+[20:20:05] UPDATE ==> CAR 20 ENTERED THE BOX
+[20:20:05] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:20:05] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:20:06] UPDATE ==> CAR 10 GOT SWAPPED TO SAFETY MODE
+[20:20:07] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:20:07] UPDATE ==> CAR 30 ENTERED THE BOX
+[20:20:08] UPDATE ==> CAR 30 IS BACK AT FULL SPEED
+[20:20:08] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:20:09] UPDATE ==> CAR 20 IS BACK AT FULL SPEED
+[20:20:10] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:20:11] UPDATE ==> CAR 40 GOT SWAPPED TO SAFETY MODE
+[20:20:11] UPDATE ==> CAR 10 ENTERED THE BOX
+[20:20:12] UPDATE ==> CAR 20 GOT SWAPPED TO SAFETY MODE
+[20:20:12] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:20:13] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:20:13] UPDATE ==> CAR 20 ENTERED THE BOX
+[20:20:13] UPDATE ==> CAR 21 GOT SWAPPED TO SAFETY MODE
+[20:20:14] UPDATE ==> CAR 30 FINISHED THE RACE
+[20:20:16] UPDATE ==> CAR 40 ENTERED THE BOX
+[20:20:17] UPDATE ==> CAR 10 IS BACK AT FULL SPEED
+[20:20:17] UPDATE ==> CAR 21 ENTERED THE BOX
+[20:20:19] UPDATE ==> CAR 20 IS BACK AT FULL SPEED
+[20:20:19] UPDATE ==> CAR 20 GOT SWAPPED TO SAFETY MODE
+[20:20:21] UPDATE ==> CAR 21 IS BACK AT FULL SPEED
+[20:20:21] UPDATE ==> CAR 41 ENTERED THE BOX
+[20:20:22] UPDATE ==> CAR 10 GOT SWAPPED TO SAFETY MODE
+[20:20:22] UPDATE ==> CAR 41 IS BACK AT FULL SPEED
+[20:20:22] UPDATE ==> CAR 40 IS BACK AT FULL SPEED
+[20:20:22] UPDATE ==> CAR 41 GOT SWAPPED TO SAFETY MODE
+[20:20:23] [Race Manager] Got SIGTERM
+[20:20:23] [Race Manager] Waiting for all cars to finish their lap
+[20:18:24] Semaphores initialized
+[20:18:24] Named pipe 'race_pipe' is ready!
+
+[20:18:24] SERVER STARTED
+[20:19:07] [Malfunction Manager] Got SIGUSR2 -> Starting
+[20:20:28] [Malfunction Manager] Got SIGTERM
+ Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:32] GOT SIGTSTP - Statistics coming
+[20:19:32] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:19:34] GOT SIGTSTP - Statistics coming
+[20:19:34] ----Statistics----
+1st -> Car 21 from team BB [lap: 4, lap_distance: 2000.00, stops: 3]
+2nd -> Car 40 from team DD [lap: 4, lap_distance: 2000.00, stops: 2]
+3rd -> Car 30 from team CC [lap: 4, lap_distance: 1600.00, stops: 0]
+4th -> Car 20 from team BB [lap: 4, lap_distance: 1220.00, stops: 1]
+5th -> Car 10 from team AA [lap: 4, lap_distance:  890.00, stops: 1]
+   .
+   .
+   .
+8th -> Car 41 from team DD [lap: 3, lap_distance: 2000.00, stops: 2]
+Total de malfuntions 3
+Total de paragens na box 9
+Carros em pista: 6
+
+[20:20:26] GOT SIGTSTP - Statistics coming
+[20:20:26] ----Statistics----
+1st -> Car 30 from team CC [lap: 10, lap_distance:    0.00, stops: 1]
+2nd -> Car 21 from team BB [lap: 8, lap_distance: 1200.00, stops: 6]
+3rd -> Car 20 from team BB [lap: 8, lap_distance:  200.00, stops: 3]
+4th -> Car 10 from team AA [lap: 8, lap_distance:    0.00, stops: 3]
+5th -> Car 41 from team DD [lap: 7, lap_distance: 7200.00, stops: 5]
+   .
+   .
+   .
+8th -> Car 40 from team DD [lap: 7, lap_distance: 2900.00, stops: 4]
+Total de malfuntions 14
+Total de paragens na box 22
+Carros em pista: 1
+
+[20:20:28] SERVER CLOSED
+[20:20:28] GOT SIGTSTP - Statistics coming
+[20:20:28] ----Statistics----
+1st -> Car 30 from team CC [lap: 10, lap_distance:    0.00, stops: 1]
+2nd -> Car 21 from team BB [lap: 8, lap_distance: 1200.00, stops: 6]
+3rd -> Car 41 from team DD [lap: 8, lap_distance:  800.00, stops: 5]
+4th -> Car 20 from team BB [lap: 8, lap_distance:  200.00, stops: 3]
+5th -> Car 10 from team AA [lap: 8, lap_distance:    0.00, stops: 3]
+   .
+   .
+   .
+8th -> Car 40 from team DD [lap: 7, lap_distance: 2900.00, stops: 4]
+Total de malfuntions 14
+Total de paragens na box 22
+Carros em pista: 0
+
+[20:20:28] Cleaning up...

@@ -348,7 +348,6 @@ void *car_worker(void *stats) {
             }
         } // end if	
         
-        
         // Decrease fuel and check if is < 0
         car_info->fuel -= multipliers[1] * car_info->car->consumption;
         if (car_info->fuel <= 0){            
@@ -360,6 +359,10 @@ void *car_worker(void *stats) {
             car_info->state = 'D';
            //sprintf(str, "Car %d from team %s ran out of fuel!", car_info->car->number, car_info->car->team_name);
            //write_log(str);
+
+            sem_wait(sem_car_count);
+            sem_post(cond_sem_car);
+
             pthread_exit(NULL);
         } else if(laps_from_fuel(car_info) <= 2){
         	if (car_info->state !='S'){

@@ -1,0 +1,164 @@
+[19:50:30] Semaphores initialized
+[19:50:30] Named pipe 'race_pipe' is ready!
+
+[19:50:30] SERVER STARTED
+[19:50:30] Race manager created (PID: 1891)
+[19:51:28] ADDED CAR 50 FROM TEAM A
+[19:51:28] ADDED CAR 55 FROM TEAM A
+[19:51:28] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Not enough teams ready
+[19:51:29] ADDED CAR 77 FROM TEAM B
+[19:51:29] ADDED CAR 80 FROM TEAM B
+[19:51:29] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Not enough teams ready
+[19:51:29] ADDED CAR 81 FROM TEAM C
+[19:51:29] ADDED CAR 91 FROM TEAM C
+[19:51:29] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Buckle Up, race is starting!
+[19:51:29] Team manager created (PID: 1956), for Team A
+
+[19:51:29] Car 55 from team A has started the race
+[19:51:29] Car 50 from team A has started the race
+[19:51:29] CAR 50 LOW ON FUEL
+[19:51:31] Car 50 | Distance =  335.00 | Lap 0 | State = S | Fuel = 27.40(0.25 laps)
+[19:51:31] Car 55 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:51:33] Car 55 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:51:33] Car 50 | Distance =  635.00 | Lap 0 | State = S | Fuel = 19.40(0.18 laps)
+[19:51:35] Car 55 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:51:35] Car 50 | Distance =  935.00 | Lap 0 | State = S | Fuel = 11.40(0.11 laps)
+[19:51:37] Car 55 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:51:37] Car 50 | Distance = 1235.00 | Lap 0 | State = S | Fuel = 3.40(0.03 laps)
+[19:51:39] Car 55 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:51:41] Car 55 | Distance = 1000.00 | Lap 1 | State = R | Fuel = 31.20(7.80 laps)
+[19:51:43] Car 55 | Distance = 2000.00 | Lap 1 | State = R | Fuel = 30.40(7.60 laps)
+[19:51:45] Car 55 | Distance = 3000.00 | Lap 1 | State = R | Fuel = 29.60(7.40 laps)
+[19:51:47] Car 55 | Distance = 4000.00 | Lap 1 | State = R | Fuel = 28.80(7.20 laps)
+[19:51:49] Car 55 | Distance =    0.00 | Lap 2 | State = R | Fuel = 28.00(7.00 laps)
+[19:50:30] Semaphores initialized
+[19:50:30] Named pipe 'race_pipe' is ready!
+
+[19:50:30] SERVER STARTED
+[19:50:30] Race manager created (PID: 1891)
+[19:51:28] ADDED CAR 50 FROM TEAM A
+[19:51:28] ADDED CAR 55 FROM TEAM A
+[19:51:28] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Not enough teams ready
+[19:51:29] ADDED CAR 77 FROM TEAM B
+[19:51:29] ADDED CAR 80 FROM TEAM B
+[19:51:29] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Not enough teams ready
+[19:51:29] ADDED CAR 81 FROM TEAM C
+[19:51:29] ADDED CAR 91 FROM TEAM C
+[19:51:29] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Buckle Up, race is starting!
+[19:51:29] Created team processes
+[19:51:29] Created team processes
+[19:51:29] Team manager created (PID: 1958), for Team C
+
+[19:51:29] Car 91 from team C has started the race
+[19:51:29] Car 81 from team C has started the race
+[19:51:31] Car 81 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:51:31] Car 91 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:51:33] Car 91 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:51:33] Car 81 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:51:35] Car 91 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:51:35] Car 81 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:51:37] Car 91 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:51:37] Car 81 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:51:39] Car 91 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:51:39] Car 81 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:51:41] Car 91 | Distance = 1000.00 | Lap 1 | State = R | Fuel = 31.20(7.80 laps)
+[19:51:41] Car 81 | Distance = 1000.00 | Lap 1 | State = R | Fuel = 31.20(7.80 laps)
+[19:51:43] Car 91 | Distance = 2000.00 | Lap 1 | State = R | Fuel = 30.40(7.60 laps)
+[19:51:43] Car 81 | Distance = 2000.00 | Lap 1 | State = R | Fuel = 30.40(7.60 laps)
+[19:51:45] Car 91 | Distance = 3000.00 | Lap 1 | State = R | Fuel = 29.60(7.40 laps)
+[19:51:45] Car 81 | Distance = 3000.00 | Lap 1 | State = R | Fuel = 29.60(7.40 laps)
+[19:51:47] Car 91 | Distance = 4000.00 | Lap 1 | State = R | Fuel = 28.80(7.20 laps)
+[19:51:47] Car 81 | Distance = 4000.00 | Lap 1 | State = R | Fuel = 28.80(7.20 laps)
+[19:51:49] Car 81 | Distance =    0.00 | Lap 2 | State = R | Fuel = 28.00(7.00 laps)
+[19:51:49] Car 91 | Distance =    0.00 | Lap 2 | State = R | Fuel = 28.00(7.00 laps)
+[19:50:30] Semaphores initialized
+[19:50:30] Named pipe 'race_pipe' is ready!
+
+[19:50:30] SERVER STARTED
+[19:50:30] Race manager created (PID: 1891)
+[19:51:28] ADDED CAR 50 FROM TEAM A
+[19:51:28] ADDED CAR 55 FROM TEAM A
+[19:51:28] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Not enough teams ready
+[19:51:29] ADDED CAR 77 FROM TEAM B
+[19:51:29] ADDED CAR 80 FROM TEAM B
+[19:51:29] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Not enough teams ready
+[19:51:29] ADDED CAR 81 FROM TEAM C
+[19:51:29] ADDED CAR 91 FROM TEAM C
+[19:51:29] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Buckle Up, race is starting!
+[19:51:29] Created team processes
+[19:51:29] Team manager created (PID: 1957), for Team B
+
+[19:51:29] Car 80 from team B has started the race
+[19:51:29] Car 77 from team B has started the race
+[19:51:31] Car 77 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:51:31] Car 80 | Distance = 1000.00 | Lap 0 | State = R | Fuel = 35.20(8.80 laps)
+[19:51:33] Car 77 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:51:33] Car 80 | Distance = 2000.00 | Lap 0 | State = R | Fuel = 34.40(8.60 laps)
+[19:51:35] Car 77 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:51:35] Car 80 | Distance = 3000.00 | Lap 0 | State = R | Fuel = 33.60(8.40 laps)
+[19:51:37] Car 77 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:51:37] Car 80 | Distance = 4000.00 | Lap 0 | State = R | Fuel = 32.80(8.20 laps)
+[19:51:39] Car 77 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:51:39] Car 80 | Distance =    0.00 | Lap 1 | State = R | Fuel = 32.00(8.00 laps)
+[19:51:41] Car 77 | Distance = 1000.00 | Lap 1 | State = R | Fuel = 31.20(7.80 laps)
+[19:51:41] Car 80 | Distance = 1000.00 | Lap 1 | State = R | Fuel = 31.20(7.80 laps)
+[19:51:43] Car 77 | Distance = 2000.00 | Lap 1 | State = R | Fuel = 30.40(7.60 laps)
+[19:51:43] Car 80 | Distance = 2000.00 | Lap 1 | State = R | Fuel = 30.40(7.60 laps)
+[19:51:45] Car 77 | Distance = 3000.00 | Lap 1 | State = R | Fuel = 29.60(7.40 laps)
+[19:51:45] Car 80 | Distance = 3000.00 | Lap 1 | State = R | Fuel = 29.60(7.40 laps)
+[19:51:47] Car 77 | Distance = 4000.00 | Lap 1 | State = R | Fuel = 28.80(7.20 laps)
+[19:51:47] Car 80 | Distance = 4000.00 | Lap 1 | State = R | Fuel = 28.80(7.20 laps)
+[19:51:49] Car 77 | Distance =    0.00 | Lap 2 | State = R | Fuel = 28.00(7.00 laps)
+[19:51:49] Car 80 | Distance =    0.00 | Lap 2 | State = R | Fuel = 28.00(7.00 laps)
+[19:50:30] Semaphores initialized
+[19:50:30] Named pipe 'race_pipe' is ready!
+
+[19:50:30] SERVER STARTED
+[19:50:30] Race manager created (PID: 1891)
+[19:51:28] ADDED CAR 50 FROM TEAM A
+[19:51:28] ADDED CAR 55 FROM TEAM A
+[19:51:28] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Not enough teams ready
+[19:51:29] ADDED CAR 77 FROM TEAM B
+[19:51:29] ADDED CAR 80 FROM TEAM B
+[19:51:29] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Not enough teams ready
+[19:51:29] ADDED CAR 81 FROM TEAM C
+[19:51:29] ADDED CAR 91 FROM TEAM C
+[19:51:29] Max number of cars reached for this team
+[19:51:29] [Race_Pipe] Got START RACE
+[19:51:29] Buckle Up, race is starting!
+[19:51:29] Created team processes
+[19:51:29] Created team processes
+[19:51:29] Created team processes
+[19:51:29] ---RACE HAS STARTED---
+[19:51:29] UPDATE ==> CAR 50 GOT SWAPPED TO SAFETY MODE
+[19:51:38] UPDATE ==> CAR 50 ISN'T HABLE TO CONTINUE THE RACE
+[19:51:49] [Race Manager] Got SIGTERM
+[19:51:49] [Race Manager] Waiting for all cars to finish their lap
+[19:50:30] Semaphores initialized
+[19:50:30] Named pipe 'race_pipe' is ready!
+
+[19:50:30] SERVER STARTED
+[19:51:29] [Malfunction Manager] Got SIGUSR2 -> Starting
+[19:51:50] [Malfunction Manager] Got SIGTERM

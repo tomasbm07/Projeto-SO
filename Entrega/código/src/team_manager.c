@@ -358,8 +358,12 @@ void *car_worker(void *stats) {
             pthread_mutex_unlock(&pipe_mutex);
             
             car_info->state = 'D';
-           //sprintf(str, "Car %d from team %s ran out of fuel!", car_info->car->number, car_info->car->team_name);
-           //write_log(str);
+            //sprintf(str, "Car %d from team %s ran out of fuel!", car_info->car->number, car_info->car->team_name);
+            //write_log(str);
+
+            sem_wait(sem_car_count);
+            sem_post(cond_sem_car);
+
             pthread_exit(NULL);
         } else if(laps_from_fuel(car_info) <= 2){
         	if (car_info->state !='S'){
