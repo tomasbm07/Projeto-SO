@@ -281,7 +281,7 @@ void statistics(){
     
     char aux[500]="";
     
-    printf("-------------------------------------------------\n");
+    //printf("-------------------------------------------------\n");
     strcat(statistics, "----Statistics----\n");
     
     sem_wait(counter_mutex);

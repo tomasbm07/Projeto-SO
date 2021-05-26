@@ -89,7 +89,7 @@ void team_manager(int team_index) {
       // wait for threads to finish
     for (i = 0; i < cars_number; i++) pthread_join(*(car_threads+i), NULL);
 	
-	kill(getppid(), SIGUSR2);
+	kill(getppid(), SIGTERM);
 	//printf("team manager writing\n");
 	//write(fd_team[index_aux/NR_TEAM], "T", 5);
 	
